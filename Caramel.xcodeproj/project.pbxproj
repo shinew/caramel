@@ -45,6 +45,8 @@
 		1AB847C41A06EB95008509FE /* univers-condensed-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847BF1A06EB95008509FE /* univers-condensed-medium.ttf */; };
 		1AB847C51A06EB95008509FE /* univers-LT-65-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847C01A06EB95008509FE /* univers-LT-65-Bold.ttf */; };
 		1AB847C61A06EB95008509FE /* univers-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847C11A06EB95008509FE /* univers-medium.ttf */; };
+		1AB847C81A06ECF9008509FE /* Univers-Light-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847C71A06EC9F008509FE /* Univers-Light-Bold.ttf */; };
+		1AB847C91A06ECF9008509FE /* univers-light-normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A990CE01A06E98100C759F9 /* univers-light-normal.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,9 @@
 		1AB847BF1A06EB95008509FE /* univers-condensed-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-condensed-medium.ttf"; sourceTree = "<group>"; };
 		1AB847C01A06EB95008509FE /* univers-LT-65-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-LT-65-Bold.ttf"; sourceTree = "<group>"; };
 		1AB847C11A06EB95008509FE /* univers-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-medium.ttf"; sourceTree = "<group>"; };
+		1AB847C71A06EC9F008509FE /* Univers-Light-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Univers-Light-Bold.ttf"; sourceTree = "<group>"; };
+		1AB847CA1A06EFCC008509FE /* univers-light-condensed-1361511939.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-light-condensed-1361511939.ttf"; sourceTree = "<group>"; };
+		1AB847CB1A06F033008509FE /* Univers-Condensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Univers-Condensed-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,8 +266,11 @@
 		1A28C9F91A060CB000678084 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				1AB847CA1A06EFCC008509FE /* univers-light-condensed-1361511939.ttf */,
 				1AB847BD1A06EB95008509FE /* univers-black-normal.ttf */,
 				1AB847BE1A06EB95008509FE /* univers-condensed-italics.ttf */,
+				1AB847C71A06EC9F008509FE /* Univers-Light-Bold.ttf */,
+				1AB847CB1A06F033008509FE /* Univers-Condensed-Bold.ttf */,
 				1AB847BF1A06EB95008509FE /* univers-condensed-medium.ttf */,
 				1AB847C01A06EB95008509FE /* univers-LT-65-Bold.ttf */,
 				1AB847C11A06EB95008509FE /* univers-medium.ttf */,
@@ -375,6 +383,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB847C81A06ECF9008509FE /* Univers-Light-Bold.ttf in Resources */,
+				1AB847C91A06ECF9008509FE /* univers-light-normal.ttf in Resources */,
 				1A28C9FB1A060CD900678084 /* TipoType - Libertad.otf in Resources */,
 				1AB847C61A06EB95008509FE /* univers-medium.ttf in Resources */,
 				1AB847C51A06EB95008509FE /* univers-LT-65-Bold.ttf in Resources */,

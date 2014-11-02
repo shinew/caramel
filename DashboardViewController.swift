@@ -32,6 +32,7 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "univers-light-normal", size: 20)!]
         self.displayUpdateDateLabels()
         self.dashboardCallback = DashboardCallback(updatedScoreCallback)
         
@@ -48,9 +49,9 @@ class DashboardViewController: UIViewController {
         let dateFormatter = NSDateFormatter()
         let currentDate = NSDate()
         dateFormatter.setLocalizedDateFormatFromTemplate("EEEE")
-        self.dayOfTheWeekLabel.text = dateFormatter.stringFromDate(currentDate)
+        self.dayOfTheWeekLabel.text = dateFormatter.stringFromDate(currentDate).uppercaseString
         dateFormatter.setLocalizedDateFormatFromTemplate("MMMM d, yyyy")
-        self.dateLabel.text = dateFormatter.stringFromDate(currentDate)
+        self.dateLabel.text = dateFormatter.stringFromDate(currentDate).uppercaseString
     }
     
     func updatedScoreCallback(interval: StressScoreInterval!) -> Void {
