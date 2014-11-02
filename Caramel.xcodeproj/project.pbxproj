@@ -47,6 +47,9 @@
 		1AB847C61A06EB95008509FE /* univers-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847C11A06EB95008509FE /* univers-medium.ttf */; };
 		1AB847C81A06ECF9008509FE /* Univers-Light-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847C71A06EC9F008509FE /* Univers-Light-Bold.ttf */; };
 		1AB847C91A06ECF9008509FE /* univers-light-normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A990CE01A06E98100C759F9 /* univers-light-normal.ttf */; };
+		1AB847CD1A06F599008509FE /* WeeklyOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847CC1A06F599008509FE /* WeeklyOverviewViewController.swift */; };
+		1AB847CF1A06F5B8008509FE /* MonthlyOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847CE1A06F5B8008509FE /* MonthlyOverviewViewController.swift */; };
+		1AB847D31A06F60F008509FE /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847D21A06F60F008509FE /* HabitsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,9 @@
 		1AB847C71A06EC9F008509FE /* Univers-Light-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Univers-Light-Bold.ttf"; sourceTree = "<group>"; };
 		1AB847CA1A06EFCC008509FE /* univers-light-condensed-1361511939.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-light-condensed-1361511939.ttf"; sourceTree = "<group>"; };
 		1AB847CB1A06F033008509FE /* Univers-Condensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Univers-Condensed-Bold.ttf"; sourceTree = "<group>"; };
+		1AB847CC1A06F599008509FE /* WeeklyOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyOverviewViewController.swift; sourceTree = "<group>"; };
+		1AB847CE1A06F5B8008509FE /* MonthlyOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthlyOverviewViewController.swift; sourceTree = "<group>"; };
+		1AB847D21A06F60F008509FE /* HabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +289,8 @@
 		1A3D2C071A0623A900063AEB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1AB847D11A06F601008509FE /* Habits */,
+				1AB847D01A06F5C0008509FE /* Overview */,
 				1A3D2C081A0623B700063AEB /* Dashboard */,
 			);
 			name = ViewControllers;
@@ -295,6 +303,23 @@
 				1A3D2BD51A060E0500063AEB /* DashboardViewController.swift */,
 			);
 			name = Dashboard;
+			sourceTree = "<group>";
+		};
+		1AB847D01A06F5C0008509FE /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				1AB847CC1A06F599008509FE /* WeeklyOverviewViewController.swift */,
+				1AB847CE1A06F5B8008509FE /* MonthlyOverviewViewController.swift */,
+			);
+			name = Overview;
+			sourceTree = "<group>";
+		};
+		1AB847D11A06F601008509FE /* Habits */ = {
+			isa = PBXGroup;
+			children = (
+				1AB847D21A06F60F008509FE /* HabitsViewController.swift */,
+			);
+			name = Habits;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,9 +438,11 @@
 			files = (
 				1415AA9A1A02D81100C1CD4F /* Notification.swift in Sources */,
 				14D0E2611A0090A70042F20A /* Agent.swift in Sources */,
+				1AB847CD1A06F599008509FE /* WeeklyOverviewViewController.swift in Sources */,
 				14F878E31A022372001FFFE2 /* Constants.swift in Sources */,
 				14D80AD31A01806C0064BCD8 /* HRCentralManager.swift in Sources */,
 				14D0E23B1A008C6D0042F20A /* ViewController.swift in Sources */,
+				1AB847D31A06F60F008509FE /* HabitsViewController.swift in Sources */,
 				14D0E25C1A008DEC0042F20A /* StressScoreInterval.swift in Sources */,
 				14DC38061A05AD0D00E992B2 /* DailySummary.swift in Sources */,
 				14D0E2691A00AA910042F20A /* Queue.swift in Sources */,
@@ -429,6 +456,7 @@
 				1469A8091A04659200F439DB /* Movement.swift in Sources */,
 				14254D571A01C9CB00DE86B8 /* HRDecoder.swift in Sources */,
 				1A3D2BD61A060E0500063AEB /* DashboardViewController.swift in Sources */,
+				1AB847CF1A06F5B8008509FE /* MonthlyOverviewViewController.swift in Sources */,
 				14D0E2651A009E420042F20A /* HRSample.swift in Sources */,
 				14D47A9F1A06E61500049C34 /* DashboardCallback.swift in Sources */,
 				14D0E25A1A008CED0042F20A /* Database.swift in Sources */,

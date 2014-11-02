@@ -26,7 +26,7 @@
         <!--Weekly Overview-->
         <scene sceneID="f4C-Mb-lQt">
             <objects>
-                <viewController id="Fbz-rx-xCi" customClass="ViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fbz-rx-xCi" customClass="WeeklyOverviewViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cvQ-ad-oby">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,7 +61,7 @@
         <!--Monthly Overview-->
         <scene sceneID="vtH-rd-pbn">
             <objects>
-                <viewController id="uio-JR-Iic" sceneMemberID="viewController">
+                <viewController id="uio-JR-Iic" customClass="MonthlyOverviewViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WMI-oW-bNO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,27 +93,30 @@
             </objects>
             <point key="canvasLocation" x="1452.5" y="-1026.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Habits-->
         <scene sceneID="chw-Wd-wiO">
             <objects>
-                <viewController id="vhO-60-I13" sceneMemberID="viewController">
+                <viewController id="vhO-60-I13" customClass="HabitsViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uO5-92-yNn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="habits-screenshot" id="qPW-vK-MGt">
-                                <rect key="frame" x="-8" y="63" width="387" height="554"/>
+                                <rect key="frame" x="-8" y="63" width="387" height="557"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oLS-kp-QZ6"/>
+                    <navigationItem key="navigationItem" title="Habits" id="djb-V2-pfX">
+                        <barButtonItem key="leftBarButtonItem" image="settings-icon" id="LNx-Yh-cwj"/>
+                        <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="S3k-Yb-tML"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DV6-UI-ZBK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044.5" y="-193.5"/>
+            <point key="canvasLocation" x="1014.5" y="-209.5"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="XvB-Ll-uJb">
@@ -251,7 +254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bf2-nj-KFv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044.5" y="-1853.5"/>
+            <point key="canvasLocation" x="1014.5" y="-1853.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fbS-rR-cFb">
@@ -299,7 +302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R98-z6-I0M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1039.5" y="555.5"/>
+            <point key="canvasLocation" x="1014.5" y="555.5"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="lsU-ga-Rei">

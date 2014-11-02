@@ -32,7 +32,7 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "univers-light-normal", size: 20)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
         self.displayUpdateDateLabels()
         self.dashboardCallback = DashboardCallback(updatedScoreCallback)
         
