@@ -1,0 +1,638 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1415AA9A1A02D81100C1CD4F /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1415AA991A02D81100C1CD4F /* Notification.swift */; };
+		14254D571A01C9CB00DE86B8 /* HRDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14254D561A01C9CB00DE86B8 /* HRDecoder.swift */; };
+		1430FCBC1A0307EF006B518B /* AccelQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430FCBB1A0307EF006B518B /* AccelQueue.swift */; };
+		1469A8091A04659200F439DB /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1469A8081A04659200F439DB /* Movement.swift */; };
+		148E40841A00F81900952565 /* QueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148E40831A00F81900952565 /* QueueTest.swift */; };
+		148E40851A00F94600952565 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2681A00AA910042F20A /* Queue.swift */; };
+		14D0E2361A008C6D0042F20A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2351A008C6D0042F20A /* AppDelegate.swift */; };
+		14D0E2391A008C6D0042F20A /* Caramel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2371A008C6D0042F20A /* Caramel.xcdatamodeld */; };
+		14D0E23B1A008C6D0042F20A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E23A1A008C6D0042F20A /* ViewController.swift */; };
+		14D0E23E1A008C6D0042F20A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D0E23C1A008C6D0042F20A /* Main.storyboard */; };
+		14D0E2401A008C6D0042F20A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14D0E23F1A008C6D0042F20A /* Images.xcassets */; };
+		14D0E2431A008C6D0042F20A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D0E2411A008C6D0042F20A /* LaunchScreen.xib */; };
+		14D0E24F1A008C6D0042F20A /* CaramelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E24E1A008C6D0042F20A /* CaramelTests.swift */; };
+		14D0E25A1A008CED0042F20A /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2591A008CED0042F20A /* Database.swift */; };
+		14D0E25C1A008DEC0042F20A /* StressScoreInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E25B1A008DEC0042F20A /* StressScoreInterval.swift */; };
+		14D0E25F1A0090920042F20A /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E25E1A0090920042F20A /* HTTPRequest.swift */; };
+		14D0E2611A0090A70042F20A /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2601A0090A70042F20A /* Agent.swift */; };
+		14D0E2631A0092CF0042F20A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2621A0092CF0042F20A /* User.swift */; };
+		14D0E2651A009E420042F20A /* HRSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2641A009E420042F20A /* HRSample.swift */; };
+		14D0E2671A00AA3A0042F20A /* HRQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2661A00AA3A0042F20A /* HRQueue.swift */; };
+		14D0E2691A00AA910042F20A /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2681A00AA910042F20A /* Queue.swift */; };
+		14D47A9F1A06E61500049C34 /* DashboardCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D47A9E1A06E61500049C34 /* DashboardCallback.swift */; };
+		14D80ACE1A0172920064BCD8 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D80ACD1A0172920064BCD8 /* Timer.swift */; };
+		14D80AD01A01730A0064BCD8 /* HRBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D80ACF1A01730A0064BCD8 /* HRBluetooth.swift */; };
+		14D80AD31A01806C0064BCD8 /* HRCentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D80AD21A01806C0064BCD8 /* HRCentralManager.swift */; };
+		14D80AD51A01808D0064BCD8 /* HRPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D80AD41A01808D0064BCD8 /* HRPeripheral.swift */; };
+		14DC38041A05A53100E992B2 /* MovementQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DC38031A05A53100E992B2 /* MovementQueue.swift */; };
+		14DC38061A05AD0D00E992B2 /* DailySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DC38051A05AD0D00E992B2 /* DailySummary.swift */; };
+		14F878DF1A020BD8001FFFE2 /* DateConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F878DE1A020BD8001FFFE2 /* DateConversion.swift */; };
+		14F878E11A021992001FFFE2 /* StressQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F878E01A021992001FFFE2 /* StressQueue.swift */; };
+		14F878E31A022372001FFFE2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F878E21A022372001FFFE2 /* Constants.swift */; };
+		1A28C9FB1A060CD900678084 /* TipoType - Libertad.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A28C9FA1A060CBA00678084 /* TipoType - Libertad.otf */; };
+		1A3D2BD61A060E0500063AEB /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D2BD51A060E0500063AEB /* DashboardViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14D0E2491A008C6D0042F20A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14D0E2281A008C6D0042F20A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14D0E22F1A008C6D0042F20A;
+			remoteInfo = Caramel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1415AA991A02D81100C1CD4F /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		14254D561A01C9CB00DE86B8 /* HRDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRDecoder.swift; sourceTree = "<group>"; };
+		1430FCBB1A0307EF006B518B /* AccelQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelQueue.swift; sourceTree = "<group>"; };
+		1469A8081A04659200F439DB /* Movement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movement.swift; sourceTree = "<group>"; };
+		148E40831A00F81900952565 /* QueueTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTest.swift; sourceTree = "<group>"; };
+		14D0E2301A008C6D0042F20A /* Caramel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caramel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14D0E2341A008C6D0042F20A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14D0E2351A008C6D0042F20A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		14D0E2381A008C6D0042F20A /* Caramel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Caramel.xcdatamodel; sourceTree = "<group>"; };
+		14D0E23A1A008C6D0042F20A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		14D0E23D1A008C6D0042F20A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14D0E23F1A008C6D0042F20A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		14D0E2421A008C6D0042F20A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		14D0E2481A008C6D0042F20A /* CaramelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaramelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14D0E24D1A008C6D0042F20A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14D0E24E1A008C6D0042F20A /* CaramelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaramelTests.swift; sourceTree = "<group>"; };
+		14D0E2591A008CED0042F20A /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Database.swift; path = ../Database.swift; sourceTree = "<group>"; };
+		14D0E25B1A008DEC0042F20A /* StressScoreInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StressScoreInterval.swift; sourceTree = "<group>"; };
+		14D0E25E1A0090920042F20A /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		14D0E2601A0090A70042F20A /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
+		14D0E2621A0092CF0042F20A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
+		14D0E2641A009E420042F20A /* HRSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRSample.swift; sourceTree = "<group>"; };
+		14D0E2661A00AA3A0042F20A /* HRQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRQueue.swift; path = ../HRQueue.swift; sourceTree = "<group>"; };
+		14D0E2681A00AA910042F20A /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		14D47A9E1A06E61500049C34 /* DashboardCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCallback.swift; sourceTree = "<group>"; };
+		14D80ACD1A0172920064BCD8 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		14D80ACF1A01730A0064BCD8 /* HRBluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRBluetooth.swift; sourceTree = "<group>"; };
+		14D80AD21A01806C0064BCD8 /* HRCentralManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRCentralManager.swift; sourceTree = "<group>"; };
+		14D80AD41A01808D0064BCD8 /* HRPeripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRPeripheral.swift; sourceTree = "<group>"; };
+		14DC38031A05A53100E992B2 /* MovementQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementQueue.swift; sourceTree = "<group>"; };
+		14DC38051A05AD0D00E992B2 /* DailySummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailySummary.swift; sourceTree = "<group>"; };
+		14F878DE1A020BD8001FFFE2 /* DateConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateConversion.swift; sourceTree = "<group>"; };
+		14F878E01A021992001FFFE2 /* StressQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StressQueue.swift; sourceTree = "<group>"; };
+		14F878E21A022372001FFFE2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1A28C9FA1A060CBA00678084 /* TipoType - Libertad.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TipoType - Libertad.otf"; sourceTree = "<group>"; };
+		1A3D2BD51A060E0500063AEB /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewController.swift; path = ../DashboardViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14D0E22D1A008C6D0042F20A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14D0E2451A008C6D0042F20A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1430FCB91A03071A006B518B /* Queues */ = {
+			isa = PBXGroup;
+			children = (
+				14D0E2661A00AA3A0042F20A /* HRQueue.swift */,
+				14F878E01A021992001FFFE2 /* StressQueue.swift */,
+				1430FCBB1A0307EF006B518B /* AccelQueue.swift */,
+				14DC38031A05A53100E992B2 /* MovementQueue.swift */,
+			);
+			name = Queues;
+			sourceTree = "<group>";
+		};
+		1430FCBA1A030726006B518B /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				14D0E2601A0090A70042F20A /* Agent.swift */,
+				14D0E25E1A0090920042F20A /* HTTPRequest.swift */,
+			);
+			name = HTTP;
+			sourceTree = "<group>";
+		};
+		148E40811A00F80200952565 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				148E40831A00F81900952565 /* QueueTest.swift */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		14D0E2271A008C6D0042F20A = {
+			isa = PBXGroup;
+			children = (
+				14D0E2321A008C6D0042F20A /* Caramel */,
+				14D0E24B1A008C6D0042F20A /* CaramelTests */,
+				14D0E2311A008C6D0042F20A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		14D0E2311A008C6D0042F20A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14D0E2301A008C6D0042F20A /* Caramel.app */,
+				14D0E2481A008C6D0042F20A /* CaramelTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14D0E2321A008C6D0042F20A /* Caramel */ = {
+			isa = PBXGroup;
+			children = (
+				1A3D2C071A0623A900063AEB /* ViewControllers */,
+				1A28C9F91A060CB000678084 /* Fonts */,
+				14D0E26A1A00D4D00042F20A /* Globals */,
+				14D0E25D1A0090780042F20A /* Library */,
+				14D0E2581A008CD40042F20A /* Structures */,
+				14D0E2351A008C6D0042F20A /* AppDelegate.swift */,
+				14D0E23A1A008C6D0042F20A /* ViewController.swift */,
+				14D0E23C1A008C6D0042F20A /* Main.storyboard */,
+				14D0E23F1A008C6D0042F20A /* Images.xcassets */,
+				14D0E2411A008C6D0042F20A /* LaunchScreen.xib */,
+				14D0E2371A008C6D0042F20A /* Caramel.xcdatamodeld */,
+				14D0E2331A008C6D0042F20A /* Supporting Files */,
+			);
+			path = Caramel;
+			sourceTree = "<group>";
+		};
+		14D0E2331A008C6D0042F20A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				14D0E2341A008C6D0042F20A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14D0E24B1A008C6D0042F20A /* CaramelTests */ = {
+			isa = PBXGroup;
+			children = (
+				148E40811A00F80200952565 /* Library */,
+				14D0E24E1A008C6D0042F20A /* CaramelTests.swift */,
+				14D0E24C1A008C6D0042F20A /* Supporting Files */,
+			);
+			path = CaramelTests;
+			sourceTree = "<group>";
+		};
+		14D0E24C1A008C6D0042F20A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				14D0E24D1A008C6D0042F20A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14D0E2581A008CD40042F20A /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				14D0E2641A009E420042F20A /* HRSample.swift */,
+				14D0E25B1A008DEC0042F20A /* StressScoreInterval.swift */,
+			);
+			name = Structures;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		14D0E25D1A0090780042F20A /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				1469A8081A04659200F439DB /* Movement.swift */,
+				14D80AD11A0180530064BCD8 /* Bluetooth */,
+				14D0E2681A00AA910042F20A /* Queue.swift */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		14D0E26A1A00D4D00042F20A /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				1430FCBA1A030726006B518B /* HTTP */,
+				1430FCB91A03071A006B518B /* Queues */,
+				14F878E21A022372001FFFE2 /* Constants.swift */,
+				14F878DE1A020BD8001FFFE2 /* DateConversion.swift */,
+				14D0E2591A008CED0042F20A /* Database.swift */,
+				14D0E2621A0092CF0042F20A /* User.swift */,
+				14D80ACD1A0172920064BCD8 /* Timer.swift */,
+				1415AA991A02D81100C1CD4F /* Notification.swift */,
+				14DC38051A05AD0D00E992B2 /* DailySummary.swift */,
+			);
+			name = Globals;
+			sourceTree = "<group>";
+		};
+		14D80AD11A0180530064BCD8 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				14D80ACF1A01730A0064BCD8 /* HRBluetooth.swift */,
+				14D80AD21A01806C0064BCD8 /* HRCentralManager.swift */,
+				14D80AD41A01808D0064BCD8 /* HRPeripheral.swift */,
+				14254D561A01C9CB00DE86B8 /* HRDecoder.swift */,
+			);
+			name = Bluetooth;
+			sourceTree = "<group>";
+		};
+		1A28C9F91A060CB000678084 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1A28C9FA1A060CBA00678084 /* TipoType - Libertad.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		1A3D2C071A0623A900063AEB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1A3D2C081A0623B700063AEB /* Dashboard */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1A3D2C081A0623B700063AEB /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				14D47A9E1A06E61500049C34 /* DashboardCallback.swift */,
+				1A3D2BD51A060E0500063AEB /* DashboardViewController.swift */,
+			);
+			name = Dashboard;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14D0E22F1A008C6D0042F20A /* Caramel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14D0E2521A008C6D0042F20A /* Build configuration list for PBXNativeTarget "Caramel" */;
+			buildPhases = (
+				14D0E22C1A008C6D0042F20A /* Sources */,
+				14D0E22D1A008C6D0042F20A /* Frameworks */,
+				14D0E22E1A008C6D0042F20A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Caramel;
+			productName = Caramel;
+			productReference = 14D0E2301A008C6D0042F20A /* Caramel.app */;
+			productType = "com.apple.product-type.application";
+		};
+		14D0E2471A008C6D0042F20A /* CaramelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14D0E2551A008C6D0042F20A /* Build configuration list for PBXNativeTarget "CaramelTests" */;
+			buildPhases = (
+				14D0E2441A008C6D0042F20A /* Sources */,
+				14D0E2451A008C6D0042F20A /* Frameworks */,
+				14D0E2461A008C6D0042F20A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14D0E24A1A008C6D0042F20A /* PBXTargetDependency */,
+			);
+			name = CaramelTests;
+			productName = CaramelTests;
+			productReference = 14D0E2481A008C6D0042F20A /* CaramelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14D0E2281A008C6D0042F20A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Beyond;
+				TargetAttributes = {
+					14D0E22F1A008C6D0042F20A = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 89S3RTKPWR;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					14D0E2471A008C6D0042F20A = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 14D0E22F1A008C6D0042F20A;
+					};
+				};
+			};
+			buildConfigurationList = 14D0E22B1A008C6D0042F20A /* Build configuration list for PBXProject "Caramel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 14D0E2271A008C6D0042F20A;
+			productRefGroup = 14D0E2311A008C6D0042F20A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14D0E22F1A008C6D0042F20A /* Caramel */,
+				14D0E2471A008C6D0042F20A /* CaramelTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14D0E22E1A008C6D0042F20A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A28C9FB1A060CD900678084 /* TipoType - Libertad.otf in Resources */,
+				14D0E23E1A008C6D0042F20A /* Main.storyboard in Resources */,
+				14D0E2431A008C6D0042F20A /* LaunchScreen.xib in Resources */,
+				14D0E2401A008C6D0042F20A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14D0E2461A008C6D0042F20A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14D0E22C1A008C6D0042F20A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1415AA9A1A02D81100C1CD4F /* Notification.swift in Sources */,
+				14D0E2611A0090A70042F20A /* Agent.swift in Sources */,
+				14F878E31A022372001FFFE2 /* Constants.swift in Sources */,
+				14D80AD31A01806C0064BCD8 /* HRCentralManager.swift in Sources */,
+				14D0E23B1A008C6D0042F20A /* ViewController.swift in Sources */,
+				14D0E25C1A008DEC0042F20A /* StressScoreInterval.swift in Sources */,
+				14DC38061A05AD0D00E992B2 /* DailySummary.swift in Sources */,
+				14D0E2691A00AA910042F20A /* Queue.swift in Sources */,
+				1430FCBC1A0307EF006B518B /* AccelQueue.swift in Sources */,
+				14D0E2361A008C6D0042F20A /* AppDelegate.swift in Sources */,
+				14D0E2671A00AA3A0042F20A /* HRQueue.swift in Sources */,
+				14F878E11A021992001FFFE2 /* StressQueue.swift in Sources */,
+				14D0E2631A0092CF0042F20A /* User.swift in Sources */,
+				14D80ACE1A0172920064BCD8 /* Timer.swift in Sources */,
+				14D0E25F1A0090920042F20A /* HTTPRequest.swift in Sources */,
+				1469A8091A04659200F439DB /* Movement.swift in Sources */,
+				14254D571A01C9CB00DE86B8 /* HRDecoder.swift in Sources */,
+				1A3D2BD61A060E0500063AEB /* DashboardViewController.swift in Sources */,
+				14D0E2651A009E420042F20A /* HRSample.swift in Sources */,
+				14D47A9F1A06E61500049C34 /* DashboardCallback.swift in Sources */,
+				14D0E25A1A008CED0042F20A /* Database.swift in Sources */,
+				14D80AD51A01808D0064BCD8 /* HRPeripheral.swift in Sources */,
+				14D80AD01A01730A0064BCD8 /* HRBluetooth.swift in Sources */,
+				14D0E2391A008C6D0042F20A /* Caramel.xcdatamodeld in Sources */,
+				14DC38041A05A53100E992B2 /* MovementQueue.swift in Sources */,
+				14F878DF1A020BD8001FFFE2 /* DateConversion.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14D0E2441A008C6D0042F20A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				148E40851A00F94600952565 /* Queue.swift in Sources */,
+				14D0E24F1A008C6D0042F20A /* CaramelTests.swift in Sources */,
+				148E40841A00F81900952565 /* QueueTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		14D0E24A1A008C6D0042F20A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14D0E22F1A008C6D0042F20A /* Caramel */;
+			targetProxy = 14D0E2491A008C6D0042F20A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		14D0E23C1A008C6D0042F20A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14D0E23D1A008C6D0042F20A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		14D0E2411A008C6D0042F20A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14D0E2421A008C6D0042F20A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14D0E2501A008C6D0042F20A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		14D0E2511A008C6D0042F20A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		14D0E2531A008C6D0042F20A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = Caramel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		14D0E2541A008C6D0042F20A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = Caramel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		14D0E2561A008C6D0042F20A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CaramelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Caramel.app/Caramel";
+			};
+			name = Debug;
+		};
+		14D0E2571A008C6D0042F20A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CaramelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Caramel.app/Caramel";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14D0E22B1A008C6D0042F20A /* Build configuration list for PBXProject "Caramel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14D0E2501A008C6D0042F20A /* Debug */,
+				14D0E2511A008C6D0042F20A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14D0E2521A008C6D0042F20A /* Build configuration list for PBXNativeTarget "Caramel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14D0E2531A008C6D0042F20A /* Debug */,
+				14D0E2541A008C6D0042F20A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14D0E2551A008C6D0042F20A /* Build configuration list for PBXNativeTarget "CaramelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14D0E2561A008C6D0042F20A /* Debug */,
+				14D0E2571A008C6D0042F20A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		14D0E2371A008C6D0042F20A /* Caramel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				14D0E2381A008C6D0042F20A /* Caramel.xcdatamodel */,
+			);
+			currentVersion = 14D0E2381A008C6D0042F20A /* Caramel.xcdatamodel */;
+			path = Caramel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 14D0E2281A008C6D0042F20A /* Project object */;
+}
