@@ -22,6 +22,8 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var yesterdayScoreLabel: UILabel!
     @IBOutlet weak var percentageOfTodayStressedLabel: UILabel!
     
+    @IBOutlet var profileCircleView: ProfileCircleView!
+    
     required init(coder: NSCoder) {
         super.init(coder: coder)
         self.hrBluetooth = HRBluetooth()
@@ -33,6 +35,8 @@ class DashboardViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         self.displayUpdateDateLabels()
+        
+        self.updateProfileCircle()
         self.dashboardCallback = DashboardCallback(updatedScoreCallback)
         
         self.hrBluetooth.startScanningHRPeripheral(self.dashboardCallback.newHeartRateCallback)
@@ -57,5 +61,12 @@ class DashboardViewController: UIViewController {
         println("Smooth score: \(interval.score)")
         self.todayOverallLabel.text = "\(interval.score)"
         Database.AddStressScoreInterval(interval)
+        self.updateProfileCircle()
+    }
+    
+    func updateProfileCircle() {
+        println("updating circle!")
+        self.profileCircleView.setNeedsDisplay()
+        println("updated circle!")
     }
 }

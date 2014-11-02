@@ -171,8 +171,8 @@
                                     <navigationItem title="Dashboard" id="F8P-S4-ORj"/>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" id="iVf-CR-cAn">
-                                <rect key="frame" x="58" y="165" width="259" height="253"/>
+                            <view contentMode="scaleToFill" id="iVf-CR-cAn" customClass="ProfileCircleView" customModule="Caramel" customModuleProvider="target">
+                                <rect key="frame" x="58" y="165" width="259" height="259"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODAY'S OVERALL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S0x-Lb-vOd">
@@ -190,7 +190,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.43529412150382996" blue="0.81176471710205078" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle" id="T5G-US-b3u">
                                 <rect key="frame" x="213" y="445" width="1" height="98"/>
@@ -237,6 +237,7 @@
                         <outlet property="lastEventDurationLabel" destination="Q5v-Ay-kO4" id="Mt7-Tc-c5U"/>
                         <outlet property="lastEventTimeLabel" destination="gUc-lt-Q1d" id="Ntb-N1-SAf"/>
                         <outlet property="percentageOfTodayStressedLabel" destination="qTe-Ha-Mja" id="Rl9-jy-kDd"/>
+                        <outlet property="profileCircleView" destination="iVf-CR-cAn" id="cRK-tf-lgq"/>
                         <outlet property="todayOverallLabel" destination="KIy-K7-yIK" id="KTs-4w-X3W"/>
                         <outlet property="yesterdayScoreLabel" destination="KHR-HA-eJ5" id="kGU-3d-XBU"/>
                     </connections>
