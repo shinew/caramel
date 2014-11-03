@@ -9,33 +9,22 @@
 import Foundation
 
 var _lastHRSentDate: NSDate?
-var _lastWalkingDate: NSDate?
 var _lastMovementDate: NSDate?
+var _lastLowStressNotifDate: NSDate?
+var _lastHighStressNotifDate: NSDate?
 
 class Timer {
     //This class keeps various dates
     
-    class func getLastHRSentDate() -> NSDate? {
-        return _lastHRSentDate
-    }
+    class func getLastHRSentDate() -> NSDate? { return _lastHRSentDate }
+    class func setLastHRSentDate(date: NSDate!) { _lastHRSentDate = date }
     
-    class func setLastHRSentDate(date: NSDate!) {
-        _lastHRSentDate = date
-    }
+    class func getLastMovementDate() -> NSDate? { return _lastMovementDate }
+    class func setLastMovementDate(date: NSDate!) { _lastMovementDate = date }
     
-    class func getLastWalkingDate() -> NSDate? {
-        return _lastWalkingDate
-    }
+    class func getLastLowStressNotifDate() -> NSDate? { return _lastLowStressNotifDate }
+    class func setLastLowStressNotifDate(date: NSDate!) { _lastLowStressNotifDate = date }
     
-    class func setLastWalkingDate(date: NSDate!) {
-        _lastWalkingDate = date
-    }
-    
-    class func getLastMovementDate() -> NSDate? {
-        return _lastMovementDate
-    }
-    
-    class func setLastMovementDate(date: NSDate!) {
-        _lastMovementDate = date
-    }
+    class func getLastHighStressNotifDate() -> NSDate? { return _lastHighStressNotifDate }
+    class func setLastHighStressNotifDate(date: NSDate!) { _lastHighStressNotifDate = date }
 }

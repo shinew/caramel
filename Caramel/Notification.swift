@@ -9,14 +9,24 @@
 import UIKit
 import AVFoundation
 
+let _lowStressMessage = "You seem tense. Let's take a few deep breaths?"
+let _highStressMessage = "Need more help on de-stressing? Slide me."
+
 class Notification {
     
-    class func sendStressNotification(var stressScore: Int) {
-        //possibly customize to delay notification
+    class func sendLowStressNotification() {
+        Notification.sendNotification(_lowStressMessage)
+    }
+    
+    class func sendHighStressNotification() {
+        Notification.sendNotification(_highStressMessage)
+    }
+    
+    private class func sendNotification(message: String!) {
         var stressNotification = UILocalNotification()
-        stressNotification.alertBody = "Hey, your current stress score is \(stressScore)"
+        stressNotification.alertBody = message
         stressNotification.soundName = UILocalNotificationDefaultSoundName
-        stressNotification.fireDate = NSDate()
+        stressNotification.fireDate = NSDate() //we send message now
         UIApplication.sharedApplication().scheduleLocalNotification(stressNotification)
     }
 }
