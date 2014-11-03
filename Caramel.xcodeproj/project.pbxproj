@@ -157,6 +157,7 @@
 				14D0E2661A00AA3A0042F20A /* HRQueue.swift */,
 				14F878E01A021992001FFFE2 /* StressQueue.swift */,
 				1430FCBB1A0307EF006B518B /* AccelQueue.swift */,
+				14D0E2681A00AA910042F20A /* Queue.swift */,
 				14DC38031A05A53100E992B2 /* MovementQueue.swift */,
 			);
 			name = Queues;
@@ -258,7 +259,6 @@
 			children = (
 				1469A8081A04659200F439DB /* Movement.swift */,
 				14D80AD11A0180530064BCD8 /* Bluetooth */,
-				14D0E2681A00AA910042F20A /* Queue.swift */,
 			);
 			name = Library;
 			sourceTree = "<group>";
