@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Beyond. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class DashboardViewController: UIViewController {
@@ -34,13 +33,16 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
         self.displayUpdateDateLabels()
         self.updateProfileCircle()
 
         self.dashboardCallback = DashboardCallback(updatedScoreCallback)
         
         self.hrBluetooth.startScanningHRPeripheral(self.dashboardCallback.newHeartRateCallback)
-        println("Loaded DashboardViewController view")
+        println("Loaded DashboardViewController view!")        
+//        let appearance = UITabBarItem.appearance()
+//        let attributes = [NSFontAttributeName: UIFont(name:"univers-light-normal", size: 12)]
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,9 +53,9 @@ class DashboardViewController: UIViewController {
         let dateFormatter = NSDateFormatter()
         let currentDate = NSDate()
         dateFormatter.setLocalizedDateFormatFromTemplate("EEEE")
-        self.dayOfTheWeekLabel.text = dateFormatter.stringFromDate(currentDate)
+        self.dayOfTheWeekLabel.text = dateFormatter.stringFromDate(currentDate).uppercaseString
         dateFormatter.setLocalizedDateFormatFromTemplate("MMMM d, yyyy")
-        self.dateLabel.text = dateFormatter.stringFromDate(currentDate)
+        self.dateLabel.text = dateFormatter.stringFromDate(currentDate).uppercaseString
     }
     
     func updatedScoreCallback(interval: StressScoreInterval!) {
