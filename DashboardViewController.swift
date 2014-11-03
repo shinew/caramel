@@ -58,12 +58,12 @@ class DashboardViewController: UIViewController {
     
     func updatedScoreCallback(interval: StressScoreInterval!) {
         println("Smooth score: \(interval.score)")
-        self.todayOverallLabel.text = "\(interval.score)"
         Database.AddStressScoreInterval(interval)
         
-        self.possiblySendNotification(interval.score)
-        
+        self.scoreNowLabel.text = String(interval.score)
         self.updateProfile()
+        
+        self.possiblySendNotification(interval.score)
     }
     
     private func possiblySendNotification(score: Int!) {
