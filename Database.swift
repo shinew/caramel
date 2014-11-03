@@ -15,7 +15,7 @@ class Database {
     // the connection to the DB
     
     class func AddStressScoreInterval(interval: StressScoreInterval!) {
-        println("Adding a stress score interval")
+        println("(DB) Adding a stress score interval")
         var stressScore = NSEntityDescription.insertNewObjectForEntityForName("StressScoreInterval", inManagedObjectContext: appContext) as NSManagedObject
         stressScore.setValue(interval.score, forKey: "score")
         stressScore.setValue(interval.startDate, forKey: "startDate")
@@ -26,7 +26,7 @@ class Database {
     }
     
     class func GetStressScores(startDate: NSDate!, endDate: NSDate!) -> [StressScoreInterval] {
-        println("Retriving stress score intervals")
+        println("(DB) Retriving stress score intervals")
         var request = NSFetchRequest(entityName: "StressScoreInterval")
         request.returnsObjectsAsFaults = false
         request.predicate = NSPredicate(format: "(startDate >= %@) AND (endDate <= %@)", startDate, endDate)

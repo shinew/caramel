@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Beyond. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class DashboardViewController: UIViewController {
@@ -40,7 +41,7 @@ class DashboardViewController: UIViewController {
         self.dashboardCallback = DashboardCallback(updatedScoreCallback)
         
         self.hrBluetooth.startScanningHRPeripheral(self.dashboardCallback.newHeartRateCallback)
-        println("Loaded DashboardViewController view!")
+        println("Loaded DashboardViewController view")
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,8 +66,18 @@ class DashboardViewController: UIViewController {
     }
     
     func updateProfileCircle() {
-        println("updating circle!")
+        println("Updating profile circle")
+        let currentDate = NSDate()
+        println("current time: \(currentDate)")
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: currentDate)
+        var startDate = calendar.dateFromComponents(components)!
+        var endDate = startDate.dateByAddingTimeInterval(60 * 60 * 24) //add 24hrs
+        println("circle startDate: \(startDate)")
+        println("circle endDate: \(endDate)")
+        
+        let stressIntervals = Database.GetStressScores(startDate, endDate: endDate)
+        
         self.profileCircleView.setNeedsDisplay()
-        println("updated circle!")
     }
 }

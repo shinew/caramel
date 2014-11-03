@@ -38,8 +38,8 @@ class HTTPRequest {
         let req = Agent.post(ROOT_URL + "/api/v1.0/score")
         var json = HTTPRequest.getDefaultJSON()
         
-        json["StartTime"] = DateConversion.dateToString(stressInterval.startDate)
-        json["EndTime"] = DateConversion.dateToString(stressInterval.endDate)
+        json["StartTime"] = Conversion.dateToString(stressInterval.startDate)
+        json["EndTime"] = Conversion.dateToString(stressInterval.endDate)
         
         req.send(json)
         req.end(responseCallback)

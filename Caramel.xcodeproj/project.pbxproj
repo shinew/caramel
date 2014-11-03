@@ -36,7 +36,7 @@
 		14D80AD51A01808D0064BCD8 /* HRPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D80AD41A01808D0064BCD8 /* HRPeripheral.swift */; };
 		14DC38041A05A53100E992B2 /* MovementQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DC38031A05A53100E992B2 /* MovementQueue.swift */; };
 		14DC38061A05AD0D00E992B2 /* DailySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DC38051A05AD0D00E992B2 /* DailySummary.swift */; };
-		14F878DF1A020BD8001FFFE2 /* DateConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F878DE1A020BD8001FFFE2 /* DateConversion.swift */; };
+		14F878DF1A020BD8001FFFE2 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F878DE1A020BD8001FFFE2 /* Conversion.swift */; };
 		14F878E11A021992001FFFE2 /* StressQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F878E01A021992001FFFE2 /* StressQueue.swift */; };
 		14F878E31A022372001FFFE2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F878E21A022372001FFFE2 /* Constants.swift */; };
 		1A28C9FB1A060CD900678084 /* TipoType - Libertad.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A28C9FA1A060CBA00678084 /* TipoType - Libertad.otf */; };
@@ -86,7 +86,7 @@
 		14D80AD41A01808D0064BCD8 /* HRPeripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRPeripheral.swift; sourceTree = "<group>"; };
 		14DC38031A05A53100E992B2 /* MovementQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementQueue.swift; sourceTree = "<group>"; };
 		14DC38051A05AD0D00E992B2 /* DailySummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailySummary.swift; sourceTree = "<group>"; };
-		14F878DE1A020BD8001FFFE2 /* DateConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateConversion.swift; sourceTree = "<group>"; };
+		14F878DE1A020BD8001FFFE2 /* Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
 		14F878E01A021992001FFFE2 /* StressQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StressQueue.swift; sourceTree = "<group>"; };
 		14F878E21A022372001FFFE2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1A28C9FA1A060CBA00678084 /* TipoType - Libertad.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TipoType - Libertad.otf"; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 				1430FCBA1A030726006B518B /* HTTP */,
 				1430FCB91A03071A006B518B /* Queues */,
 				14F878E21A022372001FFFE2 /* Constants.swift */,
-				14F878DE1A020BD8001FFFE2 /* DateConversion.swift */,
+				14F878DE1A020BD8001FFFE2 /* Conversion.swift */,
 				14D0E2591A008CED0042F20A /* Database.swift */,
 				14D0E2621A0092CF0042F20A /* User.swift */,
 				14D80ACD1A0172920064BCD8 /* Timer.swift */,
@@ -408,7 +408,7 @@
 				14D80AD01A01730A0064BCD8 /* HRBluetooth.swift in Sources */,
 				14D0E2391A008C6D0042F20A /* Caramel.xcdatamodeld in Sources */,
 				14DC38041A05A53100E992B2 /* MovementQueue.swift in Sources */,
-				14F878DF1A020BD8001FFFE2 /* DateConversion.swift in Sources */,
+				14F878DF1A020BD8001FFFE2 /* Conversion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
