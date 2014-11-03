@@ -10,8 +10,18 @@ import UIKit
 
 class BreaksViewController: UIViewController {
 
+    @IBOutlet weak var napButton: UIButton!
+    @IBOutlet weak var napLabel: UILabel!
+    var napCounter = 6
+    
+    @IBAction func napButtonDidPress(sender: AnyObject) {
+        self.napCounter++
+        self.napLabel.text = String(self.napCounter)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.napLabel.text = String(self.napCounter)
 
         // Do any additional setup after loading the view.
     }
