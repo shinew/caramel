@@ -70,7 +70,7 @@
             </objects>
             <point key="canvasLocation" x="1014.5" y="-1026.5"/>
         </scene>
-        <!--Monthly Overview-->
+        <!--Monthly-->
         <scene sceneID="vtH-rd-pbn">
             <objects>
                 <viewController id="uio-JR-Iic" customClass="MonthlyOverviewViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,21 +82,10 @@
                                 <rect key="frame" x="-1" y="64" width="377" height="556"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fM2-3x-xlu">
-                                <rect key="frame" x="248" y="583" width="118" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Fbz-rx-xCi" kind="push" id="58d-9f-1EY"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Monthly Overview" id="sEu-Fx-sMY">
-                        <barButtonItem key="leftBarButtonItem" image="settings-icon" id="aDe-OG-enL"/>
+                    <navigationItem key="navigationItem" title="Monthly" id="sEu-Fx-sMY">
                         <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="Nmy-K4-Zsp"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -300,7 +289,7 @@
             </objects>
             <point key="canvasLocation" x="-72.5" y="-655.5"/>
         </scene>
-        <!--Simple Actions-->
+        <!--Actions-->
         <scene sceneID="1hx-DS-4ED">
             <objects>
                 <viewController id="gEU-hv-X5S" sceneMemberID="viewController">
@@ -317,6 +306,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="UVn-0d-4mO" kind="push" id="MKe-DM-diT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lyd-Zk-gYY">
                                 <rect key="frame" x="0.0" y="333" width="375" height="284"/>
@@ -343,7 +335,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Simple Actions" id="Ett-Or-Mb7">
+                    <navigationItem key="navigationItem" title="Actions" id="Ett-Or-Mb7">
                         <barButtonItem key="leftBarButtonItem" image="settings-icon" id="Puo-hd-Zb8"/>
                         <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="GMI-VK-5ar">
                             <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-4"/>
@@ -354,6 +346,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R98-z6-I0M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1014.5" y="555.5"/>
+        </scene>
+        <!--Deep Breaths-->
+        <scene sceneID="fej-qX-sCZ">
+            <objects>
+                <viewController id="UVn-0d-4mO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B6v-z9-3iA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Deep Breaths" id="mSb-ne-XRf">
+                        <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="p3X-oN-4I8">
+                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-4"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T0P-gX-eHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1014.5" y="1366.5"/>
         </scene>
         <!--Protocols-->
         <scene sceneID="vCu-bg-R4c">
@@ -457,11 +470,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Protocols" id="dOt-7U-7zL">
-                        <barButtonItem key="leftBarButtonItem" image="previous-icon" id="XjY-hL-aMm">
-                            <connections>
-                                <segue destination="gEU-hv-X5S" kind="push" id="3iG-6a-IuC"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="7Pl-cL-MBr">
                             <inset key="imageInsets" minX="-4" minY="0.0" maxX="0.0" maxY="-6"/>
                         </barButtonItem>
@@ -470,28 +478,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efY-6z-yll" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1483.5" y="555.5"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="zvA-5N-vUq">
-            <objects>
-                <viewController id="1YP-vv-6gR" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vZY-wJ-VlQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screenshot 2014-11-02 16.45.59" id="zWb-5a-xtb">
-                                <rect key="frame" x="0.0" y="-42" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pNo-0i-NEO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1983.5" y="494.5"/>
+            <point key="canvasLocation" x="1462.5" y="555.5"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="lsU-ga-Rei">
@@ -581,7 +568,6 @@
     </scenes>
     <resources>
         <image name="Rectangle" width="255" height="314"/>
-        <image name="Screenshot 2014-11-02 16.45.59" width="294" height="520"/>
         <image name="action-icon" width="26" height="26"/>
         <image name="anger-icon" width="35" height="31"/>
         <image name="calendar-icon" width="23" height="24"/>
@@ -590,7 +576,6 @@
         <image name="habits-screenshot" width="1004" height="1358"/>
         <image name="monthlytrends-screenshot" width="998" height="1356"/>
         <image name="overwhelmed-icon" width="34" height="31"/>
-        <image name="previous-icon" width="11" height="20"/>
         <image name="profile-icon" width="26" height="26"/>
         <image name="refresh-icon" width="15" height="14"/>
         <image name="settings-icon" width="16" height="16"/>
@@ -602,9 +587,5 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="U67-Nu-t5B"/>
-        <segue reference="3iG-6a-IuC"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

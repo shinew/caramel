@@ -52,6 +52,11 @@
 		1AB847D31A06F60F008509FE /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847D21A06F60F008509FE /* HabitsViewController.swift */; };
 		1AB847D51A0701B1008509FE /* univers-light-condensed-1361511939.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847CA1A06EFCC008509FE /* univers-light-condensed-1361511939.ttf */; };
 		1AB847D61A0701B1008509FE /* Univers-Condensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847CB1A06F033008509FE /* Univers-Condensed-Bold.ttf */; };
+		1AB847DD1A07112F008509FE /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847D81A07112F008509FE /* BlurView.swift */; };
+		1AB847DE1A07112F008509FE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847D91A07112F008509FE /* Data.swift */; };
+		1AB847DF1A07112F008509FE /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847DA1A07112F008509FE /* DesignableView.swift */; };
+		1AB847E01A07112F008509FE /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847DB1A07112F008509FE /* Misc.swift */; };
+		1AB847E11A07112F008509FE /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847DC1A07112F008509FE /* SpringAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +118,11 @@
 		1AB847CC1A06F599008509FE /* WeeklyOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyOverviewViewController.swift; sourceTree = "<group>"; };
 		1AB847CE1A06F5B8008509FE /* MonthlyOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthlyOverviewViewController.swift; sourceTree = "<group>"; };
 		1AB847D21A06F60F008509FE /* HabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
+		1AB847D81A07112F008509FE /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		1AB847D91A07112F008509FE /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		1AB847DA1A07112F008509FE /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		1AB847DB1A07112F008509FE /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
+		1AB847DC1A07112F008509FE /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +192,7 @@
 		14D0E2321A008C6D0042F20A /* Caramel */ = {
 			isa = PBXGroup;
 			children = (
+				1AB847D71A07112F008509FE /* Spring */,
 				1A3D2C071A0623A900063AEB /* ViewControllers */,
 				1A28C9F91A060CB000678084 /* Fonts */,
 				14D0E26A1A00D4D00042F20A /* Globals */,
@@ -332,6 +343,18 @@
 			name = Action;
 			sourceTree = "<group>";
 		};
+		1AB847D71A07112F008509FE /* Spring */ = {
+			isa = PBXGroup;
+			children = (
+				1AB847D81A07112F008509FE /* BlurView.swift */,
+				1AB847D91A07112F008509FE /* Data.swift */,
+				1AB847DA1A07112F008509FE /* DesignableView.swift */,
+				1AB847DB1A07112F008509FE /* Misc.swift */,
+				1AB847DC1A07112F008509FE /* SpringAnimation.swift */,
+			);
+			path = Spring;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -449,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1415AA9A1A02D81100C1CD4F /* Notification.swift in Sources */,
+				1AB847E11A07112F008509FE /* SpringAnimation.swift in Sources */,
 				14D0E2611A0090A70042F20A /* Agent.swift in Sources */,
 				1AB847CD1A06F599008509FE /* WeeklyOverviewViewController.swift in Sources */,
 				14F878E31A022372001FFFE2 /* Constants.swift in Sources */,
@@ -461,17 +485,21 @@
 				1430FCBC1A0307EF006B518B /* AccelQueue.swift in Sources */,
 				14D0E2361A008C6D0042F20A /* AppDelegate.swift in Sources */,
 				14D0E2671A00AA3A0042F20A /* HRQueue.swift in Sources */,
+				1AB847DE1A07112F008509FE /* Data.swift in Sources */,
 				14F878E11A021992001FFFE2 /* StressQueue.swift in Sources */,
 				14D0E2631A0092CF0042F20A /* User.swift in Sources */,
 				14D80ACE1A0172920064BCD8 /* Timer.swift in Sources */,
 				14D0E25F1A0090920042F20A /* HTTPRequest.swift in Sources */,
+				1AB847DD1A07112F008509FE /* BlurView.swift in Sources */,
 				1469A8091A04659200F439DB /* Movement.swift in Sources */,
 				14254D571A01C9CB00DE86B8 /* HRDecoder.swift in Sources */,
 				1A3D2BD61A060E0500063AEB /* DashboardViewController.swift in Sources */,
 				1AB847CF1A06F5B8008509FE /* MonthlyOverviewViewController.swift in Sources */,
 				14D0E2651A009E420042F20A /* HRSample.swift in Sources */,
+				1AB847DF1A07112F008509FE /* DesignableView.swift in Sources */,
 				14D47A9F1A06E61500049C34 /* DashboardCallback.swift in Sources */,
 				14D0E25A1A008CED0042F20A /* Database.swift in Sources */,
+				1AB847E01A07112F008509FE /* Misc.swift in Sources */,
 				14D80AD51A01808D0064BCD8 /* HRPeripheral.swift in Sources */,
 				14D80AD01A01730A0064BCD8 /* HRBluetooth.swift in Sources */,
 				14D0E2391A008C6D0042F20A /* Caramel.xcdatamodeld in Sources */,
