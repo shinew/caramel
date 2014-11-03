@@ -25,4 +25,12 @@ class Conversion {
             alpha: CGFloat(1.0)
         )
     }
+    class func UIColorFromRGB(red: Int!, green: Int!, blue: Int!, alpha: Int!) -> UIColor {
+        return UIColor(
+            red: CGFloat(Double(red)/255.0),
+            green: CGFloat(Double(green)/255.0),
+            blue: CGFloat(Double(blue)/255.0),
+            alpha: CGFloat(Double(alpha)/255.0)
+        )
+    }
 }

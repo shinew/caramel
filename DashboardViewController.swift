@@ -58,7 +58,7 @@ class DashboardViewController: UIViewController {
         self.dateLabel.text = dateFormatter.stringFromDate(currentDate)
     }
     
-    func updatedScoreCallback(interval: StressScoreInterval!) -> Void {
+    func updatedScoreCallback(interval: StressScoreInterval!) {
         println("Smooth score: \(interval.score)")
         self.todayOverallLabel.text = "\(interval.score)"
         Database.AddStressScoreInterval(interval)
@@ -68,16 +68,45 @@ class DashboardViewController: UIViewController {
     func updateProfileCircle() {
         println("Updating profile circle")
         let currentDate = NSDate()
-        println("current time: \(currentDate)")
+        //println("current time: \(currentDate)")
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: currentDate)
         var startDate = calendar.dateFromComponents(components)!
         var endDate = startDate.dateByAddingTimeInterval(60 * 60 * 24) //add 24hrs
-        println("circle startDate: \(startDate)")
-        println("circle endDate: \(endDate)")
+        //println("circle startDate: \(startDate)")
+        //println("circle endDate: \(endDate)")
         
-        let stressIntervals = Database.GetStressScores(startDate, endDate: endDate)
+        let stressIntervals = Database.GetSortedStressIntervals(startDate, endDate: endDate)
+        let scores = self.prepareStressScoresForCircle(startDate, endDate: endDate, stressIntervals: stressIntervals)
         
+        self.profileCircleView.setStressScores(scores)
         self.profileCircleView.setNeedsDisplay()
+    }
+    
+    func prepareStressScoresForCircle(startDate: NSDate!, endDate: NSDate!, stressIntervals: [StressScoreInterval]) -> [Int?] {
+        println("Calculating circle update array")
+        var result = [Int?]()
+        let circleArcRange = NSTimeInterval(Constants.getProfileCircleFineness() * 60)
+        var index = 0
+        var currentStartDate = startDate
+        while currentStartDate.compare(endDate) == NSComparisonResult.OrderedAscending {
+            //we take the maximum over that range
+            let currentEndDate = currentStartDate.dateByAddingTimeInterval(circleArcRange)
+            var maxScore: Int?
+            //we want start <= scoreStartDate < end
+            while index < stressIntervals.count &&
+                currentStartDate.compare(stressIntervals[index].startDate) != NSComparisonResult.OrderedDescending &&
+                currentEndDate.compare(stressIntervals[index].startDate) == NSComparisonResult.OrderedDescending {
+                    if maxScore == nil {
+                        maxScore = stressIntervals[index].score
+                    } else {
+                        maxScore = max(maxScore!, stressIntervals[index].score)
+                    }
+                    index++
+            }
+            result.append(maxScore)
+            currentStartDate = currentEndDate
+        }
+        return result
     }
 }

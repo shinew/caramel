@@ -10,11 +10,16 @@ import UIKit
 
 class ProfileCircleView: UIView {
     
-    let calmColor: UIColor! = Conversion.UIColorFromRGB(74, green: 139, blue: 194)
-    let littleStressedColor: UIColor! = Conversion.UIColorFromRGB(255, green: 221, blue: 69)
-    //let veryStressedColor: UIColor! = Conversion.UIColorFromRGB(232, green: 79, blue: 56)
-    let veryStressedColor: UIColor! = Conversion.UIColorFromRGB(0, green: 0, blue: 0)
-    let numSlices = 60*24/Constants.getProfileCircleFineness()
+    private let blueColor = Conversion.UIColorFromRGB(74, green: 139, blue: 194)
+    private let yellowColor = Conversion.UIColorFromRGB(255, green: 221, blue: 69)
+    private let redColor = Conversion.UIColorFromRGB(232, green: 79, blue: 56)
+    private let clearColor = Conversion.UIColorFromRGB(255, green: 255, blue: 255, alpha: 0)
+    private let numSlices = 60*24/Constants.getProfileCircleFineness()
+    private var stressScores: [Int?]! //around
+    
+    func setStressScores(stressScores: [Int?]) {
+        self.stressScores = stressScores
+    }
     
     override func drawRect(rect: CGRect) {
         println("Drawing profile circle")
@@ -38,12 +43,16 @@ class ProfileCircleView: UIView {
             //The color of the slice has equal red, green, and blue values to make it grayscale
             //If the stress value is 0.0 (no value has been added to that index) then we set the
             // alpha value to 0 (transparent)
-            if index % 3 == 0 {
-                self.calmColor.set()
-            } else if index % 3 == 1 {
-                self.littleStressedColor.set()
+            if let score = self.stressScores[index] {
+                if score >= Constants.getCircleColorRedThreshold() {
+                    self.redColor.set()
+                } else if score >= Constants.getCircleColorYellowThreshold() {
+                    self.yellowColor.set()
+                } else {
+                    self.blueColor.set()
+                }
             } else {
-                self.veryStressedColor.set()
+                self.clearColor.set()
             }
             //Finally, we add the slice to context and draw it
             CGContextAddArc(context, self.frame.size.width / 2, self.frame.size.height / 2, (self.frame.size.width - thickness) / 2, sliceStart, sliceEnd, 0)
