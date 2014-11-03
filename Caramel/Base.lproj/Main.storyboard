@@ -426,7 +426,7 @@
         <!--Suggestions-->
         <scene sceneID="G1t-mI-wo3">
             <objects>
-                <viewController id="Pm6-Ye-h65" sceneMemberID="viewController">
+                <viewController id="Pm6-Ye-h65" customClass="BreaksViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aYI-RU-EAa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
