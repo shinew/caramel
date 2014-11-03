@@ -19,7 +19,6 @@
 		14D0E23B1A008C6D0042F20A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E23A1A008C6D0042F20A /* ViewController.swift */; };
 		14D0E23E1A008C6D0042F20A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D0E23C1A008C6D0042F20A /* Main.storyboard */; };
 		14D0E2401A008C6D0042F20A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14D0E23F1A008C6D0042F20A /* Images.xcassets */; };
-		14D0E2431A008C6D0042F20A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D0E2411A008C6D0042F20A /* LaunchScreen.xib */; };
 		14D0E24F1A008C6D0042F20A /* CaramelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E24E1A008C6D0042F20A /* CaramelTests.swift */; };
 		14D0E25A1A008CED0042F20A /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2591A008CED0042F20A /* Database.swift */; };
 		14D0E25C1A008DEC0042F20A /* StressScoreInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E25B1A008DEC0042F20A /* StressScoreInterval.swift */; };
@@ -92,7 +91,6 @@
 		14D0E23A1A008C6D0042F20A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		14D0E23D1A008C6D0042F20A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14D0E23F1A008C6D0042F20A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		14D0E2421A008C6D0042F20A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		14D0E2481A008C6D0042F20A /* CaramelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaramelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14D0E24D1A008C6D0042F20A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14D0E24E1A008C6D0042F20A /* CaramelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaramelTests.swift; sourceTree = "<group>"; };
@@ -222,7 +220,6 @@
 				14D0E23A1A008C6D0042F20A /* ViewController.swift */,
 				14D0E23C1A008C6D0042F20A /* Main.storyboard */,
 				14D0E23F1A008C6D0042F20A /* Images.xcassets */,
-				14D0E2411A008C6D0042F20A /* LaunchScreen.xib */,
 				14D0E2371A008C6D0042F20A /* Caramel.xcdatamodeld */,
 				14D0E2331A008C6D0042F20A /* Supporting Files */,
 			);
@@ -503,7 +500,6 @@
 				1AB847C51A06EB95008509FE /* univers-LT-65-Bold.ttf in Resources */,
 				1AB847C31A06EB95008509FE /* univers-condensed-italics.ttf in Resources */,
 				14D0E23E1A008C6D0042F20A /* Main.storyboard in Resources */,
-				14D0E2431A008C6D0042F20A /* LaunchScreen.xib in Resources */,
 				14D0E2401A008C6D0042F20A /* Images.xcassets in Resources */,
 				1A5347DF1A07897C00CE742E /* Portrait - 6.png in Resources */,
 				1AB847C21A06EB95008509FE /* univers-black-normal.ttf in Resources */,
@@ -595,14 +591,6 @@
 				14D0E23D1A008C6D0042F20A /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		14D0E2411A008C6D0042F20A /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				14D0E2421A008C6D0042F20A /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
