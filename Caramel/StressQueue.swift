@@ -48,8 +48,8 @@ class StressQueue {
         sum += Double(rawScore.score)
         sum /= Double(queueIntervals.count + 1)
         var sumAsInt = Int(sum)
-        if sumAsInt <= 0 {
-            sumAsInt = 1
+        if sumAsInt <= 10 {
+            sumAsInt = 11
         } else if sumAsInt >= 100 {
             sumAsInt = 99
         }

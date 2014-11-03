@@ -787,27 +787,6 @@
             </objects>
             <point key="canvasLocation" x="1462.5" y="555.5"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="zvA-5N-vUq">
-            <objects>
-                <viewController id="1YP-vv-6gR" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vZY-wJ-VlQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screenshot 2014-11-02 16.45.59" id="zWb-5a-xtb">
-                                <rect key="frame" x="0.0" y="-42" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pNo-0i-NEO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1983.5" y="494.5"/>
-        </scene>
         <!--Dashboard-->
         <scene sceneID="lsU-ga-Rei">
             <objects>
@@ -915,7 +894,6 @@
     </scenes>
     <resources>
         <image name="Rectangle" width="255" height="314"/>
-        <image name="Screenshot 2014-11-02 16.45.59" width="294" height="520"/>
         <image name="action-icon" width="26" height="26"/>
         <image name="anger-icon" width="35" height="31"/>
         <image name="calendar-icon" width="23" height="24"/>
