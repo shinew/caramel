@@ -33,11 +33,10 @@ class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         self.displayUpdateDateLabels()
-        
         self.updateProfileCircle()
+
         self.dashboardCallback = DashboardCallback(updatedScoreCallback)
         
         self.hrBluetooth.startScanningHRPeripheral(self.dashboardCallback.newHeartRateCallback)
@@ -46,7 +45,6 @@ class DashboardViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func displayUpdateDateLabels() {
@@ -68,13 +66,10 @@ class DashboardViewController: UIViewController {
     func updateProfileCircle() {
         println("Updating profile circle")
         let currentDate = NSDate()
-        //println("current time: \(currentDate)")
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: currentDate)
         var startDate = calendar.dateFromComponents(components)!
         var endDate = startDate.dateByAddingTimeInterval(60 * 60 * 24) //add 24hrs
-        //println("circle startDate: \(startDate)")
-        //println("circle endDate: \(endDate)")
         
         let stressIntervals = Database.GetSortedStressIntervals(startDate, endDate: endDate)
         let scores = self.prepareStressScoresForCircle(startDate, endDate: endDate, stressIntervals: stressIntervals)
@@ -90,7 +85,7 @@ class DashboardViewController: UIViewController {
         var index = 0
         var currentStartDate = startDate
         while currentStartDate.compare(endDate) == NSComparisonResult.OrderedAscending {
-            //we take the maximum over that range
+            //we take the maximum over that range as the display
             let currentEndDate = currentStartDate.dateByAddingTimeInterval(circleArcRange)
             var maxScore: Int?
             //we want start <= scoreStartDate < end
