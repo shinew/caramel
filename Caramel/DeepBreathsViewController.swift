@@ -7,13 +7,57 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class DeepBreathsViewController: UIViewController {
 
+    @IBOutlet weak var bubbleView: UIView!
+    @IBOutlet weak var bubbleLabel: UILabel!
+    
+    var bubbleCounter = 1
+    var shrinkingDelay = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        bubbleLabel.text = String(bubbleCounter)
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.bubbleCallback()
+    }
+    
+    private func bubbleCallback() -> Void {
+        UIView.animateWithDuration(
+            3,
+            delay: self.shrinkingDelay,
+            options: nil,
+            animations: {
+                self.bubbleView.transform = CGAffineTransformMakeScale(0.5, 0.5)
+                self.vibratePhone()
+            }, completion: {
+                finished in UIView.animateWithDuration(
+                    3,
+                    delay: 1,
+                    options: .AllowUserInteraction,
+                    animations: {
+                        self.bubbleView.transform = CGAffineTransformMakeScale(1.0, 1.0)
+                        self.vibratePhone()
+                    }, completion: {finished in
+                        if self.bubbleCounter < 3 {
+                            self.shrinkingDelay = 1.0
+                            self.bubbleCounter++
+                            self.bubbleLabel.text = String(self.bubbleCounter)
+                            self.bubbleCallback()
+                        }
+                    }
+                )
+            }
+        )
+    }
+    
+    private func vibratePhone() {
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
 
     override func didReceiveMemoryWarning() {

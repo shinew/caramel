@@ -19,8 +19,8 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var lastEventDurationLabel: UILabel!
     @IBOutlet weak var lastEventTimeLabel: UILabel!
-    @IBOutlet weak var yesterdayScoreLabel: UILabel!
     @IBOutlet weak var percentageOfTodayStressedLabel: UILabel!
+    @IBOutlet weak var scoreNowLabel: UILabel!
     
     @IBOutlet var profileCircleView: ProfileCircleView!
     
