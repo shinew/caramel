@@ -37,7 +37,9 @@ class DashboardViewController: UIViewController {
         self.dashboardCallback = DashboardCallback(updatedScoreCallback)
         
         self.hrBluetooth.startScanningHRPeripheral(self.dashboardCallback.newHeartRateCallback)
-        println("Loaded DashboardViewController view!")
+        println("Loaded DashboardViewController view!")        
+//        let appearance = UITabBarItem.appearance()
+//        let attributes = [NSFontAttributeName: UIFont(name:"univers-light-normal", size: 12)]
     }
     
     override func didReceiveMemoryWarning() {

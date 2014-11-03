@@ -4,6 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Univers-Condensed-Bold.ttf">
+            <string>Univers-Condensed-Bold</string>
+            <string>Univers-Condensed-Bold</string>
+        </mutableArray>
         <mutableArray key="Univers-Light-Bold.ttf">
             <string>Univers-Light-Bold</string>
             <string>Univers-Light-Bold</string>
@@ -12,6 +16,7 @@
             <string>Univers-Light-Bold</string>
         </mutableArray>
         <mutableArray key="univers-light-normal.ttf">
+            <string>Univers-Light-Normal</string>
             <string>Univers-Light-Normal</string>
             <string>Univers-Light-Normal</string>
             <string>Univers-Light-Normal</string>
@@ -288,16 +293,50 @@
             </objects>
             <point key="canvasLocation" x="-72.5" y="-655.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Actions-->
         <scene sceneID="1hx-DS-4ED">
             <objects>
                 <viewController id="gEU-hv-X5S" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5wy-sy-Gcl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="818-Ha-a4e">
+                                <rect key="frame" x="0.0" y="65" width="375" height="270"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.18431372549019609" green="0.59607843137254901" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Univers-Condensed-Bold" family="Univers Condensed" pointSize="41"/>
+                                <state key="normal" title="5 DEEP BREATHS">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lyd-Zk-gYY">
+                                <rect key="frame" x="0.0" y="333" width="375" height="284"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.84705882352941175" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Univers-Condensed-Bold" family="Univers Condensed" pointSize="41"/>
+                                <state key="normal" title="TAKE A BREAK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uHm-pD-lx7">
+                                <rect key="frame" x="282" y="582" width="85" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="15"/>
+                                <state key="normal" title="Need More?">
+                                    <color key="titleColor" red="0.9137254901960784" green="0.27843137254901962" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="8W1-WL-TRn"/>
+                    <navigationItem key="navigationItem" title="Actions" id="Ett-Or-Mb7">
+                        <barButtonItem key="leftBarButtonItem" image="settings-icon" id="Puo-hd-Zb8"/>
+                        <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="GMI-VK-5ar"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R98-z6-I0M" userLabel="First Responder" sceneMemberID="firstResponder"/>
