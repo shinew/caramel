@@ -41,6 +41,7 @@
 		14F878E31A022372001FFFE2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F878E21A022372001FFFE2 /* Constants.swift */; };
 		1A1B7DB11A07508300312B71 /* BreaksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B7DB01A07508300312B71 /* BreaksViewController.swift */; };
 		1A28C9FB1A060CD900678084 /* TipoType - Libertad.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A28C9FA1A060CBA00678084 /* TipoType - Libertad.otf */; };
+		1A3C1BA01A0772C500C34CAD /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C1B9F1A0772C500C34CAD /* DebugViewController.swift */; };
 		1A3D2BD61A060E0500063AEB /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D2BD51A060E0500063AEB /* DashboardViewController.swift */; };
 		1AAE13FF1A0714A500B16F61 /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAE13FE1A0714A500B16F61 /* ActionsViewController.swift */; };
 		1AAE14011A0714E400B16F61 /* DeepBreathsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAE14001A0714E400B16F61 /* DeepBreathsViewController.swift */; };
@@ -111,6 +112,7 @@
 		14F878E21A022372001FFFE2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1A1B7DB01A07508300312B71 /* BreaksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreaksViewController.swift; sourceTree = "<group>"; };
 		1A28C9FA1A060CBA00678084 /* TipoType - Libertad.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TipoType - Libertad.otf"; sourceTree = "<group>"; };
+		1A3C1B9F1A0772C500C34CAD /* DebugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		1A3D2BD51A060E0500063AEB /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewController.swift; path = ../DashboardViewController.swift; sourceTree = "<group>"; };
 		1A990CE01A06E98100C759F9 /* univers-light-normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-light-normal.ttf"; sourceTree = "<group>"; };
 		1AAE13FE1A0714A500B16F61 /* ActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionsViewController.swift; sourceTree = "<group>"; };
@@ -307,9 +309,18 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		1A3C1B9E1A0772B300C34CAD /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				1A3C1B9F1A0772C500C34CAD /* DebugViewController.swift */,
+			);
+			name = Debug;
+			sourceTree = "<group>";
+		};
 		1A3D2C071A0623A900063AEB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1A3C1B9E1A0772B300C34CAD /* Debug */,
 				1AB847D41A06FBA0008509FE /* Action */,
 				1AB847D11A06F601008509FE /* Habits */,
 				1AB847D01A06F5C0008509FE /* Overview */,
@@ -524,6 +535,7 @@
 				14D0E25A1A008CED0042F20A /* Database.swift in Sources */,
 				1AAE13FF1A0714A500B16F61 /* ActionsViewController.swift in Sources */,
 				1AB847E01A07112F008509FE /* Misc.swift in Sources */,
+				1A3C1BA01A0772C500C34CAD /* DebugViewController.swift in Sources */,
 				14D80AD51A01808D0064BCD8 /* HRPeripheral.swift in Sources */,
 				14D80AD01A01730A0064BCD8 /* HRBluetooth.swift in Sources */,
 				14D0E2391A008C6D0042F20A /* Caramel.xcdatamodeld in Sources */,
