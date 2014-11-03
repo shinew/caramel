@@ -33,9 +33,13 @@ class DashboardCallback {
     }
     
     func hrHTTPResponseCallback(response: NSHTTPURLResponse!, data: Agent.Data!, error: NSError!) -> Void {
-        println("finished sending HR request!")
+        println("(HR) finished sending HR request!")
+        if response == nil {
+            println("(HR) Request did not go through")
+            return
+        }
         println("(HR) response status code: \(response.statusCode)")
-        if response != nil && response.statusCode == 201 {
+        if response.statusCode == 201 {
             //send stress request
             var stressInterval = StressScoreInterval(
                 score: 0,
@@ -48,7 +52,11 @@ class DashboardCallback {
     }
     
     func hrStressResponseCallback(response: NSHTTPURLResponse!, data: Agent.Data!, error: NSError!) -> Void {
-        println("finished sending Stress request!")
+        if response == nil {
+            println("(Stress) Request did not go through")
+            return
+        }
+        println("(Stress) finished sending Stress request!")
         println("(Stress) response status code: \(response.statusCode)")
         if response != nil && response.statusCode == 200 {
             let json = data as [String: AnyObject]

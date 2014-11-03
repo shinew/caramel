@@ -9,6 +9,7 @@
 import Foundation
 
 let ROOT_URL = "http://23.239.1.132"
+//let ROOT_URL = "http://192.168.0.6:5000"
 
 class HTTPRequest {
 

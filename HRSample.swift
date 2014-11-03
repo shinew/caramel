@@ -29,8 +29,17 @@ struct HRSample {
         json["Device"] = self.device
         json["Time"] = Conversion.dateToString(self.date)
         json["Movement"] = self.movement
-        json["HR"] = self.hr
-        json["HRV"] = self.hrv
+        
+        if self.hr != nil {
+            json["HR"] = self.hr
+        } else {
+            json["HRV"] = NSNull()
+        }
+        if self.hrv != nil {
+            json["HRV"] = self.hrv
+        } else {
+            json["HRV"] = NSNull()
+        }
         return json
     }
 }

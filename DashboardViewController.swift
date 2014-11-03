@@ -14,13 +14,14 @@ class DashboardViewController: UIViewController {
     var movement: Movement!
     var dashboardCallback: DashboardCallback!
     
-    @IBOutlet weak var todayOverallLabel: UILabel!
     @IBOutlet weak var dayOfTheWeekLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var lastEventDurationLabel: UILabel!
     @IBOutlet weak var lastEventTimeLabel: UILabel!
-    @IBOutlet weak var lastStressEventScoreLabel: UILabel!
-    @IBOutlet weak var scoreNowLabel: UILabel!
+    
+    @IBOutlet weak var dailyOverallLabel: UILabel!
+    @IBOutlet weak var currentScoreLabel: UILabel!
+    @IBOutlet weak var lastStressLabel: UILabel!
     
     @IBOutlet var profileCircleView: ProfileCircleView!
     
@@ -58,9 +59,13 @@ class DashboardViewController: UIViewController {
     
     func updatedScoreCallback(interval: StressScoreInterval!) {
         println("Smooth score: \(interval.score)")
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            self.currentScoreLabel.text = String(interval.score)
+        })
+        
         Database.AddStressScoreInterval(interval)
         
-        self.scoreNowLabel.text = String(interval.score)
         self.updateProfile()
         
         self.possiblySendNotification(interval.score)
@@ -114,12 +119,29 @@ class DashboardViewController: UIViewController {
         
         let stressIntervals = Database.GetSortedStressIntervals(startDate, endDate: endDate)
         
+        //update current and lastStress scores
+        self.displayCurrentAndLastStressScores(stressIntervals)
+        
         //updates profile circle
         let scores = self.prepareStressScoresForCircle(startDate, endDate: endDate, stressIntervals: stressIntervals)
         self.profileCircleView.setStressScores(scores)
         self.profileCircleView.setNeedsDisplay()
         
         //updates daily score
+    }
+    
+    private func displayCurrentAndLastStressScores(stressIntervals: [StressScoreInterval]) {
+        if stressIntervals.count == 0 {
+            return
+        }
+        for var i = stressIntervals.count - 1; i >= 0; i-- {
+            if stressIntervals[i].score >= Constants.getStressNotificationThreshold() {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.lastStressLabel.text = "\(String(stressIntervals[i].score) )%"
+                })
+                break
+            }
+        }
     }
     
     private func prepareStressScoresForCircle(startDate: NSDate!, endDate: NSDate!, stressIntervals: [StressScoreInterval]) -> [Int?] {
