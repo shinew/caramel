@@ -46,7 +46,7 @@ class StressQueue {
             sum += Double(interval.score)
         }
         sum += Double(rawScore.score)
-        sum /= Double(StressQueue.length() + 1)
+        sum /= Double(queueIntervals.count + 1)
         var sumAsInt = Int(sum)
         if sumAsInt <= 0 {
             sumAsInt = 1
