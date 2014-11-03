@@ -27,6 +27,7 @@
             <string>UniversLightCondensed-Regular</string>
             <string>UniversLightCondensed-Regular</string>
             <string>UniversLightCondensed-Regular</string>
+            <string>UniversLightCondensed-Regular</string>
         </mutableArray>
         <mutableArray key="univers-light-normal.ttf">
             <string>Univers-Light-Normal</string>
@@ -411,7 +412,7 @@
             </objects>
             <point key="canvasLocation" x="1014.5" y="1366.5"/>
         </scene>
-        <!--Break-->
+        <!--Suggestions-->
         <scene sceneID="G1t-mI-wo3">
             <objects>
                 <viewController id="Pm6-Ye-h65" sceneMemberID="viewController">
@@ -477,13 +478,23 @@
                                             <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bci-Yd-ssH">
+                                        <rect key="frame" x="0.0" y="476" width="375" height="77"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="24"/>
+                                        <state key="normal" title="Have a Snack">
+                                            <color key="titleColor" red="0.28627450980000002" green="0.31764705879999999" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.84705882349999995" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Break" id="ZZU-2F-ibI">
+                    <navigationItem key="navigationItem" title="Suggestions" id="ZZU-2F-ibI">
                         <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="Y4P-RO-yex">
                             <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-4"/>
                         </barButtonItem>
