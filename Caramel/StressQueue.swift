@@ -47,6 +47,12 @@ class StressQueue {
         }
         sum += Double(rawScore.score)
         sum /= Double(StressQueue.length() + 1)
-        return Int(sum)
+        var sumAsInt = Int(sum)
+        if sumAsInt <= 0 {
+            sumAsInt = 1
+        } else if sumAsInt >= 100 {
+            sumAsInt = 99
+        }
+        return sumAsInt
     }
 }

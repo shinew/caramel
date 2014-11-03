@@ -22,6 +22,8 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var yesterdayScoreLabel: UILabel!
     @IBOutlet weak var percentageOfTodayStressedLabel: UILabel!
     
+    @IBOutlet var profileCircleView: ProfileCircleView!
+    
     required init(coder: NSCoder) {
         super.init(coder: coder)
         self.hrBluetooth = HRBluetooth()
@@ -30,10 +32,11 @@ class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
         self.displayUpdateDateLabels()
+        self.updateProfileCircle()
+
         self.dashboardCallback = DashboardCallback(updatedScoreCallback)
         
         self.hrBluetooth.startScanningHRPeripheral(self.dashboardCallback.newHeartRateCallback)
@@ -44,7 +47,6 @@ class DashboardViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func displayUpdateDateLabels() {
@@ -56,9 +58,52 @@ class DashboardViewController: UIViewController {
         self.dateLabel.text = dateFormatter.stringFromDate(currentDate).uppercaseString
     }
     
-    func updatedScoreCallback(interval: StressScoreInterval!) -> Void {
+    func updatedScoreCallback(interval: StressScoreInterval!) {
         println("Smooth score: \(interval.score)")
         self.todayOverallLabel.text = "\(interval.score)"
         Database.AddStressScoreInterval(interval)
+        self.updateProfileCircle()
+    }
+    
+    func updateProfileCircle() {
+        println("Updating profile circle")
+        let currentDate = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: currentDate)
+        var startDate = calendar.dateFromComponents(components)!
+        var endDate = startDate.dateByAddingTimeInterval(60 * 60 * 24) //add 24hrs
+        
+        let stressIntervals = Database.GetSortedStressIntervals(startDate, endDate: endDate)
+        let scores = self.prepareStressScoresForCircle(startDate, endDate: endDate, stressIntervals: stressIntervals)
+        
+        self.profileCircleView.setStressScores(scores)
+        self.profileCircleView.setNeedsDisplay()
+    }
+    
+    func prepareStressScoresForCircle(startDate: NSDate!, endDate: NSDate!, stressIntervals: [StressScoreInterval]) -> [Int?] {
+        println("Calculating circle update array")
+        var result = [Int?]()
+        let circleArcRange = NSTimeInterval(Constants.getProfileCircleFineness() * 60)
+        var index = 0
+        var currentStartDate = startDate
+        while currentStartDate.compare(endDate) == NSComparisonResult.OrderedAscending {
+            //we take the maximum over that range as the display
+            let currentEndDate = currentStartDate.dateByAddingTimeInterval(circleArcRange)
+            var maxScore: Int?
+            //we want start <= scoreStartDate < end
+            while index < stressIntervals.count &&
+                currentStartDate.compare(stressIntervals[index].startDate) != NSComparisonResult.OrderedDescending &&
+                currentEndDate.compare(stressIntervals[index].startDate) == NSComparisonResult.OrderedDescending {
+                    if maxScore == nil {
+                        maxScore = stressIntervals[index].score
+                    } else {
+                        maxScore = max(maxScore!, stressIntervals[index].score)
+                    }
+                    index++
+            }
+            result.append(maxScore)
+            currentStartDate = currentEndDate
+        }
+        return result
     }
 }

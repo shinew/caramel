@@ -15,7 +15,7 @@ class Database {
     // the connection to the DB
     
     class func AddStressScoreInterval(interval: StressScoreInterval!) {
-        println("Adding a stress score interval")
+        println("(DB) Adding a stress score interval")
         var stressScore = NSEntityDescription.insertNewObjectForEntityForName("StressScoreInterval", inManagedObjectContext: appContext) as NSManagedObject
         stressScore.setValue(interval.score, forKey: "score")
         stressScore.setValue(interval.startDate, forKey: "startDate")
@@ -25,11 +25,11 @@ class Database {
         println("StressScoreInterval saved.")
     }
     
-    class func GetStressScores(startDate: NSDate!, endDate: NSDate!) -> [StressScoreInterval] {
-        println("Retriving stress score intervals")
+    class func GetSortedStressIntervals(startDate: NSDate!, endDate: NSDate!) -> [StressScoreInterval] {
+        println("(DB) Retriving stress score intervals")
         var request = NSFetchRequest(entityName: "StressScoreInterval")
         request.returnsObjectsAsFaults = false
-        request.predicate = NSPredicate(format: "(startDate >= %@) AND (endDate <= %@)", startDate, endDate)
+        request.predicate = NSPredicate(format: "(startDate >= %@) AND (startDate <= %@)", startDate, endDate)
         var searchResults = appContext.executeFetchRequest(request, error: nil)!
         var results = [StressScoreInterval]()
         for item in searchResults {
@@ -40,6 +40,10 @@ class Database {
                 endDate: thisItem.valueForKey("endDate") as NSDate
             ))
         }
-        return results
+        var sortedStressIntervals = sorted(
+            results,
+            { s1, s2 in s1.startDate.compare(s2.startDate) == NSComparisonResult.OrderedAscending }
+        )
+        return sortedStressIntervals
     }
 }

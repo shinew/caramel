@@ -27,7 +27,7 @@ struct HRSample {
     func asJSON() -> [String: AnyObject] {
         var json = [String: AnyObject]()
         json["Device"] = self.device
-        json["Time"] = DateConversion.dateToString(self.date)
+        json["Time"] = Conversion.dateToString(self.date)
         json["Movement"] = self.movement
         json["HR"] = self.hr
         json["HRV"] = self.hrv
