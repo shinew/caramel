@@ -14,6 +14,7 @@ class DashboardViewController: UIViewController {
     var movement: Movement!
     var dashboardCallback: DashboardCallback!
     
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
     @IBOutlet weak var dayOfTheWeekLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var lastEventDurationLabel: UILabel!
@@ -30,6 +31,12 @@ class DashboardViewController: UIViewController {
         self.hrBluetooth = HRBluetooth()
         self.movement = Movement()
     }
+    
+    @IBAction func refreshButtonDidPress(sender: AnyObject) {
+        self.hrBluetooth.startScanningHRPeripheral(self.dashboardCallback.newHeartRateCallback)
+        println("Restarted Bluetooth services")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
