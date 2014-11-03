@@ -40,6 +40,8 @@
 		14F878E31A022372001FFFE2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F878E21A022372001FFFE2 /* Constants.swift */; };
 		1A28C9FB1A060CD900678084 /* TipoType - Libertad.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A28C9FA1A060CBA00678084 /* TipoType - Libertad.otf */; };
 		1A3D2BD61A060E0500063AEB /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D2BD51A060E0500063AEB /* DashboardViewController.swift */; };
+		1AAE13FF1A0714A500B16F61 /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAE13FE1A0714A500B16F61 /* ActionsViewController.swift */; };
+		1AAE14011A0714E400B16F61 /* DeepBreathsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAE14001A0714E400B16F61 /* DeepBreathsViewController.swift */; };
 		1AB847C21A06EB95008509FE /* univers-black-normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847BD1A06EB95008509FE /* univers-black-normal.ttf */; };
 		1AB847C31A06EB95008509FE /* univers-condensed-italics.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847BE1A06EB95008509FE /* univers-condensed-italics.ttf */; };
 		1AB847C41A06EB95008509FE /* univers-condensed-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847BF1A06EB95008509FE /* univers-condensed-medium.ttf */; };
@@ -107,6 +109,8 @@
 		1A28C9FA1A060CBA00678084 /* TipoType - Libertad.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TipoType - Libertad.otf"; sourceTree = "<group>"; };
 		1A3D2BD51A060E0500063AEB /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewController.swift; path = ../DashboardViewController.swift; sourceTree = "<group>"; };
 		1A990CE01A06E98100C759F9 /* univers-light-normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-light-normal.ttf"; sourceTree = "<group>"; };
+		1AAE13FE1A0714A500B16F61 /* ActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionsViewController.swift; sourceTree = "<group>"; };
+		1AAE14001A0714E400B16F61 /* DeepBreathsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepBreathsViewController.swift; sourceTree = "<group>"; };
 		1AB847BD1A06EB95008509FE /* univers-black-normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-black-normal.ttf"; sourceTree = "<group>"; };
 		1AB847BE1A06EB95008509FE /* univers-condensed-italics.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-condensed-italics.ttf"; sourceTree = "<group>"; };
 		1AB847BF1A06EB95008509FE /* univers-condensed-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-condensed-medium.ttf"; sourceTree = "<group>"; };
@@ -319,6 +323,14 @@
 			name = Dashboard;
 			sourceTree = "<group>";
 		};
+		1AAE13FD1A07146600B16F61 /* Deep Breaths */ = {
+			isa = PBXGroup;
+			children = (
+				1AAE14001A0714E400B16F61 /* DeepBreathsViewController.swift */,
+			);
+			name = "Deep Breaths";
+			sourceTree = "<group>";
+		};
 		1AB847D01A06F5C0008509FE /* Overview */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +351,8 @@
 		1AB847D41A06FBA0008509FE /* Action */ = {
 			isa = PBXGroup;
 			children = (
+				1AAE13FD1A07146600B16F61 /* Deep Breaths */,
+				1AAE13FE1A0714A500B16F61 /* ActionsViewController.swift */,
 			);
 			name = Action;
 			sourceTree = "<group>";
@@ -475,6 +489,7 @@
 				1AB847E11A07112F008509FE /* SpringAnimation.swift in Sources */,
 				14D0E2611A0090A70042F20A /* Agent.swift in Sources */,
 				1AB847CD1A06F599008509FE /* WeeklyOverviewViewController.swift in Sources */,
+				1AAE14011A0714E400B16F61 /* DeepBreathsViewController.swift in Sources */,
 				14F878E31A022372001FFFE2 /* Constants.swift in Sources */,
 				14D80AD31A01806C0064BCD8 /* HRCentralManager.swift in Sources */,
 				14D0E23B1A008C6D0042F20A /* ViewController.swift in Sources */,
@@ -499,6 +514,7 @@
 				1AB847DF1A07112F008509FE /* DesignableView.swift in Sources */,
 				14D47A9F1A06E61500049C34 /* DashboardCallback.swift in Sources */,
 				14D0E25A1A008CED0042F20A /* Database.swift in Sources */,
+				1AAE13FF1A0714A500B16F61 /* ActionsViewController.swift in Sources */,
 				1AB847E01A07112F008509FE /* Misc.swift in Sources */,
 				14D80AD51A01808D0064BCD8 /* HRPeripheral.swift in Sources */,
 				14D80AD01A01730A0064BCD8 /* HRBluetooth.swift in Sources */,
