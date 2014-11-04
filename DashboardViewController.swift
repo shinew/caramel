@@ -96,7 +96,8 @@ class DashboardViewController: UIViewController {
         
         if lastLowDate == nil {
             Notification.sendLowStressNotification()
-            Timer.setLastLowStressNotifDate(NSDate())
+            Timer.setLastLowStressNotifDate(currentDate)
+             Database.AddNotificationRecord(NotificationRecord(type: "low", date: currentDate))
         } else {
             let lowTimeDifference = currentDate.timeIntervalSinceDate(lastLowDate!)
             if lowTimeDifference < NSTimeInterval(Constants.getStressNotificationIntervalDuration()) {
@@ -105,10 +106,12 @@ class DashboardViewController: UIViewController {
                 let highTimeDifference = currentDate.timeIntervalSinceDate(lastHighDate!)
                 if highTimeDifference < NSTimeInterval(Constants.getStressNotificationIntervalDuration()) {
                     Notification.sendLowStressNotification()
-                    Timer.setLastLowStressNotifDate(NSDate())
+                    Timer.setLastLowStressNotifDate(currentDate)
+                    Database.AddNotificationRecord(NotificationRecord(type: "low", date: currentDate))
                 } else {
                     Notification.sendHighStressNotification()
-                    Timer.setLastHighStressNotifDate(NSDate())
+                    Timer.setLastHighStressNotifDate(currentDate)
+                    Database.AddNotificationRecord(NotificationRecord(type: "high", date: currentDate))
                 }
             }
         }
@@ -123,8 +126,9 @@ class DashboardViewController: UIViewController {
         var endDate = startDate.dateByAddingTimeInterval(60 * 60 * 24) //add 24hrs
         
         let stressIntervals = Database.GetSortedStressIntervals(startDate, endDate: endDate)
-        
-        //update current and lastStress scores
+        let notifRecords = Database.GetSortedNotificationRecords(startDate, endDate: endDate)
+
+        //updates current and lastStress scores
         self.displayCurrentAndLastStressScores(stressIntervals)
         
         //updates profile circle
@@ -133,6 +137,7 @@ class DashboardViewController: UIViewController {
         self.profileCircleView.setNeedsDisplay()
         
         //updates daily score
+        self.displayDailyScore(stressIntervals, notifRecords: notifRecords)
     }
     
     private func displayCurrentAndLastStressScores(stressIntervals: [StressScoreInterval]) {
@@ -174,5 +179,35 @@ class DashboardViewController: UIViewController {
             currentStartDate = currentEndDate
         }
         return result
+    }
+
+    private func displayDailyScore(stressIntervals: [StressScoreInterval], notifRecords: [NotificationRecord]) {
+        println("Calculating and displaying daily overall score")
+        if stressIntervals.count == 0 {
+            return
+        }
+        var score = 0.0
+        var stressScores = [Int]()
+        var lowNotifCount = 0
+        var highNotifCount = 0
+        for interval in stressIntervals {
+            stressScores.append(interval.score)
+        }
+        for record in notifRecords {
+            if record.type == "low" {
+                lowNotifCount++
+            } else {
+                highNotifCount++
+            }
+        }
+
+        score += Math.stddev(stressScores) / 30.0 * 25.0
+        score += Double(lowNotifCount) / 6.0 * 25.0
+        score += Double(highNotifCount) / 3.0 * 25.0
+        score += Math.rms(stressScores) / 100.0 * 25.0
+        score = min(99.0, score)
+        score = max(1.0, score)
+        var wellnessScore = Int(100.0 - score)
+        self.dailyOverallLabel.text = String(wellnessScore)
     }
 }

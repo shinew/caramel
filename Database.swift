@@ -21,8 +21,8 @@ class Database {
         stressScore.setValue(interval.startDate, forKey: "startDate")
         stressScore.setValue(interval.endDate, forKey: "endDate")
         appContext.save(nil)
-        println("\(stressScore)")
-        println("StressScoreInterval saved.")
+        println("(DB) \(stressScore)")
+        println("(DB) StressScoreInterval saved.")
     }
     
     class func GetSortedStressIntervals(startDate: NSDate!, endDate: NSDate!) -> [StressScoreInterval] {
@@ -31,19 +31,50 @@ class Database {
         request.returnsObjectsAsFaults = false
         request.predicate = NSPredicate(format: "(startDate >= %@) AND (startDate <= %@)", startDate, endDate)
         var searchResults = appContext.executeFetchRequest(request, error: nil)!
-        var results = [StressScoreInterval]()
+        var unsortedIntervals = [StressScoreInterval]()
         for item in searchResults {
             let thisItem = item as NSManagedObject
-            results.append(StressScoreInterval(
+            unsortedIntervals.append(StressScoreInterval(
                 score: thisItem.valueForKey("score") as Int,
                 startDate: thisItem.valueForKey("startDate") as NSDate,
                 endDate: thisItem.valueForKey("endDate") as NSDate
             ))
         }
         var sortedStressIntervals = sorted(
-            results,
+            unsortedIntervals,
             { s1, s2 in s1.startDate.compare(s2.startDate) == NSComparisonResult.OrderedAscending }
         )
         return sortedStressIntervals
+    }
+
+    class func AddNotificationRecord(notif: NotificationRecord!) {
+        println("(DB) Adding a notification record")
+        var notifRecord = NSEntityDescription.insertNewObjectForEntityForName("NotificationRecord", inManagedObjectContext: appContext) as NSManagedObject
+        notifRecord.setValue(notif.type, forKey: "type")
+        notifRecord.setValue(notif.date, forKey: "date")
+        appContext.save(nil)
+        println("(DB) \(notifRecord)")
+        println("(DB) notification record saved.")
+    }
+
+    class func GetSortedNotificationRecords(startDate: NSDate!, endDate: NSDate!) -> [NotificationRecord] {
+        println("(DB) Retriving notification records")
+        var request = NSFetchRequest(entityName: "NotificationRecord")
+        request.returnsObjectsAsFaults = false
+        request.predicate = NSPredicate(format: "(date >= %@) AND (date <= %@)", startDate, endDate)
+        var searchResults = appContext.executeFetchRequest(request, error: nil)!
+        var unsortedRecords = [NotificationRecord]()
+        for item in searchResults {
+            let thisItem = item as NSManagedObject
+            unsortedRecords.append(NotificationRecord(
+                type: thisItem.valueForKey("type") as String,
+                date: thisItem.valueForKey("date") as NSDate
+            ))
+        }
+        var sortedRecords = sorted(
+            unsortedRecords,
+            { s1, s2 in s1.date.compare(s2.date) == NSComparisonResult.OrderedAscending }
+        )
+        return sortedRecords
     }
 }
