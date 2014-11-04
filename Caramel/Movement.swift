@@ -9,47 +9,53 @@
 import Foundation
 import CoreMotion
 
+var _newMovementCallbacks = Array<(Bool) -> Void>()
+var _activityManager: CMMotionActivityManager?
+var _motionManager: CMMotionManager?
+var _wasMoving = false
+
 class Movement {
     
-    private var activityManager: CMMotionActivityManager?
-    private var motionManager: CMMotionManager?
-    private var wasMoving = false
-    
-    init() {
+    class func initalizeManager() {
         if CMMotionActivityManager.isActivityAvailable() {
-            self.initializeActivityManager()
+            Movement.initializeActivityManager()
         } else {
-            self.initializeMotionManager()
+            Movement.initializeMotionManager()
         }
     }
     
-    func isSteadyMovement() -> Bool {
-        return self.wasMoving
+    class func addNewMovementCallback(callback: (Bool) -> Void) {
+        _newMovementCallbacks.append(callback)
     }
-    
-    private func initializeActivityManager() -> Void {
-        self.activityManager = CMMotionActivityManager()
-        self.activityManager!.startActivityUpdatesToQueue(
+
+    class func isSteadyMovement() -> Bool {
+        return _wasMoving
+    }
+
+    private class func initializeActivityManager() -> Void {
+        _activityManager = CMMotionActivityManager()
+        _activityManager!.startActivityUpdatesToQueue(
             NSOperationQueue.currentQueue(),
             withHandler: {(activity: CMMotionActivity!) -> Void in
                 dispatch_async(dispatch_get_main_queue()) {
                     if activity.walking || activity.running || activity.cycling {
-                        self.wasMoving = true
+                        _wasMoving = true
                         println("ActM: Moving")
                         Timer.setLastMovementDate(NSDate())
                     } else if activity.stationary || activity.automotive {
-                        self.wasMoving = false
+                        _wasMoving = false
                         println("ActM: Still")
                     }
                 }
+                Movement.invokeCallbacks()
             }
         )
     }
     
-    private func initializeMotionManager() -> Void {
-        self.motionManager = CMMotionManager()
-        self.motionManager!.accelerometerUpdateInterval = 1.0/Double(Constants.getAccelFrequency())
-        self.motionManager!.startAccelerometerUpdatesToQueue(
+    private class func initializeMotionManager() -> Void {
+        _motionManager = CMMotionManager()
+        _motionManager!.accelerometerUpdateInterval = 1.0/Double(Constants.getAccelFrequency())
+        _motionManager!.startAccelerometerUpdatesToQueue(
             NSOperationQueue.currentQueue(),
             withHandler: {(accelerometerData: CMAccelerometerData!, error:NSError!) -> Void in
                 AccelQueue.addAccel(accelerometerData.acceleration)
@@ -61,13 +67,20 @@ class Movement {
                     } else {
                         println("MotM: Still")
                     }
-                    self.wasMoving = MovementQueue.isMoving()
-                    if self.wasMoving {
+                    _wasMoving = MovementQueue.isMoving()
+                    if _wasMoving {
                         Timer.setLastMovementDate(NSDate())
                     }
-                    println("MotM: Needs stress pausing b/c movement: \(self.wasMoving)")
+                    println("MotM: Needs stress pausing b/c movement: \(_wasMoving)")
                 }
+                Movement.invokeCallbacks()
             }
         )
+    }
+    
+    private class func invokeCallbacks() {
+        for callback in _newMovementCallbacks {
+            callback(_wasMoving)
+        }
     }
 }

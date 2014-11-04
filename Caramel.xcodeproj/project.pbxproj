@@ -163,8 +163,8 @@
 				14D0E2661A00AA3A0042F20A /* HRQueue.swift */,
 				14F878E01A021992001FFFE2 /* StressQueue.swift */,
 				1430FCBB1A0307EF006B518B /* AccelQueue.swift */,
-				14D0E2681A00AA910042F20A /* Queue.swift */,
 				14DC38031A05A53100E992B2 /* MovementQueue.swift */,
+				14D0E2681A00AA910042F20A /* Queue.swift */,
 			);
 			name = Queues;
 			sourceTree = "<group>";
@@ -262,7 +262,6 @@
 		14D0E25D1A0090780042F20A /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				1469A8081A04659200F439DB /* Movement.swift */,
 				14D80AD11A0180530064BCD8 /* Bluetooth */,
 			);
 			name = Library;
@@ -277,6 +276,7 @@
 				14F878DE1A020BD8001FFFE2 /* Conversion.swift */,
 				14D0E2591A008CED0042F20A /* Database.swift */,
 				14D0E2621A0092CF0042F20A /* User.swift */,
+				1469A8081A04659200F439DB /* Movement.swift */,
 				14D80ACD1A0172920064BCD8 /* Timer.swift */,
 				1415AA991A02D81100C1CD4F /* Notification.swift */,
 				14DC38051A05AD0D00E992B2 /* DailySummary.swift */,

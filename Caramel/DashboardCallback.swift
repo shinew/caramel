@@ -12,10 +12,9 @@ class DashboardCallback {
     
     var todayOverallLabel: UILabel!
     var lastStressScoreInterval: StressScoreInterval!
-    var updatedScoreCallback: (interval: StressScoreInterval!) -> Void
     
     init(updatedScoreCallback: (interval: StressScoreInterval!) -> Void) {
-        self.updatedScoreCallback = updatedScoreCallback
+        StressQueue.addNewScoreCallback(updatedScoreCallback)
     }
     
     func newHeartRateCallback(data: NSData!) -> Void {
@@ -63,7 +62,7 @@ class DashboardCallback {
             let score = json["Score"] as Int
             println("(Stress) Received stress score: \(score)")
             self.lastStressScoreInterval.score = score
-            StressQueue.addNewRawScore(self.lastStressScoreInterval, newScoreCallback: self.updatedScoreCallback)
+            StressQueue.addNewRawScore(self.lastStressScoreInterval)
         }
     }
 }

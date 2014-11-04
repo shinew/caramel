@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
         
         // Override point for customization after application launch.
+        Movement.initalizeManager()
+        
         return true
     }
 

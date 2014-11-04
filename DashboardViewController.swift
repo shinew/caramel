@@ -11,7 +11,6 @@ import UIKit
 class DashboardViewController: UIViewController {
     
     var hrBluetooth: HRBluetooth!
-    var movement: Movement!
     var dashboardCallback: DashboardCallback!
     
     @IBOutlet weak var refreshButton: UIBarButtonItem!
@@ -29,30 +28,29 @@ class DashboardViewController: UIViewController {
     required init(coder: NSCoder) {
         super.init(coder: coder)
         self.hrBluetooth = HRBluetooth()
-        self.movement = Movement()
     }
-    
-    @IBAction func refreshButtonDidPress(sender: AnyObject) {
-        self.hrBluetooth.startScanningHRPeripheral(self.dashboardCallback.newHeartRateCallback)
-        println("Restarted Bluetooth services")
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
+        self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
+        
         self.displayUpdateDateLabels()
         self.updateProfile()
 
         self.dashboardCallback = DashboardCallback(updatedScoreCallback)
-        
         self.hrBluetooth.startScanningHRPeripheral(self.dashboardCallback.newHeartRateCallback)
+        
         println("Loaded DashboardViewController view!")
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func refreshButtonDidPress(sender: AnyObject) {
+        self.hrBluetooth.startScanningHRPeripheral(self.dashboardCallback.newHeartRateCallback)
+        println("Restarted Bluetooth services")
     }
     
     private func displayUpdateDateLabels() {
@@ -64,7 +62,7 @@ class DashboardViewController: UIViewController {
         self.dateLabel.text = dateFormatter.stringFromDate(currentDate).uppercaseString
     }
     
-    func updatedScoreCallback(interval: StressScoreInterval!) {
+    private func updatedScoreCallback(interval: StressScoreInterval!) {
         println("Smooth score: \(interval.score)")
         
         dispatch_async(dispatch_get_main_queue(), {

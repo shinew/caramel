@@ -9,6 +9,7 @@
 import Foundation
 
 var _stressQueue = Queue<StressScoreInterval>()
+var _newScoreCallbacks = Array<(StressScoreInterval!) -> Void>()
 
 class StressQueue {
     
@@ -16,12 +17,13 @@ class StressQueue {
         return _stressQueue.length()
     }
     
-    class func addNewRawScore(
-        rawScore: StressScoreInterval!,
-        newScoreCallback: (StressScoreInterval!) -> Void
-    ) {
+    class func addNewScoreCallback(callback: (StressScoreInterval!) -> Void) {
+        _newScoreCallbacks.append(callback)
+    }
+    
+    class func addNewRawScore(rawScore: StressScoreInterval!) {
         /*
-        What we want to calculate:
+        What we want to calculate and add:
         DB: smoothened score
         Queue: raw score
         */
@@ -33,7 +35,9 @@ class StressQueue {
         if _stressQueue.length() == Constants.getMaxNumStressQueue() {
             _stressQueue.pop()
         }
-        newScoreCallback(smoothScore)
+        for callback in _newScoreCallbacks {
+            callback(rawScore)
+        }
     }
     
     private class func getSmoothScore(rawScore: StressScoreInterval!) -> Int {
