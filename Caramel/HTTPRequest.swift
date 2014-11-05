@@ -9,6 +9,7 @@
 import Foundation
 
 let ROOT_URL = "http://23.239.1.132"
+let API_VERSION = "/api/v1.0"
 
 class HTTPRequest {
 
@@ -17,7 +18,7 @@ class HTTPRequest {
         responseCallback: (NSHTTPURLResponse!, Agent.Data!, NSError!) -> Void
     ) {
         println("Sending HR Request")
-        let req = Agent.put(ROOT_URL + "/api/v1.0/heart")
+        let req = Agent.put(ROOT_URL + API_VERSION + "/heart")
         var json = HTTPRequest.getDefaultJSON()
         
         var samplesJSON = [[String: AnyObject]]()
@@ -35,12 +36,30 @@ class HTTPRequest {
         responseCallback: (NSHTTPURLResponse!, Agent.Data!, NSError!) -> Void
     ) {
         println("Sending Stress Score Request")
-        let req = Agent.post(ROOT_URL + "/api/v1.0/score")
+        let req = Agent.post(ROOT_URL + API_VERSION + "/score")
         var json = HTTPRequest.getDefaultJSON()
         
         json["StartTime"] = Conversion.dateToString(stressInterval.startDate)
         json["EndTime"] = Conversion.dateToString(stressInterval.endDate)
         
+        req.send(json)
+        req.end(responseCallback)
+    }
+    
+    class func sendUserAuthRequest(
+        user: UserRecord,
+        responseCallback: (NSHTTPURLResponse!, Agent.Data!, NSError!) -> Void
+    ) {
+        println("Sending user auth request")
+        let req = Agent.put(ROOT_URL + API_VERSION + "/user")
+        var json = [String: AnyObject]()
+        json["FirstName"] = user.firstName
+        if user.lastName != nil {
+            json["LastName"] = user.lastName
+        } else {
+            json["LastName"] = NSNull()
+        }
+        json["Password"] = user.password
         req.send(json)
         req.end(responseCallback)
     }

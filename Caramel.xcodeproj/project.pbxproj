@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140ACA0E1A0A3286007A1853 /* UserRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140ACA0D1A0A3286007A1853 /* UserRecord.swift */; };
 		1415AA9A1A02D81100C1CD4F /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1415AA991A02D81100C1CD4F /* Notification.swift */; };
 		14254D571A01C9CB00DE86B8 /* HRDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14254D561A01C9CB00DE86B8 /* HRDecoder.swift */; };
 		1430FCBC1A0307EF006B518B /* AccelQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430FCBB1A0307EF006B518B /* AccelQueue.swift */; };
@@ -78,6 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		140ACA0D1A0A3286007A1853 /* UserRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRecord.swift; sourceTree = "<group>"; };
 		1415AA991A02D81100C1CD4F /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		14254D561A01C9CB00DE86B8 /* HRDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRDecoder.swift; sourceTree = "<group>"; };
 		1430FCBB1A0307EF006B518B /* AccelQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelQueue.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				14D0E2641A009E420042F20A /* HRSample.swift */,
 				14D0E25B1A008DEC0042F20A /* StressScoreInterval.swift */,
 				14A851B21A089CCC00855954 /* NotificationRecord.swift */,
+				140ACA0D1A0A3286007A1853 /* UserRecord.swift */,
 			);
 			name = Structures;
 			path = ..;
@@ -550,6 +553,7 @@
 				1A1B7DB11A07508300312B71 /* BreaksViewController.swift in Sources */,
 				1AB847DF1A07112F008509FE /* DesignableView.swift in Sources */,
 				144071891A0A05B4002A3B71 /* User.swift in Sources */,
+				140ACA0E1A0A3286007A1853 /* UserRecord.swift in Sources */,
 				14D47A9F1A06E61500049C34 /* DashboardCallback.swift in Sources */,
 				14D0E25A1A008CED0042F20A /* Database.swift in Sources */,
 				1AAE13FF1A0714A500B16F61 /* ActionsViewController.swift in Sources */,
