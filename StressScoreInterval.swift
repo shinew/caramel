@@ -13,10 +13,12 @@ struct StressScoreInterval {
     var score: Int
     var startDate: NSDate
     var endDate: NSDate
+    var userID: Int
     
-    init(score: Int!, startDate: NSDate!, endDate: NSDate!) {
+    init(score: Int!, startDate: NSDate!, endDate: NSDate!, userID: Int!) {
         self.score = score
         self.startDate = startDate
         self.endDate = endDate
+        self.userID = userID
     }
 }

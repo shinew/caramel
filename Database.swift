@@ -14,22 +14,23 @@ private let appContext = (UIApplication.sharedApplication().delegate as AppDeleg
 class Database {
     // the connection to the DB
     
-    class func AddStressScoreInterval(interval: StressScoreInterval!) {
+    class func addStressScoreInterval(interval: StressScoreInterval!) {
         println("(DB) Adding a stress score interval")
         var stressScore = NSEntityDescription.insertNewObjectForEntityForName("StressScoreInterval", inManagedObjectContext: appContext) as NSManagedObject
         stressScore.setValue(interval.score, forKey: "score")
         stressScore.setValue(interval.startDate, forKey: "startDate")
         stressScore.setValue(interval.endDate, forKey: "endDate")
+        stressScore.setValue(interval.userID, forKey: "userID")
         appContext.save(nil)
         println("(DB) \(stressScore)")
         println("(DB) StressScoreInterval saved.")
     }
     
-    class func GetSortedStressIntervals(startDate: NSDate!, endDate: NSDate!) -> [StressScoreInterval] {
+    class func getSortedStressIntervals(startDate: NSDate!, endDate: NSDate!) -> [StressScoreInterval] {
         println("(DB) Retriving stress score intervals")
         var request = NSFetchRequest(entityName: "StressScoreInterval")
         request.returnsObjectsAsFaults = false
-        request.predicate = NSPredicate(format: "(startDate >= %@) AND (startDate <= %@)", startDate, endDate)
+        request.predicate = NSPredicate(format: "(startDate >= %@) AND (startDate <= %@) AND (userID == %i)", startDate, endDate, User.getUserID())
         var searchResults = appContext.executeFetchRequest(request, error: nil)!
         var unsortedIntervals = [StressScoreInterval]()
         for item in searchResults {
@@ -37,7 +38,8 @@ class Database {
             unsortedIntervals.append(StressScoreInterval(
                 score: thisItem.valueForKey("score") as Int,
                 startDate: thisItem.valueForKey("startDate") as NSDate,
-                endDate: thisItem.valueForKey("endDate") as NSDate
+                endDate: thisItem.valueForKey("endDate") as NSDate,
+                userID: thisItem.valueForKey("userID") as Int
             ))
         }
         var sortedStressIntervals = sorted(
@@ -47,28 +49,30 @@ class Database {
         return sortedStressIntervals
     }
 
-    class func AddNotificationRecord(notif: NotificationRecord!) {
+    class func addNotificationRecord(notif: NotificationRecord!) {
         println("(DB) Adding a notification record")
         var notifRecord = NSEntityDescription.insertNewObjectForEntityForName("NotificationRecord", inManagedObjectContext: appContext) as NSManagedObject
         notifRecord.setValue(notif.type, forKey: "type")
         notifRecord.setValue(notif.date, forKey: "date")
+        notifRecord.setValue(notif.userID, forKey: "userID")
         appContext.save(nil)
         println("(DB) \(notifRecord)")
         println("(DB) notification record saved.")
     }
 
-    class func GetSortedNotificationRecords(startDate: NSDate!, endDate: NSDate!) -> [NotificationRecord] {
+    class func getSortedNotificationRecords(startDate: NSDate!, endDate: NSDate!) -> [NotificationRecord] {
         println("(DB) Retriving notification records")
         var request = NSFetchRequest(entityName: "NotificationRecord")
         request.returnsObjectsAsFaults = false
-        request.predicate = NSPredicate(format: "(date >= %@) AND (date <= %@)", startDate, endDate)
+        request.predicate = NSPredicate(format: "(date >= %@) AND (date <= %@) AND (userID = %i)", startDate, endDate, User.getUserID())
         var searchResults = appContext.executeFetchRequest(request, error: nil)!
         var unsortedRecords = [NotificationRecord]()
         for item in searchResults {
             let thisItem = item as NSManagedObject
             unsortedRecords.append(NotificationRecord(
                 type: thisItem.valueForKey("type") as String,
-                date: thisItem.valueForKey("date") as NSDate
+                date: thisItem.valueForKey("date") as NSDate,
+                userID: thisItem.valueForKey("userID") as Int
             ))
         }
         var sortedRecords = sorted(

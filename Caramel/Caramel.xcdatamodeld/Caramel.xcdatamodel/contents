@@ -3,14 +3,16 @@
     <entity name="NotificationRecord" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="StressScoreInterval" syncable="YES">
         <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="score" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="NotificationRecord" positionX="-63" positionY="9" width="128" height="75"/>
-        <element name="StressScoreInterval" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="NotificationRecord" positionX="-63" positionY="9" width="128" height="90"/>
+        <element name="StressScoreInterval" positionX="-63" positionY="-18" width="128" height="105"/>
     </elements>
 </model>

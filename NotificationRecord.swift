@@ -12,9 +12,11 @@ struct NotificationRecord {
 
     var type: String
     var date: NSDate
+    var userID: Int
     
-    init(type: String!, date: NSDate!) {
+    init(type: String!, date: NSDate!, userID: Int!) {
         self.type = type
         self.date = date
+        self.userID = userID
     }
 }

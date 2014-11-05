@@ -69,7 +69,7 @@ class DashboardViewController: UIViewController {
             self.currentScoreLabel.text = String(interval.score)
         })
         
-        Database.AddStressScoreInterval(interval)
+        Database.addStressScoreInterval(interval)
         
         self.updateProfile()
         
@@ -97,7 +97,7 @@ class DashboardViewController: UIViewController {
         if lastLowDate == nil {
             Notification.sendLowStressNotification()
             Timer.setLastLowStressNotifDate(currentDate)
-             Database.AddNotificationRecord(NotificationRecord(type: "low", date: currentDate))
+            Database.addNotificationRecord(NotificationRecord(type: "low", date: currentDate, userID: User.getUserID()))
         } else {
             let lowTimeDifference = currentDate.timeIntervalSinceDate(lastLowDate!)
             if lowTimeDifference < NSTimeInterval(Constants.getStressNotificationIntervalDuration()) {
@@ -107,11 +107,11 @@ class DashboardViewController: UIViewController {
                 if highTimeDifference < NSTimeInterval(Constants.getStressNotificationIntervalDuration()) {
                     Notification.sendLowStressNotification()
                     Timer.setLastLowStressNotifDate(currentDate)
-                    Database.AddNotificationRecord(NotificationRecord(type: "low", date: currentDate))
+                    Database.addNotificationRecord(NotificationRecord(type: "low", date: currentDate, userID: User.getUserID()))
                 } else {
                     Notification.sendHighStressNotification()
                     Timer.setLastHighStressNotifDate(currentDate)
-                    Database.AddNotificationRecord(NotificationRecord(type: "high", date: currentDate))
+                    Database.addNotificationRecord(NotificationRecord(type: "high", date: currentDate, userID: User.getUserID()))
                 }
             }
         }
@@ -125,8 +125,8 @@ class DashboardViewController: UIViewController {
         var startDate = calendar.dateFromComponents(components)!
         var endDate = startDate.dateByAddingTimeInterval(60 * 60 * 24) //add 24hrs
         
-        let stressIntervals = Database.GetSortedStressIntervals(startDate, endDate: endDate)
-        let notifRecords = Database.GetSortedNotificationRecords(startDate, endDate: endDate)
+        let stressIntervals = Database.getSortedStressIntervals(startDate, endDate: endDate)
+        let notifRecords = Database.getSortedNotificationRecords(startDate, endDate: endDate)
 
         //updates current and lastStress scores
         self.displayCurrentAndLastStressScores(stressIntervals)

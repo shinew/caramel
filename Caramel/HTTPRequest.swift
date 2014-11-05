@@ -9,7 +9,6 @@
 import Foundation
 
 let ROOT_URL = "http://23.239.1.132"
-//let ROOT_URL = "http://192.168.0.6:5000"
 
 class HTTPRequest {
 
@@ -48,7 +47,7 @@ class HTTPRequest {
     
     private class func getDefaultJSON() -> [String: AnyObject] {
         var json = [String: AnyObject]()
-        json["ID"] = User.getID()
+        json["ID"] = User.getUserID()
         json["Password"] = User.getPassword()
         return json
     }

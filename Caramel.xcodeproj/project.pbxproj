@@ -10,6 +10,7 @@
 		1415AA9A1A02D81100C1CD4F /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1415AA991A02D81100C1CD4F /* Notification.swift */; };
 		14254D571A01C9CB00DE86B8 /* HRDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14254D561A01C9CB00DE86B8 /* HRDecoder.swift */; };
 		1430FCBC1A0307EF006B518B /* AccelQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430FCBB1A0307EF006B518B /* AccelQueue.swift */; };
+		144071891A0A05B4002A3B71 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144071881A0A05B4002A3B71 /* User.swift */; };
 		1469A8091A04659200F439DB /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1469A8081A04659200F439DB /* Movement.swift */; };
 		148E40841A00F81900952565 /* QueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148E40831A00F81900952565 /* QueueTest.swift */; };
 		148E40851A00F94600952565 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2681A00AA910042F20A /* Queue.swift */; };
@@ -25,7 +26,6 @@
 		14D0E25C1A008DEC0042F20A /* StressScoreInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E25B1A008DEC0042F20A /* StressScoreInterval.swift */; };
 		14D0E25F1A0090920042F20A /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E25E1A0090920042F20A /* HTTPRequest.swift */; };
 		14D0E2611A0090A70042F20A /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2601A0090A70042F20A /* Agent.swift */; };
-		14D0E2631A0092CF0042F20A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2621A0092CF0042F20A /* User.swift */; };
 		14D0E2651A009E420042F20A /* HRSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2641A009E420042F20A /* HRSample.swift */; };
 		14D0E2671A00AA3A0042F20A /* HRQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2661A00AA3A0042F20A /* HRQueue.swift */; };
 		14D0E2691A00AA910042F20A /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2681A00AA910042F20A /* Queue.swift */; };
@@ -81,6 +81,7 @@
 		1415AA991A02D81100C1CD4F /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		14254D561A01C9CB00DE86B8 /* HRDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRDecoder.swift; sourceTree = "<group>"; };
 		1430FCBB1A0307EF006B518B /* AccelQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelQueue.swift; sourceTree = "<group>"; };
+		144071881A0A05B4002A3B71 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1469A8081A04659200F439DB /* Movement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movement.swift; sourceTree = "<group>"; };
 		148E40831A00F81900952565 /* QueueTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTest.swift; sourceTree = "<group>"; };
 		14A06CF81A08ADA5007B6FD3 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		14D0E25B1A008DEC0042F20A /* StressScoreInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StressScoreInterval.swift; sourceTree = "<group>"; };
 		14D0E25E1A0090920042F20A /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		14D0E2601A0090A70042F20A /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
-		14D0E2621A0092CF0042F20A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
 		14D0E2641A009E420042F20A /* HRSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRSample.swift; sourceTree = "<group>"; };
 		14D0E2661A00AA3A0042F20A /* HRQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRQueue.swift; path = ../HRQueue.swift; sourceTree = "<group>"; };
 		14D0E2681A00AA910042F20A /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
@@ -279,10 +279,10 @@
 				14F878E21A022372001FFFE2 /* Constants.swift */,
 				14F878DE1A020BD8001FFFE2 /* Conversion.swift */,
 				14D0E2591A008CED0042F20A /* Database.swift */,
-				14D0E2621A0092CF0042F20A /* User.swift */,
 				1469A8081A04659200F439DB /* Movement.swift */,
 				14D80ACD1A0172920064BCD8 /* Timer.swift */,
 				1415AA991A02D81100C1CD4F /* Notification.swift */,
+				144071881A0A05B4002A3B71 /* User.swift */,
 			);
 			name = Globals;
 			sourceTree = "<group>";
@@ -538,7 +538,6 @@
 				14D0E2671A00AA3A0042F20A /* HRQueue.swift in Sources */,
 				1AB847DE1A07112F008509FE /* Data.swift in Sources */,
 				14F878E11A021992001FFFE2 /* StressQueue.swift in Sources */,
-				14D0E2631A0092CF0042F20A /* User.swift in Sources */,
 				14D80ACE1A0172920064BCD8 /* Timer.swift in Sources */,
 				14D0E25F1A0090920042F20A /* HTTPRequest.swift in Sources */,
 				14A851B31A089CCC00855954 /* NotificationRecord.swift in Sources */,
@@ -550,6 +549,7 @@
 				14D0E2651A009E420042F20A /* HRSample.swift in Sources */,
 				1A1B7DB11A07508300312B71 /* BreaksViewController.swift in Sources */,
 				1AB847DF1A07112F008509FE /* DesignableView.swift in Sources */,
+				144071891A0A05B4002A3B71 /* User.swift in Sources */,
 				14D47A9F1A06E61500049C34 /* DashboardCallback.swift in Sources */,
 				14D0E25A1A008CED0042F20A /* Database.swift in Sources */,
 				1AAE13FF1A0714A500B16F61 /* ActionsViewController.swift in Sources */,

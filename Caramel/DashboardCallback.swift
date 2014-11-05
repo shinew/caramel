@@ -43,7 +43,8 @@ class DashboardCallback {
             var stressInterval = StressScoreInterval(
                 score: 0,
                 startDate: Timer.getLastHRSentDate()!.dateByAddingTimeInterval(0.0 - Double(Constants.getStressIntervalDuration())),
-                endDate: Timer.getLastHRSentDate()!
+                endDate: Timer.getLastHRSentDate()!,
+                userID: User.getUserID()
             )
             self.lastStressScoreInterval = stressInterval
             HTTPRequest.sendStressRequest(stressInterval, self.hrStressResponseCallback)
