@@ -64,7 +64,7 @@ class Database {
         println("(DB) Retriving notification records")
         var request = NSFetchRequest(entityName: "NotificationRecord")
         request.returnsObjectsAsFaults = false
-        request.predicate = NSPredicate(format: "(date >= %@) AND (date <= %@) AND (userID = %i)", startDate, endDate, User.getUserID())
+        request.predicate = NSPredicate(format: "(date >= %@) AND (date <= %@) AND (userID == %i)", startDate, endDate, User.getUserID())
         var searchResults = appContext.executeFetchRequest(request, error: nil)!
         var unsortedRecords = [NotificationRecord]()
         for item in searchResults {
@@ -80,5 +80,39 @@ class Database {
             { s1, s2 in s1.date.compare(s2.date) == NSComparisonResult.OrderedAscending }
         )
         return sortedRecords
+    }
+    
+    class func updateBreakActivityCounter(activity: BreakActivityCounter) {
+        println("(DB) Updating break activity counter")
+        var request = NSFetchRequest(entityName: "BreakActivityCounter")
+        request.returnsObjectsAsFaults = false
+        request.predicate = NSPredicate(format: "(activity == %@) AND (userID == %i)", activity.activity, activity.userID)
+        var searchResults = appContext.executeFetchRequest(request, error: nil)!
+        if searchResults.count == 0 {
+            var stressScore = NSEntityDescription.insertNewObjectForEntityForName("BreakActivityCounter", inManagedObjectContext: appContext) as NSManagedObject
+            stressScore.setValue(activity.activity, forKey: "activity")
+            stressScore.setValue(activity.counter, forKey: "counter")
+            stressScore.setValue(activity.userID, forKey: "userID")
+        } else {
+            let item = searchResults.first! as NSManagedObject
+            item.setValue(activity.counter, forKey: "counter")
+            appContext.save(nil)
+        }
+    }
+    
+    class func getBreakActivityCounter(fixedActivity: BreakActivityCounter) -> BreakActivityCounter {
+        var activity = fixedActivity
+        println("(DB) Retriving break activity counter")
+        var request = NSFetchRequest(entityName: "BreakActivityCounter")
+        request.returnsObjectsAsFaults = false
+        request.predicate = NSPredicate(format: "(activity == %@) AND (userID == %i)", activity.activity, activity.userID)
+                var searchResults = appContext.executeFetchRequest(request, error: nil)!
+        if searchResults.count == 0 {
+            activity.counter = 0
+        } else {
+            let item = searchResults.first! as NSManagedObject
+            activity.counter = item.valueForKey("counter") as Int
+        }
+        return activity
     }
 }
