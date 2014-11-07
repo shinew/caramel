@@ -547,6 +547,9 @@
                                             <color key="titleColor" red="0.28627450980000002" green="0.31764705879999999" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="walkingButtonDidPress:" destination="Pm6-Ye-h65" eventType="touchUpInside" id="ZTK-5u-22f"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ift-8F-V6S">
                                         <rect key="frame" x="0.0" y="93" width="375" height="92"/>
@@ -557,6 +560,9 @@
                                             <color key="titleColor" red="0.28627450980000002" green="0.31764705879999999" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="coffeeButtonDidPress:" destination="Pm6-Ye-h65" eventType="touchUpInside" id="UtL-FL-LYf"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mpn-Vx-nWu">
                                         <rect key="frame" x="0.0" y="185" width="375" height="92"/>
@@ -567,6 +573,9 @@
                                             <color key="titleColor" red="0.28627450980000002" green="0.31764705879999999" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="talkingButtonDidPress:" destination="Pm6-Ye-h65" eventType="touchUpInside" id="jo7-RX-UC1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nom-2p-VmZ">
                                         <rect key="frame" x="0.0" y="277" width="375" height="92"/>
@@ -578,7 +587,7 @@
                                             <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="napButtonDidPress:" destination="Pm6-Ye-h65" eventType="touchUpInside" id="3tW-no-Zx3"/>
+                                            <action selector="nappingButtonDidPress:" destination="Pm6-Ye-h65" eventType="touchUpInside" id="1bR-KA-XLi"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oup-Y0-Uou">
@@ -590,6 +599,9 @@
                                             <color key="titleColor" red="0.28627450980000002" green="0.31764705879999999" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="musicButtonDidPress:" destination="Pm6-Ye-h65" eventType="touchUpInside" id="1uI-D7-UF2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bci-Yd-ssH">
                                         <rect key="frame" x="0.0" y="461" width="375" height="92"/>
@@ -600,6 +612,9 @@
                                             <color key="titleColor" red="0.28627450980000002" green="0.31764705879999999" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="snackButtonDidPress:" destination="Pm6-Ye-h65" eventType="touchUpInside" id="3Va-EZ-kij"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle" id="vQH-qV-78J">
                                         <rect key="frame" x="0.0" y="93" width="375" height="2"/>
@@ -630,42 +645,42 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tHz-na-gWy">
-                                        <rect key="frame" x="305" y="36" width="28" height="21"/>
+                                        <rect key="frame" x="265" y="40" width="28" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M0G-SD-0Ku">
-                                        <rect key="frame" x="305" y="128" width="28" height="21"/>
+                                        <rect key="frame" x="265" y="132" width="28" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="70W-nA-7lh">
-                                        <rect key="frame" x="305" y="220" width="28" height="21"/>
+                                        <rect key="frame" x="265" y="224" width="28" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TgB-gz-hsD">
-                                        <rect key="frame" x="305" y="404" width="28" height="21"/>
+                                        <rect key="frame" x="265" y="408" width="28" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rfP-UW-0gZ">
-                                        <rect key="frame" x="305" y="496" width="28" height="21"/>
+                                        <rect key="frame" x="265" y="500" width="28" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ywF-1W-uBx">
-                                        <rect key="frame" x="305" y="312" width="28" height="21"/>
+                                        <rect key="frame" x="265" y="316" width="28" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -683,8 +698,18 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="napButton" destination="nom-2p-VmZ" id="kQY-G2-eXD"/>
-                        <outlet property="napLabel" destination="ywF-1W-uBx" id="Mfc-bV-euy"/>
+                        <outlet property="coffeeButton" destination="ift-8F-V6S" id="kID-ld-wwm"/>
+                        <outlet property="coffeeLabel" destination="M0G-SD-0Ku" id="afn-ec-FRL"/>
+                        <outlet property="musicButton" destination="oup-Y0-Uou" id="N5y-ZP-5WM"/>
+                        <outlet property="musicLabel" destination="TgB-gz-hsD" id="MhM-37-lJh"/>
+                        <outlet property="nappingButton" destination="nom-2p-VmZ" id="YcO-F5-BEt"/>
+                        <outlet property="nappingLabel" destination="ywF-1W-uBx" id="sn8-P4-tnA"/>
+                        <outlet property="snackButton" destination="Bci-Yd-ssH" id="RQQ-GL-ZWN"/>
+                        <outlet property="snackLabel" destination="rfP-UW-0gZ" id="74b-c0-R95"/>
+                        <outlet property="talkingButton" destination="mpn-Vx-nWu" id="1Cb-cP-5SJ"/>
+                        <outlet property="talkingLabel" destination="70W-nA-7lh" id="mEK-8m-heD"/>
+                        <outlet property="walkingButton" destination="SvV-tF-EmU" id="8o6-Gh-Pge"/>
+                        <outlet property="walkingLabel" destination="tHz-na-gWy" id="sPr-w0-m9A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gxi-qQ-I2L" userLabel="First Responder" sceneMemberID="firstResponder"/>

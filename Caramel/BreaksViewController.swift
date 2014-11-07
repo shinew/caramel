@@ -9,17 +9,24 @@
 import UIKit
 
 class BreaksViewController: UIViewController {
+
+    @IBOutlet weak var walkingLabel: UILabel!
+    @IBOutlet weak var coffeeLabel: UILabel!
+    @IBOutlet weak var talkingLabel: UILabel!
+    @IBOutlet weak var nappingLabel: UILabel!
+    @IBOutlet weak var musicLabel: UILabel!
+    @IBOutlet weak var snackLabel: UILabel!
+    
     
     @IBOutlet weak var walkingButton: UIButton!
     @IBOutlet weak var coffeeButton: UIButton!
     @IBOutlet weak var talkingButton: UIButton!
-    @IBOutlet weak var napButton: UIButton!
+    @IBOutlet weak var nappingButton: UIButton!
     @IBOutlet weak var musicButton: UIButton!
     @IBOutlet weak var snackButton: UIButton!
     
-    
     var buttonCounters = [String: BreakActivityCounter]()
-    let activities = ["Walking", "Coffee", "Talking", "Nap", "Music", "Snack"]
+    let activities = ["Walking", "Coffee", "Talking", "Napping", "Music", "Snack"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +50,8 @@ class BreaksViewController: UIViewController {
     @IBAction func talkingButtonDidPress(sender: AnyObject) {
         self.incrementActivity("Talking")
     }
-    @IBAction func napButtonDidPress(sender: AnyObject) {
-        self.incrementActivity("Nap")
+    @IBAction func nappingButtonDidPress(sender: AnyObject) {
+        self.incrementActivity("Napping")
     }
     @IBAction func musicButtonDidPress(sender: AnyObject) {
         self.incrementActivity("Music")
@@ -64,17 +71,17 @@ class BreaksViewController: UIViewController {
             for activity in self.activities {
                 switch activity {
                 case "Walking":
-                    self.walkingButton.titleLabel!.text = String(self.buttonCounters[activity]!.counter)
+                    self.walkingLabel.text = String(self.buttonCounters[activity]!.counter)
                 case "Coffee":
-                    self.coffeeButton.titleLabel!.text = String(self.buttonCounters[activity]!.counter)
+                    self.coffeeLabel.text = String(self.buttonCounters[activity]!.counter)
                 case "Talking":
-                    self.talkingButton.titleLabel!.text = String(self.buttonCounters[activity]!.counter)
-                case "Nap":
-                    self.napButton.titleLabel!.text = String(self.buttonCounters[activity]!.counter)
+                    self.talkingLabel.text = String(self.buttonCounters[activity]!.counter)
+                case "Napping":
+                    self.nappingLabel.text = String(self.buttonCounters[activity]!.counter)
                 case "Music":
-                    self.musicButton.titleLabel!.text = String(self.buttonCounters[activity]!.counter)
+                    self.musicLabel.text = String(self.buttonCounters[activity]!.counter)
                 case "Snack":
-                    self.snackButton.titleLabel!.text = String(self.buttonCounters[activity]!.counter)
+                    self.snackLabel.text = String(self.buttonCounters[activity]!.counter)
                 default:
                     println("Couldn't find activity \(activity)")
                 }
