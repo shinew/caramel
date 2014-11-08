@@ -17,6 +17,13 @@ class Conversion {
         return dateString
     }
     
+    class func dateToTimeString(date: NSDate!) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "HH:mm:ss"
+        let dateString = dateFormatter.stringFromDate(date)
+        return dateString
+    }
+    
     class func UIColorFromRGB(red: Int!, green: Int!, blue: Int!) -> UIColor {
         return UIColor(
             red: CGFloat(Double(red)/255.0),

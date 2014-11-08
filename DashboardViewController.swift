@@ -144,13 +144,32 @@ class DashboardViewController: UIViewController {
         if stressIntervals.count == 0 {
             return
         }
+        var lastStressDuration = 0
+        var updatedStressLabel = false
         for var i = stressIntervals.count - 1; i >= 0; i-- {
             if stressIntervals[i].score >= Constants.getStressNotificationThreshold() {
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.lastStressLabel.text = "\(String(stressIntervals[i].score) )%"
-                })
-                break
+                lastStressDuration += 30
+                if !updatedStressLabel {
+                    updatedStressLabel = true
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.lastStressLabel.text = "\(String(stressIntervals[i].score) )%"
+                        self.lastEventTimeLabel.text = Conversion.dateToTimeString(stressIntervals[i].endDate)
+                    })
+                }
+            } else {
+                if updatedStressLabel {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.lastEventDurationLabel.text = "\(lastStressDuration) s"
+                    })
+                    return
+                }
             }
+        }
+        if updatedStressLabel {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.lastEventDurationLabel.text = "\(lastStressDuration) s"
+            })
+            return
         }
     }
     
