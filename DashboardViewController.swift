@@ -158,18 +158,31 @@ class DashboardViewController: UIViewController {
                 }
             } else {
                 if updatedStressLabel {
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.lastEventDurationLabel.text = "\(lastStressDuration) s"
-                    })
+                    self.displayStressDuration(lastStressDuration)
                     return
                 }
             }
         }
         if updatedStressLabel {
-            dispatch_async(dispatch_get_main_queue(), {
-                self.lastEventDurationLabel.text = "\(lastStressDuration) s"
-            })
+            self.displayStressDuration(lastStressDuration)
             return
+        }
+    }
+    
+    private func displayStressDuration(duration: Int) {
+        if duration > 3600 {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.lastEventDurationLabel.text = "\(duration / 3600) hr"
+            })
+
+        } else if duration > 60 {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.lastEventDurationLabel.text = "\(duration / 60) min"
+            })
+        } else {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.lastEventDurationLabel.text = "\(duration) s"
+            })
         }
     }
     
