@@ -144,13 +144,45 @@ class DashboardViewController: UIViewController {
         if stressIntervals.count == 0 {
             return
         }
+        var lastStressDuration = 0
+        var updatedStressLabel = false
         for var i = stressIntervals.count - 1; i >= 0; i-- {
             if stressIntervals[i].score >= Constants.getStressNotificationThreshold() {
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.lastStressLabel.text = "\(String(stressIntervals[i].score) )%"
-                })
-                break
+                lastStressDuration += 30
+                if !updatedStressLabel {
+                    updatedStressLabel = true
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.lastStressLabel.text = "\(String(stressIntervals[i].score) )%"
+                        self.lastEventTimeLabel.text = Conversion.dateToTimeString(stressIntervals[i].endDate)
+                    })
+                }
+            } else {
+                if updatedStressLabel {
+                    self.displayStressDuration(lastStressDuration)
+                    return
+                }
             }
+        }
+        if updatedStressLabel {
+            self.displayStressDuration(lastStressDuration)
+            return
+        }
+    }
+    
+    private func displayStressDuration(duration: Int) {
+        if duration > 3600 {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.lastEventDurationLabel.text = "\(duration / 3600) hr"
+            })
+
+        } else if duration > 60 {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.lastEventDurationLabel.text = "\(duration / 60) min"
+            })
+        } else {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.lastEventDurationLabel.text = "\(duration) s"
+            })
         }
     }
     
