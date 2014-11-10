@@ -17,6 +17,8 @@
 		1469A8091A04659200F439DB /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1469A8081A04659200F439DB /* Movement.swift */; };
 		148E40841A00F81900952565 /* QueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148E40831A00F81900952565 /* QueueTest.swift */; };
 		148E40851A00F94600952565 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2681A00AA910042F20A /* Queue.swift */; };
+		148F34F91A113EFB00B3C941 /* CalibrationCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148F34F81A113EFB00B3C941 /* CalibrationCallback.swift */; };
+		148F34FB1A113FDE00B3C941 /* CalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148F34FA1A113FDE00B3C941 /* CalibrationViewController.swift */; };
 		14A06CF91A08ADA5007B6FD3 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A06CF81A08ADA5007B6FD3 /* Math.swift */; };
 		14A63F461A074EB100EA9924 /* ProfileCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CE4E631A06EA21000A2A27 /* ProfileCircleView.swift */; };
 		14A851B31A089CCC00855954 /* NotificationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A851B21A089CCC00855954 /* NotificationRecord.swift */; };
@@ -90,6 +92,8 @@
 		1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothConnectivity.swift; sourceTree = "<group>"; };
 		1469A8081A04659200F439DB /* Movement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movement.swift; sourceTree = "<group>"; };
 		148E40831A00F81900952565 /* QueueTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTest.swift; sourceTree = "<group>"; };
+		148F34F81A113EFB00B3C941 /* CalibrationCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationCallback.swift; sourceTree = "<group>"; };
+		148F34FA1A113FDE00B3C941 /* CalibrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationViewController.swift; sourceTree = "<group>"; };
 		14A06CF81A08ADA5007B6FD3 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		14A851B21A089CCC00855954 /* NotificationRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationRecord.swift; sourceTree = "<group>"; };
 		14CE4E631A06EA21000A2A27 /* ProfileCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCircleView.swift; sourceTree = "<group>"; };
@@ -200,6 +204,15 @@
 				148E40831A00F81900952565 /* QueueTest.swift */,
 			);
 			name = Library;
+			sourceTree = "<group>";
+		};
+		148F34F71A113EDC00B3C941 /* Calibration */ = {
+			isa = PBXGroup;
+			children = (
+				148F34F81A113EFB00B3C941 /* CalibrationCallback.swift */,
+				148F34FA1A113FDE00B3C941 /* CalibrationViewController.swift */,
+			);
+			name = Calibration;
 			sourceTree = "<group>";
 		};
 		14D0E2271A008C6D0042F20A = {
@@ -343,6 +356,7 @@
 		1A3D2C071A0623A900063AEB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				148F34F71A113EDC00B3C941 /* Calibration */,
 				1A3C1B9E1A0772B300C34CAD /* Debug */,
 				1AB847D41A06FBA0008509FE /* Action */,
 				1AB847D11A06F601008509FE /* Habits */,
@@ -568,6 +582,7 @@
 				14D0E2651A009E420042F20A /* HRSample.swift in Sources */,
 				1A1B7DB11A07508300312B71 /* BreaksViewController.swift in Sources */,
 				1AB847DF1A07112F008509FE /* DesignableView.swift in Sources */,
+				148F34F91A113EFB00B3C941 /* CalibrationCallback.swift in Sources */,
 				144071891A0A05B4002A3B71 /* User.swift in Sources */,
 				140ACA0E1A0A3286007A1853 /* UserRecord.swift in Sources */,
 				14D47A9F1A06E61500049C34 /* DashboardCallback.swift in Sources */,
@@ -575,6 +590,7 @@
 				1AAE13FF1A0714A500B16F61 /* ActionsViewController.swift in Sources */,
 				1AB847E01A07112F008509FE /* Misc.swift in Sources */,
 				1A3C1BA01A0772C500C34CAD /* DebugViewController.swift in Sources */,
+				148F34FB1A113FDE00B3C941 /* CalibrationViewController.swift in Sources */,
 				14D80AD51A01808D0064BCD8 /* HRPeripheral.swift in Sources */,
 				14D80AD01A01730A0064BCD8 /* HRBluetooth.swift in Sources */,
 				14D0E2391A008C6D0042F20A /* Caramel.xcdatamodeld in Sources */,
