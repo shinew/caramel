@@ -9,17 +9,19 @@
 import Foundation
 import CoreBluetooth
 
+var _hrCBManager = HRCentralManager()
+var _hrUpdateCallback: ((NSData!) -> Void)?
+
 class HRBluetooth: NSObject {
     
-    var hrCBManager: HRCentralManager!
-    
-    override init() {
-        self.hrCBManager = HRCentralManager()
-        super.init()
+    class func setHRUpdateCallback(hrUpdateCallback: (NSData!) -> Void) {
+        _hrUpdateCallback = hrUpdateCallback
     }
-    
+
     //may need to modify this to take on other UUIDs later?
-    func startScanningHRPeripheral(hrUpdateCallback: (NSData!) -> Void) {
-        self.hrCBManager.startCentralManager(hrUpdateCallback)
+    class func startScanningHRPeripheral() {
+        if _hrUpdateCallback != nil {
+            _hrCBManager.startCentralManager(_hrUpdateCallback!)
+        }
     }
 }

@@ -20,6 +20,7 @@ let _stressNotificationIntervalDuration = 5 * 60 //5 min
 let _stressNotificationThreshold = 70
 let _circleColorYellowThreshold = 70
 let _circleColorRedThreshold = 90
+let _bluetoothConnectivityDuration = 20.0
 
 class Constants {
     
@@ -46,4 +47,6 @@ class Constants {
     class func getCircleColorYellowThreshold() -> Int { return _circleColorYellowThreshold }
     
     class func getCircleColorRedThreshold() -> Int { return _circleColorRedThreshold }
+    
+    class func getBluetoothConnectivityDuration() -> Double { return _bluetoothConnectivityDuration }
 }

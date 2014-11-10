@@ -13,6 +13,7 @@
 		14254D571A01C9CB00DE86B8 /* HRDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14254D561A01C9CB00DE86B8 /* HRDecoder.swift */; };
 		1430FCBC1A0307EF006B518B /* AccelQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430FCBB1A0307EF006B518B /* AccelQueue.swift */; };
 		144071891A0A05B4002A3B71 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144071881A0A05B4002A3B71 /* User.swift */; };
+		1446CCAC1A10A21700DBA7FC /* BluetoothConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */; };
 		1469A8091A04659200F439DB /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1469A8081A04659200F439DB /* Movement.swift */; };
 		148E40841A00F81900952565 /* QueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148E40831A00F81900952565 /* QueueTest.swift */; };
 		148E40851A00F94600952565 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2681A00AA910042F20A /* Queue.swift */; };
@@ -91,6 +92,7 @@
 		14254D561A01C9CB00DE86B8 /* HRDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRDecoder.swift; sourceTree = "<group>"; };
 		1430FCBB1A0307EF006B518B /* AccelQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelQueue.swift; sourceTree = "<group>"; };
 		144071881A0A05B4002A3B71 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothConnectivity.swift; sourceTree = "<group>"; };
 		1469A8081A04659200F439DB /* Movement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movement.swift; sourceTree = "<group>"; };
 		148E40831A00F81900952565 /* QueueTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTest.swift; sourceTree = "<group>"; };
 		14A06CF81A08ADA5007B6FD3 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
@@ -194,6 +196,14 @@
 			name = HTTP;
 			sourceTree = "<group>";
 		};
+		1446CCAA1A10A1CA00DBA7FC /* Edge Cases */ = {
+			isa = PBXGroup;
+			children = (
+				1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */,
+			);
+			name = "Edge Cases";
+			sourceTree = "<group>";
+		};
 		148E40811A00F80200952565 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +215,7 @@
 		14D0E2271A008C6D0042F20A = {
 			isa = PBXGroup;
 			children = (
+				1446CCAA1A10A1CA00DBA7FC /* Edge Cases */,
 				14D0E2321A008C6D0042F20A /* Caramel */,
 				14D0E24B1A008C6D0042F20A /* CaramelTests */,
 				14D0E2311A008C6D0042F20A /* Products */,
@@ -282,7 +293,6 @@
 			isa = PBXGroup;
 			children = (
 				14D80AD11A0180530064BCD8 /* Bluetooth */,
-				14A06CF81A08ADA5007B6FD3 /* Math.swift */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -295,6 +305,8 @@
 				14F878E21A022372001FFFE2 /* Constants.swift */,
 				14F878DE1A020BD8001FFFE2 /* Conversion.swift */,
 				14D0E2591A008CED0042F20A /* Database.swift */,
+				14D80ACF1A01730A0064BCD8 /* HRBluetooth.swift */,
+				14A06CF81A08ADA5007B6FD3 /* Math.swift */,
 				1469A8081A04659200F439DB /* Movement.swift */,
 				14D80ACD1A0172920064BCD8 /* Timer.swift */,
 				1415AA991A02D81100C1CD4F /* Notification.swift */,
@@ -306,7 +318,6 @@
 		14D80AD11A0180530064BCD8 /* Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
-				14D80ACF1A01730A0064BCD8 /* HRBluetooth.swift */,
 				14D80AD21A01806C0064BCD8 /* HRCentralManager.swift */,
 				14D80AD41A01808D0064BCD8 /* HRPeripheral.swift */,
 				14254D561A01C9CB00DE86B8 /* HRDecoder.swift */,
@@ -573,6 +584,7 @@
 				14D0E25F1A0090920042F20A /* HTTPRequest.swift in Sources */,
 				14A851B31A089CCC00855954 /* NotificationRecord.swift in Sources */,
 				1AB847DD1A07112F008509FE /* BlurView.swift in Sources */,
+				1446CCAC1A10A21700DBA7FC /* BluetoothConnectivity.swift in Sources */,
 				1469A8091A04659200F439DB /* Movement.swift in Sources */,
 				1AFFAAE91A0FF21F002BAB2D /* FrustrationViewController.swift in Sources */,
 				14254D571A01C9CB00DE86B8 /* HRDecoder.swift in Sources */,

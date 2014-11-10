@@ -19,6 +19,7 @@ class DashboardCallback {
     
     func newHeartRateCallback(data: NSData!) -> Void {
         println("Received new heart rate data")
+        Timer.setLastHRBluetoothReceivedDate(NSDate())
         var hrSample = HRDecoder.dataToHRSample(data)
         if hrSample != nil {
             HRQueue.push(hrSample!)
@@ -35,6 +36,7 @@ class DashboardCallback {
         println("(HR) finished sending HR request!")
         if response == nil {
             println("(HR) Request did not go through")
+            Notification.sendNoInternetNotification()
             return
         }
         println("(HR) response status code: \(response.statusCode)")
@@ -54,6 +56,7 @@ class DashboardCallback {
     func hrStressResponseCallback(response: NSHTTPURLResponse!, data: Agent.Data!, error: NSError!) -> Void {
         if response == nil {
             println("(Stress) Request did not go through")
+            Notification.sendNoInternetNotification()
             return
         }
         println("(Stress) finished sending Stress request!")
