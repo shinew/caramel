@@ -10,23 +10,23 @@ import UIKit
 
 class ProtocolAnimation {
     
-    class func animate (index: Int, buttons: [UIButton], images: [UIImageView], maskView: UIView) -> Int {
+    class func animate (index: Int, buttons: [UIButton], images: [UIImageView], maskView: UIView, color: UIColor) -> Int {
         //performs animations
         //returns updated index
         if index == 3 {
             ProtocolAnimation.popupFinal(buttons, images: images, maskView: maskView)
             return 3
         } else {
-            ProtocolAnimation.normalCheckmark(index, buttons: buttons, images: images)
+            ProtocolAnimation.normalCheckmark(index, buttons: buttons, images: images, color: color)
             return index + 1
         }
     }
     
-    private class func normalCheckmark(index: Int, buttons: [UIButton], images: [UIImageView]) {
+    private class func normalCheckmark(index: Int, buttons: [UIButton], images: [UIImageView], color: UIColor) {
         images[index].hidden = false
         buttons[index].backgroundColor = UIColor.whiteColor()
         buttons[index].setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        buttons[index + 1].backgroundColor = Conversion.UIColorFromRGB(31,green:150,blue:137)
+        buttons[index + 1].backgroundColor = color
         buttons[index + 1].setTitleColor(UIColor.whiteColor(),forState: UIControlState.Normal)
     }
     
