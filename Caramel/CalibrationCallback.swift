@@ -19,4 +19,19 @@ class CalibrationCallback {
             println("(Calibration) HRQueue length: \(HRQueue.length())")
         }
     }
+    
+    func httpResponseCallbackGenerator(type: String) -> (NSHTTPURLResponse!, Agent.Data!, NSError!) -> Void {
+        
+        func closure (response: NSHTTPURLResponse!, data: Agent.Data!, error: NSError!) -> Void {
+            println("(\(type)) finished sending \(type) request!")
+            if response == nil {
+                println("(\(type)) Request did not go through")
+                Notification.sendNoInternetNotification()
+                return
+            }
+            println("(\(type)) response status code: \(response.statusCode)")
+        }
+        
+        return closure
+    }
 }

@@ -20,6 +20,7 @@
 		148F34F91A113EFB00B3C941 /* CalibrationCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148F34F81A113EFB00B3C941 /* CalibrationCallback.swift */; };
 		148F34FB1A113FDE00B3C941 /* CalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148F34FA1A113FDE00B3C941 /* CalibrationViewController.swift */; };
 		14A06CF91A08ADA5007B6FD3 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A06CF81A08ADA5007B6FD3 /* Math.swift */; };
+		14A0C3EB1A1146B6006AD37F /* TrainingInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A0C3EA1A1146B6006AD37F /* TrainingInterval.swift */; };
 		14A63F461A074EB100EA9924 /* ProfileCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CE4E631A06EA21000A2A27 /* ProfileCircleView.swift */; };
 		14A851B31A089CCC00855954 /* NotificationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A851B21A089CCC00855954 /* NotificationRecord.swift */; };
 		14D0E2361A008C6D0042F20A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2351A008C6D0042F20A /* AppDelegate.swift */; };
@@ -95,6 +96,7 @@
 		148F34F81A113EFB00B3C941 /* CalibrationCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationCallback.swift; sourceTree = "<group>"; };
 		148F34FA1A113FDE00B3C941 /* CalibrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationViewController.swift; sourceTree = "<group>"; };
 		14A06CF81A08ADA5007B6FD3 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		14A0C3EA1A1146B6006AD37F /* TrainingInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingInterval.swift; sourceTree = "<group>"; };
 		14A851B21A089CCC00855954 /* NotificationRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationRecord.swift; sourceTree = "<group>"; };
 		14CE4E631A06EA21000A2A27 /* ProfileCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCircleView.swift; sourceTree = "<group>"; };
 		14D0E2301A008C6D0042F20A /* Caramel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caramel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -284,6 +286,7 @@
 			children = (
 				14D0E2641A009E420042F20A /* HRSample.swift */,
 				14D0E25B1A008DEC0042F20A /* StressScoreInterval.swift */,
+				14A0C3EA1A1146B6006AD37F /* TrainingInterval.swift */,
 				14A851B21A089CCC00855954 /* NotificationRecord.swift */,
 				140ACA0D1A0A3286007A1853 /* UserRecord.swift */,
 				1412E3BB1A0B676100E06AED /* BreakActivityCounter.swift */,
@@ -567,6 +570,7 @@
 				1430FCBC1A0307EF006B518B /* AccelQueue.swift in Sources */,
 				14D0E2361A008C6D0042F20A /* AppDelegate.swift in Sources */,
 				14D0E2671A00AA3A0042F20A /* HRQueue.swift in Sources */,
+				14A0C3EB1A1146B6006AD37F /* TrainingInterval.swift in Sources */,
 				1AB847DE1A07112F008509FE /* Data.swift in Sources */,
 				14F878E11A021992001FFFE2 /* StressQueue.swift in Sources */,
 				1412E3BC1A0B676100E06AED /* BreakActivityCounter.swift in Sources */,

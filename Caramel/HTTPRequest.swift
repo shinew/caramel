@@ -46,6 +46,23 @@ class HTTPRequest {
         req.end(responseCallback)
     }
     
+    class func sendTrainingIntervalRequest(
+        trainingInterval: TrainingInterval!,
+        responseCallback: (NSHTTPURLResponse!, Agent.Data!, NSError!) -> Void
+    ) {
+        println("Sending Training Interval Request")
+        let req = Agent.put(ROOT_URL + API_VERSION + "/training")
+        var json = HTTPRequest.getDefaultJSON()
+        
+        json["StartTime"] = Conversion.dateToString(trainingInterval.startDate)
+        json["EndTime"] = Conversion.dateToString(trainingInterval.endDate)
+        json["Category"] = trainingInterval.category
+        json["IsDefaultSet"] = trainingInterval.isDefaultSet
+        
+        req.send(json)
+        req.end(responseCallback)
+    }
+    
     class func sendUserAuthRequest(
         user: UserRecord,
         responseCallback: (NSHTTPURLResponse!, Agent.Data!, NSError!) -> Void

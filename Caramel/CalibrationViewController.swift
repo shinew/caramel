@@ -34,6 +34,11 @@ class CalibrationViewController: UIViewController {
     
     func endButtonDidPress() {
         self.endDate = NSDate()
+        var hrSamples = HRQueue.popAll()
+        //1 = non-stress, 2 = stress
+        var trainingInterval = TrainingInterval(startDate: self.startDate!, endDate: self.endDate!, category: 1, userID: User.getUserID())
         
+        HTTPRequest.sendHRRequest(hrSamples, self.calibrationCallback.httpResponseCallbackGenerator("HR"))
+        HTTPRequest.sendTrainingIntervalRequest(trainingInterval, self.calibrationCallback.httpResponseCallbackGenerator("Training"))
     }
 }
