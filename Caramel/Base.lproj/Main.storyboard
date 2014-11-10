@@ -1077,6 +1077,10 @@
         <scene sceneID="C0d-Ra-ayK">
             <objects>
                 <viewController id="N8J-DU-LSA" customClass="ConflictViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OjK-qG-xmS"/>
+                        <viewControllerLayoutGuide type="bottom" id="VgL-YN-FoM"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yJy-k4-XDQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1165,6 +1169,10 @@
         <scene sceneID="wH9-dd-Hjf">
             <objects>
                 <viewController id="tEV-un-hc9" customClass="FearViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MWw-K3-0Wu"/>
+                        <viewControllerLayoutGuide type="bottom" id="JwR-hz-pfy"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YVK-mp-L3X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1231,12 +1239,16 @@
         <scene sceneID="HOW-hN-Fla">
             <objects>
                 <viewController id="gnD-4Q-Ldd" customClass="FrustrationViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yJn-lP-pl5"/>
+                        <viewControllerLayoutGuide type="bottom" id="hX1-K6-x6Q"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DFL-1b-xNV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SG8-Co-dD3">
-                                <rect key="frame" x="0.0" y="65" width="375" height="138.5"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="139"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.074509803921568626" green="0.59215686274509804" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
@@ -1249,7 +1261,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LeY-jZ-9XK">
-                                <rect key="frame" x="0.0" y="203" width="375" height="138.5"/>
+                                <rect key="frame" x="0.0" y="203" width="375" height="139"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
@@ -1262,7 +1274,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2sO-AO-NPH">
-                                <rect key="frame" x="0.0" y="341" width="375" height="138.5"/>
+                                <rect key="frame" x="0.0" y="341" width="375" height="139"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
@@ -1275,7 +1287,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="GvK-GD-vfO">
-                                <rect key="frame" x="0.0" y="479" width="375" height="138.5"/>
+                                <rect key="frame" x="0.0" y="479" width="375" height="139"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
@@ -1305,7 +1317,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view hidden="YES" alpha="0.69999999999999996" contentMode="scaleToFill" id="NN1-zt-M53">
-                                <rect key="frame" x="0.0" y="65" width="375" height="552.5"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="553"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great! You are focused." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7EJ-Gx-Up3">
@@ -1326,7 +1338,6 @@
                             <inset key="imageInsets" minX="-4" minY="0.0" maxX="0.0" maxY="-3"/>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="checkMarkImage1" destination="2HX-lA-C3y" id="C22-w5-OSK"/>
                         <outlet property="checkMarkImage2" destination="sSo-ih-Aw6" id="dci-wt-H52"/>
@@ -1341,12 +1352,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h1m-0J-PCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1953.5" y="-209.5"/>
+            <point key="canvasLocation" x="2999.5" y="-209.5"/>
         </scene>
         <!--Overwhelmed-->
         <scene sceneID="pp8-tX-j7H">
             <objects>
                 <viewController id="dYv-13-G1s" customClass="OverwhelmedViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O61-Cs-lE4"/>
+                        <viewControllerLayoutGuide type="bottom" id="67v-rd-8Ao"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="k1m-a7-8cz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
