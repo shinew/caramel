@@ -39,7 +39,11 @@ class DashboardViewController: UIViewController {
         self.updateProfile()
 
         self.dashboardCallback = DashboardCallback(updatedScoreCallback)
-        self.hrBluetooth.startScanningHRPeripheral(self.dashboardCallback.newHeartRateCallback)
+        
+        HRBluetooth.setHRUpdateCallback(self.dashboardCallback.newHeartRateCallback)
+        HRBluetooth.startScanningHRPeripheral()
+        
+        BluetoothConnectivity().setLongRunningTimer()
         
         println("Loaded DashboardViewController view!")
     }
@@ -49,7 +53,7 @@ class DashboardViewController: UIViewController {
     }
     
     @IBAction func refreshButtonDidPress(sender: AnyObject) {
-        self.hrBluetooth.startScanningHRPeripheral(self.dashboardCallback.newHeartRateCallback)
+        HRBluetooth.startScanningHRPeripheral()
         println("Restarted Bluetooth services")
     }
     
