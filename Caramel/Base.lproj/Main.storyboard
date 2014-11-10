@@ -1066,6 +1066,9 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="step4ButtonDidPress:" destination="gnD-4Q-Ldd" eventType="touchUpInside" id="Vrm-Eu-ihQ"/>
+                                </connections>
                             </button>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frustrationcheck-icon" id="2HX-lA-C3y">
                                 <rect key="frame" x="322" y="125" width="22" height="17"/>

@@ -19,50 +19,53 @@ class FrustrationViewController: UIViewController {
     @IBOutlet weak var step3Button: UIButton!
     @IBOutlet weak var step4Button: UIButton!
     
+    private var images: [UIImageView]!
+    private var buttons: [UIButton]!
+    private var index: Int!
+    
     @IBAction func step1ButtonDidPress(sender: AnyObject) {
-        checkMarkImage1.hidden = false
-        step1Button.backgroundColor = UIColor.whiteColor()
-        step1Button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        step2Button.backgroundColor = Conversion.UIColorFromRGB(31,green:150,blue:137)
-        step2Button.setTitleColor(UIColor.whiteColor(),forState: UIControlState.Normal)
+        if self.index! == 0 {
+            self.animate(self.index!)
+            self.index!++
+        }
     }
     
     @IBAction func step2ButtonDidPress(sender: AnyObject) {
-        checkMarkImage2.hidden = false
-        step2Button.backgroundColor = UIColor.whiteColor()
-        step2Button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        step3Button.backgroundColor = Conversion.UIColorFromRGB(31,green:150,blue:137)
-        step3Button.setTitleColor(UIColor.whiteColor(),forState: UIControlState.Normal)
+        if self.index! == 1 {
+            self.animate(self.index!)
+            self.index!++
+        }
     }
     
     @IBAction func step3ButtonDidPress(sender: AnyObject) {
-        checkMarkImage3.hidden = false
-        step3Button.backgroundColor = UIColor.whiteColor()
-        step3Button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        step4Button.backgroundColor = Conversion.UIColorFromRGB(31,green:150,blue:137)
-        step4Button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        if self.index! == 2 {
+            self.animate(self.index!)
+            self.index!++
+        }
+    }
+    
+    @IBAction func step4ButtonDidPress(sender: AnyObject) {
+        self.checkMarkImage4.hidden = false
+        
+    
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.images = [self.checkMarkImage1, self.checkMarkImage2, self.checkMarkImage3, self.checkMarkImage4]
+        self.buttons = [self.step1Button, self.step2Button, self.step3Button, self.step4Button]
+        self.index = 0
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func animate(index: Int) {
+        self.images[index].hidden = false
+        self.buttons[index].backgroundColor = UIColor.whiteColor()
+        self.buttons[index].setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        self.buttons[index + 1].backgroundColor = Conversion.UIColorFromRGB(31,green:150,blue:137)
+        self.buttons[index + 1].setTitleColor(UIColor.whiteColor(),forState: UIControlState.Normal)
     }
-    */
-
 }
