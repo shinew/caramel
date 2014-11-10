@@ -16,6 +16,9 @@
             <string>Univers-Light-Bold</string>
             <string>Univers-Light-Bold</string>
         </mutableArray>
+        <mutableArray key="univers-condensed-medium.ttf">
+            <string>UniversCondensed-Medium</string>
+        </mutableArray>
         <mutableArray key="univers-light-condensed-1361511939.ttf">
             <string>UniversLightCondensed-Regular</string>
             <string>UniversLightCondensed-Regular</string>
@@ -1086,6 +1089,20 @@
                                 <rect key="frame" x="322" y="540" width="22" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view hidden="YES" alpha="0.69999999999999996" contentMode="scaleToFill" id="NN1-zt-M53">
+                                <rect key="frame" x="0.0" y="65" width="375" height="552.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great! You are focused." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7EJ-Gx-Up3">
+                                        <rect key="frame" x="66" y="253" width="242" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="UniversCondensed-Medium" family="Univers Condensed" pointSize="30"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1100,6 +1117,7 @@
                         <outlet property="checkMarkImage2" destination="sSo-ih-Aw6" id="dci-wt-H52"/>
                         <outlet property="checkMarkImage3" destination="uch-5J-eBO" id="thd-LS-nZG"/>
                         <outlet property="checkMarkImage4" destination="5Ab-Sg-mCX" id="u5c-J7-DbB"/>
+                        <outlet property="maskView" destination="NN1-zt-M53" id="pD1-lH-TXR"/>
                         <outlet property="step1Button" destination="SG8-Co-dD3" id="Dlw-xC-aPk"/>
                         <outlet property="step2Button" destination="LeY-jZ-9XK" id="3Gb-Fr-uCc"/>
                         <outlet property="step3Button" destination="2sO-AO-NPH" id="NMy-Nz-6I1"/>

@@ -67,6 +67,7 @@
 		1AB847DF1A07112F008509FE /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847DA1A07112F008509FE /* DesignableView.swift */; };
 		1AB847E01A07112F008509FE /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847DB1A07112F008509FE /* Misc.swift */; };
 		1AB847E11A07112F008509FE /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847DC1A07112F008509FE /* SpringAnimation.swift */; };
+		1AEC6D491A103E9100053F17 /* ProtocolAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEC6D481A103E9100053F17 /* ProtocolAnimation.swift */; };
 		1AFFAAE31A0FF1F7002BAB2D /* OverwhelmedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFFAAE21A0FF1F7002BAB2D /* OverwhelmedViewController.swift */; };
 		1AFFAAE51A0FF203002BAB2D /* FearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFFAAE41A0FF203002BAB2D /* FearViewController.swift */; };
 		1AFFAAE71A0FF20E002BAB2D /* ConflictViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFFAAE61A0FF20E002BAB2D /* ConflictViewController.swift */; };
@@ -147,6 +148,7 @@
 		1AB847DA1A07112F008509FE /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		1AB847DB1A07112F008509FE /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
 		1AB847DC1A07112F008509FE /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		1AEC6D481A103E9100053F17 /* ProtocolAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolAnimation.swift; sourceTree = "<group>"; };
 		1AFFAAE21A0FF1F7002BAB2D /* OverwhelmedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverwhelmedViewController.swift; sourceTree = "<group>"; };
 		1AFFAAE41A0FF203002BAB2D /* FearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FearViewController.swift; sourceTree = "<group>"; };
 		1AFFAAE61A0FF20E002BAB2D /* ConflictViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConflictViewController.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 				1AFFAAE41A0FF203002BAB2D /* FearViewController.swift */,
 				1AFFAAE61A0FF20E002BAB2D /* ConflictViewController.swift */,
 				1AFFAAE81A0FF21F002BAB2D /* FrustrationViewController.swift */,
+				1AEC6D481A103E9100053F17 /* ProtocolAnimation.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				14D0E2391A008C6D0042F20A /* Caramel.xcdatamodeld in Sources */,
 				14DC38041A05A53100E992B2 /* MovementQueue.swift in Sources */,
 				14F878DF1A020BD8001FFFE2 /* Conversion.swift in Sources */,
+				1AEC6D491A103E9100053F17 /* ProtocolAnimation.swift in Sources */,
 				14A06CF91A08ADA5007B6FD3 /* Math.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
