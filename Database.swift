@@ -101,8 +101,8 @@ class Database {
     }
     
     class func getBreakActivityCounter(fixedActivity: BreakActivityCounter) -> BreakActivityCounter {
-        var activity = fixedActivity
         println("(DB) Retriving break activity counter")
+        var activity = fixedActivity
         var request = NSFetchRequest(entityName: "BreakActivityCounter")
         request.returnsObjectsAsFaults = false
         request.predicate = NSPredicate(format: "(activity == %@) AND (userID == %i)", activity.activity, activity.userID)
@@ -114,5 +114,39 @@ class Database {
             activity.counter = item.valueForKey("counter") as Int
         }
         return activity
+    }
+    
+    class func updateDailyWellnessScore(dailyScore: DailyWellnessScore) {
+        println("(DB) Updating daily wellness score")
+        var request = NSFetchRequest(entityName: "DailyWellnessScore")
+        request.returnsObjectsAsFaults = false
+        request.predicate = NSPredicate(format: "(date == %@) AND (userID == %i)", dailyScore.date, dailyScore.userID)
+        var searchResults = appContext.executeFetchRequest(request, error: nil)!
+        if searchResults.count == 0 {
+            var stressScore = NSEntityDescription.insertNewObjectForEntityForName("DailyWellnessScore", inManagedObjectContext: appContext) as NSManagedObject
+            stressScore.setValue(dailyScore.date, forKey: "date")
+            stressScore.setValue(dailyScore.score, forKey: "score")
+            stressScore.setValue(dailyScore.userID, forKey: "userID")
+        } else {
+            let item = searchResults.first! as NSManagedObject
+            item.setValue(dailyScore.score, forKey: "score")
+            appContext.save(nil)
+        }
+    }
+    
+    class func getDailyWellnessScore(fixedDailyScore: DailyWellnessScore) -> DailyWellnessScore? {
+        println("(DB) Retriving daily wellness score")
+        var dailyScore = fixedDailyScore
+        var request = NSFetchRequest(entityName: "DailyWellnessScore")
+        request.returnsObjectsAsFaults = false
+        request.predicate = NSPredicate(format: "(date == %@) AND (userID == %i)", dailyScore.date, dailyScore.userID)
+        var searchResults = appContext.executeFetchRequest(request, error: nil)!
+        if searchResults.count == 0 {
+            return nil
+        } else {
+            let item = searchResults.first! as NSManagedObject
+            dailyScore.score = item.valueForKey("score") as Int
+        }
+        return dailyScore
     }
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 
+var _lastHRBluetoothReceivedDate: NSDate?
 var _lastHRSentDate: NSDate?
 var _lastMovementDate: NSDate?
 var _lastLowStressNotifDate: NSDate?
@@ -15,6 +16,9 @@ var _lastHighStressNotifDate: NSDate?
 
 class Timer {
     //This class keeps various dates
+    
+    class func getLastHRBluetoothReceivedDate() -> NSDate? { return _lastHRBluetoothReceivedDate }
+    class func setLastHRBluetoothReceivedDate(date: NSDate!) { _lastHRBluetoothReceivedDate = date }
     
     class func getLastHRSentDate() -> NSDate? { return _lastHRSentDate }
     class func setLastHRSentDate(date: NSDate!) { _lastHRSentDate = date }
