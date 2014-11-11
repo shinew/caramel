@@ -253,7 +253,6 @@
 		14D0E2321A008C6D0042F20A /* Caramel */ = {
 			isa = PBXGroup;
 			children = (
-				1446CCAA1A10A1CA00DBA7FC /* Edge Cases */,
 				1A5347D71A07896C00CE742E /* LaunchImages */,
 				1AB847D71A07112F008509FE /* Spring */,
 				1A3D2C071A0623A900063AEB /* ViewControllers */,
@@ -261,6 +260,7 @@
 				14D0E26A1A00D4D00042F20A /* Globals */,
 				14D0E25D1A0090780042F20A /* Library */,
 				14D0E2581A008CD40042F20A /* Structures */,
+				1446CCAA1A10A1CA00DBA7FC /* Edge Cases */,
 				14D0E2351A008C6D0042F20A /* AppDelegate.swift */,
 				14D0E23C1A008C6D0042F20A /* Main.storyboard */,
 				14D0E23F1A008C6D0042F20A /* Images.xcassets */,
