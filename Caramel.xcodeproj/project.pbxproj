@@ -52,6 +52,7 @@
 		1A5347DD1A07897C00CE742E /* 5C.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A5347D91A07897C00CE742E /* 5C.png */; };
 		1A5347DE1A07897C00CE742E /* Portrait - 6 Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A5347DA1A07897C00CE742E /* Portrait - 6 Plus.png */; };
 		1A5347DF1A07897C00CE742E /* Portrait - 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A5347DB1A07897C00CE742E /* Portrait - 6.png */; };
+		1A9D8AB01A11F529004FA076 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D8AAF1A11F529004FA076 /* RegisterViewController.swift */; };
 		1AAE13FF1A0714A500B16F61 /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAE13FE1A0714A500B16F61 /* ActionsViewController.swift */; };
 		1AAE14011A0714E400B16F61 /* DeepBreathsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAE14001A0714E400B16F61 /* DeepBreathsViewController.swift */; };
 		1AB847C21A06EB95008509FE /* univers-black-normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847BD1A06EB95008509FE /* univers-black-normal.ttf */; };
@@ -138,6 +139,7 @@
 		1A5347DA1A07897C00CE742E /* Portrait - 6 Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Portrait - 6 Plus.png"; sourceTree = "<group>"; };
 		1A5347DB1A07897C00CE742E /* Portrait - 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Portrait - 6.png"; sourceTree = "<group>"; };
 		1A990CE01A06E98100C759F9 /* univers-light-normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-light-normal.ttf"; sourceTree = "<group>"; };
+		1A9D8AAF1A11F529004FA076 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1AAE13FE1A0714A500B16F61 /* ActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionsViewController.swift; sourceTree = "<group>"; };
 		1AAE14001A0714E400B16F61 /* DeepBreathsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepBreathsViewController.swift; sourceTree = "<group>"; };
 		1AB847BD1A06EB95008509FE /* univers-black-normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-black-normal.ttf"; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 		1A3D2C071A0623A900063AEB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1A9D8AAC1A11E8F4004FA076 /* Onboarding */,
 				148F34F71A113EDC00B3C941 /* Calibration */,
 				1A3C1B9E1A0772B300C34CAD /* Debug */,
 				1AB847D41A06FBA0008509FE /* Action */,
@@ -398,6 +401,14 @@
 				1A5347DB1A07897C00CE742E /* Portrait - 6.png */,
 			);
 			name = LaunchImages;
+			sourceTree = "<group>";
+		};
+		1A9D8AAC1A11E8F4004FA076 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				1A9D8AAF1A11F529004FA076 /* RegisterViewController.swift */,
+			);
+			name = Onboarding;
 			sourceTree = "<group>";
 		};
 		1AAE13FD1A07146600B16F61 /* Deep Breaths */ = {
@@ -609,6 +620,7 @@
 				1A3D2BD61A060E0500063AEB /* DashboardViewController.swift in Sources */,
 				1AB847CF1A06F5B8008509FE /* MonthlyOverviewViewController.swift in Sources */,
 				14D0E2651A009E420042F20A /* HRSample.swift in Sources */,
+				1A9D8AB01A11F529004FA076 /* RegisterViewController.swift in Sources */,
 				1A1B7DB11A07508300312B71 /* BreaksViewController.swift in Sources */,
 				1AFFAAE71A0FF20E002BAB2D /* ConflictViewController.swift in Sources */,
 				1AB847DF1A07112F008509FE /* DesignableView.swift in Sources */,
