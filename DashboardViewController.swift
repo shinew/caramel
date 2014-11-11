@@ -124,27 +124,43 @@ class DashboardViewController: UIViewController {
     private func updateProfile() {
         println("Updating profile circle and daily score")
         let currentDate = NSDate()
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: currentDate)
-        var startDate = calendar.dateFromComponents(components)!
-        var endDate = startDate.dateByAddingTimeInterval(60 * 60 * 24) //add 24hrs
+        let startDate = Conversion.dateToTimelessDate(currentDate)
+        let endDate = startDate.dateByAddingTimeInterval(60 * 60 * 24) //add 24hrs
         
         let stressIntervals = Database.getSortedStressIntervals(startDate, endDate: endDate)
         let notifRecords = Database.getSortedNotificationRecords(startDate, endDate: endDate)
 
         //updates current and lastStress scores
-        self.displayCurrentAndLastStressScores(stressIntervals)
+        self.displayLastStressScores(stressIntervals)
         
         //updates profile circle
         let scores = self.prepareStressScoresForCircle(startDate, endDate: endDate, stressIntervals: stressIntervals)
         self.profileCircleView.setStressScores(scores)
         self.profileCircleView.setNeedsDisplay()
         
-        //updates daily score
-        self.displayDailyScore(stressIntervals, notifRecords: notifRecords)
+        //updates daily wellness scores
+        
+        let newDailyScore = self.calculateDailyScore(stressIntervals, notifRecords: notifRecords)
+        if newDailyScore != nil {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.dailyOverallLabel.text = String(newDailyScore!)
+            })
+            Database.updateDailyWellnessScore(DailyWellnessScore(date: startDate, score: newDailyScore!, userID: User.getUserID()))
+        }
+        
+        let yesterdayDailyScore = Database.getDailyWellnessScore(DailyWellnessScore(
+            date: startDate.dateByAddingTimeInterval(-60 * 60 * 24),
+            score: 0,
+            userID: User.getUserID()
+        ))
+        if yesterdayDailyScore != nil {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.currentScoreLabel.text = String(yesterdayDailyScore!.score)
+            })
+        }
     }
     
-    private func displayCurrentAndLastStressScores(stressIntervals: [StressScoreInterval]) {
+    private func displayLastStressScores(stressIntervals: [StressScoreInterval]) {
         if stressIntervals.count == 0 {
             return
         }
@@ -156,7 +172,6 @@ class DashboardViewController: UIViewController {
                 if !updatedStressLabel {
                     updatedStressLabel = true
                     dispatch_async(dispatch_get_main_queue(), {
-                        self.lastStressLabel.text = "\(String(stressIntervals[i].score) )%"
                         self.lastEventTimeLabel.text = Conversion.dateToTimeString(stressIntervals[i].endDate)
                     })
                 }
@@ -217,10 +232,10 @@ class DashboardViewController: UIViewController {
         return result
     }
 
-    private func displayDailyScore(stressIntervals: [StressScoreInterval], notifRecords: [NotificationRecord]) {
+    private func calculateDailyScore(stressIntervals: [StressScoreInterval], notifRecords: [NotificationRecord]) -> Int? {
         println("Calculating and displaying daily overall score")
         if stressIntervals.count == 0 {
-            return
+            return nil
         }
         var score = 0.0
         var stressScores = [Int]()
@@ -244,6 +259,6 @@ class DashboardViewController: UIViewController {
         score = min(99.0, score)
         score = max(1.0, score)
         var wellnessScore = Int(100.0 - score)
-        self.dailyOverallLabel.text = String(wellnessScore)
+        return wellnessScore
     }
 }

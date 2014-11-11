@@ -24,6 +24,12 @@ class Conversion {
         return dateString
     }
     
+    class func dateToTimelessDate(date: NSDate!) -> NSDate {
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: date)
+        return calendar.dateFromComponents(components)!
+    }
+    
     class func UIColorFromRGB(red: Int!, green: Int!, blue: Int!) -> UIColor {
         return UIColor(
             red: CGFloat(Double(red)/255.0),
