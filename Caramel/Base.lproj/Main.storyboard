@@ -1160,7 +1160,7 @@
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gnD-4Q-Ldd" kind="show" id="4XX-oj-lmv"/>
+                                    <segue destination="GXa-z6-egl" kind="show" id="jdU-2v-JvC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQa-An-FEU">
@@ -1472,61 +1472,57 @@
             </objects>
             <point key="canvasLocation" x="2425.5" y="555.5"/>
         </scene>
-        <!--Frustration-->
-        <scene sceneID="HOW-hN-Fla">
+        <!--Frustration View Controller-->
+        <scene sceneID="8w9-qD-50g">
             <objects>
-                <viewController id="gnD-4Q-Ldd" customClass="FrustrationViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GXa-z6-egl" customClass="FrustrationViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yJn-lP-pl5"/>
-                        <viewControllerLayoutGuide type="bottom" id="hX1-K6-x6Q"/>
+                        <viewControllerLayoutGuide type="top" id="oKg-ka-9mc"/>
+                        <viewControllerLayoutGuide type="bottom" id="71y-Vs-Ium"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DFL-1b-xNV">
+                    <view key="view" contentMode="scaleToFill" id="spw-eb-5r2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SG8-Co-dD3">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD9-ju-gDI">
                                 <rect key="frame" x="0.0" y="65" width="375" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.074509803921568626" green="0.59215686274509804" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.074509803920000006" green="0.59215686270000001" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
                                 <state key="normal" title="Identify the problem">
-                                    <color key="titleColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="step1ButtonDidPress:" destination="gnD-4Q-Ldd" eventType="touchUpInside" id="AWk-22-LPw"/>
+                                    <action selector="step1ButtonDidPress:" destination="GXa-z6-egl" eventType="touchUpInside" id="i18-Kc-eOk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LeY-jZ-9XK">
-                                <rect key="frame" x="0.0" y="203" width="375" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cO3-ZP-alJ">
+                                <rect key="frame" x="0.0" y="201" width="375" height="139"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
                                 <state key="normal" title="Find a solution">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="step2ButtonDidPress:" destination="gnD-4Q-Ldd" eventType="touchUpInside" id="75S-q3-osf"/>
+                                    <action selector="step2ButtonDidPress:" destination="GXa-z6-egl" eventType="touchUpInside" id="Afc-cf-Nfi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2sO-AO-NPH">
-                                <rect key="frame" x="0.0" y="341" width="375" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sln-0p-Jl1">
+                                <rect key="frame" x="0.0" y="340" width="375" height="139"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
                                 <state key="normal" title="Re-engage with patience">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="step3ButtonDidPress:" destination="gnD-4Q-Ldd" eventType="touchUpInside" id="BI9-Cr-C9n"/>
+                                    <action selector="step3ButtonDidPress:" destination="GXa-z6-egl" eventType="touchUpInside" id="NAH-Ce-5d1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="GvK-GD-vfO">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nVN-85-s8a">
                                 <rect key="frame" x="0.0" y="479" width="375" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
                                 <inset key="titleEdgeInsets" minX="50" minY="0.0" maxX="50" maxY="0.0"/>
                                 <state key="normal" title="If no immediate solution, do something different">
@@ -1534,61 +1530,52 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="step4ButtonDidPress:" destination="gnD-4Q-Ldd" eventType="touchUpInside" id="Vrm-Eu-ihQ"/>
+                                    <action selector="step4ButtonDidPress:" destination="GXa-z6-egl" eventType="touchUpInside" id="Ffi-Nb-dLd"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frustrationcheck-icon" id="2HX-lA-C3y">
-                                <rect key="frame" x="322" y="125" width="22" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frustrationcheck-icon" translatesAutoresizingMaskIntoConstraints="NO" id="XNv-KW-vml">
+                                <rect key="frame" x="317" y="126" width="22" height="17"/>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frustrationcheck-icon" id="sSo-ih-Aw6">
-                                <rect key="frame" x="322" y="264" width="22" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frustrationcheck-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Hhz-1W-rcY">
+                                <rect key="frame" x="317" y="262" width="22" height="17"/>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frustrationcheck-icon" id="uch-5J-eBO">
-                                <rect key="frame" x="322" y="402" width="22" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frustrationcheck-icon" translatesAutoresizingMaskIntoConstraints="NO" id="y7v-ti-OVs">
+                                <rect key="frame" x="317" y="401" width="22" height="17"/>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frustrationcheck-icon" id="5Ab-Sg-mCX">
-                                <rect key="frame" x="322" y="540" width="22" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frustrationcheck-icon" translatesAutoresizingMaskIntoConstraints="NO" id="tcK-Bh-hcd">
+                                <rect key="frame" x="317" y="540" width="22" height="17"/>
                             </imageView>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nna-3R-b3X">
+                                <rect key="frame" x="0.0" y="65" width="375" height="553"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Great! You are now focused." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gx-EQ-l76">
+                                        <rect key="frame" x="68" y="262" width="234" height="29"/>
+                                        <fontDescription key="fontDescription" name="UniversCondensed-Medium" family="Univers Condensed" pointSize="24"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Frustration" id="tjD-lP-rh4">
-                        <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="A78-uj-6oL">
-                            <inset key="imageInsets" minX="-4" minY="0.0" maxX="0.0" maxY="-3"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="checkMarkImage1" destination="2HX-lA-C3y" id="C22-w5-OSK"/>
-                        <outlet property="checkMarkImage2" destination="sSo-ih-Aw6" id="dci-wt-H52"/>
-                        <outlet property="checkMarkImage3" destination="uch-5J-eBO" id="thd-LS-nZG"/>
-                        <outlet property="checkMarkImage4" destination="5Ab-Sg-mCX" id="u5c-J7-DbB"/>
-                        <outlet property="maskView" destination="NN1-zt-M53" id="pD1-lH-TXR"/>
-                        <outlet property="step1Button" destination="SG8-Co-dD3" id="Dlw-xC-aPk"/>
-                        <outlet property="step2Button" destination="LeY-jZ-9XK" id="3Gb-Fr-uCc"/>
-                        <outlet property="step3Button" destination="2sO-AO-NPH" id="NMy-Nz-6I1"/>
-                        <outlet property="step4Button" destination="GvK-GD-vfO" id="aPf-lG-Vsp"/>
+                        <outlet property="checkMarkImage1" destination="XNv-KW-vml" id="ciO-o5-0md"/>
+                        <outlet property="checkMarkImage2" destination="Hhz-1W-rcY" id="QVL-Rs-49k"/>
+                        <outlet property="checkMarkImage3" destination="y7v-ti-OVs" id="1SP-FA-IbC"/>
+                        <outlet property="checkMarkImage4" destination="tcK-Bh-hcd" id="lpA-gy-7ak"/>
+                        <outlet property="maskView" destination="Nna-3R-b3X" id="vXf-Yw-7ec"/>
+                        <outlet property="step1Button" destination="hD9-ju-gDI" id="KCM-Nz-bhw"/>
+                        <outlet property="step2Button" destination="cO3-ZP-alJ" id="our-VI-40P"/>
+                        <outlet property="step3Button" destination="Sln-0p-Jl1" id="mix-Hm-PVZ"/>
+                        <outlet property="step4Button" destination="nVN-85-s8a" id="hhN-wU-QK9"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h1m-0J-PCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view hidden="YES" alpha="0.69999999999999996" contentMode="scaleToFill" id="NN1-zt-M53">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Great! You are focused." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7EJ-Gx-Up3">
-                            <rect key="frame" x="66" y="253" width="242" height="36"/>
-                            <fontDescription key="fontDescription" name="UniversCondensed-Medium" family="Univers Condensed" pointSize="30"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VQN-k7-54f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2999.5" y="-209.5"/>
+            <point key="canvasLocation" x="3131.5" y="-251.5"/>
         </scene>
         <!--Overwhelmed-->
         <scene sceneID="pp8-tX-j7H">
