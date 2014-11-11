@@ -17,6 +17,14 @@ class DebugViewController: UIViewController {
     
     @IBOutlet weak var testNotificationButton: UIButton!
     
+    @IBOutlet weak var getUserIDButton: UIButton!
+    @IBOutlet weak var userIDLabel: UILabel!
+    
+    
+    @IBAction func getUserIDButtonDidPress(sender: AnyObject) {
+        self.userIDLabel.text = "\(User.getUserID())"
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
