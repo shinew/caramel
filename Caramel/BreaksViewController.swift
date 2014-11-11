@@ -27,9 +27,17 @@ class BreaksViewController: UIViewController {
     
     var buttonCounters = [String: BreakActivityCounter]()
     let activities = ["Walking", "Coffee", "Talking", "Napping", "Music", "Snack"]
-
+    var buttons: [UIButton]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.buttons = [self.walkingButton, self.coffeeButton, self.talkingButton, self.nappingButton, self.musicButton, self.snackButton]
+        
+        for index in 0..<buttons.count{
+            buttons[index].layer.borderColor = UIColor.blackColor().CGColor
+            buttons[index].layer.borderWidth = 1
+        }
+        
         for activity in self.activities {
             var activityCounter = BreakActivityCounter(activity: activity, counter: 0, userID: User.getUserID())
             self.buttonCounters[activity] = Database.getBreakActivityCounter(activityCounter)
