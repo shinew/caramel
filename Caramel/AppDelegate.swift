@@ -114,4 +114,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        //Get the storyboard
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var actionsTabIndex = 3
+        if notification.description.rangeOfString("Internet") != nil {
+            actionsTabIndex = 0
+        }
+        var tabBarController = self.window!.rootViewController! as UITabBarController
+        tabBarController.selectedIndex = actionsTabIndex
+        var actionsViewController = tabBarController.viewControllers![actionsTabIndex] as UINavigationController
+        actionsViewController.popToRootViewControllerAnimated(false)
+    }
 }
