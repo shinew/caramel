@@ -17,6 +17,14 @@ class DebugViewController: UIViewController {
     
     @IBOutlet weak var testNotificationButton: UIButton!
     
+    @IBOutlet weak var getUserIDButton: UIButton!
+    @IBOutlet weak var userIDLabel: UILabel!
+    
+    
+    @IBAction func getUserIDButtonDidPress(sender: AnyObject) {
+        self.userIDLabel.text = "\(User.getUserID())"
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,6 +77,7 @@ class DebugViewController: UIViewController {
     }
     
     @IBAction func testNotificationButtonDidPress(sender: UIButton) {
+        AppDelegate.setNotificationType(.LowStress)
         var stressNotification = UILocalNotification()
         stressNotification.alertBody = "This is a test stress notification message"
         stressNotification.soundName = UILocalNotificationDefaultSoundName

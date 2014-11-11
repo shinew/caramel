@@ -16,14 +16,17 @@ let _noInternetMessage = "We can't seem to connect to the Internet. Try reconnec
 class Notification {
     
     class func sendNoInternetNotification() {
+        AppDelegate.setNotificationType(.Standard)
         Notification.sendNotification(_noInternetMessage)
     }
     
     class func sendLowStressNotification() {
+        AppDelegate.setNotificationType(.LowStress)
         Notification.sendNotification(_lowStressMessage)
     }
     
     class func sendHighStressNotification() {
+        AppDelegate.setNotificationType(.HighStress)
         Notification.sendNotification(_highStressMessage)
     }
     
