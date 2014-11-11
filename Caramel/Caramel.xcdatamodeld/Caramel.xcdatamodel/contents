@@ -5,6 +5,11 @@
         <attribute name="counter" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
+    <entity name="DailyWellnessScore" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
     <entity name="NotificationRecord" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
@@ -17,8 +22,9 @@
         <attribute name="userID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
+        <element name="BreakActivityCounter" positionX="-63" positionY="18" width="128" height="90"/>
         <element name="NotificationRecord" positionX="-63" positionY="9" width="128" height="90"/>
         <element name="StressScoreInterval" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="BreakActivityCounter" positionX="-63" positionY="18" width="128" height="90"/>
+        <element name="DailyWellnessScore" positionX="-63" positionY="27" width="128" height="90"/>
     </elements>
 </model>
