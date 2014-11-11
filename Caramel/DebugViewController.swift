@@ -69,6 +69,7 @@ class DebugViewController: UIViewController {
     }
     
     @IBAction func testNotificationButtonDidPress(sender: UIButton) {
+        AppDelegate.setNotificationType(.LowStress)
         var stressNotification = UILocalNotification()
         stressNotification.alertBody = "This is a test stress notification message"
         stressNotification.soundName = UILocalNotificationDefaultSoundName

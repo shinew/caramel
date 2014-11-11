@@ -1122,7 +1122,7 @@
         <!--Protocols-->
         <scene sceneID="vCu-bg-R4c">
             <objects>
-                <viewController id="83e-tV-PWP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProtocolViewController" id="83e-tV-PWP" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GeC-up-d2M"/>
                         <viewControllerLayoutGuide type="bottom" id="yqG-3E-efy"/>

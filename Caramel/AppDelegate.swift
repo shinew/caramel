@@ -9,11 +9,18 @@
 import UIKit
 import CoreData
 
+enum NotificationType {
+    case Standard
+    case LowStress
+    case HighStress
+}
+
+var _notificationType = NotificationType.Standard
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         //registering for sending user various kinds of notifications
@@ -113,18 +120,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    
+    class func setNotificationType(newType: NotificationType) {
+        _notificationType = newType
+    }
     
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         //Get the storyboard
-        var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var actionsTabIndex = 3
-        if notification.description.rangeOfString("Internet") != nil {
-            actionsTabIndex = 0
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabBarController = self.window!.rootViewController! as UITabBarController
+        switch _notificationType {
+        case .Standard:
+            //opens Dashboard page
+            tabBarController.selectedIndex = 0
+            var dashboardNavVC = tabBarController.viewControllers![0] as UINavigationController
+            dashboardNavVC.popToRootViewControllerAnimated(false)
+        case .LowStress:
+            //opens Action page
+            tabBarController.selectedIndex = 2
+            var actionNavVC = tabBarController.viewControllers![2] as UINavigationController
+            actionNavVC.popToRootViewControllerAnimated(false)
+        case .HighStress:
+            //opens Actions -> Protocols page
+            tabBarController.selectedIndex = 2
+            var actionNavVC = tabBarController.viewControllers![2] as UINavigationController
+            actionNavVC.popToRootViewControllerAnimated(false)
+            
+            let protocolVC = storyboard.instantiateViewControllerWithIdentifier("ProtocolViewController") as UIViewController
+            actionNavVC.pushViewController(protocolVC, animated: false)
         }
-        var tabBarController = self.window!.rootViewController! as UITabBarController
-        tabBarController.selectedIndex = actionsTabIndex
-        var actionsViewController = tabBarController.viewControllers![actionsTabIndex] as UINavigationController
-        actionsViewController.popToRootViewControllerAnimated(false)
     }
 }
