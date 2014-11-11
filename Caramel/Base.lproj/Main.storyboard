@@ -308,10 +308,12 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="KHR-HA-eJ5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="KOu-cY-fM7" secondAttribute="bottom" constant="5" id="Ayl-Jq-wxG"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="KHR-HA-eJ5" secondAttribute="bottom" id="BFN-dV-JEw"/>
                                             <constraint firstItem="KHR-HA-eJ5" firstAttribute="top" secondItem="KOu-cY-fM7" secondAttribute="bottom" constant="10" id="Et6-Z6-TB1"/>
                                             <constraint firstItem="KOu-cY-fM7" firstAttribute="top" secondItem="AJV-Jg-wJs" secondAttribute="top" id="G6V-Tw-gbr"/>
                                             <constraint firstItem="KOu-cY-fM7" firstAttribute="trailing" secondItem="KHR-HA-eJ5" secondAttribute="trailing" id="GbP-I4-7Xw"/>
+                                            <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="KHR-HA-eJ5" secondAttribute="bottom" constant="15" id="K7O-2u-aJi"/>
                                             <constraint firstItem="KOu-cY-fM7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AJV-Jg-wJs" secondAttribute="leading" id="MHm-0b-5Hw"/>
                                             <constraint firstAttribute="centerX" secondItem="KOu-cY-fM7" secondAttribute="centerX" id="PSL-Ta-Dn2"/>
                                             <constraint firstItem="KHR-HA-eJ5" firstAttribute="leading" secondItem="KOu-cY-fM7" secondAttribute="leading" id="ind-rz-0Vw"/>
@@ -328,6 +330,7 @@
                                                 <exclude reference="ind-rz-0Vw"/>
                                                 <exclude reference="rah-p2-r9s"/>
                                                 <exclude reference="xro-iH-Cm6"/>
+                                                <exclude reference="zkv-QR-hWs"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -347,6 +350,7 @@
                                     <constraint firstItem="wRO-Lp-CpN" firstAttribute="top" secondItem="PfE-bC-iaq" secondAttribute="top" id="J2M-Nb-DKc"/>
                                     <constraint firstItem="wRO-Lp-CpN" firstAttribute="trailing" secondItem="AJV-Jg-wJs" secondAttribute="trailing" id="KFk-U9-YSY"/>
                                     <constraint firstItem="wRO-Lp-CpN" firstAttribute="centerX" secondItem="KHR-HA-eJ5" secondAttribute="centerX" id="LwM-g8-B6R"/>
+                                    <constraint firstItem="hPu-MM-edu" firstAttribute="height" secondItem="AJV-Jg-wJs" secondAttribute="height" id="NiO-uU-io7"/>
                                     <constraint firstItem="AJV-Jg-wJs" firstAttribute="top" secondItem="T5G-US-b3u" secondAttribute="top" id="NwH-pY-ULI"/>
                                     <constraint firstItem="PfE-bC-iaq" firstAttribute="leading" secondItem="1Wi-Vs-rbz" secondAttribute="leadingMargin" id="Oh7-tq-6Vu"/>
                                     <constraint firstItem="wRO-Lp-CpN" firstAttribute="bottom" secondItem="PfE-bC-iaq" secondAttribute="bottom" id="PH4-gI-c3U"/>
