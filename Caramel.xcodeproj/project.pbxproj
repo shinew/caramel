@@ -376,7 +376,6 @@
 			isa = PBXGroup;
 			children = (
 				1A9D8AAC1A11E8F4004FA076 /* Onboarding */,
-				148F34F71A113EDC00B3C941 /* Calibration */,
 				1A3C1B9E1A0772B300C34CAD /* Debug */,
 				1AB847D41A06FBA0008509FE /* Action */,
 				1AB847D11A06F601008509FE /* Habits */,
@@ -410,6 +409,7 @@
 		1A9D8AAC1A11E8F4004FA076 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				148F34F71A113EDC00B3C941 /* Calibration */,
 				1A9D8AAF1A11F529004FA076 /* RegisterViewController.swift */,
 			);
 			name = Onboarding;

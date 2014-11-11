@@ -30,11 +30,12 @@ class RegisterViewController: UIViewController {
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
         if identifier == "loginSuccessSegue" && self.firstNameTextField.text != "" && self.lastNameTextField.text != "" && self.passwordTextField.text != "" {
             self.didCompleteSignup()
+            self.signUpButton.setTitle("Thanks!", forState: UIControlState.Normal)
             return true
         } else {
-            signUpButton.setTitle("Please complete all fields.", forState: UIControlState.Normal)
-            signUpButton.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
-            signUpButton.layer.borderColor = UIColor.redColor().CGColor
+            self.signUpButton.setTitle("Please complete all fields.", forState: UIControlState.Normal)
+            self.signUpButton.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
+            self.signUpButton.layer.borderColor = UIColor.redColor().CGColor
             return false
         }
     }

@@ -10,6 +10,9 @@ import UIKit
 
 class CalibrationViewController: UIViewController {
     
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
     var startDate: NSDate?
     var endDate: NSDate?
     var previousHRCallback: ((NSData!) -> Void)?

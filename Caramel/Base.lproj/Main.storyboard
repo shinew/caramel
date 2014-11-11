@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Jv9-lT-bWw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NaH-e3-zsE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -12,6 +12,8 @@
             <string>Univers-Condensed-Bold</string>
         </mutableArray>
         <mutableArray key="Univers-Light-Bold.ttf">
+            <string>Univers-Light-Bold</string>
+            <string>Univers-Light-Bold</string>
             <string>Univers-Light-Bold</string>
             <string>Univers-Light-Bold</string>
             <string>Univers-Light-Bold</string>
@@ -106,7 +108,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Weekly Overview" id="OvF-tg-KO4">
-                        <barButtonItem key="leftBarButtonItem" image="settings-icon" id="zZw-NU-FaH"/>
                         <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="uOm-an-IJZ">
                             <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-3"/>
                         </barButtonItem>
@@ -115,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hoe-zS-Cdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902.1875" y="-1084.3309859154929"/>
+            <point key="canvasLocation" x="1571.5" y="-1084.5"/>
         </scene>
         <!--Monthly-->
         <scene sceneID="vtH-rd-pbn">
@@ -148,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJ6-ML-fuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2723.4375" y="-1084.3309859154929"/>
+            <point key="canvasLocation" x="2027.5" y="-1084.5"/>
         </scene>
         <!--Habits-->
         <scene sceneID="chw-Wd-wiO">
@@ -169,7 +170,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Habits" id="djb-V2-pfX">
-                        <barButtonItem key="leftBarButtonItem" image="settings-icon" id="LNx-Yh-cwj"/>
                         <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="S3k-Yb-tML">
                             <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-3"/>
                         </barButtonItem>
@@ -178,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DV6-UI-ZBK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902.1875" y="-221.30281690140845"/>
+            <point key="canvasLocation" x="1571.5" y="-221.5"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="XvB-Ll-uJb">
@@ -447,7 +447,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Dashboard" id="CbV-sf-hKN">
-                        <barButtonItem key="leftBarButtonItem" image="settings-icon" id="jkv-VY-Z59"/>
+                        <barButtonItem key="leftBarButtonItem" image="debug-icon" id="6oP-BJ-Ovk">
+                            <connections>
+                                <segue destination="d3B-FT-PBL" kind="show" id="Cos-9m-Gh8"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="Rqd-x6-c0c">
                             <connections>
                                 <action selector="refreshButtonDidPress:" destination="BQQ-jZ-s5E" id="5OX-gt-fqP"/>
@@ -468,92 +472,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bf2-nj-KFv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1911.5" y="-1958.5"/>
-        </scene>
-        <!--Register View Controller-->
-        <scene sceneID="nAE-lT-y7c">
-            <objects>
-                <viewController id="Jv9-lT-bWw" customClass="RegisterViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ibf-4z-ul1"/>
-                        <viewControllerLayoutGuide type="bottom" id="sut-ZK-82y"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7Rk-OZ-tuT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello friend." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4N-FI-w8A">
-                                <rect key="frame" x="134" y="53" width="107" height="20"/>
-                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="7dM-UD-BsM">
-                                <rect key="frame" x="136" y="268" width="199" height="30"/>
-                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYq-Ws-ish">
-                                <rect key="frame" x="40" y="272" width="76" height="21"/>
-                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="16"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Thanks for taking part in our alpha! We'll need 5 minutes of quiet time to set-up. " selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SyF-Zx-aQ7">
-                                <rect key="frame" x="29" y="96" width="317.5" height="55.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdB-O4-BXm">
-                                <rect key="frame" x="40" y="180" width="83" height="21"/>
-                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="16"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBC-fX-k7y">
-                                <rect key="frame" x="40" y="226" width="83" height="21"/>
-                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="16"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eab-uI-M40">
-                                <rect key="frame" x="40" y="317" width="295" height="30"/>
-                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
-                                <state key="normal" title="Sign Up">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="NaH-e3-zsE" kind="show" identifier="loginSuccessSegue" id="4Vn-Sc-03j"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="foT-TL-bja">
-                                <rect key="frame" x="136" y="173" width="199" height="30"/>
-                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="txW-id-6JV">
-                                <rect key="frame" x="136" y="219" width="199" height="30"/>
-                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="firstNameTextField" destination="foT-TL-bja" id="1Zx-dO-uPL"/>
-                        <outlet property="lastNameTextField" destination="txW-id-6JV" id="Phq-md-f8R"/>
-                        <outlet property="passwordTextField" destination="7dM-UD-BsM" id="9KE-Fb-tuj"/>
-                        <outlet property="signUpButton" destination="eab-uI-M40" id="gCB-sH-8HZ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qsy-xw-QTW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-229.5" y="-696.5"/>
+            <point key="canvasLocation" x="1571.5" y="-1958.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fbS-rR-cFb">
@@ -670,7 +589,6 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Actions" id="Ett-Or-Mb7">
-                        <barButtonItem key="leftBarButtonItem" image="settings-icon" id="Puo-hd-Zb8"/>
                         <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="GMI-VK-5ar">
                             <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-3"/>
                         </barButtonItem>
@@ -679,7 +597,163 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R98-z6-I0M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902.1875" y="586.79577464788724"/>
+            <point key="canvasLocation" x="1485.5" y="555.5"/>
+        </scene>
+        <!--Register-->
+        <scene sceneID="rdA-ee-nVu">
+            <objects>
+                <viewController id="HvO-Ly-VYz" customClass="RegisterViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n1b-Jp-TB9"/>
+                        <viewControllerLayoutGuide type="bottom" id="lQt-N0-Ngg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fYj-9B-RZ2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello friend." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6P-np-8Pk">
+                                <rect key="frame" x="134" y="93" width="107" height="20"/>
+                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="tZe-5w-7ix">
+                                <rect key="frame" x="136" y="308" width="199" height="30"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXk-b8-IK8">
+                                <rect key="frame" x="40" y="312" width="76" height="21"/>
+                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Thanks for taking part in our alpha! We'll need 5 minutes of quiet time to set-up. " selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJs-QX-iiz">
+                                <rect key="frame" x="29" y="136.5" width="317.5" height="55.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0J-Ge-Nde">
+                                <rect key="frame" x="40" y="220" width="83" height="21"/>
+                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mjv-Bw-Poh">
+                                <rect key="frame" x="40" y="266" width="83" height="21"/>
+                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfc-g4-kLd">
+                                <rect key="frame" x="40" y="357" width="295" height="30"/>
+                                <fontDescription key="fontDescription" name="Univers-Light-Bold" family="Univers-Light" pointSize="17"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="XsB-6y-3G6" kind="show" identifier="loginSuccessSegue" id="udB-Kh-1c0"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Rn0-2j-U9M">
+                                <rect key="frame" x="136" y="213" width="199" height="30"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="wGo-XD-V5v">
+                                <rect key="frame" x="136" y="259" width="199" height="30"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Register" id="a77-0o-6bA">
+                        <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="TKm-9O-9jp">
+                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-3"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="firstNameTextField" destination="Rn0-2j-U9M" id="guk-FX-8dM"/>
+                        <outlet property="lastNameTextField" destination="wGo-XD-V5v" id="P0C-rq-xbx"/>
+                        <outlet property="passwordTextField" destination="tZe-5w-7ix" id="h5D-38-Zoy"/>
+                        <outlet property="signUpButton" destination="xfc-g4-kLd" id="sgb-qF-R3h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZvB-1q-4GL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1485.5" y="1404.5"/>
+        </scene>
+        <!--Calibration-->
+        <scene sceneID="Z47-oB-dGm">
+            <objects>
+                <viewController id="XsB-6y-3G6" customClass="CalibrationViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Imf-BL-1hB"/>
+                        <viewControllerLayoutGuide type="bottom" id="ynv-d2-c87"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Ae-IL-oHE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="In the next five minutes, meditate without" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Q5-ec-38N">
+                                <rect key="frame" x="16" y="391" width="316" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="conciscously controlling your breaths so" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIO-bH-kLl">
+                                <rect key="frame" x="16" y="420" width="309" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HGm-3e-dRP">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="app-icon" translatesAutoresizingMaskIntoConstraints="NO" id="cFK-jR-Sz6">
+                                        <rect key="frame" x="152" y="77" width="70" height="99"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Beyond needs five minutes to understand your body. Let's meditate for five minutes without controlling your breath." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDI-T1-QXr">
+                                        <rect key="frame" x="23" y="214" width="329" height="75"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTS-Lw-xnN">
+                                        <rect key="frame" x="23" y="309" width="329" height="30"/>
+                                        <fontDescription key="fontDescription" name="Univers-Light-Bold" family="Univers-Light" pointSize="15"/>
+                                        <state key="normal" title="Start Now.">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.30588236451148987" green="0.57254904508590698" blue="0.87450987100601196" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Calibration" id="XUM-Ci-aQO" customClass="Cao">
+                        <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="XwC-o0-WQw">
+                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-3"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="JDI-T1-QXr" id="tbt-pr-rLv"/>
+                        <outlet property="startButton" destination="dTS-Lw-xnN" id="mBT-1g-dry"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="leb-Ub-9Tm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1953.5" y="1404.5"/>
         </scene>
         <!--Debug View Controller-->
         <scene sceneID="9o5-6H-XsG">
@@ -809,7 +883,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mpu-sZ-tZ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1911.5625" y="1405.4577464788731"/>
+            <point key="canvasLocation" x="2033.5" y="-1958.5"/>
         </scene>
         <!--Deep Breaths-->
         <scene sceneID="fej-qX-sCZ">
@@ -1104,7 +1178,7 @@
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gnD-4Q-Ldd" kind="push" id="4XX-oj-lmv"/>
+                                    <segue destination="gnD-4Q-Ldd" kind="show" id="4XX-oj-lmv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQa-An-FEU">
@@ -1117,7 +1191,7 @@
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="N8J-DU-LSA" kind="push" id="Wt7-Kz-sEk"/>
+                                    <segue destination="N8J-DU-LSA" kind="show" id="Wt7-Kz-sEk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wo-j4-wK8">
@@ -1130,7 +1204,7 @@
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dYv-13-G1s" kind="push" id="hP2-LN-jhh"/>
+                                    <segue destination="dYv-13-G1s" kind="show" id="hP2-LN-jhh"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="vZO-u8-hUm">
@@ -1175,7 +1249,7 @@
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="tEV-un-hc9" kind="push" id="hg8-h4-Hqh"/>
+                                    <segue destination="tEV-un-hc9" kind="show" id="hg8-h4-Hqh"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fear-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ofj-12-kJL">
@@ -1619,7 +1693,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqY-u8-MHi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2425.5" y="-209.5"/>
+            <point key="canvasLocation" x="2033.5" y="-209.5"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="lsU-ga-Rei">
@@ -1706,11 +1780,11 @@
             </objects>
             <point key="canvasLocation" x="999.375" y="576.76056338028161"/>
         </scene>
-        <!--Debug-->
+        <!--Calibration-->
         <scene sceneID="cpt-ZB-Bca">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dUH-h8-TIH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Debug" id="rUu-KX-kD6"/>
+                <navigationController title="Calibration" automaticallyAdjustsScrollViewInsets="NO" id="dUH-h8-TIH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calibration" image="calibration-icon" selectedImage="settings-icon" id="rUu-KX-kD6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AAk-Yb-D5d">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1718,7 +1792,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="d3B-FT-PBL" kind="relationship" relationship="rootViewController" id="Jbd-pr-TjO"/>
+                        <segue destination="HvO-Ly-VYz" kind="relationship" relationship="rootViewController" id="ABh-Pk-5Z5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KNe-43-cwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1730,8 +1804,11 @@
         <image name="Rectangle" width="255" height="314"/>
         <image name="action-icon" width="26" height="26"/>
         <image name="anger-icon" width="35" height="31"/>
+        <image name="app-icon" width="70" height="99"/>
         <image name="calendar-icon" width="23" height="24"/>
+        <image name="calibration-icon" width="24" height="24"/>
         <image name="conflictcheck-icon" width="22" height="17"/>
+        <image name="debug-icon" width="16" height="16"/>
         <image name="fear-icon" width="31" height="31"/>
         <image name="fearcheck-icon" width="22" height="17"/>
         <image name="frustration-icon" width="28" height="32"/>
