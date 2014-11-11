@@ -40,7 +40,7 @@ class CalibrationViewController: UIViewController {
         self.previousHRCallback = HRBluetooth.getHRUpdateCallback()
         HRBluetooth.setHRUpdateCallback(self.calibrationCallback.newHeartRateCallback)
         
-        var timer = NSTimer.scheduledTimerWithTimeInterval(300, target: self, selector: Selector("endButtonDidPress"), userInfo: nil, repeats: false)
+        var timer = NSTimer.scheduledTimerWithTimeInterval(305, target: self, selector: Selector("endButtonDidPress"), userInfo: nil, repeats: false)
         
         self.startButton.setTitle("Perfect. We'll vibrate you when it's done.", forState: UIControlState.Normal)
         
