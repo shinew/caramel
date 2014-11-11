@@ -200,6 +200,7 @@
 				1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */,
 			);
 			name = "Edge Cases";
+			path = ..;
 			sourceTree = "<group>";
 		};
 		148E40811A00F80200952565 /* Library */ = {
@@ -222,7 +223,6 @@
 		14D0E2271A008C6D0042F20A = {
 			isa = PBXGroup;
 			children = (
-				1446CCAA1A10A1CA00DBA7FC /* Edge Cases */,
 				14D0E2321A008C6D0042F20A /* Caramel */,
 				14D0E24B1A008C6D0042F20A /* CaramelTests */,
 				14D0E2311A008C6D0042F20A /* Products */,
@@ -241,6 +241,7 @@
 		14D0E2321A008C6D0042F20A /* Caramel */ = {
 			isa = PBXGroup;
 			children = (
+				1446CCAA1A10A1CA00DBA7FC /* Edge Cases */,
 				1A5347D71A07896C00CE742E /* LaunchImages */,
 				1AB847D71A07112F008509FE /* Spring */,
 				1A3D2C071A0623A900063AEB /* ViewControllers */,
