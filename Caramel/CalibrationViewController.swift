@@ -2,11 +2,12 @@
 //  CalibrationViewController.swift
 //  Caramel
 //
-//  Created by Shine Wang on 2014-11-10.
+//  Created by Shine Wang and James Sun on 2014-11-10.
 //  Copyright (c) 2014 Beyond. All rights reserved.
 //
 
 import UIKit
+import AudioToolbox
 
 class CalibrationViewController: UIViewController {
     
@@ -20,19 +21,33 @@ class CalibrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.startButton.layer.cornerRadius = 5
+        self.startButton.layer.borderWidth = 1
+        self.startButton.layer.borderColor = UIColor.whiteColor().CGColor
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func startButtonDidPress() {
-        //refactor this into the IBAction outlet later
+    @IBAction func startButtonDidPress(sender: AnyObject) {
         self.startDate = NSDate()
         HRQueue.popAll()
         
         self.previousHRCallback = HRBluetooth.getHRUpdateCallback()
         HRBluetooth.setHRUpdateCallback(self.calibrationCallback.newHeartRateCallback)
+        
+        var timer = NSTimer.scheduledTimerWithTimeInterval(300, target: self, selector: Selector("endButtonDidPress"), userInfo: nil, repeats: false)
+        
+        self.startButton.setTitle("Perfect. We'll vibrate you when it's done.", forState: UIControlState.Normal)
+        
+        self.descriptionTextView.text = "Please don't meditate. Just sit and relax. If you were wondering, Beyond's logo is a pile of three meditation rocks."
+        self.descriptionTextView.textColor = UIColor.whiteColor()
+        self.descriptionTextView.font = UIFont(name: "Univers-Light-Normal", size: 17)
+    }
+    
+    private func vibratePhone() {
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
     func endButtonDidPress() {
@@ -43,5 +58,9 @@ class CalibrationViewController: UIViewController {
         
         HTTPRequest.sendHRRequest(hrSamples, self.calibrationCallback.httpResponseCallbackGenerator("HR"))
         HTTPRequest.sendTrainingIntervalRequest(trainingInterval, self.calibrationCallback.httpResponseCallbackGenerator("Training"))
+        
+        self.startButton.setTitle("Perfect. Beyond is ready.", forState: UIControlState.Normal)
+        vibratePhone()
+    
     }
 }
