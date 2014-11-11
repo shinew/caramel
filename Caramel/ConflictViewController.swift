@@ -22,23 +22,29 @@ class ConflictViewController: UIViewController {
     private var images: [UIImageView]!
     private var buttons: [UIButton]!
     private var index: Int!
+    private let finalIndex = 3
     
     private var color = Conversion.UIColorFromRGB(62,green:120,blue:179)
     
     @IBAction func step1ButtonDidPress(sender: AnyObject) {
-        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color, isFinal: false)
+        self.animateButton()
     }
     
     @IBAction func step2ButtonDidPress(sender: AnyObject) {
-        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color, isFinal: false)
+        self.animateButton()
     }
     
     @IBAction func step3ButtonDidPress(sender: AnyObject) {
-        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color, isFinal: false)
+        self.animateButton()
     }
     
     @IBAction func step4ButtonDidPress(sender: AnyObject) {
-        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color, isFinal: true)
+        self.animateButton()
+    }
+    
+    func animateButton() {
+        var isFinal = self.index == self.finalIndex
+        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color, isFinal: isFinal)
     }
     
     override func viewDidLoad() {

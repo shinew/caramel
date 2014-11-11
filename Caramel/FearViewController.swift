@@ -9,7 +9,7 @@
 import UIKit
 
 class FearViewController: UIViewController {
-
+    
     @IBOutlet weak var checkMarkImage1: UIImageView!
     @IBOutlet weak var checkMarkImage2: UIImageView!
     @IBOutlet weak var checkMarkImage3: UIImageView!
@@ -17,6 +17,8 @@ class FearViewController: UIViewController {
     @IBOutlet weak var step2Button: UIButton!
     @IBOutlet weak var step3Button: UIButton!
     @IBOutlet weak var maskView: UIView!
+    private let finalIndex = 2
+    
     
     private var images: [UIImageView]!
     private var buttons: [UIButton]!
@@ -25,17 +27,14 @@ class FearViewController: UIViewController {
     private var color = Conversion.UIColorFromRGB(80,green:33,blue:120)
     
     @IBAction func step1ButtonDidPress(sender: AnyObject) {
-        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color, isFinal: false)
-    }
+        self.animateButton()    }
     
     @IBAction func step2ButtonDidPress(sender: AnyObject) {
-        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color, isFinal: false)
-    }
+        self.animateButton()    }
     
     @IBAction func step3ButtonDidPress(sender: AnyObject) {
-        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color, isFinal: true)
-    }
-
+        self.animateButton()    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,5 +48,10 @@ class FearViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
+    func animateButton() {
+        var isFinal = self.index == self.finalIndex
+        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color, isFinal: isFinal)
+    }
+    
 }
