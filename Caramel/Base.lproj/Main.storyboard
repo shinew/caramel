@@ -23,6 +23,7 @@
         </mutableArray>
         <mutableArray key="univers-condensed-medium.ttf">
             <string>UniversCondensed-Medium</string>
+            <string>UniversCondensed-Medium</string>
         </mutableArray>
         <mutableArray key="univers-light-condensed-1361511939.ttf">
             <string>UniversLightCondensed-Regular</string>
@@ -1632,6 +1633,9 @@
                                     <color key="titleColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="step1ButtonDidPress:" destination="dYv-13-G1s" eventType="touchUpInside" id="Gqt-Rp-72h"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="h35-K2-kSy">
                                 <rect key="frame" x="0.0" y="202" width="375" height="138.5"/>
@@ -1644,6 +1648,9 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="step2ButtonDidPress:" destination="dYv-13-G1s" eventType="touchUpInside" id="gfT-eJ-esf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="Lny-sz-k0v">
                                 <rect key="frame" x="0.0" y="340" width="375" height="138.5"/>
@@ -1655,6 +1662,9 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="step3ButtonDidPress:" destination="dYv-13-G1s" eventType="touchUpInside" id="09t-6c-omE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="zJS-Ld-Ly1">
                                 <rect key="frame" x="0.0" y="478" width="375" height="139.5"/>
@@ -1666,23 +1676,40 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="step4ButtonDidPress:" destination="dYv-13-G1s" eventType="touchUpInside" id="mjM-nA-0pu"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overwhelmedcheck-icon" id="x2B-DL-Xdj">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overwhelmedcheck-icon" id="x2B-DL-Xdj">
                                 <rect key="frame" x="322" y="263" width="22" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overwhelmedcheck-icon" id="BiY-bP-oRZ">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overwhelmedcheck-icon" id="BiY-bP-oRZ">
                                 <rect key="frame" x="322" y="401" width="22" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overwhelmedcheck-icon" id="RTI-mV-ya2">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overwhelmedcheck-icon" id="RTI-mV-ya2">
                                 <rect key="frame" x="322" y="539" width="22" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overwhelmedcheck-icon" id="3Dj-iF-bq9">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overwhelmedcheck-icon" id="3Dj-iF-bq9">
                                 <rect key="frame" x="322" y="125" width="22" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view hidden="YES" alpha="0.69999998807907104" contentMode="scaleToFill" id="gx7-9q-815">
+                                <rect key="frame" x="0.0" y="64.5" width="375" height="552.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great! You are focused." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eM9-Bf-fLj">
+                                        <rect key="frame" x="66" y="253" width="242" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="UniversCondensed-Medium" family="Univers Condensed" pointSize="30"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1692,6 +1719,17 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="checkMarkImage1" destination="3Dj-iF-bq9" id="Vx7-zk-uAK"/>
+                        <outlet property="checkMarkImage2" destination="x2B-DL-Xdj" id="1Aj-YQ-mE1"/>
+                        <outlet property="checkMarkImage3" destination="BiY-bP-oRZ" id="ZuU-f7-5Q7"/>
+                        <outlet property="checkMarkImage4" destination="RTI-mV-ya2" id="toS-Wi-f2B"/>
+                        <outlet property="maskView" destination="gx7-9q-815" id="SRB-jd-mFR"/>
+                        <outlet property="step1Button" destination="fLU-EA-o99" id="fDy-pZ-dry"/>
+                        <outlet property="step2Button" destination="h35-K2-kSy" id="zoX-Dx-edL"/>
+                        <outlet property="step3Button" destination="Lny-sz-k0v" id="i9V-nA-PBr"/>
+                        <outlet property="step4Button" destination="zJS-Ld-Ly1" id="ach-7i-I15"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqY-u8-MHi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
