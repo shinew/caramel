@@ -20,6 +20,9 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
+
         signUpButton.layer.cornerRadius = 5
         signUpButton.layer.borderColor = Conversion.UIColorFromRGB(13, green: 153, blue: 252).CGColor
         signUpButton.layer.borderWidth = 1

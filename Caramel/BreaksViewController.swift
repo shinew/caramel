@@ -35,7 +35,7 @@ class BreaksViewController: UIViewController {
         
         for index in 0..<buttons.count{
             buttons[index].layer.borderColor = UIColor.blackColor().CGColor
-            buttons[index].layer.borderWidth = 1
+            buttons[index].layer.borderWidth = 0.5
         }
         
         for activity in self.activities {

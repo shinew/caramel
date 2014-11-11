@@ -9,27 +9,49 @@
 import UIKit
 
 class FearViewController: UIViewController {
-
+    
+    @IBOutlet weak var checkMarkImage1: UIImageView!
+    @IBOutlet weak var checkMarkImage2: UIImageView!
+    @IBOutlet weak var checkMarkImage3: UIImageView!
+    @IBOutlet weak var step1Button: UIButton!
+    @IBOutlet weak var step2Button: UIButton!
+    @IBOutlet weak var step3Button: UIButton!
+    @IBOutlet weak var maskView: UIView!
+    private let finalIndex = 2
+    
+    
+    private var images: [UIImageView]!
+    private var buttons: [UIButton]!
+    private var index: Int!
+    
+    private var color = Conversion.UIColorFromRGB(80,green:33,blue:120)
+    
+    @IBAction func step1ButtonDidPress(sender: AnyObject) {
+        self.animateButton()    }
+    
+    @IBAction func step2ButtonDidPress(sender: AnyObject) {
+        self.animateButton()    }
+    
+    @IBAction func step3ButtonDidPress(sender: AnyObject) {
+        self.animateButton()    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        super.viewDidLoad()
+        self.maskView.transform = CGAffineTransformMakeTranslation(0, 500)
+        self.images = [self.checkMarkImage1, self.checkMarkImage2, self.checkMarkImage3]
+        self.buttons = [self.step1Button, self.step2Button, self.step3Button]
+        self.index = 0
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
-    */
-
+    
+    func animateButton() {
+        var isFinal = self.index == self.finalIndex
+        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color, isFinal: isFinal)
+    }
+    
 }

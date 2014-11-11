@@ -21,6 +21,9 @@ class CalibrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
+
         self.startButton.layer.cornerRadius = 5
         self.startButton.layer.borderWidth = 1
         self.startButton.layer.borderColor = UIColor.whiteColor().CGColor

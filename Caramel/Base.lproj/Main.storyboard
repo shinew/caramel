@@ -25,6 +25,8 @@
         <mutableArray key="univers-condensed-medium.ttf">
             <string>UniversCondensed-Medium</string>
             <string>UniversCondensed-Medium</string>
+            <string>UniversCondensed-Medium</string>
+            <string>UniversCondensed-Medium</string>
         </mutableArray>
         <mutableArray key="univers-light-condensed-1361511939.ttf">
             <string>UniversLightCondensed-Regular</string>
@@ -730,7 +732,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="app-icon" translatesAutoresizingMaskIntoConstraints="NO" id="cFK-jR-Sz6">
                                         <rect key="frame" x="152" y="77" width="70" height="99"/>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Beyond needs five minutes to understand your body. Let's meditate for five minutes without controlling your breath." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDI-T1-QXr">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Beyond needs five minutes to understand your body. Let's relax for five minutes without controlling your breath." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDI-T1-QXr">
                                         <rect key="frame" x="23" y="214" width="329" height="75"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1153,6 +1155,120 @@
             </objects>
             <point key="canvasLocation" x="3739.6875" y="1443.4859154929577"/>
         </scene>
+        <!--Overwhelmed-->
+        <scene sceneID="Lr0-tv-9ZO">
+            <objects>
+                <viewController id="z9w-Sh-XDz" customClass="OverwhelmedViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z7t-zP-s8S"/>
+                        <viewControllerLayoutGuide type="bottom" id="hK6-oR-Tsj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d0q-6t-2zm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="9Bv-7k-zCR">
+                                <rect key="frame" x="0.0" y="64.5" width="375" height="138.5"/>
+                                <color key="backgroundColor" red="0.1215686275" green="0.16078431369999999" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
+                                <inset key="titleEdgeInsets" minX="100" minY="0.0" maxX="100" maxY="0.0"/>
+                                <state key="normal" title="Identify why you are overwhelmed">
+                                    <color key="titleColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="step1ButtonDidPress:" destination="z9w-Sh-XDz" eventType="touchUpInside" id="ntI-40-y66"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6OZ-7b-GnO">
+                                <rect key="frame" x="0.0" y="202.5" width="375" height="138.5"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="80" minY="0.0" maxX="80" maxY="0.0"/>
+                                <state key="normal" title="Choose highest priority or easiest task">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="step2ButtonDidPress:" destination="z9w-Sh-XDz" eventType="touchUpInside" id="Wy8-H1-2g4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hTe-Q0-Ksm">
+                                <rect key="frame" x="0.0" y="340" width="375" height="138.5"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
+                                <inset key="titleEdgeInsets" minX="80" minY="0.0" maxX="80" maxY="0.0"/>
+                                <state key="normal" title="Choose 2 actionable steps for that priority/task">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="step3ButtonDidPress:" destination="z9w-Sh-XDz" eventType="touchUpInside" id="CjI-Nt-54x"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zWL-24-c7i">
+                                <rect key="frame" x="0.0" y="478.5" width="375" height="139.5"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
+                                <inset key="contentEdgeInsets" minX="-3" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Focus on the task at hand">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="step4ButtonDidPress:" destination="z9w-Sh-XDz" eventType="touchUpInside" id="4OJ-1i-38d"/>
+                                </connections>
+                            </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="overwhelmedcheck-icon" translatesAutoresizingMaskIntoConstraints="NO" id="T3S-7v-4R8">
+                                <rect key="frame" x="322" y="126" width="22" height="17"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="overwhelmedcheck-icon" translatesAutoresizingMaskIntoConstraints="NO" id="h42-5p-lPK">
+                                <rect key="frame" x="322" y="264" width="22" height="17"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="overwhelmedcheck-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Byk-UJ-dVh">
+                                <rect key="frame" x="322" y="401.5" width="22" height="17"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="overwhelmedcheck-icon" translatesAutoresizingMaskIntoConstraints="NO" id="vwZ-fM-d4V">
+                                <rect key="frame" x="322" y="540" width="22" height="17"/>
+                            </imageView>
+                            <view hidden="YES" alpha="0.69999998807907104" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1Z-bs-V41">
+                                <rect key="frame" x="0.0" y="65" width="375" height="552.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Great! You are focused." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwc-7W-57k">
+                                        <rect key="frame" x="66" y="253" width="242" height="36"/>
+                                        <fontDescription key="fontDescription" name="UniversCondensed-Medium" family="Univers Condensed" pointSize="30"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Overwhelmed" id="mxO-VB-5li">
+                        <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="Phk-Yz-lup">
+                            <inset key="imageInsets" minX="-4" minY="0.0" maxX="0.0" maxY="-3"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="checkMarkImage1" destination="T3S-7v-4R8" id="dy3-n5-2DU"/>
+                        <outlet property="checkMarkImage2" destination="h42-5p-lPK" id="gDi-Rj-Z0J"/>
+                        <outlet property="checkMarkImage3" destination="Byk-UJ-dVh" id="3P0-2w-sCX"/>
+                        <outlet property="checkMarkImage4" destination="vwZ-fM-d4V" id="mX6-yL-Cy7"/>
+                        <outlet property="maskView" destination="Q1Z-bs-V41" id="hh4-Co-ZPv"/>
+                        <outlet property="step1Button" destination="9Bv-7k-zCR" id="YUu-ll-oVs"/>
+                        <outlet property="step2Button" destination="6OZ-7b-GnO" id="T6e-2c-oAv"/>
+                        <outlet property="step3Button" destination="hTe-Q0-Ksm" id="rig-7A-GPL"/>
+                        <outlet property="step4Button" destination="zWL-24-c7i" id="vaH-Kc-ton"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F1k-Lb-tcH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2681.5" y="-301.5"/>
+        </scene>
         <!--Protocols-->
         <scene sceneID="vCu-bg-R4c">
             <objects>
@@ -1194,7 +1310,7 @@
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gnD-4Q-Ldd" kind="show" id="4XX-oj-lmv"/>
+                                    <segue destination="GXa-z6-egl" kind="show" id="jdU-2v-JvC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQa-An-FEU">
@@ -1207,7 +1323,7 @@
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="N8J-DU-LSA" kind="show" id="Wt7-Kz-sEk"/>
+                                    <segue destination="QKo-Gs-ZAt" kind="show" id="Dz7-XM-dJc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wo-j4-wK8">
@@ -1220,7 +1336,7 @@
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dYv-13-G1s" kind="show" id="hP2-LN-jhh"/>
+                                    <segue destination="z9w-Sh-XDz" kind="show" id="DNX-yl-Fz0"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="vZO-u8-hUm">
@@ -1265,7 +1381,7 @@
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="tEV-un-hc9" kind="show" id="hg8-h4-Hqh"/>
+                                    <segue destination="hmL-lX-DGh" kind="show" id="iGj-9d-fIu"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fear-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ofj-12-kJL">
@@ -1345,378 +1461,86 @@
             <point key="canvasLocation" x="2999.5" y="555.5"/>
         </scene>
         <!--Conflict-->
-        <scene sceneID="C0d-Ra-ayK">
+        <scene sceneID="IAI-oI-Jwd">
             <objects>
-                <viewController id="N8J-DU-LSA" customClass="ConflictViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QKo-Gs-ZAt" customClass="ConflictViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="OjK-qG-xmS"/>
-                        <viewControllerLayoutGuide type="bottom" id="VgL-YN-FoM"/>
+                        <viewControllerLayoutGuide type="top" id="oN3-d3-7uJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="6CA-C6-YSg"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yJy-k4-XDQ">
+                    <view key="view" contentMode="scaleToFill" id="Ngo-Cf-Kzy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="nne-JF-jn2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="Eoe-ZG-YIh">
-                                        <rect key="frame" x="0.0" y="63" width="375" height="138.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.23137254901960785" green="0.46666666666666667" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
-                                        <state key="normal" title="Slow down">
-                                            <color key="titleColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="l6r-bM-ZBS">
-                                        <rect key="frame" x="0.0" y="201" width="375" height="138.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
-                                        <state key="normal" title="Identify cause of conflict">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="FCP-eb-LvY">
-                                        <rect key="frame" x="0.0" y="339" width="375" height="138.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
-                                        <inset key="titleEdgeInsets" minX="80" minY="0.0" maxX="80" maxY="0.0"/>
-                                        <state key="normal" title="Listen first, then talk with calm voice">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="tuh-cr-i56">
-                                        <rect key="frame" x="0.0" y="477" width="375" height="141.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
-                                        <inset key="contentEdgeInsets" minX="38" minY="0.0" maxX="29" maxY="0.0"/>
-                                        <inset key="titleEdgeInsets" minX="40" minY="0.0" maxX="40" maxY="0.0"/>
-                                        <state key="normal" title="Offer solutions, look for win-win situation">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="conflictcheck-icon" id="dNT-rm-JHU">
-                                        <rect key="frame" x="322" y="262" width="22" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="conflictcheck-icon" id="xJB-ip-QgH">
-                                        <rect key="frame" x="322" y="400" width="22" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="conflictcheck-icon" id="LIB-Oh-fez">
-                                        <rect key="frame" x="322" y="539" width="22" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="conflictcheck-icon" id="Gua-i6-Wyb">
-                                        <rect key="frame" x="322" y="124" width="22" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Conflict" id="D46-04-elp">
-                        <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="OUD-or-Hd0">
-                            <inset key="imageInsets" minX="-4" minY="0.0" maxX="0.0" maxY="-3"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3aS-nm-afO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1953.5" y="555.5"/>
-        </scene>
-        <!--Fear-->
-        <scene sceneID="wH9-dd-Hjf">
-            <objects>
-                <viewController id="tEV-un-hc9" customClass="FearViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MWw-K3-0Wu"/>
-                        <viewControllerLayoutGuide type="bottom" id="JwR-hz-pfy"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YVK-mp-L3X">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AAo-3S-yje">
-                                <rect key="frame" x="0.0" y="65" width="375" height="184"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.31764705882352939" green="0.10980392156862745" blue="0.47843137254901963" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ctu-4x-bWN">
+                                <rect key="frame" x="0.0" y="62" width="375" height="138.5"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.46666666670000001" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
-                                <state key="normal" title="Name your fear">
+                                <state key="normal" title="Slow down">
                                     <color key="titleColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="SgR-D5-Ujm">
-                                <rect key="frame" x="0.0" y="249" width="375" height="184"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
-                                <inset key="titleEdgeInsets" minX="100" minY="0.0" maxX="100" maxY="0.0"/>
-                                <state key="normal" title="Reframe your fear into excitement">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="Au2-ps-gUL">
-                                <rect key="frame" x="0.0" y="433" width="375" height="184"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
-                                <inset key="titleEdgeInsets" minX="100" minY="0.0" maxX="100" maxY="0.0"/>
-                                <state key="normal" title="Imagine success and be positive">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fearcheck-icon" id="ZEX-nR-Rf9">
-                                <rect key="frame" x="322" y="148" width="22" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fearcheck-icon" id="Dls-6L-nbL">
-                                <rect key="frame" x="322" y="332" width="22" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fearcheck-icon" id="YyA-gD-LEu">
-                                <rect key="frame" x="322" y="516" width="22" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Fear" id="m83-cX-5zK">
-                        <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="gma-sj-Tws">
-                            <inset key="imageInsets" minX="-4" minY="0.0" maxX="0.0" maxY="-3"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wlW-BY-hpN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2425.5" y="555.5"/>
-        </scene>
-        <!--Frustration-->
-        <scene sceneID="HOW-hN-Fla">
-            <objects>
-                <viewController id="gnD-4Q-Ldd" customClass="FrustrationViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yJn-lP-pl5"/>
-                        <viewControllerLayoutGuide type="bottom" id="hX1-K6-x6Q"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DFL-1b-xNV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SG8-Co-dD3">
-                                <rect key="frame" x="0.0" y="65" width="375" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.074509803921568626" green="0.59215686274509804" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
-                                <state key="normal" title="Identify the problem">
-                                    <color key="titleColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                                 <connections>
-                                    <action selector="step1ButtonDidPress:" destination="gnD-4Q-Ldd" eventType="touchUpInside" id="AWk-22-LPw"/>
+                                    <action selector="step1ButtonDidPress:" destination="QKo-Gs-ZAt" eventType="touchUpInside" id="KrW-qd-fPf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LeY-jZ-9XK">
-                                <rect key="frame" x="0.0" y="203" width="375" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="20D-QN-ZhB">
+                                <rect key="frame" x="0.0" y="200.5" width="375" height="138.5"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
-                                <state key="normal" title="Find a solution">
+                                <state key="normal" title="Identify cause of conflict">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="step2ButtonDidPress:" destination="gnD-4Q-Ldd" eventType="touchUpInside" id="75S-q3-osf"/>
+                                    <action selector="step2ButtonDidPress:" destination="QKo-Gs-ZAt" eventType="touchUpInside" id="Z7H-PM-2xb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2sO-AO-NPH">
-                                <rect key="frame" x="0.0" y="341" width="375" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
-                                <state key="normal" title="Re-engage with patience">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="step3ButtonDidPress:" destination="gnD-4Q-Ldd" eventType="touchUpInside" id="BI9-Cr-C9n"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="GvK-GD-vfO">
-                                <rect key="frame" x="0.0" y="479" width="375" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
-                                <inset key="titleEdgeInsets" minX="50" minY="0.0" maxX="50" maxY="0.0"/>
-                                <state key="normal" title="If no immediate solution, do something different">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="step4ButtonDidPress:" destination="gnD-4Q-Ldd" eventType="touchUpInside" id="Vrm-Eu-ihQ"/>
-                                </connections>
-                            </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frustrationcheck-icon" id="2HX-lA-C3y">
-                                <rect key="frame" x="322" y="125" width="22" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frustrationcheck-icon" id="sSo-ih-Aw6">
-                                <rect key="frame" x="322" y="264" width="22" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frustrationcheck-icon" id="uch-5J-eBO">
-                                <rect key="frame" x="322" y="402" width="22" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frustrationcheck-icon" id="5Ab-Sg-mCX">
-                                <rect key="frame" x="322" y="540" width="22" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Frustration" id="tjD-lP-rh4">
-                        <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="A78-uj-6oL">
-                            <inset key="imageInsets" minX="-4" minY="0.0" maxX="0.0" maxY="-3"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="checkMarkImage1" destination="2HX-lA-C3y" id="C22-w5-OSK"/>
-                        <outlet property="checkMarkImage2" destination="sSo-ih-Aw6" id="dci-wt-H52"/>
-                        <outlet property="checkMarkImage3" destination="uch-5J-eBO" id="thd-LS-nZG"/>
-                        <outlet property="checkMarkImage4" destination="5Ab-Sg-mCX" id="u5c-J7-DbB"/>
-                        <outlet property="maskView" destination="NN1-zt-M53" id="pD1-lH-TXR"/>
-                        <outlet property="step1Button" destination="SG8-Co-dD3" id="Dlw-xC-aPk"/>
-                        <outlet property="step2Button" destination="LeY-jZ-9XK" id="3Gb-Fr-uCc"/>
-                        <outlet property="step3Button" destination="2sO-AO-NPH" id="NMy-Nz-6I1"/>
-                        <outlet property="step4Button" destination="GvK-GD-vfO" id="aPf-lG-Vsp"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h1m-0J-PCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view hidden="YES" alpha="0.69999999999999996" contentMode="scaleToFill" id="NN1-zt-M53">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Great! You are focused." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7EJ-Gx-Up3">
-                            <rect key="frame" x="66" y="253" width="242" height="36"/>
-                            <fontDescription key="fontDescription" name="UniversCondensed-Medium" family="Univers Condensed" pointSize="30"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-            </objects>
-            <point key="canvasLocation" x="2999.5" y="-209.5"/>
-        </scene>
-        <!--Overwhelmed-->
-        <scene sceneID="pp8-tX-j7H">
-            <objects>
-                <viewController id="dYv-13-G1s" customClass="OverwhelmedViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="O61-Cs-lE4"/>
-                        <viewControllerLayoutGuide type="bottom" id="67v-rd-8Ao"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="k1m-a7-8cz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="fLU-EA-o99">
-                                <rect key="frame" x="0.0" y="64" width="375" height="138.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.12156862745098039" green="0.16078431372549021" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
-                                <inset key="titleEdgeInsets" minX="100" minY="0.0" maxX="100" maxY="0.0"/>
-                                <state key="normal" title="Identify why you are overwhelmed">
-                                    <color key="titleColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="step1ButtonDidPress:" destination="dYv-13-G1s" eventType="touchUpInside" id="Gqt-Rp-72h"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="h35-K2-kSy">
-                                <rect key="frame" x="0.0" y="202" width="375" height="138.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                                <inset key="titleEdgeInsets" minX="80" minY="0.0" maxX="80" maxY="0.0"/>
-                                <state key="normal" title="Choose highest priority or easiest task">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="step2ButtonDidPress:" destination="dYv-13-G1s" eventType="touchUpInside" id="gfT-eJ-esf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="Lny-sz-k0v">
-                                <rect key="frame" x="0.0" y="340" width="375" height="138.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="57t-VP-0t2">
+                                <rect key="frame" x="0.0" y="338" width="375" height="138.5"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
                                 <inset key="titleEdgeInsets" minX="80" minY="0.0" maxX="80" maxY="0.0"/>
-                                <state key="normal" title="Choose 2 actionable steps for that priority/task">
+                                <state key="normal" title="Listen first, then talk with calm voice">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="step3ButtonDidPress:" destination="dYv-13-G1s" eventType="touchUpInside" id="09t-6c-omE"/>
+                                    <action selector="step3ButtonDidPress:" destination="QKo-Gs-ZAt" eventType="touchUpInside" id="Kf6-Di-tI6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="zJS-Ld-Ly1">
-                                <rect key="frame" x="0.0" y="478" width="375" height="139.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="FgF-e5-2TQ">
+                                <rect key="frame" x="0.0" y="476.5" width="375" height="141.5"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
-                                <inset key="contentEdgeInsets" minX="-3" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Focus on the task at hand">
+                                <inset key="contentEdgeInsets" minX="38" minY="0.0" maxX="29" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="40" minY="0.0" maxX="40" maxY="0.0"/>
+                                <state key="normal" title="Offer solutions, look for win-win situation">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="step4ButtonDidPress:" destination="dYv-13-G1s" eventType="touchUpInside" id="mjM-nA-0pu"/>
+                                    <action selector="step4ButtonDidPress:" destination="QKo-Gs-ZAt" eventType="touchUpInside" id="dcq-YX-z3i"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overwhelmedcheck-icon" id="x2B-DL-Xdj">
-                                <rect key="frame" x="322" y="263" width="22" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="conflictcheck-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ACG-uY-93I">
+                                <rect key="frame" x="322" y="124" width="22" height="17"/>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overwhelmedcheck-icon" id="BiY-bP-oRZ">
-                                <rect key="frame" x="322" y="401" width="22" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="conflictcheck-icon" translatesAutoresizingMaskIntoConstraints="NO" id="bdq-ni-c1B">
+                                <rect key="frame" x="322" y="262" width="22" height="17"/>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overwhelmedcheck-icon" id="RTI-mV-ya2">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="conflictcheck-icon" translatesAutoresizingMaskIntoConstraints="NO" id="8eA-hc-qM8">
+                                <rect key="frame" x="322" y="400" width="22" height="17"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="conflictcheck-icon" translatesAutoresizingMaskIntoConstraints="NO" id="7cj-Xx-zDQ">
                                 <rect key="frame" x="322" y="539" width="22" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overwhelmedcheck-icon" id="3Dj-iF-bq9">
-                                <rect key="frame" x="322" y="125" width="22" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <view hidden="YES" alpha="0.69999998807907104" contentMode="scaleToFill" id="gx7-9q-815">
-                                <rect key="frame" x="0.0" y="64.5" width="375" height="552.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sSp-rr-yst">
+                                <rect key="frame" x="0.0" y="65" width="375" height="553"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great! You are focused." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eM9-Bf-fLj">
-                                        <rect key="frame" x="66" y="253" width="242" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="UniversCondensed-Medium" family="Univers Condensed" pointSize="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Great! You are now focused." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SG2-2A-ZWG">
+                                        <rect key="frame" x="68" y="262" width="234" height="29"/>
+                                        <fontDescription key="fontDescription" name="UniversCondensed-Medium" family="Univers Condensed" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1726,27 +1550,231 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Overwhelmed" id="Xud-0c-Zmc">
-                        <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="Rq7-uK-S9p">
+                    <navigationItem key="navigationItem" title="Conflict" id="Q3a-nC-cZU">
+                        <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="I98-u6-EaM">
                             <inset key="imageInsets" minX="-4" minY="0.0" maxX="0.0" maxY="-3"/>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="checkMarkImage1" destination="3Dj-iF-bq9" id="Vx7-zk-uAK"/>
-                        <outlet property="checkMarkImage2" destination="x2B-DL-Xdj" id="1Aj-YQ-mE1"/>
-                        <outlet property="checkMarkImage3" destination="BiY-bP-oRZ" id="ZuU-f7-5Q7"/>
-                        <outlet property="checkMarkImage4" destination="RTI-mV-ya2" id="toS-Wi-f2B"/>
-                        <outlet property="maskView" destination="gx7-9q-815" id="SRB-jd-mFR"/>
-                        <outlet property="step1Button" destination="fLU-EA-o99" id="fDy-pZ-dry"/>
-                        <outlet property="step2Button" destination="h35-K2-kSy" id="zoX-Dx-edL"/>
-                        <outlet property="step3Button" destination="Lny-sz-k0v" id="i9V-nA-PBr"/>
-                        <outlet property="step4Button" destination="zJS-Ld-Ly1" id="ach-7i-I15"/>
+                        <outlet property="checkMarkImage1" destination="ACG-uY-93I" id="0Nl-an-Kte"/>
+                        <outlet property="checkMarkImage2" destination="bdq-ni-c1B" id="jcd-1Y-XTv"/>
+                        <outlet property="checkMarkImage3" destination="8eA-hc-qM8" id="LwZ-jT-VNQ"/>
+                        <outlet property="checkMarkImage4" destination="7cj-Xx-zDQ" id="udA-rZ-IZu"/>
+                        <outlet property="maskView" destination="sSp-rr-yst" id="Uuy-Bv-reL"/>
+                        <outlet property="step1Button" destination="ctu-4x-bWN" id="VWz-iU-I1F"/>
+                        <outlet property="step2Button" destination="20D-QN-ZhB" id="vbU-jF-vP4"/>
+                        <outlet property="step3Button" destination="57t-VP-0t2" id="Npn-tw-k9c"/>
+                        <outlet property="step4Button" destination="FgF-e5-2TQ" id="imI-8k-OKG"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fqY-u8-MHi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eay-8M-Iw2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2033.5" y="-209.5"/>
+            <point key="canvasLocation" x="2022.5" y="508.5"/>
+        </scene>
+        <!--Frustration-->
+        <scene sceneID="8w9-qD-50g">
+            <objects>
+                <viewController id="GXa-z6-egl" customClass="FrustrationViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oKg-ka-9mc"/>
+                        <viewControllerLayoutGuide type="bottom" id="71y-Vs-Ium"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="spw-eb-5r2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD9-ju-gDI">
+                                <rect key="frame" x="0.0" y="65" width="375" height="139"/>
+                                <color key="backgroundColor" red="0.074509803920000006" green="0.59215686270000001" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
+                                <state key="normal" title="Identify the problem">
+                                    <color key="titleColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="step1ButtonDidPress:" destination="GXa-z6-egl" eventType="touchUpInside" id="i18-Kc-eOk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cO3-ZP-alJ">
+                                <rect key="frame" x="0.0" y="201" width="375" height="139"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
+                                <state key="normal" title="Find a solution">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="step2ButtonDidPress:" destination="GXa-z6-egl" eventType="touchUpInside" id="Afc-cf-Nfi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sln-0p-Jl1">
+                                <rect key="frame" x="0.0" y="340" width="375" height="139"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
+                                <state key="normal" title="Re-engage with patience">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="step3ButtonDidPress:" destination="GXa-z6-egl" eventType="touchUpInside" id="NAH-Ce-5d1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nVN-85-s8a">
+                                <rect key="frame" x="0.0" y="479" width="375" height="139"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
+                                <inset key="titleEdgeInsets" minX="50" minY="0.0" maxX="50" maxY="0.0"/>
+                                <state key="normal" title="If no immediate solution, do something different">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="step4ButtonDidPress:" destination="GXa-z6-egl" eventType="touchUpInside" id="Ffi-Nb-dLd"/>
+                                </connections>
+                            </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frustrationcheck-icon" translatesAutoresizingMaskIntoConstraints="NO" id="XNv-KW-vml">
+                                <rect key="frame" x="317" y="126" width="22" height="17"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frustrationcheck-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Hhz-1W-rcY">
+                                <rect key="frame" x="317" y="262" width="22" height="17"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frustrationcheck-icon" translatesAutoresizingMaskIntoConstraints="NO" id="y7v-ti-OVs">
+                                <rect key="frame" x="317" y="401" width="22" height="17"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frustrationcheck-icon" translatesAutoresizingMaskIntoConstraints="NO" id="tcK-Bh-hcd">
+                                <rect key="frame" x="317" y="540" width="22" height="17"/>
+                            </imageView>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nna-3R-b3X">
+                                <rect key="frame" x="0.0" y="65" width="375" height="553"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Great! You are now focused." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gx-EQ-l76">
+                                        <rect key="frame" x="68" y="262" width="234" height="29"/>
+                                        <fontDescription key="fontDescription" name="UniversCondensed-Medium" family="Univers Condensed" pointSize="24"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Frustration" id="29n-yI-Qlt">
+                        <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="OO7-Ih-ILo">
+                            <inset key="imageInsets" minX="-4" minY="0.0" maxX="0.0" maxY="-3"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="checkMarkImage1" destination="XNv-KW-vml" id="ciO-o5-0md"/>
+                        <outlet property="checkMarkImage2" destination="Hhz-1W-rcY" id="QVL-Rs-49k"/>
+                        <outlet property="checkMarkImage3" destination="y7v-ti-OVs" id="1SP-FA-IbC"/>
+                        <outlet property="checkMarkImage4" destination="tcK-Bh-hcd" id="lpA-gy-7ak"/>
+                        <outlet property="maskView" destination="Nna-3R-b3X" id="vXf-Yw-7ec"/>
+                        <outlet property="step1Button" destination="hD9-ju-gDI" id="KCM-Nz-bhw"/>
+                        <outlet property="step2Button" destination="cO3-ZP-alJ" id="our-VI-40P"/>
+                        <outlet property="step3Button" destination="Sln-0p-Jl1" id="mix-Hm-PVZ"/>
+                        <outlet property="step4Button" destination="nVN-85-s8a" id="hhN-wU-QK9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VQN-k7-54f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3123.5" y="-301.5"/>
+        </scene>
+        <!--Fear-->
+        <scene sceneID="SuT-yb-cHj">
+            <objects>
+                <viewController id="hmL-lX-DGh" customClass="FearViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Khr-Ex-8qX"/>
+                        <viewControllerLayoutGuide type="bottom" id="geI-fB-hoH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rV9-tR-EFM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5W-aj-6oM">
+                                <rect key="frame" x="0.0" y="66" width="375" height="184"/>
+                                <color key="backgroundColor" red="0.31764705879999999" green="0.10980392160000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
+                                <state key="normal" title="Name your fear">
+                                    <color key="titleColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="step1ButtonDidPress:" destination="hmL-lX-DGh" eventType="touchUpInside" id="Tos-CS-asv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qJR-a5-IAi">
+                                <rect key="frame" x="0.0" y="250" width="375" height="184"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
+                                <inset key="titleEdgeInsets" minX="100" minY="0.0" maxX="100" maxY="0.0"/>
+                                <state key="normal" title="Reframe your fear into excitement">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="step2ButtonDidPress:" destination="hmL-lX-DGh" eventType="touchUpInside" id="kZR-lX-0W6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="EjA-y3-y2n">
+                                <rect key="frame" x="0.0" y="434" width="375" height="184"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
+                                <inset key="titleEdgeInsets" minX="100" minY="0.0" maxX="100" maxY="0.0"/>
+                                <state key="normal" title="Imagine success and be positive">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="step3ButtonDidPress:" destination="hmL-lX-DGh" eventType="touchUpInside" id="u0t-6a-VX0"/>
+                                </connections>
+                            </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fearcheck-icon" translatesAutoresizingMaskIntoConstraints="NO" id="KIF-eU-he6">
+                                <rect key="frame" x="322" y="149" width="22" height="17"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fearcheck-icon" translatesAutoresizingMaskIntoConstraints="NO" id="DMK-Os-qxH">
+                                <rect key="frame" x="322" y="517" width="22" height="17"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fearcheck-icon" translatesAutoresizingMaskIntoConstraints="NO" id="mmG-qu-E9T">
+                                <rect key="frame" x="322" y="333" width="22" height="17"/>
+                            </imageView>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gR7-6r-Yfz">
+                                <rect key="frame" x="0.0" y="63" width="375" height="553"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Great! You are now focused." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TX-SF-qmv">
+                                        <rect key="frame" x="68" y="262" width="234" height="29"/>
+                                        <fontDescription key="fontDescription" name="UniversCondensed-Medium" family="Univers Condensed" pointSize="24"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Fear" id="bm5-Hm-THl">
+                        <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="H4n-EW-Ozz">
+                            <inset key="imageInsets" minX="-4" minY="0.0" maxX="0.0" maxY="-3"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="checkMarkImage1" destination="KIF-eU-he6" id="ADc-Jf-M4e"/>
+                        <outlet property="checkMarkImage2" destination="mmG-qu-E9T" id="bmJ-AM-GYy"/>
+                        <outlet property="checkMarkImage3" destination="DMK-Os-qxH" id="9Pv-3f-n3F"/>
+                        <outlet property="maskView" destination="gR7-6r-Yfz" id="Gn3-oI-EtY"/>
+                        <outlet property="step1Button" destination="C5W-aj-6oM" id="Xji-sq-4jc"/>
+                        <outlet property="step2Button" destination="qJR-a5-IAi" id="K62-AG-mB2"/>
+                        <outlet property="step3Button" destination="EjA-y3-y2n" id="3PS-7s-mgi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Zc-KZ-UqJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2501.5" y="508.5"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="lsU-ga-Rei">
