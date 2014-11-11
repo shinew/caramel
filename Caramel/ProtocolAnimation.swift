@@ -10,12 +10,12 @@ import UIKit
 
 class ProtocolAnimation {
     
-    class func animate (index: Int, buttons: [UIButton], images: [UIImageView], maskView: UIView, color: UIColor) -> Int {
+    class func animate (index: Int, buttons: [UIButton], images: [UIImageView], maskView: UIView, color: UIColor, isFinal: Bool) -> Int {
         //performs animations
         //returns updated index
-        if index == 3 {
+        if isFinal {
             ProtocolAnimation.popupFinal(buttons, images: images, maskView: maskView)
-            return 3
+            return index
         } else {
             ProtocolAnimation.normalCheckmark(index, buttons: buttons, images: images, color: color)
             return index + 1

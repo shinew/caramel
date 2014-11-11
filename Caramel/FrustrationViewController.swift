@@ -27,19 +27,19 @@ class FrustrationViewController: UIViewController {
     private var color = Conversion.UIColorFromRGB(31,green:150,blue:137)
     
     @IBAction func step1ButtonDidPress(sender: AnyObject) {
-        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color)
+        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color, isFinal: false)
     }
     
     @IBAction func step2ButtonDidPress(sender: AnyObject) {
-        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color)
+        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color, isFinal: false)
     }
     
     @IBAction func step3ButtonDidPress(sender: AnyObject) {
-        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color)
+        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color, isFinal: false)
     }
     
     @IBAction func step4ButtonDidPress(sender: AnyObject) {
-        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color)
+        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color, isFinal: true)
     }
     
     override func viewDidLoad() {

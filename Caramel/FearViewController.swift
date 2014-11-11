@@ -10,26 +10,44 @@ import UIKit
 
 class FearViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBOutlet weak var checkMarkImage1: UIImageView!
+    @IBOutlet weak var checkMarkImage2: UIImageView!
+    @IBOutlet weak var checkMarkImage3: UIImageView!
+    @IBOutlet weak var step1Button: UIButton!
+    @IBOutlet weak var step2Button: UIButton!
+    @IBOutlet weak var step3Button: UIButton!
+    @IBOutlet weak var maskView: UIView!
+    
+    private var images: [UIImageView]!
+    private var buttons: [UIButton]!
+    private var index: Int!
+    
+    private var color = Conversion.UIColorFromRGB(80,green:33,blue:120)
+    
+    @IBAction func step1ButtonDidPress(sender: AnyObject) {
+        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color, isFinal: false)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func step2ButtonDidPress(sender: AnyObject) {
+        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color, isFinal: false)
     }
-    */
+    
+    @IBAction func step3ButtonDidPress(sender: AnyObject) {
+        self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color, isFinal: true)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        super.viewDidLoad()
+        self.maskView.transform = CGAffineTransformMakeTranslation(0, 500)
+        self.images = [self.checkMarkImage1, self.checkMarkImage2, self.checkMarkImage3]
+        self.buttons = [self.step1Button, self.step2Button, self.step3Button]
+        self.index = 0
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 
 }
