@@ -10,12 +10,6 @@ import UIKit
 import CoreData
 import AVFoundation
 
-enum NotificationType {
-    case Standard
-    case LowStress
-    case HighStress
-}
-
 var _notificationType = NotificationType.Standard
 
 @UIApplicationMain
@@ -134,6 +128,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabBarController = self.window!.rootViewController! as UITabBarController
         switch _notificationType {
+        case .Original:
+            //takes to previous page
+            return
         case .Standard:
             //opens Dashboard page
             tabBarController.selectedIndex = 0

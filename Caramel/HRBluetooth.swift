@@ -16,6 +16,7 @@ class HRBluetooth: NSObject {
     
     class func setHRUpdateCallback(hrUpdateCallback: (NSData!) -> Void) {
         _hrUpdateCallback = hrUpdateCallback
+        HRBluetooth.startScanningHRPeripheral()
     }
     
     class func getHRUpdateCallback() -> ((NSData!) -> Void)? {

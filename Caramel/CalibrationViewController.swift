@@ -54,6 +54,8 @@ class CalibrationViewController: UIViewController {
     }
     
     func endButtonDidPress() {
+        self.startButton.enabled = false
+        
         self.endDate = NSDate()
         var hrSamples = HRQueue.popAll()
         //1 = non-stress, 2 = stress
@@ -65,6 +67,11 @@ class CalibrationViewController: UIViewController {
         HRBluetooth.setHRUpdateCallback(self.previousHRCallback!)
         
         self.startButton.setTitle("Perfect. Beyond is ready.", forState: UIControlState.Normal)
+        self.descriptionTextView.text = "Just exit the app and let Beyond notify you when you are about to be stressed. It's that easy."
+        self.descriptionTextView.textColor = UIColor.whiteColor()
+        self.descriptionTextView.font = UIFont(name: "Univers-Light-Normal", size: 17)
+        
+        Notification.sendCalibrationCompleteNotification()
         vibratePhone()
     }
 }

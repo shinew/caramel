@@ -66,6 +66,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     func completeSignup() {
         println("(Onboarding) Received new name and password. Sending auth to server.")
+        self.signUpButton.enabled = false
         self.signUpButton.setTitle("Thanks!", forState: UIControlState.Normal)
         let firstName = self.firstNameTextField.text
         let lastName = self.lastNameTextField.text
