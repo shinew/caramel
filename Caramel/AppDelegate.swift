@@ -138,13 +138,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             dashboardNavVC.popToRootViewControllerAnimated(false)
         case .LowStress:
             //opens Action page
-            tabBarController.selectedIndex = 2
-            var actionNavVC = tabBarController.viewControllers![2] as UINavigationController
+            tabBarController.selectedIndex = 1
+            var actionNavVC = tabBarController.viewControllers![1] as UINavigationController
             actionNavVC.popToRootViewControllerAnimated(false)
         case .HighStress:
             //opens Actions -> Protocols page
-            tabBarController.selectedIndex = 2
-            var actionNavVC = tabBarController.viewControllers![2] as UINavigationController
+            tabBarController.selectedIndex = 1
+            var actionNavVC = tabBarController.viewControllers![1] as UINavigationController
             actionNavVC.popToRootViewControllerAnimated(false)
             
             let protocolVC = storyboard.instantiateViewControllerWithIdentifier("ProtocolsViewController") as UIViewController
