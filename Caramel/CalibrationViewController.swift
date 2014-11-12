@@ -21,7 +21,6 @@ class CalibrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
 
         self.startButton.layer.cornerRadius = 5
@@ -63,8 +62,9 @@ class CalibrationViewController: UIViewController {
         HTTPRequest.sendHRRequest(hrSamples, self.calibrationCallback.httpResponseCallbackGenerator("HR"))
         HTTPRequest.sendTrainingIntervalRequest(trainingInterval, self.calibrationCallback.httpResponseCallbackGenerator("Training"))
         
+        HRBluetooth.setHRUpdateCallback(self.previousHRCallback!)
+        
         self.startButton.setTitle("Perfect. Beyond is ready.", forState: UIControlState.Normal)
         vibratePhone()
-    
     }
 }
