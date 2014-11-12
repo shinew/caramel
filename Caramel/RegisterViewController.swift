@@ -8,8 +8,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
-    
+class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -27,13 +26,15 @@ class RegisterViewController: UIViewController {
         signUpButton.layer.borderColor = Conversion.UIColorFromRGB(13, green: 153, blue: 252).CGColor
         signUpButton.layer.borderWidth = 1
         
-        // Do any additional setup after loading the view.
+        //setting up textfield delegates
+        self.firstNameTextField.delegate = self
+        self.lastNameTextField.delegate = self
+        self.passwordTextField.delegate = self
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
-        if identifier == "loginSuccessSegue" && self.firstNameTextField.text != "" && self.lastNameTextField.text != "" && self.passwordTextField.text != "" {
-            self.didCompleteSignup()
-            self.signUpButton.setTitle("Thanks!", forState: UIControlState.Normal)
+        if identifier == "loginSuccessSegue" && self.didCompleteSignup() {
+            self.completeSignup()
             return true
         } else {
             self.signUpButton.setTitle("Please complete all fields.", forState: UIControlState.Normal)
@@ -48,14 +49,24 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func textFieldShouldReturn(textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
-    {
-        passwordTextField.resignFirstResponder()
-        return true;
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        if textField == self.firstNameTextField {
+            self.lastNameTextField.becomeFirstResponder()
+        } else if textField == self.lastNameTextField {
+            self.passwordTextField.becomeFirstResponder()
+        } else {
+            self.passwordTextField.resignFirstResponder()
+        }
+        return true
     }
     
-    func didCompleteSignup() {
+    func didCompleteSignup() -> Bool {
+        return self.firstNameTextField.text != "" && self.lastNameTextField.text != "" && self.passwordTextField.text != ""
+    }
+    
+    func completeSignup() {
         println("(Onboarding) Received new name and password. Sending auth to server.")
+        self.signUpButton.setTitle("Thanks!", forState: UIControlState.Normal)
         let firstName = self.firstNameTextField.text
         let lastName = self.lastNameTextField.text
         let password = self.passwordTextField.text

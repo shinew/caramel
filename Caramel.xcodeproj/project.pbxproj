@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14047C0F1A1359DC00C4F096 /* blankSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14047C0E1A1359DC00C4F096 /* blankSound.mp3 */; };
 		140ACA0E1A0A3286007A1853 /* UserRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140ACA0D1A0A3286007A1853 /* UserRecord.swift */; };
 		1412E3BC1A0B676100E06AED /* BreakActivityCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412E3BB1A0B676100E06AED /* BreakActivityCounter.swift */; };
 		1415AA9A1A02D81100C1CD4F /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1415AA991A02D81100C1CD4F /* Notification.swift */; };
@@ -92,6 +93,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14047C0E1A1359DC00C4F096 /* blankSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blankSound.mp3; sourceTree = "<group>"; };
 		140ACA0D1A0A3286007A1853 /* UserRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRecord.swift; sourceTree = "<group>"; };
 		1412E3BB1A0B676100E06AED /* BreakActivityCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakActivityCounter.swift; sourceTree = "<group>"; };
 		1415AA991A02D81100C1CD4F /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 		1446CCAA1A10A1CA00DBA7FC /* Edge Cases */ = {
 			isa = PBXGroup;
 			children = (
+				14047C0E1A1359DC00C4F096 /* blankSound.mp3 */,
 				1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */,
 			);
 			name = "Edge Cases";
@@ -577,6 +580,7 @@
 				14D0E23E1A008C6D0042F20A /* Main.storyboard in Resources */,
 				14D0E2401A008C6D0042F20A /* Images.xcassets in Resources */,
 				1A5347DF1A07897C00CE742E /* Portrait - 6.png in Resources */,
+				14047C0F1A1359DC00C4F096 /* blankSound.mp3 in Resources */,
 				1AB847C21A06EB95008509FE /* univers-black-normal.ttf in Resources */,
 				1A5347DC1A07897C00CE742E /* @2x.png in Resources */,
 				1AB847C41A06EB95008509FE /* univers-condensed-medium.ttf in Resources */,

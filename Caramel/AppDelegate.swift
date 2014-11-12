@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 enum NotificationType {
     case Standard
@@ -21,6 +22,7 @@ var _notificationType = NotificationType.Standard
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var audioPlayer = AVAudioPlayer()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         //registering for sending user various kinds of notifications
@@ -30,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
         Movement.initalizeManager()
+        
+        self.playMusicInBackgroundToPreventSleep()
         
         return true
     }
@@ -149,5 +153,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let protocolVC = storyboard.instantiateViewControllerWithIdentifier("ProtocolsViewController") as UIViewController
             actionNavVC.pushViewController(protocolVC, animated: false)
         }
+    }
+    
+    func playMusicInBackgroundToPreventSleep() {
+        var mp3Sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("blankSound", ofType: "mp3")!)
+        println("Blank sound file: \(mp3Sound)")
+        
+        // Removed deprecated use of AVAudioSessionDelegate protocol
+        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
+        AVAudioSession.sharedInstance().setActive(true, error: nil)
+        
+        var error:NSError?
+        self.audioPlayer = AVAudioPlayer(contentsOfURL: mp3Sound, error: &error)
+        self.audioPlayer.numberOfLoops = -1
+        self.audioPlayer.prepareToPlay()
+        self.audioPlayer.play()
     }
 }
