@@ -42,7 +42,7 @@ class CalibrationViewController: UIViewController {
         
         var timer = NSTimer.scheduledTimerWithTimeInterval(305, target: self, selector: Selector("endButtonDidPress"), userInfo: nil, repeats: false)
         
-        self.startButton.setTitle("Perfect. We'll vibrate you when it's done.", forState: UIControlState.Normal)
+        self.startButton.setTitle("We'll vibrate when it's done.", forState: UIControlState.Normal)
         
         self.descriptionTextView.text = "Please don't meditate. Just sit and relax. If you were wondering, Beyond's logo is a pile of three meditation rocks."
         self.descriptionTextView.textColor = UIColor.whiteColor()
