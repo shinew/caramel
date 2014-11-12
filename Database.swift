@@ -130,8 +130,8 @@ class Database {
         } else {
             let item = searchResults.first! as NSManagedObject
             item.setValue(dailyScore.score, forKey: "score")
-            appContext.save(nil)
         }
+        appContext.save(nil)
     }
     
     class func getDailyWellnessScore(fixedDailyScore: DailyWellnessScore) -> DailyWellnessScore? {
@@ -146,7 +146,7 @@ class Database {
         } else {
             let item = searchResults.first! as NSManagedObject
             dailyScore.score = item.valueForKey("score") as Int
+            return dailyScore
         }
-        return dailyScore
     }
 }

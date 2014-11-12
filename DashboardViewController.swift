@@ -71,10 +71,6 @@ class DashboardViewController: UIViewController {
     private func updatedScoreCallback(interval: StressScoreInterval!) {
         println("Smooth score: \(interval.score)")
         
-        dispatch_async(dispatch_get_main_queue(), {
-            self.currentScoreLabel.text = String(interval.score)
-        })
-        
         Database.addStressScoreInterval(interval)
         
         self.updateProfile()
@@ -151,7 +147,7 @@ class DashboardViewController: UIViewController {
         }
         
         let yesterdayDailyScore = Database.getDailyWellnessScore(DailyWellnessScore(
-            date: startDate.dateByAddingTimeInterval(-60 * 60 * 24),
+            date: currentDate.dateByAddingTimeInterval(-60 * 60 * 24),
             score: 0,
             userID: User.getUserID()
         ))
@@ -170,11 +166,13 @@ class DashboardViewController: UIViewController {
         var updatedStressLabel = false
         for var i = stressIntervals.count - 1; i >= 0; i-- {
             if stressIntervals[i].score >= Constants.getStressNotificationThreshold() {
+                let stressInterval = stressIntervals[i]
                 lastStressDuration += 30
                 if !updatedStressLabel {
                     updatedStressLabel = true
                     dispatch_async(dispatch_get_main_queue(), {
-                        self.lastEventTimeLabel.text = Conversion.dateToTimeString(stressIntervals[i].endDate)
+                        self.lastStressLabel.text = "\(stressInterval.score)"
+                        self.lastEventTimeLabel.text = Conversion.dateToTimeString(stressInterval.endDate)
                     })
                 }
             } else {

@@ -41,7 +41,7 @@ class DebugViewController: UIViewController {
     private func updatedScoreCallback(interval: StressScoreInterval!) {
         println("(Debug) Updated score: \(interval.score)")
         dispatch_async(dispatch_get_main_queue(), {
-            self.stressScoreLabel.text = String(interval.score)
+            self.stressScoreLabel.text = "\(interval.score)"
         })
     }
     
