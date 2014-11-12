@@ -20,7 +20,7 @@ let _stressNotificationIntervalDuration = 5 * 60 //5 min
 let _stressNotificationThreshold = 70
 let _circleColorYellowThreshold = 70
 let _circleColorRedThreshold = 90
-let _bluetoothConnectivityDuration = 20.0
+let _bluetoothConnectivityDuration = 60.0
 
 class Constants {
     
