@@ -146,7 +146,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var actionNavVC = tabBarController.viewControllers![2] as UINavigationController
             actionNavVC.popToRootViewControllerAnimated(false)
             
-            let protocolVC = storyboard.instantiateViewControllerWithIdentifier("ProtocolViewController") as UIViewController
+            let protocolVC = storyboard.instantiateViewControllerWithIdentifier("ProtocolsViewController") as UIViewController
             actionNavVC.pushViewController(protocolVC, animated: false)
         }
     }

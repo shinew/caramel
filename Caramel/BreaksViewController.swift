@@ -33,9 +33,9 @@ class BreaksViewController: UIViewController {
         super.viewDidLoad()
         self.buttons = [self.walkingButton, self.coffeeButton, self.talkingButton, self.nappingButton, self.musicButton, self.snackButton]
         
-        for index in 0..<buttons.count{
-            buttons[index].layer.borderColor = UIColor.blackColor().CGColor
-            buttons[index].layer.borderWidth = 0.5
+        for index in 0 ..< self.buttons.count {
+            self.buttons[index].layer.borderColor = UIColor.blackColor().CGColor
+            self.buttons[index].layer.borderWidth = 0.5
         }
         
         for activity in self.activities {

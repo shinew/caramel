@@ -11,6 +11,7 @@
 		1412E3BC1A0B676100E06AED /* BreakActivityCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412E3BB1A0B676100E06AED /* BreakActivityCounter.swift */; };
 		1415AA9A1A02D81100C1CD4F /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1415AA991A02D81100C1CD4F /* Notification.swift */; };
 		14254D571A01C9CB00DE86B8 /* HRDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14254D561A01C9CB00DE86B8 /* HRDecoder.swift */; };
+		142EB8231A12E4E400F23EF0 /* ProtocolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142EB8221A12E4E400F23EF0 /* ProtocolsViewController.swift */; };
 		1430FCBC1A0307EF006B518B /* AccelQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430FCBB1A0307EF006B518B /* AccelQueue.swift */; };
 		144071891A0A05B4002A3B71 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144071881A0A05B4002A3B71 /* User.swift */; };
 		1446CCAC1A10A21700DBA7FC /* BluetoothConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */; };
@@ -95,6 +96,7 @@
 		1412E3BB1A0B676100E06AED /* BreakActivityCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakActivityCounter.swift; sourceTree = "<group>"; };
 		1415AA991A02D81100C1CD4F /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		14254D561A01C9CB00DE86B8 /* HRDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRDecoder.swift; sourceTree = "<group>"; };
+		142EB8221A12E4E400F23EF0 /* ProtocolsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolsViewController.swift; sourceTree = "<group>"; };
 		1430FCBB1A0307EF006B518B /* AccelQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelQueue.swift; sourceTree = "<group>"; };
 		144071881A0A05B4002A3B71 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothConnectivity.swift; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 				1AAE13FD1A07146600B16F61 /* Deep Breaths */,
 				1AAE13FE1A0714A500B16F61 /* ActionsViewController.swift */,
 				1A1B7DB01A07508300312B71 /* BreaksViewController.swift */,
+				142EB8221A12E4E400F23EF0 /* ProtocolsViewController.swift */,
 			);
 			name = Action;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				1446CCAC1A10A21700DBA7FC /* BluetoothConnectivity.swift in Sources */,
 				1469A8091A04659200F439DB /* Movement.swift in Sources */,
 				1AFFAAE91A0FF21F002BAB2D /* FrustrationViewController.swift in Sources */,
+				142EB8231A12E4E400F23EF0 /* ProtocolsViewController.swift in Sources */,
 				14254D571A01C9CB00DE86B8 /* HRDecoder.swift in Sources */,
 				1A3D2BD61A060E0500063AEB /* DashboardViewController.swift in Sources */,
 				1AB847CF1A06F5B8008509FE /* MonthlyOverviewViewController.swift in Sources */,
