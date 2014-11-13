@@ -126,6 +126,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         //Get the storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let actionsTabIndex = 2
+        
         let tabBarController = self.window!.rootViewController! as UITabBarController
         switch _notificationType {
         case .Original:
@@ -138,13 +140,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             dashboardNavVC.popToRootViewControllerAnimated(false)
         case .LowStress:
             //opens Action page
-            tabBarController.selectedIndex = 1
-            var actionNavVC = tabBarController.viewControllers![1] as UINavigationController
+            tabBarController.selectedIndex = actionsTabIndex
+            var actionNavVC = tabBarController.viewControllers![actionsTabIndex] as UINavigationController
             actionNavVC.popToRootViewControllerAnimated(false)
         case .HighStress:
             //opens Actions -> Protocols page
-            tabBarController.selectedIndex = 1
-            var actionNavVC = tabBarController.viewControllers![1] as UINavigationController
+            tabBarController.selectedIndex = actionsTabIndex
+            var actionNavVC = tabBarController.viewControllers![actionsTabIndex] as UINavigationController
             actionNavVC.popToRootViewControllerAnimated(false)
             
             let protocolVC = storyboard.instantiateViewControllerWithIdentifier("ProtocolsViewController") as UIViewController
