@@ -14,7 +14,7 @@ class CalibrationCallback {
         println("(Calibration) Received new heart rate data")
         Timer.setLastHRBluetoothReceivedDate(NSDate())
         var hrSample = HRDecoder.dataToHRSample(data)
-        if hrSample != nil {
+        if hrSample != nil && hrSample!.hr != nil && hrSample!.hr < 150 {
             HRQueue.push(hrSample!)
             println("(Calibration) HRQueue length: \(HRQueue.length())")
         }

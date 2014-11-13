@@ -21,7 +21,7 @@ class DashboardCallback {
         println("Received new heart rate data")
         Timer.setLastHRBluetoothReceivedDate(NSDate())
         var hrSample = HRDecoder.dataToHRSample(data)
-        if hrSample != nil {
+        if hrSample != nil && hrSample!.hr != nil && hrSample!.hr < 150 {
             HRQueue.push(hrSample!)
             println("HRQueue length: \(HRQueue.length())")
             if HRQueue.length() == Constants.getMaxNumHRQueue() {
