@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import AVFoundation
+import HockeySDK
 
 var _notificationType = NotificationType.Standard
 
@@ -19,6 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var audioPlayer = AVAudioPlayer()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        //HockeyApp integration
+        BITHockeyManager.sharedHockeyManager().configureWithIdentifier("a645f2588d2e3fb133e495e35cf80250");
+        BITHockeyManager.sharedHockeyManager().startManager();
+        BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation();
+        
         //registering for sending user various kinds of notifications
         let types: UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Sound | UIUserNotificationType.Badge
         let settings = UIUserNotificationSettings(forTypes: types, categories: nil)
