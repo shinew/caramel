@@ -12,10 +12,17 @@ class TrendGraphView: UIView {
     
     private var currentDataValues: [Int]!
     private var currentMaxYValue: Int!
+    private var previousDataValues: [Int]!
+    private var previousMaxYValue: Int!
     
     func setCurrentData(dataValues: [Int], maxYValue: Int) {
         self.currentDataValues = dataValues
         self.currentMaxYValue = maxYValue
+    }
+    
+    func setPreviousData(dataValues: [Int], maxYValue: Int) {
+        self.previousDataValues = dataValues
+        self.previousMaxYValue = maxYValue
     }
     
     override func drawRect(rect: CGRect) {
@@ -27,28 +34,37 @@ class TrendGraphView: UIView {
         
         var context = UIGraphicsGetCurrentContext()
         
-        //Draws current day/week's data
+        //Draws previous data
+        self.drawDataArea(self.previousDataValues, max: self.previousMaxYValue, color: UIColor(red: 0.63, green: 0.63, blue: 0.63, alpha: 1.0).CGColor, rect: rect, context: context)
         
-        //Draws area
-        CGContextSetFillColorWithColor(context, UIColor(red: 0.30, green: 0.55, blue: 0.76, alpha: 0.8).CGColor) //color dark gray with transparency
+        //Draws current data
+        self.drawDataArea(self.currentDataValues, max: self.currentMaxYValue, color: UIColor(red: 0.30, green: 0.55, blue: 0.76, alpha: 0.8).CGColor, rect: rect, context: context)
+        
+        //Draws line separators for current data
+        self.drawLineSeparators(self.currentDataValues, max: self.currentMaxYValue, color: UIColor.whiteColor().CGColor, rect: rect, context: context)
+    }
+    
+    private func drawDataArea(data: [Int], max: Int, color: CGColor!, rect: CGRect!, context: CGContext!) {
+        CGContextSetFillColorWithColor(context, color) //color dark gray with transparency
         CGContextMoveToPoint(context, 0.0, rect.height) //bottom left
-        for index in 0 ..< self.currentDataValues.count {
+        for index in 0 ..< data.count {
             CGContextAddLineToPoint(
                 context,
-                self.getRelativeProportion(index, max: self.currentDataValues.count - 1, height: rect.width),
-                rect.height - self.getRelativeProportion(self.currentDataValues[index], max: self.currentMaxYValue, height: rect.height)
+                self.getRelativeProportion(index, max: data.count - 1, height: rect.width),
+                rect.height - self.getRelativeProportion(data[index], max: max, height: rect.height)
             )
         }
         CGContextAddLineToPoint(context, rect.width, rect.height) //bottom right
         CGContextAddLineToPoint(context, 0.0, rect.height) //back to origin
         CGContextFillPath(context) //fill it in
-        
-        //Draws line separators
-        CGContextSetStrokeColorWithColor(context, UIColor.whiteColor().CGColor)
+    }
+    
+    private func drawLineSeparators(data: [Int], max: Int, color: CGColor!, rect: CGRect!, context: CGContext!) {
+        CGContextSetStrokeColorWithColor(context, color)
         CGContextSetLineWidth(context, 1.0);
         
-        for index in 1 ..< self.currentDataValues.count - 1 {
-            let xValue = self.getRelativeProportion(index, max: self.currentDataValues.count - 1, height: rect.width)
+        for index in 1 ..< data.count - 1 {
+            let xValue = self.getRelativeProportion(index, max: data.count - 1, height: rect.width)
             CGContextMoveToPoint(
                 context,
                 xValue,
@@ -57,7 +73,7 @@ class TrendGraphView: UIView {
             CGContextAddLineToPoint(
                 context,
                 xValue,
-                rect.height - self.getRelativeProportion(self.currentDataValues[index], max: self.currentMaxYValue, height: rect.height)
+                rect.height - self.getRelativeProportion(data[index], max: max, height: rect.height)
             )
             CGContextStrokePath(context)
         }
