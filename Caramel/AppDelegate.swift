@@ -155,7 +155,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func playMusicInBackgroundToPreventSleep() {
-        var mp3Sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("blankSound", ofType: "mp3")!)
+        var mp3Sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("notBlankSound", ofType: "mp3")!)
         println("Blank sound file: \(mp3Sound)")
         
         // Removed deprecated use of AVAudioSessionDelegate protocol
