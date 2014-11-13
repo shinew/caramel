@@ -15,6 +15,8 @@
 		142EB8231A12E4E400F23EF0 /* ProtocolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142EB8221A12E4E400F23EF0 /* ProtocolsViewController.swift */; };
 		1430FCBC1A0307EF006B518B /* AccelQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430FCBB1A0307EF006B518B /* AccelQueue.swift */; };
 		144071891A0A05B4002A3B71 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144071881A0A05B4002A3B71 /* User.swift */; };
+		144630AD1A1466BD003B350A /* DailyOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144630AC1A1466BD003B350A /* DailyOverviewViewController.swift */; };
+		144630B11A1467C6003B350A /* TrendGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144630B01A1467C6003B350A /* TrendGraphView.swift */; };
 		1446CCAC1A10A21700DBA7FC /* BluetoothConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */; };
 		1469A8091A04659200F439DB /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1469A8081A04659200F439DB /* Movement.swift */; };
 		148E40841A00F81900952565 /* QueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148E40831A00F81900952565 /* QueueTest.swift */; };
@@ -66,7 +68,6 @@
 		1AB847C81A06ECF9008509FE /* Univers-Light-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847C71A06EC9F008509FE /* Univers-Light-Bold.ttf */; };
 		1AB847C91A06ECF9008509FE /* univers-light-normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A990CE01A06E98100C759F9 /* univers-light-normal.ttf */; };
 		1AB847CD1A06F599008509FE /* WeeklyOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847CC1A06F599008509FE /* WeeklyOverviewViewController.swift */; };
-		1AB847CF1A06F5B8008509FE /* MonthlyOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847CE1A06F5B8008509FE /* MonthlyOverviewViewController.swift */; };
 		1AB847D31A06F60F008509FE /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847D21A06F60F008509FE /* HabitsViewController.swift */; };
 		1AB847D51A0701B1008509FE /* univers-light-condensed-1361511939.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847CA1A06EFCC008509FE /* univers-light-condensed-1361511939.ttf */; };
 		1AB847D61A0701B1008509FE /* Univers-Condensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847CB1A06F033008509FE /* Univers-Condensed-Bold.ttf */; };
@@ -101,6 +102,8 @@
 		142EB8221A12E4E400F23EF0 /* ProtocolsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolsViewController.swift; sourceTree = "<group>"; };
 		1430FCBB1A0307EF006B518B /* AccelQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelQueue.swift; sourceTree = "<group>"; };
 		144071881A0A05B4002A3B71 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		144630AC1A1466BD003B350A /* DailyOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyOverviewViewController.swift; sourceTree = "<group>"; };
+		144630B01A1467C6003B350A /* TrendGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendGraphView.swift; sourceTree = "<group>"; };
 		1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothConnectivity.swift; sourceTree = "<group>"; };
 		1469A8081A04659200F439DB /* Movement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movement.swift; sourceTree = "<group>"; };
 		148E40831A00F81900952565 /* QueueTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTest.swift; sourceTree = "<group>"; };
@@ -157,7 +160,6 @@
 		1AB847CA1A06EFCC008509FE /* univers-light-condensed-1361511939.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-light-condensed-1361511939.ttf"; sourceTree = "<group>"; };
 		1AB847CB1A06F033008509FE /* Univers-Condensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Univers-Condensed-Bold.ttf"; sourceTree = "<group>"; };
 		1AB847CC1A06F599008509FE /* WeeklyOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyOverviewViewController.swift; sourceTree = "<group>"; };
-		1AB847CE1A06F5B8008509FE /* MonthlyOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthlyOverviewViewController.swift; sourceTree = "<group>"; };
 		1AB847D21A06F60F008509FE /* HabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 		1AB847D81A07112F008509FE /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		1AB847D91A07112F008509FE /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -431,8 +433,9 @@
 		1AB847D01A06F5C0008509FE /* Overview */ = {
 			isa = PBXGroup;
 			children = (
+				144630AC1A1466BD003B350A /* DailyOverviewViewController.swift */,
 				1AB847CC1A06F599008509FE /* WeeklyOverviewViewController.swift */,
-				1AB847CE1A06F5B8008509FE /* MonthlyOverviewViewController.swift */,
+				144630B01A1467C6003B350A /* TrendGraphView.swift */,
 			);
 			name = Overview;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				14D0E2611A0090A70042F20A /* Agent.swift in Sources */,
 				1AB847CD1A06F599008509FE /* WeeklyOverviewViewController.swift in Sources */,
 				1AAE14011A0714E400B16F61 /* DeepBreathsViewController.swift in Sources */,
+				144630B11A1467C6003B350A /* TrendGraphView.swift in Sources */,
 				14F878E31A022372001FFFE2 /* Constants.swift in Sources */,
 				14E275751A11F8A500F30780 /* DailyWellnessScore.swift in Sources */,
 				14D80AD31A01806C0064BCD8 /* HRCentralManager.swift in Sources */,
@@ -626,12 +630,12 @@
 				14A851B31A089CCC00855954 /* NotificationRecord.swift in Sources */,
 				1AB847DD1A07112F008509FE /* BlurView.swift in Sources */,
 				1446CCAC1A10A21700DBA7FC /* BluetoothConnectivity.swift in Sources */,
+				144630AD1A1466BD003B350A /* DailyOverviewViewController.swift in Sources */,
 				1469A8091A04659200F439DB /* Movement.swift in Sources */,
 				1AFFAAE91A0FF21F002BAB2D /* FrustrationViewController.swift in Sources */,
 				142EB8231A12E4E400F23EF0 /* ProtocolsViewController.swift in Sources */,
 				14254D571A01C9CB00DE86B8 /* HRDecoder.swift in Sources */,
 				1A3D2BD61A060E0500063AEB /* DashboardViewController.swift in Sources */,
-				1AB847CF1A06F5B8008509FE /* MonthlyOverviewViewController.swift in Sources */,
 				14D0E2651A009E420042F20A /* HRSample.swift in Sources */,
 				1A9D8AB01A11F529004FA076 /* RegisterViewController.swift in Sources */,
 				1A1B7DB11A07508300312B71 /* BreaksViewController.swift in Sources */,

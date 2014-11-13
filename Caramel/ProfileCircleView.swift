@@ -1,5 +1,5 @@
 //
-//  CircleView.swift
+//  ProfileCircleView.swift
 //  Caramel
 //
 //  Created by Shine Wang on 2014-11-02.

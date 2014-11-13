@@ -84,10 +84,10 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Weekly Overview-->
+        <!--Daily Overview-->
         <scene sceneID="f4C-Mb-lQt">
             <objects>
-                <viewController id="Fbz-rx-xCi" customClass="WeeklyOverviewViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fbz-rx-xCi" customClass="DailyOverviewViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SgO-2h-uQZ"/>
                         <viewControllerLayoutGuide type="bottom" id="tbZ-4h-1vc"/>
@@ -101,59 +101,31 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="uio-JR-Iic" kind="show" id="vs6-yQ-9Bf"/>
-                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="weeklytrends-screenshot" translatesAutoresizingMaskIntoConstraints="NO" id="As5-CL-eIs">
-                                <rect key="frame" x="0.0" y="68" width="375" height="550"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6rI-yq-qlJ" customClass="TrendGraphView" customModule="Caramel" customModuleProvider="target">
+                                <rect key="frame" x="44" y="135" width="287" height="265"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6rI-yq-qlJ" firstAttribute="top" secondItem="SgO-2h-uQZ" secondAttribute="bottom" constant="71" id="9gC-Fw-4h0"/>
+                            <constraint firstAttribute="centerX" secondItem="6rI-yq-qlJ" secondAttribute="centerX" id="Qkn-E5-cAN"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Weekly Overview" id="OvF-tg-KO4">
+                    <navigationItem key="navigationItem" title="Daily Overview" id="OvF-tg-KO4">
                         <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="uOm-an-IJZ">
                             <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-3"/>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="trendGraphView" destination="6rI-yq-qlJ" id="s46-SH-PNo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hoe-zS-Cdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1571.5" y="-1084.5"/>
-        </scene>
-        <!--Monthly-->
-        <scene sceneID="vtH-rd-pbn">
-            <objects>
-                <viewController id="uio-JR-Iic" customClass="MonthlyOverviewViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Bgs-jC-5DG"/>
-                        <viewControllerLayoutGuide type="bottom" id="KJ9-2p-4s9"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="WMI-oW-bNO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="monthlytrends-screenshot" translatesAutoresizingMaskIntoConstraints="NO" id="gXc-q7-Pbv">
-                                <rect key="frame" x="-1" y="64" width="377" height="556"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HaK-G4-bcl">
-                                <rect key="frame" x="242" y="553" width="117" height="53"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Monthly" id="sEu-Fx-sMY">
-                        <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="Nmy-K4-Zsp">
-                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-3"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MJ6-ML-fuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2027.5" y="-1084.5"/>
         </scene>
         <!--Habits-->
         <scene sceneID="chw-Wd-wiO">
@@ -2082,13 +2054,11 @@
         <image name="frustration-icon" width="28" height="32"/>
         <image name="frustrationcheck-icon" width="22" height="17"/>
         <image name="habits-screenshot" width="1004" height="1358"/>
-        <image name="monthlytrends-screenshot" width="998" height="1356"/>
         <image name="overwhelmed-icon" width="34" height="31"/>
         <image name="overwhelmedcheck-icon" width="22" height="17"/>
         <image name="profile-icon" width="26" height="26"/>
         <image name="refresh-icon" width="15" height="14"/>
         <image name="trends-icon" width="41" height="25"/>
-        <image name="weeklytrends-screenshot" width="980" height="1336"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

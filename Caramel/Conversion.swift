@@ -43,7 +43,7 @@ class Conversion {
             red: CGFloat(Double(red)/255.0),
             green: CGFloat(Double(green)/255.0),
             blue: CGFloat(Double(blue)/255.0),
-            alpha: CGFloat(Double(alpha)/255.0)
+            alpha: CGFloat(Double(alpha)/100.0)
         )
     }
 }
