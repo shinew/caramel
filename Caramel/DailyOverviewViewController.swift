@@ -23,11 +23,11 @@ class DailyOverviewViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         let data = self.prepareTrendData(NSDate())
-        self.trendGraphView.setCurrentData([69, 21, 0, 0, 34, 45, 5], maxYValue: 100) //testing
-        self.trendGraphView.setPreviousData([19, 23, 31, 44, 59, 5, 25], maxYValue: 100)
+        //self.trendGraphView.setCurrentData([69, 21, 0, 0, 34, 45, 5, 13, 13, 1, 5], maxYValue: 100) //display testing
+        //self.trendGraphView.setPreviousData([19, 23, 31, 44, 59, 5, 25, 10, 23, 45, 6], maxYValue: 100)
         
-        //self.trendGraphView.setCurrentData(data.0, maxYValue: 100)
-        //self.trendGraphView.setPreviousData(data.0, maxYValue: 100)
+        self.trendGraphView.setCurrentData(data.0, maxYValue: 100)
+        self.trendGraphView.setPreviousData(data.0, maxYValue: 100)
         self.trendGraphView.setNeedsDisplay()
     }
     
