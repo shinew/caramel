@@ -9,13 +9,11 @@
 import UIKit
 import CoreData
 
-private let appContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
-
 class Database {
-    // the connection to the DB
     
     class func addStressScoreInterval(interval: StressScoreInterval!) {
         println("(DB) Adding a stress score interval")
+        let appContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
         var stressScore = NSEntityDescription.insertNewObjectForEntityForName("StressScoreInterval", inManagedObjectContext: appContext) as NSManagedObject
         stressScore.setValue(interval.score, forKey: "score")
         stressScore.setValue(interval.startDate, forKey: "startDate")
@@ -28,6 +26,7 @@ class Database {
     
     class func getSortedStressIntervals(startDate: NSDate!, endDate: NSDate!) -> [StressScoreInterval] {
         println("(DB) Retriving stress score intervals")
+        let appContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
         var request = NSFetchRequest(entityName: "StressScoreInterval")
         request.returnsObjectsAsFaults = false
         request.predicate = NSPredicate(format: "(startDate >= %@) AND (startDate <= %@) AND (userID == %i)", startDate, endDate, User.getUserID())
@@ -51,6 +50,7 @@ class Database {
 
     class func addNotificationRecord(notif: NotificationRecord!) {
         println("(DB) Adding a notification record")
+        let appContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
         var notifRecord = NSEntityDescription.insertNewObjectForEntityForName("NotificationRecord", inManagedObjectContext: appContext) as NSManagedObject
         notifRecord.setValue(notif.type, forKey: "type")
         notifRecord.setValue(notif.date, forKey: "date")
@@ -62,6 +62,7 @@ class Database {
 
     class func getSortedNotificationRecords(startDate: NSDate!, endDate: NSDate!) -> [NotificationRecord] {
         println("(DB) Retriving notification records")
+        let appContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
         var request = NSFetchRequest(entityName: "NotificationRecord")
         request.returnsObjectsAsFaults = false
         request.predicate = NSPredicate(format: "(date >= %@) AND (date <= %@) AND (userID == %i)", startDate, endDate, User.getUserID())
@@ -84,6 +85,7 @@ class Database {
     
     class func updateBreakActivityCounter(activity: BreakActivityCounter) {
         println("(DB) Updating break activity counter")
+        let appContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
         var request = NSFetchRequest(entityName: "BreakActivityCounter")
         request.returnsObjectsAsFaults = false
         request.predicate = NSPredicate(format: "(activity == %@) AND (userID == %i)", activity.activity, activity.userID)
@@ -102,6 +104,7 @@ class Database {
     
     class func getBreakActivityCounter(fixedActivity: BreakActivityCounter) -> BreakActivityCounter {
         println("(DB) Retriving break activity counter")
+        let appContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
         var activity = fixedActivity
         var request = NSFetchRequest(entityName: "BreakActivityCounter")
         request.returnsObjectsAsFaults = false
@@ -118,6 +121,7 @@ class Database {
     
     class func updateDailyWellnessScore(dailyScore: DailyWellnessScore) {
         println("(DB) Updating daily wellness score")
+        let appContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
         var request = NSFetchRequest(entityName: "DailyWellnessScore")
         request.returnsObjectsAsFaults = false
         request.predicate = NSPredicate(format: "(date == %@) AND (userID == %i)", dailyScore.date, dailyScore.userID)
@@ -136,6 +140,7 @@ class Database {
     
     class func getDailyWellnessScore(fixedDailyScore: DailyWellnessScore) -> DailyWellnessScore? {
         println("(DB) Retriving daily wellness score")
+        let appContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
         var dailyScore = fixedDailyScore
         var request = NSFetchRequest(entityName: "DailyWellnessScore")
         request.returnsObjectsAsFaults = false

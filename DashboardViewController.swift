@@ -20,7 +20,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var lastEventTimeLabel: UILabel!
     
     @IBOutlet weak var dailyOverallLabel: UILabel!
-    @IBOutlet weak var currentScoreLabel: UILabel!
+    @IBOutlet weak var yesterdayOverallLabel: UILabel!
     @IBOutlet weak var lastStressLabel: UILabel!
     
     @IBOutlet var profileCircleView: ProfileCircleView!
@@ -153,7 +153,7 @@ class DashboardViewController: UIViewController {
         ))
         if yesterdayDailyScore != nil {
             dispatch_async(dispatch_get_main_queue(), {
-                self.currentScoreLabel.text = String(yesterdayDailyScore!.score)
+                self.yesterdayOverallLabel.text = String(yesterdayDailyScore!.score)
             })
         }
     }
@@ -165,24 +165,29 @@ class DashboardViewController: UIViewController {
         var lastStressDuration = 0
         var updatedStressLabel = false
         for var i = stressIntervals.count - 1; i >= 0; i-- {
-            if stressIntervals[i].score >= Constants.getStressNotificationThreshold() {
-                let stressInterval = stressIntervals[i]
+            let stressInterval = stressIntervals[i]
+            if stressInterval.score >= Constants.getStressNotificationThreshold() {
                 lastStressDuration += 30
                 if !updatedStressLabel {
                     updatedStressLabel = true
                     dispatch_async(dispatch_get_main_queue(), {
                         self.lastStressLabel.text = "\(stressInterval.score)"
-                        self.lastEventTimeLabel.text = Conversion.dateToTimeString(stressInterval.endDate)
                     })
                 }
             } else {
                 if updatedStressLabel {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.lastEventTimeLabel.text = Conversion.dateToTimeString(stressInterval.startDate)
+                    })
                     self.displayStressDuration(lastStressDuration)
                     return
                 }
             }
         }
         if updatedStressLabel {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.lastEventTimeLabel.text = Conversion.dateToTimeString(stressIntervals[0].startDate)
+            })
             self.displayStressDuration(lastStressDuration)
             return
         }
