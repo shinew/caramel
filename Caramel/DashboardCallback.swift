@@ -63,10 +63,12 @@ class DashboardCallback {
         println("(Stress) response status code: \(response.statusCode)")
         if response != nil && response.statusCode == 200 {
             let json = data as [String: AnyObject]
-            let score = json["Score"] as Int
-            println("(Stress) Received stress score: \(score)")
-            self.lastStressScoreInterval.score = score
-            StressQueue.addNewRawScore(self.lastStressScoreInterval)
+            if json["Score"] is Int {
+                let score = json["Score"] as Int
+                println("(Stress) Received stress score: \(score)")
+                self.lastStressScoreInterval.score = score
+                StressQueue.addNewRawScore(self.lastStressScoreInterval)
+            }
         }
     }
 }
