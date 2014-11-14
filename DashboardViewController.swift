@@ -78,44 +78,53 @@ class DashboardViewController: UIViewController {
         self.possiblySendNotification(interval.score)
     }
     
-    private func possiblySendNotification(score: Int!) {
+    private func possiblySendNotification(score: Int) {
         println("Determining whether to send a notification or not")
         if score < Constants.getStressNotificationThreshold() {
             return
         }
-        let lastMovementDate: NSDate? = Timer.getLastMovementDate()
-        let lastLowDate: NSDate? = Timer.getLastLowStressNotifDate()
-        let lastHighDate: NSDate? = Timer.getLastHighStressNotifDate()
+        
         let currentDate = NSDate()
         
-        // don't send notification if movement too recent
-        if lastMovementDate != nil {
-            let timeDifference = currentDate.timeIntervalSinceDate(lastMovementDate!)
+        if let lastMovementDate = Timer.getLastMovementDate() {
+            // don't send notification if movement too recent
+            let timeDifference = currentDate.timeIntervalSinceDate(lastMovementDate)
             if timeDifference < NSTimeInterval(Constants.getMovementAffectiveDuration()) {
                 return
             }
         }
         
-        if lastLowDate == nil {
-            Notification.sendLowStressNotification()
-            Timer.setLastLowStressNotifDate(currentDate)
-            Database.addNotificationRecord(NotificationRecord(type: "low", date: currentDate, userID: User.getUserID()))
-        } else {
-            let lowTimeDifference = currentDate.timeIntervalSinceDate(lastLowDate!)
-            if lowTimeDifference < NSTimeInterval(Constants.getStressNotificationIntervalDuration()) {
-                return
-            } else {
-                let highTimeDifference = currentDate.timeIntervalSinceDate(lastHighDate!)
-                if highTimeDifference < NSTimeInterval(Constants.getStressNotificationIntervalDuration()) {
-                    Notification.sendLowStressNotification()
+        // |low| --- |high| ------------ |low| ------------ |low|
+        if let lastLowDate = Timer.getLastLowStressNotifDate() {
+            let lowTimeDifference = currentDate.timeIntervalSinceDate(lastLowDate)
+            if let lastHighDate = Timer.getLastHighStressNotifDate() {
+                let highTimeDifference = currentDate.timeIntervalSinceDate(lastHighDate)
+                if lowTimeDifference > NSTimeInterval(Constants.getStressNotificationIntervalDuration()) {
+                    
                     Timer.setLastLowStressNotifDate(currentDate)
+                    Notification.sendLowStressNotification()
                     Database.addNotificationRecord(NotificationRecord(type: "low", date: currentDate, userID: User.getUserID()))
-                } else {
-                    Notification.sendHighStressNotification()
+                    
+                } else if highTimeDifference > NSTimeInterval(Constants.getStressNotificationIntervalDuration()) {
+                    
                     Timer.setLastHighStressNotifDate(currentDate)
+                    Notification.sendHighStressNotification()
                     Database.addNotificationRecord(NotificationRecord(type: "high", date: currentDate, userID: User.getUserID()))
+                    
                 }
+            } else {
+                
+                Timer.setLastHighStressNotifDate(currentDate)
+                Notification.sendHighStressNotification()
+                Database.addNotificationRecord(NotificationRecord(type: "high", date: currentDate, userID: User.getUserID()))
+                
             }
+        } else {
+            
+            Timer.setLastLowStressNotifDate(currentDate)
+            Notification.sendLowStressNotification()
+            Database.addNotificationRecord(NotificationRecord(type: "low", date: currentDate, userID: User.getUserID()))
+            
         }
     }
     
