@@ -17,14 +17,12 @@ class HRCentralManager: NSObject, CBCentralManagerDelegate {
     
     var hrCBManager: CBCentralManager!
     var hrSensor: HRPeripheral!
-    var hrUpdateCallback: ((NSData!) -> Void)!
     
     override init() {
         super.init()
     }
     
-    func startCentralManager(hrUpdateCallback: (NSData!) -> Void) {
-        self.hrUpdateCallback = hrUpdateCallback
+    func startCentralManager() {
         self.hrCBManager = CBCentralManager(delegate: self, queue: nil)
     }
     
@@ -50,7 +48,7 @@ class HRCentralManager: NSObject, CBCentralManagerDelegate {
         to a reference. In this simple example we're just connecting to
         one peripheral so we'll just accomodate one. We could use a collection.
         You can even use peripheral as a dictionary key. */
-        self.hrSensor = HRPeripheral(peripheral: peripheral, callback: self.hrUpdateCallback)
+        self.hrSensor = HRPeripheral(peripheral: peripheral)
         
         // We've found one so let's stop scanning
         self.hrCBManager.stopScan()

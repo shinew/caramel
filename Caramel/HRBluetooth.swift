@@ -21,11 +21,12 @@ class HRBluetooth: NSObject {
     class func getHRUpdateCallback() -> ((NSData!) -> Void)? {
         return _hrUpdateCallback
     }
+    
+    class func setHRUpdateCallback(callback: ((NSData!) -> Void)?) {
+        _hrUpdateCallback = callback
+    }
 
-    //may need to modify this to take on other UUIDs later?
     class func startScanningHRPeripheral() {
-        if _hrUpdateCallback != nil {
-            _hrCBManager.startCentralManager(_hrUpdateCallback!)
-        }
+        _hrCBManager.startCentralManager()
     }
 }

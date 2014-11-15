@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14047C0F1A1359DC00C4F096 /* blankSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14047C0E1A1359DC00C4F096 /* blankSound.mp3 */; };
 		140ACA0E1A0A3286007A1853 /* UserRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140ACA0D1A0A3286007A1853 /* UserRecord.swift */; };
 		1412E3BC1A0B676100E06AED /* BreakActivityCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412E3BB1A0B676100E06AED /* BreakActivityCounter.swift */; };
 		1415AA9A1A02D81100C1CD4F /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1415AA991A02D81100C1CD4F /* Notification.swift */; };
@@ -27,7 +26,6 @@
 		14A0C3EB1A1146B6006AD37F /* TrainingInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A0C3EA1A1146B6006AD37F /* TrainingInterval.swift */; };
 		14A63F461A074EB100EA9924 /* ProfileCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CE4E631A06EA21000A2A27 /* ProfileCircleView.swift */; };
 		14A851B31A089CCC00855954 /* NotificationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A851B21A089CCC00855954 /* NotificationRecord.swift */; };
-		14BC9EDD1A14B23600DFC197 /* notBlankSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14BC9EDC1A14B23600DFC197 /* notBlankSound.mp3 */; };
 		14D0E2361A008C6D0042F20A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2351A008C6D0042F20A /* AppDelegate.swift */; };
 		14D0E2391A008C6D0042F20A /* Caramel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2371A008C6D0042F20A /* Caramel.xcdatamodeld */; };
 		14D0E23E1A008C6D0042F20A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D0E23C1A008C6D0042F20A /* Main.storyboard */; };
@@ -109,7 +107,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		14047C0E1A1359DC00C4F096 /* blankSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blankSound.mp3; sourceTree = "<group>"; };
 		140ACA0D1A0A3286007A1853 /* UserRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRecord.swift; sourceTree = "<group>"; };
 		1412E3BB1A0B676100E06AED /* BreakActivityCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakActivityCounter.swift; sourceTree = "<group>"; };
 		1415AA991A02D81100C1CD4F /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
@@ -127,7 +124,6 @@
 		14A06CF81A08ADA5007B6FD3 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		14A0C3EA1A1146B6006AD37F /* TrainingInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingInterval.swift; sourceTree = "<group>"; };
 		14A851B21A089CCC00855954 /* NotificationRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationRecord.swift; sourceTree = "<group>"; };
-		14BC9EDC1A14B23600DFC197 /* notBlankSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = notBlankSound.mp3; sourceTree = "<group>"; };
 		14CE4E631A06EA21000A2A27 /* ProfileCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCircleView.swift; sourceTree = "<group>"; };
 		14D0E2301A008C6D0042F20A /* Caramel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caramel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14D0E2341A008C6D0042F20A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -256,8 +252,6 @@
 		1446CCAA1A10A1CA00DBA7FC /* Edge Cases */ = {
 			isa = PBXGroup;
 			children = (
-				14BC9EDC1A14B23600DFC197 /* notBlankSound.mp3 */,
-				14047C0E1A1359DC00C4F096 /* blankSound.mp3 */,
 				1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */,
 			);
 			name = "Edge Cases";
@@ -318,7 +312,6 @@
 				1A3D2C071A0623A900063AEB /* ViewControllers */,
 				1A28C9F91A060CB000678084 /* Fonts */,
 				14D0E26A1A00D4D00042F20A /* Globals */,
-				14D0E25D1A0090780042F20A /* Library */,
 				14D0E2581A008CD40042F20A /* Structures */,
 				1446CCAA1A10A1CA00DBA7FC /* Edge Cases */,
 				14D0E2351A008C6D0042F20A /* AppDelegate.swift */,
@@ -371,23 +364,15 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		14D0E25D1A0090780042F20A /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				14D80AD11A0180530064BCD8 /* Bluetooth */,
-			);
-			name = Library;
-			sourceTree = "<group>";
-		};
 		14D0E26A1A00D4D00042F20A /* Globals */ = {
 			isa = PBXGroup;
 			children = (
+				14D80AD11A0180530064BCD8 /* Bluetooth */,
 				1430FCBA1A030726006B518B /* HTTP */,
 				1430FCB91A03071A006B518B /* Queues */,
 				14F878E21A022372001FFFE2 /* Constants.swift */,
 				14F878DE1A020BD8001FFFE2 /* Conversion.swift */,
 				14D0E2591A008CED0042F20A /* Database.swift */,
-				14D80ACF1A01730A0064BCD8 /* HRBluetooth.swift */,
 				14A06CF81A08ADA5007B6FD3 /* Math.swift */,
 				1469A8081A04659200F439DB /* Movement.swift */,
 				14D80ACD1A0172920064BCD8 /* Timer.swift */,
@@ -400,6 +385,7 @@
 		14D80AD11A0180530064BCD8 /* Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
+				14D80ACF1A01730A0064BCD8 /* HRBluetooth.swift */,
 				14D80AD21A01806C0064BCD8 /* HRCentralManager.swift */,
 				14D80AD41A01808D0064BCD8 /* HRPeripheral.swift */,
 				14254D561A01C9CB00DE86B8 /* HRDecoder.swift */,
@@ -664,12 +650,10 @@
 				14D0E23E1A008C6D0042F20A /* Main.storyboard in Resources */,
 				14D0E2401A008C6D0042F20A /* Images.xcassets in Resources */,
 				1A5347DF1A07897C00CE742E /* Portrait - 6.png in Resources */,
-				14047C0F1A1359DC00C4F096 /* blankSound.mp3 in Resources */,
 				1AB847C21A06EB95008509FE /* univers-black-normal.ttf in Resources */,
 				1A5347DC1A07897C00CE742E /* @2x.png in Resources */,
 				14FBC1231A14C00E00BD6B15 /* HockeySDKResources.bundle in Resources */,
 				1AB847C41A06EB95008509FE /* univers-condensed-medium.ttf in Resources */,
-				14BC9EDD1A14B23600DFC197 /* notBlankSound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

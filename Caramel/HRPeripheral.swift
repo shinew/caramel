@@ -23,11 +23,9 @@ class HRPeripheral : NSObject, CBPeripheralDelegate {
     let HardwareRevisionCharacteristicUUID = CBUUID(string: "0x2A27")
     
     var peripheral: CBPeripheral
-    var hrUpdateCallback: ((NSData!) -> Void)!
     
-    init(peripheral: CBPeripheral!, callback: ((NSData!) -> Void)!) {
+    init(peripheral: CBPeripheral!) {
         self.peripheral = peripheral
-        self.hrUpdateCallback = callback
         super.init()
     }
     
@@ -73,6 +71,8 @@ class HRPeripheral : NSObject, CBPeripheralDelegate {
         println("peripheral: \(peripheral)")
         println("updated characteristic: \(characteristic)")
         println("to value: \(characteristic.value)")
-        self.hrUpdateCallback(characteristic.value)
+        if let callback = HRBluetooth.getHRUpdateCallback() {
+            callback(characteristic.value)
+        }
     }
 }

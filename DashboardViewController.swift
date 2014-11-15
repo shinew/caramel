@@ -10,7 +10,6 @@ import UIKit
 
 class DashboardViewController: UIViewController {
     
-    var hrBluetooth: HRBluetooth!
     var dashboardCallback: DashboardCallback!
     
     @IBOutlet weak var refreshButton: UIBarButtonItem!
@@ -27,7 +26,6 @@ class DashboardViewController: UIViewController {
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
-        self.hrBluetooth = HRBluetooth()
     }
     
     override func viewDidLoad() {
@@ -43,9 +41,6 @@ class DashboardViewController: UIViewController {
         self.dashboardCallback = DashboardCallback(updatedScoreCallback)
         
         HRBluetooth.setHRUpdateCallback(self.dashboardCallback.newHeartRateCallback)
-        HRBluetooth.startScanningHRPeripheral()
-        
-        BluetoothConnectivity().setLongRunningTimer()
         
         println("Loaded DashboardViewController view!")
     }

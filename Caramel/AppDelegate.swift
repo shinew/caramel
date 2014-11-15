@@ -17,7 +17,8 @@ var _notificationType = NotificationType.Standard
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var audioPlayer = AVAudioPlayer()
+    var bgTask: UIBackgroundTaskIdentifier = 0
+//    var audioPlayer = AVAudioPlayer()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -34,7 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Movement.initalizeManager()
         
-        self.playMusicInBackgroundToPreventSleep()
+//        self.playMusicInBackgroundToPreventSleep()
+        
+        self.startBGTask()
         
         return true
     }
@@ -61,6 +64,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    // Call [self startBGTask]; when you begin initalizing stuff for the background. FYI I use this code in my AppDelegate.
+    // You do not need to explicitly call endBGTask: from anywhere other than startBGTask
+    func startBGTask() {
+        HRBluetooth.startScanningHRPeripheral()
+        
+        self.endBGTask(false)
+        // kick off the background task
+        var app = UIApplication.sharedApplication()
+        self.bgTask = app.beginBackgroundTaskWithExpirationHandler({() -> Void in
+            self.endBGTask(true)
+        })
+    }
+    
+    func endBGTask(calledBySystem: Bool) {
+        if (self.bgTask != UIBackgroundTaskInvalid) {
+            UIApplication.sharedApplication().endBackgroundTask(self.bgTask)
+            self.bgTask = UIBackgroundTaskInvalid
+        }
     }
 
     // MARK: - Core Data stack
@@ -161,7 +184,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func playMusicInBackgroundToPreventSleep() {
+    /*func playMusicInBackgroundToPreventSleep() {
         var mp3Sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("notBlankSound", ofType: "mp3")!)
         println("Blank sound file: \(mp3Sound)")
         
@@ -174,5 +197,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.audioPlayer.numberOfLoops = -1
         self.audioPlayer.prepareToPlay()
         self.audioPlayer.play()
-    }
+    }*/
 }
