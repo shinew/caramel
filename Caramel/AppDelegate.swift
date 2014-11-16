@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var bgTask: UIBackgroundTaskIdentifier = 0
+    var bgTaskEnded = false
 //    var audioPlayer = AVAudioPlayer()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -54,6 +55,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        
+        if self.bgTaskEnded {
+            self.startBGTask()
+            self.bgTaskEnded = false
+        }
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
@@ -83,6 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (self.bgTask != UIBackgroundTaskInvalid) {
             UIApplication.sharedApplication().endBackgroundTask(self.bgTask)
             self.bgTask = UIBackgroundTaskInvalid
+            self.bgTaskEnded = true
         }
     }
 
