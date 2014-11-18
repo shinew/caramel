@@ -41,7 +41,7 @@ class TrendGraphView: UIView {
         self.drawDataArea(self.currentDataValues, max: self.currentMaxYValue, color: UIColor(red: 0.30, green: 0.55, blue: 0.76, alpha: 0.8).CGColor, rect: rect, context: context)
         
         //Draws line separators for current data
-        self.drawLineSeparators(self.currentDataValues, max: self.currentMaxYValue, color: UIColor.whiteColor().CGColor, rect: rect, context: context)
+        //self.drawLineSeparators(self.currentDataValues, max: self.currentMaxYValue, color: UIColor.whiteColor().CGColor, rect: rect, context: context)
     }
     
     private func drawDataArea(data: [Int], max: Int, color: CGColor!, rect: CGRect!, context: CGContext!) {

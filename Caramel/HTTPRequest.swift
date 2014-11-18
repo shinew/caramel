@@ -8,8 +8,8 @@
 
 import Foundation
 
-let ROOT_URL = "http://23.239.1.132"
-let API_VERSION = "/api/v1.0"
+let ROOT_URL = "http://api.getbeyond.me"
+let API_VERSION = "/v1.0"
 
 class HTTPRequest {
 
