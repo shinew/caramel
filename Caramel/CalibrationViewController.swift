@@ -65,7 +65,7 @@ class CalibrationViewController: UIViewController {
         HTTPRequest.sendTrainingIntervalRequest(trainingInterval, self.calibrationCallback.httpResponseCallbackGenerator("Training"))
         
         HRBluetooth.setHRUpdateCallback(self.previousHRCallback!)
-        HRBluetooth.startScanningHRPeripheral()
+        //HRBluetooth.startScanningHRPeripheral()
         
         self.startButton.setTitle("Perfect. Beyond is ready.", forState: UIControlState.Normal)
         self.descriptionTextView.text = "Just exit the app and let Beyond notify you when you are about to be stressed. It's that easy."

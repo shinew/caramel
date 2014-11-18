@@ -17,11 +17,11 @@ class BluetoothConnectivity {
     
     @objc func checkForBluetooth() {
         println("(BLConnect) Checking if bluetooth connection dropped")
-        if let lastHRReceivedDate = Timer.getLastHRBluetoothReceivedDate() {
+        /*if let lastHRReceivedDate = Timer.getLastHRBluetoothReceivedDate() {
             if lastHRReceivedDate.timeIntervalSinceNow < (0.0 - Constants.getBluetoothConnectivityDuration()) {
                 println("(BLConnect) Restarting HRBluetooth")
                 HRBluetooth.startScanningHRPeripheral()
             }
-        }
+        }*/
     }
 }
