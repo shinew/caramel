@@ -23,7 +23,7 @@ class HRCentralManager: NSObject, CBCentralManagerDelegate {
     }
     
     func startCentralManager() {
-        self.hrCBManager = CBCentralManager(delegate: self, queue: nil)
+        self.hrCBManager = CBCentralManager(delegate: self, queue: nil, options: [CBCentralManagerOptionRestoreIdentifierKey: "myBTCentralManager"])
     }
     
     func centralManagerDidUpdateState(central: CBCentralManager!) {
@@ -33,8 +33,18 @@ class HRCentralManager: NSObject, CBCentralManagerDelegate {
             /* Start scanning for peripherals offering the heart rate service. We'll
             pick up any peripheral in range that offers this service. */
             self.hrCBManager.scanForPeripheralsWithServices([self.HeartRateServiceUUID], options: nil)
+            
         default:
             println("central \(central) state changed to: \(central.state.rawValue)")
+        }
+    }
+    
+    func centralManager(central: CBCentralManager!, willRestoreState state: [NSObject : AnyObject]!) {
+        var peripherals = state[CBCentralManagerRestoredStatePeripheralsKey] as [CBPeripheral]
+        for peripheral in peripherals {
+            self.hrSensor = HRPeripheral(peripheral: peripheral)
+            peripheral.delegate = self.hrSensor
+            peripheral.discoverServices([self.HeartRateServiceUUID, self.DeviceInformationUUID])
         }
     }
     

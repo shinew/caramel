@@ -17,6 +17,7 @@ var _notificationType = NotificationType.Standard
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var location: Location?
     var bgTask: UIBackgroundTaskIdentifier = 0
 //    var audioPlayer = AVAudioPlayer()
 
@@ -69,6 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Call [self startBGTask]; when you begin initalizing stuff for the background. FYI I use this code in my AppDelegate.
     // You do not need to explicitly call endBGTask: from anywhere other than startBGTask
     func startBGTask() {
+        self.location = Location()
         HRBluetooth.startScanningHRPeripheral()
         
         self.endBGTask(false)

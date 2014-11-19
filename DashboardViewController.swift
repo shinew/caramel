@@ -50,8 +50,8 @@ class DashboardViewController: UIViewController {
     }
     
     @IBAction func refreshButtonDidPress(sender: AnyObject) {
-        HRBluetooth.startScanningHRPeripheral()
-        println("Restarted Bluetooth services")
+        /*HRBluetooth.startScanningHRPeripheral()
+        println("Restarted Bluetooth services")*/
     }
     
     private func displayUpdateDateLabels() {

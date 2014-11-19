@@ -22,11 +22,11 @@ class HRPeripheral : NSObject, CBPeripheralDelegate {
     let ModelNumberCharacteristicUUID = CBUUID(string: "0x2A24")
     let HardwareRevisionCharacteristicUUID = CBUUID(string: "0x2A27")
     
-    var peripheral: CBPeripheral
+    var peripheral: CBPeripheral!
     
     init(peripheral: CBPeripheral!) {
-        self.peripheral = peripheral
         super.init()
+        self.peripheral = peripheral
     }
     
     func peripheral(peripheral: CBPeripheral!, didDiscoverServices error: NSError!) {
