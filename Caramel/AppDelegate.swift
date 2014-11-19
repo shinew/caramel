@@ -13,14 +13,14 @@ import HockeySDK
 
 var _notificationType = NotificationType.Standard
 
+var _bgTask: UIBackgroundTaskIdentifier = 0
+var _location: Location!
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var location: Location?
-    var bgTask: UIBackgroundTaskIdentifier = 0
-//    var audioPlayer = AVAudioPlayer()
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         //HockeyApp integration
@@ -36,9 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Movement.initalizeManager()
         
-//        self.playMusicInBackgroundToPreventSleep()
-        
-        self.startBGTask()
+        AppDelegate.startBGTask()
         
         return true
     }
@@ -69,23 +67,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // Call [self startBGTask]; when you begin initalizing stuff for the background. FYI I use this code in my AppDelegate.
     // You do not need to explicitly call endBGTask: from anywhere other than startBGTask
-    func startBGTask() {
-        self.location = Location()
+    class func startBGTask() {
+        _location = Location()
         HRBluetooth.startScanningHRPeripheral()
         
-        self.endBGTask(false)
+        AppDelegate.endBGTask(false)
         // kick off the background task
         var app = UIApplication.sharedApplication()
-        self.bgTask = app.beginBackgroundTaskWithExpirationHandler({() -> Void in
-            self.endBGTask(true)
+        _bgTask = app.beginBackgroundTaskWithExpirationHandler({() -> Void in
+            AppDelegate.endBGTask(true)
         })
     }
     
-    func endBGTask(calledBySystem: Bool) {
-        if (self.bgTask != UIBackgroundTaskInvalid) {
-            UIApplication.sharedApplication().endBackgroundTask(self.bgTask)
-            self.bgTask = UIBackgroundTaskInvalid
+    class func endBGTask(calledBySystem: Bool) {
+        if (_bgTask != UIBackgroundTaskInvalid) {
+            UIApplication.sharedApplication().endBackgroundTask(_bgTask)
+            _bgTask = UIBackgroundTaskInvalid
         }
+    }
+    
+    class func restartBGTask() {
+        AppDelegate.endBGTask(false)
+        AppDelegate.startBGTask()
     }
 
     // MARK: - Core Data stack
@@ -185,19 +188,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             actionNavVC.pushViewController(protocolVC, animated: false)
         }
     }
-    
-    /*func playMusicInBackgroundToPreventSleep() {
-        var mp3Sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("notBlankSound", ofType: "mp3")!)
-        println("Blank sound file: \(mp3Sound)")
-        
-        // Removed deprecated use of AVAudioSessionDelegate protocol
-        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
-        AVAudioSession.sharedInstance().setActive(true, error: nil)
-        
-        var error:NSError?
-        self.audioPlayer = AVAudioPlayer(contentsOfURL: mp3Sound, error: &error)
-        self.audioPlayer.numberOfLoops = -1
-        self.audioPlayer.prepareToPlay()
-        self.audioPlayer.play()
-    }*/
 }
