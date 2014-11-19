@@ -8,7 +8,7 @@
 
 import Foundation
 
-let ROOT_URL = "http://api.getbeyond.me"
+let ROOT_URL = "http://devapi.getbeyond.me"
 let API_VERSION = "/v1.0"
 
 class HTTPRequest {
@@ -63,22 +63,30 @@ class HTTPRequest {
         req.end(responseCallback)
     }
     
-    class func sendUserAuthRequest(
+    class func sendUserAddRequest(
         user: UserRecord,
         responseCallback: (NSHTTPURLResponse!, Agent.Data!, NSError!) -> Void
     ) {
-        println("Sending user auth request")
-        let req = Agent.put(ROOT_URL + API_VERSION + "/user")
+        println("Sending user adding request")
+        let req = Agent.put(ROOT_URL + API_VERSION + "/user/add")
         var json = [String: AnyObject]()
-        json["FirstName"] = user.firstName
-        if user.lastName != nil {
-            json["LastName"] = user.lastName
-        } else {
-            json["LastName"] = NSNull()
-        }
+        json["UserName"] = user.userName
         json["Password"] = user.password
         req.send(json)
         req.end(responseCallback)
+    }
+    
+    class func sendUserVerifyRequest(
+        user: UserRecord,
+        responseCallback: (NSHTTPURLResponse!, Agent.Data!, NSError!) -> Void
+        ) {
+            println("Sending user verification request")
+            let req = Agent.post(ROOT_URL + API_VERSION + "/user/verify")
+            var json = [String: AnyObject]()
+            json["UserName"] = user.userName
+            json["Password"] = user.password
+            req.send(json)
+            req.end(responseCallback)
     }
     
     private class func getDefaultJSON() -> [String: AnyObject] {

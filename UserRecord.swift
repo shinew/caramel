@@ -10,14 +10,12 @@ import Foundation
 
 struct UserRecord {
     
-    var firstName: String
-    var lastName: String?
     var userID: Int?
+    var userName: String?
     var password: String?
     
-    init(firstName: String, lastName: String?, userID: Int?, password: String?) {
-        self.firstName = firstName
-        self.lastName = lastName
+    init(userName: String?, userID: Int?, password: String?) {
+        self.userName = userName
         self.userID = userID
         self.password = password
     }

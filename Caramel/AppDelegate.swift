@@ -38,6 +38,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         AppDelegate.startBGTask()
         
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        var viewController = storyboard.instantiateViewControllerWithIdentifier("RegisterViewController") as UIViewController
+        
+        self.window!.rootViewController = viewController
+        self.window!.makeKeyAndVisible()
+        
         return true
     }
 
