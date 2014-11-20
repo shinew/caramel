@@ -25,7 +25,6 @@
 		148F34FB1A113FDE00B3C941 /* CalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148F34FA1A113FDE00B3C941 /* CalibrationViewController.swift */; };
 		14A06CF91A08ADA5007B6FD3 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A06CF81A08ADA5007B6FD3 /* Math.swift */; };
 		14A0C3EB1A1146B6006AD37F /* TrainingInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A0C3EA1A1146B6006AD37F /* TrainingInterval.swift */; };
-		14A63F461A074EB100EA9924 /* ProfileCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CE4E631A06EA21000A2A27 /* ProfileCircleView.swift */; };
 		14A851B31A089CCC00855954 /* NotificationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A851B21A089CCC00855954 /* NotificationRecord.swift */; };
 		14C4D1111A1BE98500F517E5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C4D1101A1BE98500F517E5 /* Location.swift */; };
 		14D0E2361A008C6D0042F20A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2351A008C6D0042F20A /* AppDelegate.swift */; };
@@ -128,7 +127,6 @@
 		14A0C3EA1A1146B6006AD37F /* TrainingInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingInterval.swift; sourceTree = "<group>"; };
 		14A851B21A089CCC00855954 /* NotificationRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationRecord.swift; sourceTree = "<group>"; };
 		14C4D1101A1BE98500F517E5 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		14CE4E631A06EA21000A2A27 /* ProfileCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCircleView.swift; sourceTree = "<group>"; };
 		14D0E2301A008C6D0042F20A /* Caramel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caramel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14D0E2341A008C6D0042F20A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14D0E2351A008C6D0042F20A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -477,7 +475,6 @@
 			children = (
 				14D47A9E1A06E61500049C34 /* DashboardCallback.swift */,
 				1A3D2BD51A060E0500063AEB /* DashboardViewController.swift */,
-				14CE4E631A06EA21000A2A27 /* ProfileCircleView.swift */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -685,7 +682,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14A63F461A074EB100EA9924 /* ProfileCircleView.swift in Sources */,
 				1AFFAAE51A0FF203002BAB2D /* FearViewController.swift in Sources */,
 				1415AA9A1A02D81100C1CD4F /* Notification.swift in Sources */,
 				1AB847E11A07112F008509FE /* SpringAnimation.swift in Sources */,

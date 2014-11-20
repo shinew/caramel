@@ -34,10 +34,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
         
         // Override point for customization after application launch.
+        
+        // Start movement monitoring
         Movement.initalizeManager()
         
+        // Start location + BT monitoring
         AppDelegate.startBGTask()
         
+        
+        // Load user data if possible
+        User.loadUserIDAndPassword()
+        
+        // Setup initial screen
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
