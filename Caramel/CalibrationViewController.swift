@@ -34,7 +34,19 @@ class CalibrationViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.startButton.enabled = false
+        })
+        HRQueue.popAll()
+        Notification.sendNoInternetNotification()
+        return false
+    }
+    
     @IBAction func startButtonDidPress(sender: AnyObject) {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.startButton.enabled = false
+        })
         self.startDate = NSDate()
         HRQueue.popAll()
         
@@ -55,7 +67,9 @@ class CalibrationViewController: UIViewController {
     }
     
     func endButtonDidPress() {
-        self.startButton.enabled = false
+        dispatch_async(dispatch_get_main_queue(), {
+            self.startButton.enabled = false
+        })
         
         self.endDate = NSDate()
         var hrSamples = HRQueue.popAll()

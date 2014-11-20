@@ -173,6 +173,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let actionsTabIndex = 2
         
+        if !(self.window!.rootViewController! is UITabBarController) {
+            var initialViewControllerID = StartScreen.getStartScreenID()
+            var viewController = storyboard.instantiateViewControllerWithIdentifier(initialViewControllerID) as UIViewController
+            
+            self.window!.rootViewController = viewController
+            self.window!.makeKeyAndVisible()
+        }
+        
         let tabBarController = self.window!.rootViewController! as UITabBarController
         switch _notificationType {
         case .Original:
