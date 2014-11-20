@@ -14,9 +14,9 @@ let _maxNumMovementQueue = 20
 let _maxMovementThreshhold = 65.0 //so if 75% movement in last 20s, then moving set to true
 let _stressIntervalDuration = 4 * 60 //4 min
 let _accelFrequency = 50
-let _profileCircleFineness = 5 //in min
+let _profileTrendFineness = 5 //in min
 let _movementAffectiveDuration = 30
-let _stressNotificationIntervalDuration = 5 * 60 //5 min
+let _stressNotificationIntervalDuration = 10 * 60 //5 min
 let _stressNotificationThreshold = 70
 let _circleColorYellowThreshold = 70
 let _circleColorRedThreshold = 90
@@ -36,7 +36,7 @@ class Constants {
     
     class func getAccelFrequency() -> Int { return _accelFrequency }
     
-    class func getProfileCircleFineness() -> Int { return _profileCircleFineness }
+    class func getProfileTrendFineness() -> Int { return _profileTrendFineness }
     
     class func getMovementAffectiveDuration() -> Int { return _movementAffectiveDuration }
     

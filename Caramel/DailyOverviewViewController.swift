@@ -49,7 +49,7 @@ class DailyOverviewViewController: UIViewController {
     
     private func organizeDailyData(startDate: NSDate) -> [Int] {
         let endDate = startDate.dateByAddingTimeInterval(60 * 60 * 24)
-        let granularity = NSTimeInterval(Constants.getProfileCircleFineness() * 60) * 2
+        let granularity = NSTimeInterval(Constants.getProfileTrendFineness() * 60) * 2
         let intervals = Database.getSortedStressIntervals(startDate, endDate: endDate)
         var movingDate = startDate
         var index = 0
