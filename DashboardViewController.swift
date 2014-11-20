@@ -33,12 +33,6 @@ class DashboardViewController: UIViewController {
         
         User.loadUserIDAndPassword()
         
-        //new
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let protocolVC = storyboard.instantiateViewControllerWithIdentifier("RegisterViewController") as UIViewController
-        self.navigationController!.pushViewController(protocolVC, animated: false)
-        //
-        
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
         
         self.displayUpdateDateLabels()

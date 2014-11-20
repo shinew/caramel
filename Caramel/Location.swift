@@ -23,6 +23,6 @@ class Location: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        println("New location: \(locations)")
+        //println("New location: \(locations)")
     }
 }

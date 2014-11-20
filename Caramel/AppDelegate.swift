@@ -42,7 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        var viewController = storyboard.instantiateViewControllerWithIdentifier("RegisterViewController") as UIViewController
+        var initialViewControllerID = StartScreen.getStartScreenID()
+        var viewController = storyboard.instantiateViewControllerWithIdentifier(initialViewControllerID) as UIViewController
         
         self.window!.rootViewController = viewController
         self.window!.makeKeyAndVisible()

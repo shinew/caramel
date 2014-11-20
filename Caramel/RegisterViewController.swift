@@ -97,6 +97,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             User.setUserIDAndPassword(userID, password: self.userRecord.password!)
             self.shouldSegue = true
             dispatch_async(dispatch_get_main_queue(), {
+                StartScreen.completedOnboarding()
                 self.performSegueWithIdentifier("signupSuccessSegue", sender: self)
             })
         } else {
@@ -134,6 +135,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             User.setUserIDAndPassword(userID, password: self.userRecord.password!)
             self.shouldSegue = true
             dispatch_async(dispatch_get_main_queue(), {
+                StartScreen.completedOnboarding()
                 self.performSegueWithIdentifier("loginSuccessSegue", sender: self)
             })
         } else {

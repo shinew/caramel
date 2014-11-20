@@ -14,6 +14,7 @@
 		142EB8231A12E4E400F23EF0 /* ProtocolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142EB8221A12E4E400F23EF0 /* ProtocolsViewController.swift */; };
 		1430FCBC1A0307EF006B518B /* AccelQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430FCBB1A0307EF006B518B /* AccelQueue.swift */; };
 		144071891A0A05B4002A3B71 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144071881A0A05B4002A3B71 /* User.swift */; };
+		144468AC1A1D665100B4C680 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144468AB1A1D665100B4C680 /* StartScreen.swift */; };
 		144630AD1A1466BD003B350A /* DailyOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144630AC1A1466BD003B350A /* DailyOverviewViewController.swift */; };
 		144630B11A1467C6003B350A /* TrendGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144630B01A1467C6003B350A /* TrendGraphView.swift */; };
 		1446CCAC1A10A21700DBA7FC /* BluetoothConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */; };
@@ -115,6 +116,7 @@
 		142EB8221A12E4E400F23EF0 /* ProtocolsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolsViewController.swift; sourceTree = "<group>"; };
 		1430FCBB1A0307EF006B518B /* AccelQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelQueue.swift; sourceTree = "<group>"; };
 		144071881A0A05B4002A3B71 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		144468AB1A1D665100B4C680 /* StartScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
 		144630AC1A1466BD003B350A /* DailyOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyOverviewViewController.swift; sourceTree = "<group>"; };
 		144630B01A1467C6003B350A /* TrendGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendGraphView.swift; sourceTree = "<group>"; };
 		1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothConnectivity.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 				14D80ACD1A0172920064BCD8 /* Timer.swift */,
 				1415AA991A02D81100C1CD4F /* Notification.swift */,
 				144071881A0A05B4002A3B71 /* User.swift */,
+				144468AB1A1D665100B4C680 /* StartScreen.swift */,
 			);
 			name = Globals;
 			sourceTree = "<group>";
@@ -692,6 +695,7 @@
 				144630B11A1467C6003B350A /* TrendGraphView.swift in Sources */,
 				14F878E31A022372001FFFE2 /* Constants.swift in Sources */,
 				14E275751A11F8A500F30780 /* DailyWellnessScore.swift in Sources */,
+				144468AC1A1D665100B4C680 /* StartScreen.swift in Sources */,
 				14D80AD31A01806C0064BCD8 /* HRCentralManager.swift in Sources */,
 				1AB847D31A06F60F008509FE /* HabitsViewController.swift in Sources */,
 				14C4D1111A1BE98500F517E5 /* Location.swift in Sources */,

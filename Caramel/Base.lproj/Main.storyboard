@@ -254,16 +254,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Wi-Vs-rbz">
                                 <rect key="frame" x="16" y="449" width="343" height="161"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPu-MM-edu">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPu-MM-edu">
                                         <rect key="frame" x="13" y="14" width="190.5" height="97"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="LAST EVENT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="LP5-cg-cij">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="LAST EVENT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="LP5-cg-cij">
                                                 <rect key="frame" x="43.5" y="0.0" width="103.5" height="18"/>
                                                 <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="18"/>
                                                 <color key="textColor" red="0.35294117650000001" green="0.36078431370000003" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="--:--:--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="gUc-lt-Q1d">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="--:--:--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="gUc-lt-Q1d">
                                                 <rect key="frame" x="155" y="83.5" width="35.5" height="13.5"/>
                                                 <fontDescription key="fontDescription" name="Univers-Light-Bold" family="Univers-Light" pointSize="14"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -283,7 +283,7 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Q5v-Ay-kO4">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Q5v-Ay-kO4">
                                                 <rect key="frame" x="181.5" y="44.5" width="9" height="13.5"/>
                                                 <fontDescription key="fontDescription" name="Univers-Light-Bold" family="Univers-Light" pointSize="14"/>
                                                 <color key="textColor" red="0.21960784310000001" green="0.25882352939999997" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -321,13 +321,13 @@
                                             <constraint firstItem="35g-Lg-Re4" firstAttribute="top" secondItem="acg-H8-H8L" secondAttribute="bottom" constant="5" id="zSR-O8-PJt"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Last Stress Event Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="PfE-bC-iaq">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Last Stress Event Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="PfE-bC-iaq">
                                         <rect key="frame" x="13" y="116" width="190.5" height="37"/>
                                         <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="14"/>
                                         <color key="textColor" red="0.21960784310000001" green="0.25882352939999997" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="-- %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="wRO-Lp-CpN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="-- %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="wRO-Lp-CpN">
                                         <rect key="frame" x="236.5" y="116" width="98.5" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="56" id="Sgc-lf-K4s"/>
@@ -341,10 +341,10 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AJV-Jg-wJs">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AJV-Jg-wJs">
                                         <rect key="frame" x="236.5" y="14" width="98.5" height="97"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="YESTERDAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="KOu-cY-fM7">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="YESTERDAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="KOu-cY-fM7">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="MmG-vy-D1D"/>
@@ -375,7 +375,7 @@
                                             <constraint firstItem="KHR-HA-eJ5" firstAttribute="centerX" secondItem="AJV-Jg-wJs" secondAttribute="centerX" id="nMW-VL-ICU"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="T5G-US-b3u">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="T5G-US-b3u">
                                         <rect key="frame" x="220.5" y="14" width="1" height="97"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="cez-qC-Qqe"/>
@@ -508,7 +508,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="fbS-rR-cFb">
             <objects>
-                <tabBarController id="NaH-e3-zsE" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="InitialTabBarController" id="NaH-e3-zsE" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -627,7 +627,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R98-z6-I0M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1485.5" y="555.5"/>
+            <point key="canvasLocation" x="1571.5" y="576.5"/>
         </scene>
         <!--Register-->
         <scene sceneID="rdA-ee-nVu">
@@ -767,14 +767,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HGm-3e-dRP">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGm-3e-dRP">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app-icon" translatesAutoresizingMaskIntoConstraints="NO" id="cFK-jR-Sz6">
-                                        <rect key="frame" x="152.5" y="77" width="70" height="99"/>
+                                        <rect key="frame" x="152" y="77" width="70" height="99"/>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" editable="NO" text="Beyond needs five minutes to understand your body. Let's relax for five minutes without controlling your breath." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDI-T1-QXr">
-                                        <rect key="frame" x="22.5" y="214" width="330" height="90"/>
+                                        <rect key="frame" x="22" y="214" width="330" height="90"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="330" id="2mX-jg-Ys1"/>
@@ -785,7 +785,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTS-Lw-xnN">
-                                        <rect key="frame" x="22.5" y="324" width="330" height="27"/>
+                                        <rect key="frame" x="22" y="324" width="330" height="27"/>
                                         <fontDescription key="fontDescription" name="Univers-Light-Bold" family="Univers-Light" pointSize="15"/>
                                         <state key="normal" title="Start Now.">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -794,6 +794,13 @@
                                         <connections>
                                             <action selector="startButtonDidPress:" destination="XsB-6y-3G6" eventType="touchUpInside" id="UbH-RC-Q42"/>
                                         </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHh-9h-Di7">
+                                        <rect key="frame" x="298" y="484" width="44" height="30"/>
+                                        <state key="normal" title="Skip &gt;">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.30588236451148987" green="0.57254904508590698" blue="0.87450987100601196" alpha="1" colorSpace="deviceRGB"/>
@@ -806,7 +813,9 @@
                                     <constraint firstItem="JDI-T1-QXr" firstAttribute="top" secondItem="cFK-jR-Sz6" secondAttribute="bottom" constant="38" id="Uxo-Qe-6N7"/>
                                     <constraint firstAttribute="centerX" secondItem="cFK-jR-Sz6" secondAttribute="centerX" id="fuY-bw-v1M"/>
                                     <constraint firstItem="cFK-jR-Sz6" firstAttribute="top" secondItem="HGm-3e-dRP" secondAttribute="top" constant="77" id="g3b-4C-gkt"/>
+                                    <constraint firstAttribute="bottom" secondItem="MHh-9h-Di7" secondAttribute="bottom" constant="40" id="se9-ix-Hzo"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JDI-T1-QXr" secondAttribute="trailing" constant="20" id="ukI-F5-hgh"/>
+                                    <constraint firstAttribute="trailing" secondItem="MHh-9h-Di7" secondAttribute="trailing" constant="33" id="w1j-bH-EQV"/>
                                     <constraint firstItem="JDI-T1-QXr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HGm-3e-dRP" secondAttribute="leading" constant="20" id="yCZ-NA-z7a"/>
                                 </constraints>
                             </view>
@@ -819,7 +828,7 @@
                             <constraint firstItem="HGm-3e-dRP" firstAttribute="top" secondItem="Imf-BL-1hB" secondAttribute="bottom" id="dw7-f6-UDN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Calibration" id="XUM-Ci-aQO" customClass="Cao">
+                    <navigationItem key="navigationItem" title="Calibration" id="XUM-Ci-aQO">
                         <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="XwC-o0-WQw">
                             <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-3"/>
                         </barButtonItem>
@@ -832,7 +841,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="leb-Ub-9Tm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1485.5" y="1404.5"/>
+            <point key="canvasLocation" x="1571.5" y="1404.5"/>
         </scene>
         <!--Debug View Controller-->
         <scene sceneID="9o5-6H-XsG">
@@ -2073,7 +2082,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dZQ-kl-ZZX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1015.3125" y="-221.30281690140845"/>
+            <point key="canvasLocation" x="1029.5" y="-221.5"/>
         </scene>
         <!--Actions-->
         <scene sceneID="gcM-lG-0p3">
@@ -2094,7 +2103,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xyi-YU-zD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="999.375" y="576.76056338028161"/>
+            <point key="canvasLocation" x="1029.5" y="576.5"/>
         </scene>
         <!--Calibration-->
         <scene sceneID="cpt-ZB-Bca">
@@ -2115,7 +2124,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KNe-43-cwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998.4375" y="1405.4577464788731"/>
+            <point key="canvasLocation" x="1029.5" y="1404.5"/>
         </scene>
     </scenes>
     <resources>
@@ -2139,7 +2148,7 @@
         <image name="trends-icon" width="41" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vhX-pF-OE5"/>
+        <segue reference="lKJ-qL-MNN"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
