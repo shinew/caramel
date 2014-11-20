@@ -12,9 +12,9 @@ class CalibrationCallback {
     
     func newHeartRateCallback(data: NSData!) -> Void {
         println("(Calibration) Received new heart rate data")
-        Timer.setLastHRBluetoothReceivedDate(NSDate())
         var hrSample = HRDecoder.dataToHRSample(data)
         if hrSample != nil && hrSample!.hr != nil && hrSample!.hr < 150 {
+            Timer.setLastHRBluetoothReceivedDate(NSDate())
             HRQueue.push(hrSample!)
             println("(Calibration) HRQueue length: \(HRQueue.length())")
         }

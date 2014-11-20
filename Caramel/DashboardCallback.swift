@@ -10,18 +10,22 @@ import UIKit
 
 class DashboardCallback {
     
-    var todayOverallLabel: UILabel!
     var lastStressScoreInterval: StressScoreInterval!
+    var currentHRLabel: UILabel!
     
-    init(updatedScoreCallback: (interval: StressScoreInterval!) -> Void) {
+    init(updatedScoreCallback: (interval: StressScoreInterval!) -> Void, currentHRLabel: UILabel!) {
         StressQueue.addNewScoreCallback(updatedScoreCallback)
+        self.currentHRLabel = currentHRLabel
     }
     
     func newHeartRateCallback(data: NSData!) -> Void {
         println("Received new heart rate data")
-        Timer.setLastHRBluetoothReceivedDate(NSDate())
         var hrSample = HRDecoder.dataToHRSample(data)
         if hrSample != nil && hrSample!.hr != nil && hrSample!.hr < 150 {
+            Timer.setLastHRBluetoothReceivedDate(NSDate())
+            dispatch_async(dispatch_get_main_queue(), {
+                self.currentHRLabel.text = "\(hrSample!.hr!)"
+            })
             HRQueue.push(hrSample!)
             println("HRQueue length: \(HRQueue.length())")
             if HRQueue.length() == Constants.getMaxNumHRQueue() {

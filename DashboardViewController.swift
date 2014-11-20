@@ -12,7 +12,17 @@ class DashboardViewController: UIViewController {
     
     var dashboardCallback: DashboardCallback!
     
+    @IBOutlet weak var redZoneLabel: UILabel!
+    @IBOutlet weak var yellowZoneLabel: UILabel!
+    @IBOutlet weak var blueZoneLabel: UILabel!
+    @IBOutlet weak var percentDayStressLabel: UILabel!
+    @IBOutlet weak var currentHRLabel: UILabel!
+    @IBOutlet weak var connectedStateLabel: UILabel!
+    @IBOutlet weak var lastCalibrationStateLabel: UILabel!
+    
     @IBOutlet weak var refreshButton: UIBarButtonItem!
+    
+    var bluetoothConnectivity = BluetoothConnectivity()
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
@@ -21,13 +31,28 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
+        self.navigationController!.navigationBar.titleTextAttributes = [
+            NSFontAttributeName: UIFont(name: "Univers-Light-Bold",
+                size: 18
+        )!]
         
         self.updateProfile()
 
-        self.dashboardCallback = DashboardCallback(updatedScoreCallback)
+        self.dashboardCallback = DashboardCallback(updatedScoreCallback: self.updatedScoreCallback, currentHRLabel: self.currentHRLabel)
         
         HRBluetooth.setHRUpdateCallback(self.dashboardCallback.newHeartRateCallback)
+        
+        //start timer
+        self.bluetoothConnectivity.setCallbacks({(Void) -> Void in
+            dispatch_async(dispatch_get_main_queue(), {
+                self.connectedStateLabel.text = "Connected"
+            })}, disconnectedCallback: {(Void) -> Void in
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.connectedStateLabel.text = "Disconnected"
+            })}
+        )
+        self.bluetoothConnectivity.setLongRunningTimer()
+        
         
         println("Loaded DashboardViewController view!")
     }
@@ -102,11 +127,52 @@ class DashboardViewController: UIViewController {
     }
     
     private func updateProfile() {
-        println("Updating profile circle and daily score")
+        println("Updating dashboard numbers")
         let currentDate = NSDate()
         let startDate = Conversion.dateToTimelessDate(currentDate)
         let endDate = startDate.dateByAddingTimeInterval(60 * 60 * 24) //add 24hrs
         
         let stressIntervals = Database.getSortedStressIntervals(startDate, endDate: endDate)
+        self.updateZonePercentages(stressIntervals)
+    }
+    
+    private func updateZonePercentages(stressIntervals: [StressScoreInterval]!) {
+        if stressIntervals.count == 0 {
+            return
+        }
+        
+        var counters = [0, 0, 0]
+        var labels = [self.blueZoneLabel, self.yellowZoneLabel, self.redZoneLabel]
+        
+        for interval in stressIntervals {
+            if interval.score < Constants.getCircleColorYellowThreshold() {
+                counters[0]++
+            } else if interval.score < Constants.getCircleColorRedThreshold() {
+                counters[1]++
+            } else {
+                counters[2]++
+            }
+        }
+        let total = reduce(counters, 0, {(old: Int, next: Int) in return old + next})
+        
+        for i in 0 ..< labels.count {
+            dispatch_async(dispatch_get_main_queue(), {
+                labels[i].text = self.formatCountToString(counters[i])
+            })
+        }
+        dispatch_async(dispatch_get_main_queue(), {
+            self.percentDayStressLabel.text = "\(Int(Double(counters[1]+counters[2])/Double(total)))"
+        })
+    }
+    
+    private func formatCountToString(constCount: Int) -> String {
+        var count = constCount * 30
+        if count < 60 {
+            return "\(count) s"
+        } else if count < 3600 {
+            return "\(count / 60) min"
+        } else {
+            return "\(count / 3600) hr"
+        }
     }
 }

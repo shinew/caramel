@@ -9,19 +9,37 @@
 import Foundation
 
 class BluetoothConnectivity {
-    //Bug fix: Bluetooth drops sometimes (iOS 8 known bug)
-    //Fix: restart CBManager if no signal for > 20s
+    
+    var connectedCallback: ((Void) -> Void)?
+    var disconnectedCallback: ((Void) -> Void)?
+    var switchConnectivity = true
+    
+    init() { }
+    
+    func setCallbacks(connectedCallback: (Void) -> Void, disconnectedCallback: (Void) -> Void) {
+        self.connectedCallback = connectedCallback
+        self.disconnectedCallback = disconnectedCallback
+    }
+
     func setLongRunningTimer() {
-        NSTimer.scheduledTimerWithTimeInterval(Constants.getBluetoothConnectivityDuration(), target: self, selector: "checkForBluetooth", userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: Selector("checkForBluetooth"), userInfo: nil, repeats: true)
     }
     
     @objc func checkForBluetooth() {
         println("(BLConnect) Checking if bluetooth connection dropped")
         if let lastHRReceivedDate = Timer.getLastHRBluetoothReceivedDate() {
-            if lastHRReceivedDate.timeIntervalSinceNow < (0.0 - Constants.getBluetoothConnectivityDuration()) {
-                println("(BLConnect) Restarting HRBluetooth")
-                AppDelegate.restartBGTask()
+            if lastHRReceivedDate.timeIntervalSinceNow >= (0.0 - Constants.getBluetoothConnectivityDuration()) {
+                
+                self.switchConnectivity = true
+                if self.connectedCallback != nil { self.connectedCallback!() }
+                return
             }
+        }
+        if self.disconnectedCallback != nil { self.disconnectedCallback!() }
+        println("(BLConnect) Restarting HRBluetooth")
+        if self.switchConnectivity {
+            AppDelegate.restartBGTask()
+            self.switchConnectivity = false
         }
     }
 }

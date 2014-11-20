@@ -40,8 +40,14 @@ class HRCentralManager: NSObject, CBCentralManagerDelegate {
     }
     
     func centralManager(central: CBCentralManager!, willRestoreState state: [NSObject : AnyObject]!) {
-        var peripherals = state[CBCentralManagerRestoredStatePeripheralsKey] as [CBPeripheral]
-        for peripheral in peripherals {
+        var peripherals: AnyObject? = state[CBCentralManagerRestoredStatePeripheralsKey]
+        if peripherals == nil {
+            return
+        }
+        
+        var peripheralsCast = peripherals as [CBPeripheral]
+        
+        for peripheral in peripheralsCast {
             self.hrSensor = HRPeripheral(peripheral: peripheral)
             peripheral.delegate = self.hrSensor
             peripheral.discoverServices([self.HeartRateServiceUUID, self.DeviceInformationUUID])
