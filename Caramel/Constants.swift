@@ -18,8 +18,8 @@ let _profileTrendFineness = 5 //in min
 let _movementAffectiveDuration = 30
 let _stressNotificationIntervalDuration = 10 * 60 //10 min
 let _highStressNotificationIntervalDuration = 3 * 60 //3 min
-let _stressNotificationThreshold = 70
-let _circleColorYellowThreshold = 70
+let _stressNotificationThreshold = 75
+let _circleColorYellowThreshold = 75
 let _circleColorRedThreshold = 90
 let _bluetoothConnectivityDuration = 10.0
 
