@@ -17,8 +17,6 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var blueZoneLabel: UILabel!
     @IBOutlet weak var percentDayStressLabel: UILabel!
     @IBOutlet weak var currentHRLabel: UILabel!
-    @IBOutlet weak var connectedStateLabel: UILabel!
-    @IBOutlet weak var lastCalibrationStateLabel: UILabel!
     
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     
@@ -45,10 +43,9 @@ class DashboardViewController: UIViewController {
         //start timer
         self.bluetoothConnectivity.setCallbacks({(Void) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
-                self.connectedStateLabel.text = "Connected"
             })}, disconnectedCallback: {(Void) -> Void in
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.connectedStateLabel.text = "Disconnected"
+                    self.currentHRLabel.text = "Disconnected"
             })}
         )
         self.bluetoothConnectivity.setLongRunningTimer()
