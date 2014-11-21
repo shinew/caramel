@@ -70,6 +70,14 @@ class DashboardViewController: UIViewController {
     private func updatedScoreCallback(interval: StressScoreInterval!) {
         println("Smooth score: \(interval.score)")
         
+        if let lastMovementDate = Timer.getLastMovementDate() {
+            // don't send notification if movement too recent
+            let timeDifference = NSDate().timeIntervalSinceDate(lastMovementDate)
+            if timeDifference < NSTimeInterval(Constants.getMovementAffectiveDuration()) {
+                return
+            }
+        }
+        
         Database.addStressScoreInterval(interval)
         
         self.updateProfile()
@@ -85,26 +93,22 @@ class DashboardViewController: UIViewController {
         
         let currentDate = NSDate()
         
-        if let lastMovementDate = Timer.getLastMovementDate() {
-            // don't send notification if movement too recent
-            let timeDifference = currentDate.timeIntervalSinceDate(lastMovementDate)
-            if timeDifference < NSTimeInterval(Constants.getMovementAffectiveDuration()) {
-                return
-            }
-        }
-        
         // |low| --- |high| ------------ |low| ------------ |low|
         if let lastLowDate = Timer.getLastLowStressNotifDate() {
             let lowTimeDifference = currentDate.timeIntervalSinceDate(lastLowDate)
             if let lastHighDate = Timer.getLastHighStressNotifDate() {
                 let highTimeDifference = currentDate.timeIntervalSinceDate(lastHighDate)
+                let highLowTimeDifference = currentDate.timeIntervalSinceDate(lastLowDate)
+                
                 if lowTimeDifference > NSTimeInterval(Constants.getStressNotificationIntervalDuration()) {
                     
                     Timer.setLastLowStressNotifDate(currentDate)
                     Notification.sendLowStressNotification()
                     Database.addNotificationRecord(NotificationRecord(type: "low", date: currentDate, userID: User.getUserID()))
                     
-                } else if highTimeDifference > NSTimeInterval(Constants.getStressNotificationIntervalDuration()) {
+                } else if highTimeDifference > NSTimeInterval(Constants.getStressNotificationIntervalDuration()) &&
+                    highLowTimeDifference > NSTimeInterval(Constants.getHighStressNotificationIntervalDuration())
+                {
                     
                     Timer.setLastHighStressNotifDate(currentDate)
                     Notification.sendHighStressNotification()
@@ -173,7 +177,13 @@ class DashboardViewController: UIViewController {
         } else if count < 3600 {
             return "\(count / 60) min"
         } else {
-            return "\(count / 3600) hr"
+            if count % 3600 == 0 {
+                return "\(count / 3600) hr"
+            } else {
+                var result = "\(count / 3600) hr"
+                result += " \((count - (count / 3600) * 3600) / 60) min"
+                return result
+            }
         }
     }
 }

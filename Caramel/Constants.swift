@@ -11,12 +11,13 @@ import Foundation
 let _maxNumHRQueue = 30
 let _maxNumStressQueue = 3
 let _maxNumMovementQueue = 20
-let _maxMovementThreshhold = 65.0 //so if 75% movement in last 20s, then moving set to true
+let _maxMovementThreshhold = 75.0 //so if 75% movement in last 20s, then moving set to true
 let _stressIntervalDuration = 4 * 60 //4 min
 let _accelFrequency = 50
 let _profileTrendFineness = 5 //in min
 let _movementAffectiveDuration = 30
-let _stressNotificationIntervalDuration = 10 * 60 //5 min
+let _stressNotificationIntervalDuration = 10 * 60 //10 min
+let _highStressNotificationIntervalDuration = 3 * 60 //3 min
 let _stressNotificationThreshold = 70
 let _circleColorYellowThreshold = 70
 let _circleColorRedThreshold = 90
@@ -40,7 +41,13 @@ class Constants {
     
     class func getMovementAffectiveDuration() -> Int { return _movementAffectiveDuration }
     
-    class func getStressNotificationIntervalDuration() -> Int { return _stressNotificationIntervalDuration }
+    class func getStressNotificationIntervalDuration() -> Int {
+        return _stressNotificationIntervalDuration
+    }
+
+    class func getHighStressNotificationIntervalDuration() -> Int {
+        return _highStressNotificationIntervalDuration
+    }
     
     class func getStressNotificationThreshold() -> Int { return _stressNotificationThreshold }
     
