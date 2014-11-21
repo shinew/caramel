@@ -46,6 +46,22 @@ class HTTPRequest {
         req.end(responseCallback)
     }
     
+    class func sendBulkStressRequest(
+        startDate: NSDate!,
+        endDate: NSDate!,
+        responseCallback: (NSHTTPURLResponse!, Agent.Data!, NSError!) -> Void
+    ) {
+        println("Sending Bulk Stress Score Request")
+        let req = Agent.post(ROOT_URL + API_VERSION + "/score/bulk")
+        var json = HTTPRequest.getDefaultJSON()
+        
+        json["StartTime"] = Conversion.dateToString(startDate)
+        json["EndTime"] = Conversion.dateToString(endDate)
+        
+        req.send(json)
+        req.end(responseCallback)
+    }
+    
     class func sendTrainingIntervalRequest(
         trainingInterval: TrainingInterval!,
         responseCallback: (NSHTTPURLResponse!, Agent.Data!, NSError!) -> Void

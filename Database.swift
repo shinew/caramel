@@ -24,6 +24,19 @@ class Database {
         println("(DB) StressScoreInterval saved.")
     }
     
+    class func addBulkStressScoreInterval(intervals: [StressScoreInterval]) {
+        let appContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+        println("(DB) Adding bulk stress score intervals")
+        for interval in intervals {
+            var stressScore = NSEntityDescription.insertNewObjectForEntityForName("StressScoreInterval", inManagedObjectContext: appContext) as NSManagedObject
+            stressScore.setValue(interval.score, forKey: "score")
+            stressScore.setValue(interval.startDate, forKey: "startDate")
+            stressScore.setValue(interval.endDate, forKey: "endDate")
+            stressScore.setValue(interval.userID, forKey: "userID")
+        }
+        appContext.save(nil)
+    }
+    
     class func getSortedStressIntervals(startDate: NSDate!, endDate: NSDate!) -> [StressScoreInterval] {
         println("(DB) Retriving stress score intervals")
         let appContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!

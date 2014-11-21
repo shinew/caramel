@@ -134,6 +134,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             println("(Onboarding) Received old userID: \(userID)")
             User.setUserIDAndPassword(userID, password: self.userRecord.password!)
             self.shouldSegue = true
+            self.sendBulkScoreRetrievalRequest()
             dispatch_async(dispatch_get_main_queue(), {
                 StartScreen.completedOnboarding()
                 self.performSegueWithIdentifier("loginSuccessSegue", sender: self)
@@ -142,6 +143,43 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             dispatch_async(dispatch_get_main_queue(), {
                 self.introTextView.text = "Wrong username/password. Please try again."
             })
+        }
+    }
+    
+    private func sendBulkScoreRetrievalRequest() {
+        //retrieve the previous 24hrs worth of intervals
+        println("Sending bulk stress request")
+        var currentDate = NSDate()
+        var yesterdayDate = currentDate.dateByAddingTimeInterval(-60 * 60 * 48)
+        HTTPRequest.sendBulkStressRequest(yesterdayDate, endDate: currentDate, responseCallback: self.bulkScoreRetrievalCallback)
+    }
+    
+    private func bulkScoreRetrievalCallback(response: NSHTTPURLResponse!, data: Agent.Data!, error: NSError!) -> Void {
+        if response == nil {
+            println("(Bulk Stress) Request did not go through")
+            Notification.sendNoInternetNotification()
+            return
+        }
+        println("(Bulk Stress) finished sending Stress request!")
+        println("(Bulk Stress) response status code: \(response.statusCode)")
+        if response != nil && response.statusCode == 200 {
+            var bulkIntervals = [StressScoreInterval]()
+            let json = data as [String: AnyObject]
+            if json["Scores"] is [[String: AnyObject]] {
+                let scores = json["Scores"] as [[String: AnyObject]]
+                for score in scores {
+                    let scoreInt = score["Score"]
+                    let startDate = score["StartTime"]
+                    let endDate = score["EndTime"]
+                    println("\(scoreInt), \(startDate), \(endDate)")
+                    bulkIntervals.append(StressScoreInterval(
+                        score: scoreInt as Int,
+                        startDate: Conversion.stringToDate(startDate as String),
+                        endDate: Conversion.stringToDate(endDate as String),
+                        userID: User.getUserID()))
+                }
+            }
+            Database.addBulkStressScoreInterval(bulkIntervals)
         }
     }
 }

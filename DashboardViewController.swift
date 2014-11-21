@@ -161,7 +161,7 @@ class DashboardViewController: UIViewController {
             })
         }
         dispatch_async(dispatch_get_main_queue(), {
-            self.percentDayStressLabel.text = "\(Int(Double(counters[1]+counters[2])/Double(total)))"
+            self.percentDayStressLabel.text = "\(Int(Double(counters[1]+counters[2])/Double(total)*100.0))%"
         })
     }
     

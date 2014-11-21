@@ -10,6 +10,13 @@ import UIKit
 
 class Conversion {
     
+    class func stringToDate(dateString: String) -> NSDate! {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date = dateFormatter.dateFromString(dateString)
+        return date
+    }
+    
     class func dateToString(date: NSDate!) -> String {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
