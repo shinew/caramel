@@ -12,6 +12,10 @@ class DashboardViewController: UIViewController {
     
     var dashboardCallback: DashboardCallback!
     
+    @IBOutlet weak var redZoneView: UIView!
+    @IBOutlet weak var yellowZoneView: UIView!
+    @IBOutlet weak var blueZoneView: UIView!
+    
     @IBOutlet weak var redZoneLabel: UILabel!
     @IBOutlet weak var yellowZoneLabel: UILabel!
     @IBOutlet weak var blueZoneLabel: UILabel!
@@ -36,6 +40,8 @@ class DashboardViewController: UIViewController {
             NSFontAttributeName: UIFont(name: "Univers-Light-Bold",
                 size: 18
         )!]
+        
+        self.redZoneView.layer.cornerRadius = self.redZoneView.frame.height/2
         
         self.updateProfile()
 
