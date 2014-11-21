@@ -41,7 +41,7 @@ class DashboardViewController: UIViewController {
                 size: 18
         )!]
         
-        self.redZoneView.layer.cornerRadius = self.redZoneView.frame.height/2
+        self.makeCircularViews()
         
         self.updateProfile()
 
@@ -72,6 +72,13 @@ class DashboardViewController: UIViewController {
     @IBAction func refreshButtonDidPress(sender: AnyObject) {
         println("Restart Bluetooth background task")
         AppDelegate.restartBGTask()
+    }
+    
+    private func makeCircularViews() {
+        var zoneViews = [self.blueZoneView, self.yellowZoneView, self.redZoneView]
+        for view in zoneViews {
+            view.layer.cornerRadius = view.frame.size.height/2
+        }
     }
     
     private func updatedScoreCallback(interval: StressScoreInterval!) {
