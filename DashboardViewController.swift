@@ -59,6 +59,7 @@ class DashboardViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        Notification.sendMemoryWarningNotification()
     }
     
     @IBAction func refreshButtonDidPress(sender: AnyObject) {

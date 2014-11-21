@@ -13,7 +13,7 @@ let _lowStressMessage = "You seem tense. Let's take a few deep breaths?"
 let _highStressMessage = "Need more help on de-stressing? Slide me."
 let _noInternetMessage = "We can't seem to connect to the Internet. Try reconnecting?"
 let _calibrationCompleteMessage = "Calibration is ready. You can use Beyond now."
-
+let _memoryWarningMessage = "Slide me to reconnect."
 
 enum NotificationType {
     case Standard
@@ -23,6 +23,11 @@ enum NotificationType {
 }
 
 class Notification {
+    
+    class func sendMemoryWarningNotification() {
+        AppDelegate.setNotificationType(.Standard)
+        Notification.sendNotification(_memoryWarningMessage)
+    }
     
     class func sendCalibrationCompleteNotification() {
         AppDelegate.setNotificationType(.Original)

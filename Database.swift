@@ -19,7 +19,8 @@ class Database {
         stressScore.setValue(interval.startDate, forKey: "startDate")
         stressScore.setValue(interval.endDate, forKey: "endDate")
         stressScore.setValue(interval.userID, forKey: "userID")
-        appContext.save(nil)
+
+        (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
         println("(DB) \(stressScore)")
         println("(DB) StressScoreInterval saved.")
     }
@@ -34,7 +35,7 @@ class Database {
             stressScore.setValue(interval.endDate, forKey: "endDate")
             stressScore.setValue(interval.userID, forKey: "userID")
         }
-        appContext.save(nil)
+        (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
     }
     
     class func getSortedStressIntervals(startDate: NSDate!, endDate: NSDate!) -> [StressScoreInterval] {
@@ -68,7 +69,7 @@ class Database {
         notifRecord.setValue(notif.type, forKey: "type")
         notifRecord.setValue(notif.date, forKey: "date")
         notifRecord.setValue(notif.userID, forKey: "userID")
-        appContext.save(nil)
+        (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
         println("(DB) \(notifRecord)")
         println("(DB) notification record saved.")
     }
@@ -111,8 +112,8 @@ class Database {
         } else {
             let item = searchResults.first! as NSManagedObject
             item.setValue(activity.counter, forKey: "counter")
-            appContext.save(nil)
         }
+        (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
     }
     
     class func getBreakActivityCounter(fixedActivity: BreakActivityCounter) -> BreakActivityCounter {
@@ -148,7 +149,7 @@ class Database {
             let item = searchResults.first! as NSManagedObject
             item.setValue(dailyScore.score, forKey: "score")
         }
-        appContext.save(nil)
+        (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
     }
     
     class func getDailyWellnessScore(fixedDailyScore: DailyWellnessScore) -> DailyWellnessScore? {
