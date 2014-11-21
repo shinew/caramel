@@ -17,6 +17,9 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var blueZoneLabel: UILabel!
     @IBOutlet weak var percentDayStressLabel: UILabel!
     @IBOutlet weak var currentHRLabel: UILabel!
+    @IBOutlet weak var redZoneTimeLabel: UILabel!
+    @IBOutlet weak var yellowZoneTimeLabel: UILabel!
+    @IBOutlet weak var blueZoneTimeLabel: UILabel!
     
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     
@@ -46,6 +49,7 @@ class DashboardViewController: UIViewController {
             })}, disconnectedCallback: {(Void) -> Void in
                 dispatch_async(dispatch_get_main_queue(), {
                     self.currentHRLabel.text = "Disconnected"
+                    self.currentHRLabel.font = UIFont(name: "Univers Light Condensed", size: 18)
             })}
         )
         self.bluetoothConnectivity.setLongRunningTimer()
@@ -141,6 +145,7 @@ class DashboardViewController: UIViewController {
         
         var counters = [0, 0, 0]
         var labels = [self.blueZoneLabel, self.yellowZoneLabel, self.redZoneLabel]
+        var timeFormatLabels = [self.blueZoneTimeLabel, self.yellowZoneTimeLabel, self.redZoneTimeLabel]
         
         for interval in stressIntervals {
             if interval.score < Constants.getCircleColorYellowThreshold() {
@@ -155,22 +160,28 @@ class DashboardViewController: UIViewController {
         
         for i in 0 ..< labels.count {
             dispatch_async(dispatch_get_main_queue(), {
-                labels[i].text = self.formatCountToString(counters[i])
+                self.updateTimeLabels(counters[i], label: labels[i], timeFormatLabel: timeFormatLabels[i])
             })
         }
         dispatch_async(dispatch_get_main_queue(), {
-            self.percentDayStressLabel.text = "\(Int(Double(counters[1]+counters[2])/Double(total)*100.0))%"
+            self.percentDayStressLabel.text = "\(Int(Double(counters[1]+counters[2])/Double(total)*100.0))"
         })
     }
     
-    private func formatCountToString(constCount: Int) -> String {
-        var count = constCount * 30
-        if count < 60 {
-            return "\(count) s"
-        } else if count < 3600 {
-            return "\(count / 60) min"
+    private func updateTimeLabels(counter: Int, label: UILabel!, timeFormatLabel: UILabel!) {
+        var seconds = counter * 30 //roughly
+        if seconds < 60 {
+            label.text = "\(seconds)"
+            timeFormatLabel.text = "sec"
+        } else if seconds < 3600 {
+            label.text = "\(seconds / 60)"
+            timeFormatLabel.text = "min"
+        } else if seconds == 3600 {
+            label.text = "1:00"
+            timeFormatLabel.text = "hour"
         } else {
-            return "\(count / 3600) hr"
+            label.text = "\(seconds / 3600):\((seconds % 3600)/60)"
+            timeFormatLabel.text = "hours"
         }
     }
 }
