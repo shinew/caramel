@@ -90,6 +90,7 @@
 		1AB847DF1A07112F008509FE /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847DA1A07112F008509FE /* DesignableView.swift */; };
 		1AB847E01A07112F008509FE /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847DB1A07112F008509FE /* Misc.swift */; };
 		1AB847E11A07112F008509FE /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847DC1A07112F008509FE /* SpringAnimation.swift */; };
+		1ADB0B2C1A1FF25F00294A0C /* ConnectivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADB0B2B1A1FF25F00294A0C /* ConnectivityViewController.swift */; };
 		1AEC6D491A103E9100053F17 /* ProtocolAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEC6D481A103E9100053F17 /* ProtocolAnimation.swift */; };
 		1AFFAAE31A0FF1F7002BAB2D /* OverwhelmedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFFAAE21A0FF1F7002BAB2D /* OverwhelmedViewController.swift */; };
 		1AFFAAE51A0FF203002BAB2D /* FearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFFAAE41A0FF203002BAB2D /* FearViewController.swift */; };
@@ -193,6 +194,7 @@
 		1AB847DA1A07112F008509FE /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		1AB847DB1A07112F008509FE /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
 		1AB847DC1A07112F008509FE /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		1ADB0B2B1A1FF25F00294A0C /* ConnectivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectivityViewController.swift; sourceTree = "<group>"; };
 		1AEC6D481A103E9100053F17 /* ProtocolAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolAnimation.swift; sourceTree = "<group>"; };
 		1AFFAAE21A0FF1F7002BAB2D /* OverwhelmedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverwhelmedViewController.swift; sourceTree = "<group>"; };
 		1AFFAAE41A0FF203002BAB2D /* FearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FearViewController.swift; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 			children = (
 				148F34F71A113EDC00B3C941 /* Calibration */,
 				1A9D8AAF1A11F529004FA076 /* RegisterViewController.swift */,
+				1ADB0B2B1A1FF25F00294A0C /* ConnectivityViewController.swift */,
 			);
 			name = Onboarding;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 				14D0E25F1A0090920042F20A /* HTTPRequest.swift in Sources */,
 				14A851B31A089CCC00855954 /* NotificationRecord.swift in Sources */,
 				1AB847DD1A07112F008509FE /* BlurView.swift in Sources */,
+				1ADB0B2C1A1FF25F00294A0C /* ConnectivityViewController.swift in Sources */,
 				1446CCAC1A10A21700DBA7FC /* BluetoothConnectivity.swift in Sources */,
 				144630AD1A1466BD003B350A /* DailyOverviewViewController.swift in Sources */,
 				1469A8091A04659200F439DB /* Movement.swift in Sources */,
