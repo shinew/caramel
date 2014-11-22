@@ -13,6 +13,7 @@ var _lastHRSentDate: NSDate?
 var _lastMovementDate: NSDate?
 var _lastLowStressNotifDate: NSDate?
 var _lastHighStressNotifDate: NSDate?
+var _lastMemoryWarningNotificationDate: NSDate?
 
 class Timer {
     //This class keeps various dates
@@ -31,4 +32,11 @@ class Timer {
     
     class func getLastHighStressNotifDate() -> NSDate? { return _lastHighStressNotifDate }
     class func setLastHighStressNotifDate(date: NSDate!) { _lastHighStressNotifDate = date }
+    
+    class func getLastMemoryWarningNotificationDate() -> NSDate? {
+        return _lastMemoryWarningNotificationDate
+    }
+    class func setLastMemoryWarningNotificationDate(date: NSDate!) {
+        _lastMemoryWarningNotificationDate = date
+    }
 }

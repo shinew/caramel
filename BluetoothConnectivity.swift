@@ -22,7 +22,7 @@ class BluetoothConnectivity {
     }
 
     func setLongRunningTimer() {
-        NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: Selector("checkForBluetooth"), userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("checkForBluetooth"), userInfo: nil, repeats: true)
     }
     
     @objc func checkForBluetooth() {

@@ -22,6 +22,7 @@ let _stressNotificationThreshold = 75
 let _circleColorYellowThreshold = 75
 let _circleColorRedThreshold = 90
 let _bluetoothConnectivityDuration = 10.0
+let _memoryWarningThrottleDuration = 10.0 * 60.0
 
 class Constants {
     
@@ -56,4 +57,6 @@ class Constants {
     class func getCircleColorRedThreshold() -> Int { return _circleColorRedThreshold }
     
     class func getBluetoothConnectivityDuration() -> Double { return _bluetoothConnectivityDuration }
+    
+    class func getMemoryWarningThrottleDuration() -> Double { return _memoryWarningThrottleDuration }
 }
