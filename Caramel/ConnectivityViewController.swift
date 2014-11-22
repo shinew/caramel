@@ -47,6 +47,7 @@ class ConnectivityViewController: UIViewController {
         println("(ConnectivityOnboarding) Received new heart rate data")
         var hrSample = HRDecoder.dataToHRSample(data)
         if hrSample != nil && hrSample!.hr != nil && hrSample!.hr < 150 {
+            Timer.setLastHRBluetoothReceivedDate(NSDate())
             self.currentHRLabel.text = "\(hrSample!.hr!)"
         }
     }
