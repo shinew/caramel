@@ -70,8 +70,10 @@ class DashboardViewController: UIViewController {
     
     func registerZoneTapToggles() {
         var zoneViews = [self.blueZoneView, self.yellowZoneView, self.redZoneView]
-        for zoneView in zoneViews {
-            zoneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("handleTap:")))
+        var functionNames = ["handleBlueTap:", "handleYellowTap:", "handleRedTap:"]
+        
+        for i in 0 ..< zoneViews.count {
+            zoneViews[i].addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector(functionNames[i])))
         }
     }
     
@@ -209,10 +211,6 @@ class DashboardViewController: UIViewController {
     }
     
     private func updateZonePercentages(stressIntervals: [StressScoreInterval]!) {
-        if stressIntervals.count == 0 {
-            return
-        }
-        
         var counters = [0, 0, 0]
         var labels = [self.blueZoneLabel, self.yellowZoneLabel, self.redZoneLabel]
         var timeFormatLabels = [self.blueZoneTimeFormatLabel, self.yellowZoneTimeFormatLabel, self.redZoneTimeFormatLabel]
@@ -245,7 +243,9 @@ class DashboardViewController: UIViewController {
     private func updateTimeLabels(toggle: Int, counter: Int, total: Int, label: UILabel!, timeFormatLabel: UILabel!) {
         if toggle == 0 {
             var seconds = counter * 30 //roughly
-            if seconds < 60 {
+            if total == 0 {
+                timeFormatLabel.text = "sec"
+            } else if seconds < 60 {
                 label.text = "\(seconds)"
                 timeFormatLabel.text = "sec"
             } else if seconds < 3600 {
@@ -259,8 +259,12 @@ class DashboardViewController: UIViewController {
                 timeFormatLabel.text = "hours"
             }
         } else {
-            label.text = "\(Int(Double(counter)/Double(total)*100.0))"
-            timeFormatLabel.text = "%"
+            if total == 0 {
+                timeFormatLabel.text = "%"
+            } else {
+                label.text = "\(Int(Double(counter)/Double(total)*100.0))"
+                timeFormatLabel.text = "%"
+            }
         }
     }
 }
