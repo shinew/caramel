@@ -9,7 +9,7 @@
 import Foundation
 
 var _stressQueue = Queue<StressScoreInterval>()
-var _newScoreCallbacks = Array<(StressScoreInterval!) -> Void>()
+var _newScoreCallbacks = Dictionary<String, (StressScoreInterval!) -> Void>()
 
 class StressQueue {
     
@@ -17,8 +17,8 @@ class StressQueue {
         return _stressQueue.length()
     }
     
-    class func addNewScoreCallback(callback: (StressScoreInterval!) -> Void) {
-        _newScoreCallbacks.append(callback)
+    class func addNewScoreCallback(key: String, callback: (StressScoreInterval!) -> Void) {
+        _newScoreCallbacks[key] = callback
     }
     
     class func addNewRawScore(rawScore: StressScoreInterval!) {
@@ -35,7 +35,7 @@ class StressQueue {
         if _stressQueue.length() == Constants.getMaxNumStressQueue() {
             _stressQueue.pop()
         }
-        for callback in _newScoreCallbacks {
+        for (key, callback) in _newScoreCallbacks {
             callback(rawScore)
         }
     }

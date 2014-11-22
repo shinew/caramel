@@ -14,7 +14,7 @@ class DashboardCallback {
     var currentHRLabel: UILabel!
     
     init(updatedScoreCallback: (interval: StressScoreInterval!) -> Void, currentHRLabel: UILabel!) {
-        StressQueue.addNewScoreCallback(updatedScoreCallback)
+        StressQueue.addNewScoreCallback("Dashboard", updatedScoreCallback)
         self.currentHRLabel = currentHRLabel
     }
     

@@ -9,7 +9,7 @@
 import Foundation
 import CoreMotion
 
-var _newMovementCallbacks = Array<(Bool) -> Void>()
+var _newMovementCallbacks = Dictionary<String, (Bool) -> Void>()
 var _activityManager: CMMotionActivityManager?
 var _motionManager: CMMotionManager?
 var _wasMoving = false
@@ -24,8 +24,8 @@ class Movement {
         }
     }
     
-    class func addNewMovementCallback(callback: (Bool) -> Void) {
-        _newMovementCallbacks.append(callback)
+    class func addNewMovementCallback(key: String, callback: (Bool) -> Void) {
+        _newMovementCallbacks[key] = callback
     }
 
     class func isSteadyMovement() -> Bool {
@@ -79,7 +79,7 @@ class Movement {
     }
     
     private class func invokeCallbacks() {
-        for callback in _newMovementCallbacks {
+        for (key, callback) in _newMovementCallbacks {
             callback(_wasMoving)
         }
     }

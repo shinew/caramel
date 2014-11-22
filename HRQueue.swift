@@ -9,7 +9,7 @@
 import Foundation
 
 var _hrQueue = Queue<HRSample>()
-var _newHRCallbacks = Array<(HRSample!) -> Void>()
+var _newHRCallbacks = Dictionary<String, (HRSample!) -> Void>()
 
 class HRQueue {
     
@@ -17,15 +17,15 @@ class HRQueue {
         return _hrQueue.length()
     }
     
-    class func addNewHRCallback(callback: (HRSample!) -> Void) {
-        _newHRCallbacks.append(callback)
+    class func addNewHRCallback(key: String, callback: (HRSample!) -> Void) {
+        _newHRCallbacks[key] = callback
     }
     
     class func push(sample: HRSample) {
         println("Adding a new HR sample")
         _hrQueue.push(sample)
         
-        for callback in _newHRCallbacks {
+        for (key, callback) in _newHRCallbacks {
             callback(sample)
         }
     }
