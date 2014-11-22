@@ -31,7 +31,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     
     var bluetoothConnectivity = BluetoothConnectivity()
-    var summaryToggle = 0
+    var summaryToggles = ["Red": 0, "Yellow": 0, "Blue": 0]
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
@@ -46,7 +46,7 @@ class DashboardViewController: UIViewController {
         )!]
         
         self.updateProfile()
-        self.registerZoneTapToggle()
+        self.registerZoneTapToggles()
         
         self.dashboardCallback = DashboardCallback(updatedScoreCallback: self.updatedScoreCallback, currentHRLabel: self.currentHRLabel)
         
@@ -65,20 +65,31 @@ class DashboardViewController: UIViewController {
         )
         self.bluetoothConnectivity.setLongRunningTimer()
         
-        
         println("Loaded DashboardViewController view!")
     }
     
-    func registerZoneTapToggle() {
+    func registerZoneTapToggles() {
         var zoneViews = [self.blueZoneView, self.yellowZoneView, self.redZoneView]
         for zoneView in zoneViews {
             zoneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("handleTap:")))
         }
     }
     
-    func handleTap(recognizer: UITapGestureRecognizer) {
-        println("A zone has been tapped")
-        self.summaryToggle = 1 - self.summaryToggle
+    func handleRedTap(recognizer: UITapGestureRecognizer) {
+        println("Red zone has been tapped")
+        self.summaryToggles["Red"] = 1 - self.summaryToggles["Red"]!
+        self.updateProfile()
+    }
+    
+    func handleYellowTap(recognizer: UITapGestureRecognizer) {
+        println("Yellow zone has been tapped")
+        self.summaryToggles["Yellow"] = 1 - self.summaryToggles["Yellow"]!
+        self.updateProfile()
+    }
+    
+    func handleBlueTap(recognizer: UITapGestureRecognizer) {
+        println("Blue zone has been tapped")
+        self.summaryToggles["Blue"] = 1 - self.summaryToggles["Blue"]!
         self.updateProfile()
     }
     
@@ -205,6 +216,7 @@ class DashboardViewController: UIViewController {
         var counters = [0, 0, 0]
         var labels = [self.blueZoneLabel, self.yellowZoneLabel, self.redZoneLabel]
         var timeFormatLabels = [self.blueZoneTimeFormatLabel, self.yellowZoneTimeFormatLabel, self.redZoneTimeFormatLabel]
+        var colors = ["Blue", "Yellow", "Red"]
         
         for interval in stressIntervals {
             if interval.score < Constants.getCircleColorYellowThreshold() {
@@ -219,13 +231,19 @@ class DashboardViewController: UIViewController {
         
         for i in 0 ..< labels.count {
             dispatch_async(dispatch_get_main_queue(), {
-                self.updateTimeLabels(counters[i], total: total, label: labels[i], timeFormatLabel: timeFormatLabels[i])
+                self.updateTimeLabels(
+                    self.summaryToggles[colors[i]]!,
+                    counter: counters[i],
+                    total: total,
+                    label: labels[i],
+                    timeFormatLabel: timeFormatLabels[i]
+                )
             })
         }
     }
     
-    private func updateTimeLabels(counter: Int, total: Int, label: UILabel!, timeFormatLabel: UILabel!) {
-        if self.summaryToggle == 0 {
+    private func updateTimeLabels(toggle: Int, counter: Int, total: Int, label: UILabel!, timeFormatLabel: UILabel!) {
+        if toggle == 0 {
             var seconds = counter * 30 //roughly
             if seconds < 60 {
                 label.text = "\(seconds)"
