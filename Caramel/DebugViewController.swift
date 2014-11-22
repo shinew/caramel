@@ -8,6 +8,8 @@
 
 import UIKit
 
+var _registeredDebugCallback = false
+
 class DebugViewController: UIViewController {
 
     @IBOutlet weak var hrvLabel: UILabel!
@@ -28,7 +30,10 @@ class DebugViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.registerCallbacks()
+        if !_registeredDebugCallback {
+            _registeredDebugCallback = true
+            self.registerCallbacks()
+        }
     }
     
     private func registerCallbacks() {
