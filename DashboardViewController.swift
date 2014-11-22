@@ -31,6 +31,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     
     var bluetoothConnectivity = BluetoothConnectivity()
+    var summaryToggle = 0
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
@@ -45,7 +46,8 @@ class DashboardViewController: UIViewController {
         )!]
         
         self.updateProfile()
-
+        self.registerZoneTapToggle()
+        
         self.dashboardCallback = DashboardCallback(updatedScoreCallback: self.updatedScoreCallback, currentHRLabel: self.currentHRLabel)
         
         HRBluetooth.setHRUpdateCallback(self.dashboardCallback.newHeartRateCallback)
@@ -65,6 +67,19 @@ class DashboardViewController: UIViewController {
         
         
         println("Loaded DashboardViewController view!")
+    }
+    
+    func registerZoneTapToggle() {
+        var zoneViews = [self.blueZoneView, self.yellowZoneView, self.redZoneView]
+        for zoneView in zoneViews {
+            zoneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("handleTap:")))
+        }
+    }
+    
+    func handleTap(recognizer: UITapGestureRecognizer) {
+        println("A zone has been tapped")
+        self.summaryToggle = 1 - self.summaryToggle
+        self.updateProfile()
     }
     
     override func didReceiveMemoryWarning() {
@@ -206,19 +221,24 @@ class DashboardViewController: UIViewController {
     }
     
     private func updateTimeLabels(counter: Int, total: Int, label: UILabel!, timeFormatLabel: UILabel!) {
-        var seconds = counter * 30 //roughly
-        if seconds < 60 {
-            label.text = "\(seconds)"
-            timeFormatLabel.text = "sec"
-        } else if seconds < 3600 {
-            label.text = "\(seconds / 60)"
-            timeFormatLabel.text = "min"
-        } else if seconds == 3600 {
-            label.text = "1:00"
-            timeFormatLabel.text = "hour"
+        if self.summaryToggle == 0 {
+            var seconds = counter * 30 //roughly
+            if seconds < 60 {
+                label.text = "\(seconds)"
+                timeFormatLabel.text = "sec"
+            } else if seconds < 3600 {
+                label.text = "\(seconds / 60)"
+                timeFormatLabel.text = "min"
+            } else if seconds == 3600 {
+                label.text = "1:00"
+                timeFormatLabel.text = "hour"
+            } else {
+                label.text = "\(seconds / 3600):\((seconds % 3600) / 60)"
+                timeFormatLabel.text = "hours"
+            }
         } else {
-            label.text = "\(seconds / 3600):\((seconds % 3600)/60)"
-            timeFormatLabel.text = "hours"
+            label.text = "\(Int(Double(counter)/Double(total)*100.0))"
+            timeFormatLabel.text = "%"
         }
     }
 }
