@@ -24,7 +24,8 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var yellowZoneTimeFormatLabel: UILabel!
     @IBOutlet weak var blueZoneTimeFormatLabel: UILabel!
 
-    @IBOutlet weak var percentDayStressLabel: UILabel!
+    @IBOutlet weak var percentTodayStressLabel: UILabel!
+    @IBOutlet weak var percentYesterdayStressLabel: UILabel!
     @IBOutlet weak var currentHRLabel: UILabel!
 
     @IBOutlet weak var refreshButton: UIBarButtonItem!
@@ -145,9 +146,36 @@ class DashboardViewController: UIViewController {
         let currentDate = NSDate()
         let startDate = Conversion.dateToTimelessDate(currentDate)
         let endDate = startDate.dateByAddingTimeInterval(60 * 60 * 24) //add 24hrs
+        let yesterdayStartDate = startDate.dateByAddingTimeInterval(-60 * 60 * 24)
         
-        let stressIntervals = Database.getSortedStressIntervals(startDate, endDate: endDate)
-        self.updateZonePercentages(stressIntervals)
+        let todayStressIntervals = Database.getSortedStressIntervals(startDate, endDate: endDate)
+        let yesterdayStressIntervals = Database.getSortedStressIntervals(yesterdayStartDate, endDate: startDate)
+        
+        self.updateZonePercentages(todayStressIntervals)
+        
+        let todayPercent = self.getDailyPercentStress(todayStressIntervals)
+        let yesterdayPercent = self.getDailyPercentStress(yesterdayStressIntervals)
+        dispatch_async(dispatch_get_main_queue(), {
+            if todayPercent != nil {
+                self.percentTodayStressLabel.text = String(todayPercent!)
+            }
+            if yesterdayPercent != nil {
+                self.percentYesterdayStressLabel.text = String(yesterdayPercent!)
+            }
+        })
+    }
+    
+    private func getDailyPercentStress(stressIntervals: [StressScoreInterval]!) -> Int? {
+        if stressIntervals.count == 0 {
+            return nil
+        }
+        var stressCounter = 0
+        for interval in stressIntervals {
+            if interval.score >= Constants.getCircleColorYellowThreshold() {
+                stressCounter++
+            }
+        }
+        return Int(Double(stressCounter)/Double(stressIntervals.count)*100.0)
     }
     
     private func updateZonePercentages(stressIntervals: [StressScoreInterval]!) {
@@ -168,16 +196,13 @@ class DashboardViewController: UIViewController {
                 counters[2]++
             }
         }
-        let total = reduce(counters, 0, {(old: Int, next: Int) in return old + next})
+        let total = stressIntervals.count
         
         for i in 0 ..< labels.count {
             dispatch_async(dispatch_get_main_queue(), {
                 self.updateTimeLabels(counters[i], total: total, label: labels[i], timeFormatLabel: timeFormatLabels[i])
             })
         }
-        dispatch_async(dispatch_get_main_queue(), {
-            self.percentDayStressLabel.text = "\(Int(Double(counters[1]+counters[2])/Double(total)*100.0))"
-        })
     }
     
     private func updateTimeLabels(counter: Int, total: Int, label: UILabel!, timeFormatLabel: UILabel!) {

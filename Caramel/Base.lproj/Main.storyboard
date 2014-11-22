@@ -482,7 +482,8 @@
                         <outlet property="blueZoneTimeFormatLabel" destination="EpU-M5-gDp" id="Wmp-9l-klv"/>
                         <outlet property="blueZoneView" destination="JXQ-Rz-Ada" id="f7D-5Z-EMB"/>
                         <outlet property="currentHRLabel" destination="keQ-AV-yAM" id="tAf-00-v3u"/>
-                        <outlet property="percentDayStressLabel" destination="Yj9-8M-mHY" id="Fpb-Eu-6fG"/>
+                        <outlet property="percentTodayStressLabel" destination="Yj9-8M-mHY" id="c7N-Gg-tI1"/>
+                        <outlet property="percentYesterdayStressLabel" destination="dnI-N1-bbY" id="dhF-sT-ZkE"/>
                         <outlet property="redZoneLabel" destination="YAw-ao-ZBF" id="UKT-ko-CMq"/>
                         <outlet property="redZoneTimeFormatLabel" destination="jJf-L7-Boi" id="5Lr-PJ-Ksz"/>
                         <outlet property="redZoneView" destination="rDQ-TY-12Y" id="pN0-AZ-ncf"/>
