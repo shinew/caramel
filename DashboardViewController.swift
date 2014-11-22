@@ -19,12 +19,14 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var redZoneLabel: UILabel!
     @IBOutlet weak var yellowZoneLabel: UILabel!
     @IBOutlet weak var blueZoneLabel: UILabel!
+
+    @IBOutlet weak var redZoneTimeFormatLabel: UILabel!
+    @IBOutlet weak var yellowZoneTimeFormatLabel: UILabel!
+    @IBOutlet weak var blueZoneTimeFormatLabel: UILabel!
+
     @IBOutlet weak var percentDayStressLabel: UILabel!
     @IBOutlet weak var currentHRLabel: UILabel!
-    @IBOutlet weak var redZoneTimeLabel: UILabel!
-    @IBOutlet weak var yellowZoneTimeLabel: UILabel!
-    @IBOutlet weak var blueZoneTimeLabel: UILabel!
-    
+
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     
     var bluetoothConnectivity = BluetoothConnectivity()
@@ -41,8 +43,6 @@ class DashboardViewController: UIViewController {
                 size: 18
         )!]
         
-        self.makeCircularViews()
-        
         self.updateProfile()
 
         self.dashboardCallback = DashboardCallback(updatedScoreCallback: self.updatedScoreCallback, currentHRLabel: self.currentHRLabel)
@@ -50,12 +50,14 @@ class DashboardViewController: UIViewController {
         HRBluetooth.setHRUpdateCallback(self.dashboardCallback.newHeartRateCallback)
         
         //start timer
-        self.bluetoothConnectivity.setCallbacks({(Void) -> Void in
-            dispatch_async(dispatch_get_main_queue(), {
-            })}, disconnectedCallback: {(Void) -> Void in
+        self.bluetoothConnectivity.setCallbacks(
+            nil,
+            disconnectedCallback: {(Void) -> Void in
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.currentHRLabel.text = "Disconnected"
-                    self.currentHRLabel.font = UIFont(name: "Univers Light Condensed", size: 18)
+                    if self.currentHRLabel != nil {
+                        self.currentHRLabel.text = "Disconnected"
+                        self.currentHRLabel.font = UIFont(name: "Univers Light Condensed", size: 18)
+                    }
             })}
         )
         self.bluetoothConnectivity.setLongRunningTimer()
@@ -72,13 +74,6 @@ class DashboardViewController: UIViewController {
     @IBAction func refreshButtonDidPress(sender: AnyObject) {
         println("Restart Bluetooth background task")
         AppDelegate.restartBGTask()
-    }
-    
-    private func makeCircularViews() {
-        var zoneViews = [self.blueZoneView, self.yellowZoneView, self.redZoneView]
-        for view in zoneViews {
-            view.layer.cornerRadius = view.frame.size.height/2
-        }
     }
     
     private func updatedScoreCallback(interval: StressScoreInterval!) {
@@ -162,7 +157,7 @@ class DashboardViewController: UIViewController {
         
         var counters = [0, 0, 0]
         var labels = [self.blueZoneLabel, self.yellowZoneLabel, self.redZoneLabel]
-        var timeFormatLabels = [self.blueZoneTimeLabel, self.yellowZoneTimeLabel, self.redZoneTimeLabel]
+        var timeFormatLabels = [self.blueZoneTimeFormatLabel, self.yellowZoneTimeFormatLabel, self.redZoneTimeFormatLabel]
         
         for interval in stressIntervals {
             if interval.score < Constants.getCircleColorYellowThreshold() {
@@ -177,7 +172,7 @@ class DashboardViewController: UIViewController {
         
         for i in 0 ..< labels.count {
             dispatch_async(dispatch_get_main_queue(), {
-                self.updateTimeLabels(counters[i], label: labels[i], timeFormatLabel: timeFormatLabels[i])
+                self.updateTimeLabels(counters[i], total: total, label: labels[i], timeFormatLabel: timeFormatLabels[i])
             })
         }
         dispatch_async(dispatch_get_main_queue(), {
@@ -185,7 +180,7 @@ class DashboardViewController: UIViewController {
         })
     }
     
-    private func updateTimeLabels(counter: Int, label: UILabel!, timeFormatLabel: UILabel!) {
+    private func updateTimeLabels(counter: Int, total: Int, label: UILabel!, timeFormatLabel: UILabel!) {
         var seconds = counter * 30 //roughly
         if seconds < 60 {
             label.text = "\(seconds)"

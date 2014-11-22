@@ -16,7 +16,7 @@ class BluetoothConnectivity {
     
     init() { }
     
-    func setCallbacks(connectedCallback: (Void) -> Void, disconnectedCallback: (Void) -> Void) {
+    func setCallbacks(connectedCallback: ((Void) -> Void)?, disconnectedCallback: ((Void) -> Void)?) {
         self.connectedCallback = connectedCallback
         self.disconnectedCallback = disconnectedCallback
     }
