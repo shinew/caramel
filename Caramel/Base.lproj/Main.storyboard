@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -9,8 +9,6 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Univers-Condensed-Bold.ttf">
-            <string>Univers-Condensed-Bold</string>
-            <string>Univers-Condensed-Bold</string>
             <string>Univers-Condensed-Bold</string>
             <string>Univers-Condensed-Bold</string>
             <string>Univers-Condensed-Bold</string>
@@ -30,6 +28,10 @@
             <string>UniversCondensed-Medium</string>
         </mutableArray>
         <mutableArray key="univers-light-condensed-1361511939.ttf">
+            <string>UniversLightCondensed-Regular</string>
+            <string>UniversLightCondensed-Regular</string>
+            <string>UniversLightCondensed-Regular</string>
+            <string>UniversLightCondensed-Regular</string>
             <string>UniversLightCondensed-Regular</string>
             <string>UniversLightCondensed-Regular</string>
             <string>UniversLightCondensed-Regular</string>
@@ -550,76 +552,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyd-Zk-gYY">
-                                <rect key="frame" x="0.0" y="341" width="375" height="277"/>
-                                <color key="backgroundColor" red="0.99607843137254903" green="0.84705882352941175" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Univers-Condensed-Bold" family="Univers Condensed" pointSize="41"/>
-                                <state key="normal" title="TAKE A BREAK">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="actions-background" translatesAutoresizingMaskIntoConstraints="NO" id="PY1-DX-e13">
+                                <rect key="frame" x="-11" y="64" width="397" height="554"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyd-Zk-gYY">
+                                <rect key="frame" x="0.0" y="382" width="375" height="118"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="30"/>
+                                <state key="normal" title="break?">
+                                    <color key="titleColor" red="0.11764705882352941" green="0.15686274509803921" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Pm6-Ye-h65" kind="show" id="Lq3-xq-pvw"/>
+                                    <segue destination="Pm6-Ye-h65" kind="show" id="XTE-K9-FbN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="818-Ha-a4e">
-                                <rect key="frame" x="0.0" y="64" width="375" height="277"/>
-                                <color key="backgroundColor" red="0.18431372549019609" green="0.59607843137254901" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="270" id="QVW-OS-0nZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Univers-Condensed-Bold" family="Univers Condensed" pointSize="41"/>
-                                <state key="normal" title="3 DEEP BREATHS">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOS-qf-SES">
+                                <rect key="frame" x="0.0" y="264" width="375" height="118"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="30"/>
+                                <state key="normal" title="breath?">
+                                    <color key="titleColor" red="0.11764705882352941" green="0.15686274509803921" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="QVW-OS-0nZ"/>
-                                    </mask>
-                                </variation>
                                 <connections>
-                                    <segue destination="UVn-0d-4mO" kind="show" id="MKe-DM-diT"/>
+                                    <segue destination="UVn-0d-4mO" kind="show" id="lBk-7c-GYt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHm-pD-lx7">
-                                <rect key="frame" x="274" y="580" width="85" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="yVc-8z-GdF"/>
-                                    <constraint firstAttribute="width" constant="85" id="yuS-e6-sDy"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="15"/>
-                                <state key="normal" title="Need More?">
-                                    <color key="titleColor" red="0.2196078431372549" green="0.24705882352941178" blue="0.29019607843137257" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MaC-VX-3zF">
+                                <rect key="frame" x="0.0" y="64" width="375" height="199"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Do you want to take a:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBg-Xr-Rgd">
+                                        <rect key="frame" x="54" y="124" width="266" height="41.5"/>
+                                        <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FN4-eh-Akd">
+                                <rect key="frame" x="0.0" y="500" width="375" height="118"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="30"/>
+                                <state key="normal" title="Or do you need more?">
+                                    <color key="titleColor" red="0.1176470588" green="0.15686274510000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="83e-tV-PWP" kind="show" id="iTo-oZ-f0p"/>
+                                    <segue destination="83e-tV-PWP" kind="show" id="A6d-1M-ulf"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="lyd-Zk-gYY" firstAttribute="leading" secondItem="5wy-sy-Gcl" secondAttribute="leading" id="2KD-vm-j3c"/>
-                            <constraint firstItem="vnQ-Jj-oGJ" firstAttribute="top" secondItem="uHm-pD-lx7" secondAttribute="bottom" constant="6" id="2oT-PU-sGH"/>
-                            <constraint firstItem="818-Ha-a4e" firstAttribute="top" secondItem="N7Y-lj-r3y" secondAttribute="bottom" id="3mx-Jo-4Va"/>
-                            <constraint firstItem="vnQ-Jj-oGJ" firstAttribute="top" secondItem="lyd-Zk-gYY" secondAttribute="bottom" id="8N9-5Q-yET"/>
-                            <constraint firstAttribute="trailing" secondItem="lyd-Zk-gYY" secondAttribute="trailing" id="Elm-Qc-eDC"/>
-                            <constraint firstItem="uHm-pD-lx7" firstAttribute="trailing" secondItem="5wy-sy-Gcl" secondAttribute="trailingMargin" id="HI8-IB-nw8"/>
-                            <constraint firstItem="818-Ha-a4e" firstAttribute="centerX" secondItem="lyd-Zk-gYY" secondAttribute="centerX" id="JY7-Vk-EAr"/>
-                            <constraint firstAttribute="trailing" secondItem="uHm-pD-lx7" secondAttribute="trailing" constant="-8" id="hA3-rx-RFe"/>
-                            <constraint firstItem="818-Ha-a4e" firstAttribute="height" secondItem="lyd-Zk-gYY" secondAttribute="height" id="jsn-wG-WWv"/>
-                            <constraint firstItem="lyd-Zk-gYY" firstAttribute="top" secondItem="818-Ha-a4e" secondAttribute="bottom" id="mHo-d2-TDo"/>
-                            <constraint firstItem="818-Ha-a4e" firstAttribute="leading" secondItem="lyd-Zk-gYY" secondAttribute="leading" id="oFz-aa-Q4Q"/>
-                            <constraint firstItem="lyd-Zk-gYY" firstAttribute="top" secondItem="N7Y-lj-r3y" secondAttribute="bottom" constant="269" id="pOh-u2-tKs"/>
-                            <constraint firstItem="lyd-Zk-gYY" firstAttribute="trailing" secondItem="818-Ha-a4e" secondAttribute="trailing" id="srP-wr-A0C"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="pOh-u2-tKs"/>
-                                <exclude reference="hA3-rx-RFe"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Actions" id="Ett-Or-Mb7">
                         <barButtonItem key="rightBarButtonItem" image="refresh-icon" id="GMI-VK-5ar">
@@ -627,10 +611,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="breakButton" destination="lyd-Zk-gYY" id="XVl-pb-o7z"/>
+                        <outlet property="breathButton" destination="dOS-qf-SES" id="JyR-s3-wmd"/>
+                        <outlet property="moreButton" destination="FN4-eh-Akd" id="fja-2z-0Ca"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R98-z6-I0M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1571.5" y="576.5"/>
+            <point key="canvasLocation" x="1571.5" y="564.5"/>
         </scene>
         <!--Register-->
         <scene sceneID="rdA-ee-nVu">
@@ -1025,17 +1014,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDC-RZ-Eci">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="breath-background" translatesAutoresizingMaskIntoConstraints="NO" id="8zY-Hv-67b">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breath Out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUN-Cy-zr7">
+                                        <rect key="frame" x="0.0" y="96" width="375" height="21"/>
+                                        <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="21"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Do-CY-lj0">
-                                        <rect key="frame" x="62.5" y="152" width="250" height="250"/>
+                                        <rect key="frame" x="62" y="152" width="250" height="250"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mc0-9K-I4h">
-                                                <rect key="frame" x="106" y="94.5" width="38.5" height="61.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mc0-9K-I4h">
+                                                <rect key="frame" x="106" y="94" width="38.5" height="65.5"/>
                                                 <fontDescription key="fontDescription" name="Univers-Light-Bold" family="Univers-Light" pointSize="65"/>
                                                 <color key="textColor" red="0.1843137255" green="0.59607843140000005" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="1" alpha="0.83999999999999997" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="centerX" secondItem="mc0-9K-I4h" secondAttribute="centerX" id="9bi-Br-pYZ"/>
                                             <constraint firstAttribute="width" secondItem="8Do-CY-lj0" secondAttribute="height" multiplier="1:1" id="lg2-dp-h7X"/>
@@ -1072,6 +1070,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="breathLabel" destination="GUN-Cy-zr7" id="fa4-5N-Jnr"/>
                         <outlet property="bubbleLabel" destination="mc0-9K-I4h" id="Nvx-jy-FLw"/>
                         <outlet property="bubbleView" destination="8Do-CY-lj0" id="oSf-az-4jV"/>
                     </connections>
@@ -2245,8 +2244,10 @@
     <resources>
         <image name="Wahoo-image" width="222" height="78"/>
         <image name="action-icon" width="26" height="26"/>
+        <image name="actions-background" width="375" height="555"/>
         <image name="anger-icon" width="35" height="31"/>
         <image name="app-icon" width="70" height="99"/>
+        <image name="breath-background" width="375" height="601"/>
         <image name="calendar-icon" width="23" height="24"/>
         <image name="calibration-icon" width="24" height="24"/>
         <image name="conflictcheck-icon" width="22" height="17"/>
