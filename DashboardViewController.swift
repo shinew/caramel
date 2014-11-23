@@ -71,7 +71,13 @@ class DashboardViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         let lastSentDate = Timer.getLastMemoryWarningNotificationDate()
-        if lastSentDate != nil && lastSentDate!.timeIntervalSinceNow <= (0.0 - Constants.getMemoryWarningThrottleDuration()) {
+        if lastSentDate == nil {
+            Timer.setLastMemoryWarningNotificationDate(NSDate())
+            Notification.sendMemoryWarningNotification()
+            return
+        }
+        
+        if lastSentDate!.timeIntervalSinceNow <= (0.0 - Constants.getMemoryWarningThrottleDuration()) {
             Timer.setLastMemoryWarningNotificationDate(NSDate())
             Notification.sendMemoryWarningNotification()
         }
