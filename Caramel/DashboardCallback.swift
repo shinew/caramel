@@ -10,11 +10,12 @@ import UIKit
 
 class DashboardCallback {
     
-    var lastStressScoreInterval: StressScoreInterval!
+    var lastStressScoreInterval: StressScoreInterval! //used to keep track of start-end
     var currentHRLabel: UILabel!
+    var updatedScoreCallback: ((interval: StressScoreInterval!) -> Void)!
     
     init(updatedScoreCallback: (interval: StressScoreInterval!) -> Void, currentHRLabel: UILabel!) {
-        StressQueue.addNewScoreCallback("Dashboard", updatedScoreCallback)
+        self.updatedScoreCallback = updatedScoreCallback
         self.currentHRLabel = currentHRLabel
     }
     
@@ -82,7 +83,7 @@ class DashboardCallback {
                 let score = json["Score"] as Int
                 println("(Stress) Received stress score: \(score)")
                 self.lastStressScoreInterval.score = score
-                StressQueue.addNewRawScore(self.lastStressScoreInterval)
+                self.updatedScoreCallback(interval: self.lastStressScoreInterval)
             }
         }
     }

@@ -16,8 +16,8 @@ let _stressIntervalDuration = 4 * 60 //4 min
 let _accelFrequency = 50
 let _profileTrendFineness = 5 //in min
 let _movementAffectiveDuration = 30
-let _stressNotificationIntervalDuration = 10 * 60 //10 min
-let _highStressNotificationIntervalDuration = 3 * 60 //3 min
+let _defaultStressNotificationInterval = 10 * 60 //10 min
+let _stressDiscardInterval = 5 * 60 //5 min
 let _stressNotificationThreshold = 75
 let _circleColorYellowThreshold = 75
 let _circleColorRedThreshold = 90
@@ -42,13 +42,9 @@ class Constants {
     
     class func getMovementAffectiveDuration() -> Int { return _movementAffectiveDuration }
     
-    class func getStressNotificationIntervalDuration() -> Int {
-        return _stressNotificationIntervalDuration
-    }
-
-    class func getHighStressNotificationIntervalDuration() -> Int {
-        return _highStressNotificationIntervalDuration
-    }
+    class func getDefaultStressNotificationInterval() -> Int { return _defaultStressNotificationInterval }
+    
+    class func getStressDiscardInterval() -> Int { return _stressDiscardInterval }
     
     class func getStressNotificationThreshold() -> Int { return _stressNotificationThreshold }
     

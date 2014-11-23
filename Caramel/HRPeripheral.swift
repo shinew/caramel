@@ -68,9 +68,9 @@ class HRPeripheral : NSObject, CBPeripheralDelegate {
     }
     
     func peripheral(peripheral: CBPeripheral!, didUpdateValueForCharacteristic characteristic: CBCharacteristic!, error: NSError!) {
-        println("peripheral: \(peripheral)")
-        println("updated characteristic: \(characteristic)")
-        println("to value: \(characteristic.value)")
+        //println("peripheral: \(peripheral)")
+        //println("updated characteristic: \(characteristic)")
+        //println("to value: \(characteristic.value)")
         if let callback = HRBluetooth.getHRUpdateCallback() {
             callback(characteristic.value)
         }

@@ -11,8 +11,7 @@ import Foundation
 var _lastHRBluetoothReceivedDate: NSDate?
 var _lastHRSentDate: NSDate?
 var _lastMovementDate: NSDate?
-var _lastLowStressNotifDate: NSDate?
-var _lastHighStressNotifDate: NSDate?
+var _lastStressNotifDate: NSDate?
 var _lastMemoryWarningNotificationDate: NSDate?
 
 class Timer {
@@ -27,11 +26,8 @@ class Timer {
     class func getLastMovementDate() -> NSDate? { return _lastMovementDate }
     class func setLastMovementDate(date: NSDate!) { _lastMovementDate = date }
     
-    class func getLastLowStressNotifDate() -> NSDate? { return _lastLowStressNotifDate }
-    class func setLastLowStressNotifDate(date: NSDate!) { _lastLowStressNotifDate = date }
-    
-    class func getLastHighStressNotifDate() -> NSDate? { return _lastHighStressNotifDate }
-    class func setLastHighStressNotifDate(date: NSDate!) { _lastHighStressNotifDate = date }
+    class func getLastStressNotifDate() -> NSDate? { return _lastStressNotifDate }
+    class func setLastStressNotifDate(date: NSDate!) { _lastStressNotifDate = date }
     
     class func getLastMemoryWarningNotificationDate() -> NSDate? {
         return _lastMemoryWarningNotificationDate

@@ -110,59 +110,14 @@ class DashboardViewController: UIViewController {
     }
     
     private func updatedScoreCallback(interval: StressScoreInterval!) {
-        println("Smooth score: \(interval.score)")
+        println("Raw score: \(interval.score)")
         
-        Database.addStressScoreInterval(interval)
+        var smoothInterval = StressScoreManager.addRawScore(interval)
+        StressScoreManager.possiblySendNotification(smoothInterval.score)
+        
+        Database.addStressScoreInterval(smoothInterval)
         
         self.updateProfile()
-        
-        self.possiblySendNotification(interval.score)
-    }
-    
-    private func possiblySendNotification(score: Int) {
-        println("Determining whether to send a notification or not")
-        if score < Constants.getStressNotificationThreshold() {
-            return
-        }
-        
-        let currentDate = NSDate()
-        
-        // |low| --- |high| ------------ |low| ------------ |low|
-        if let lastLowDate = Timer.getLastLowStressNotifDate() {
-            let lowTimeDifference = currentDate.timeIntervalSinceDate(lastLowDate)
-            if let lastHighDate = Timer.getLastHighStressNotifDate() {
-                let highTimeDifference = currentDate.timeIntervalSinceDate(lastHighDate)
-                let highLowTimeDifference = currentDate.timeIntervalSinceDate(lastLowDate)
-                
-                if lowTimeDifference > NSTimeInterval(Constants.getStressNotificationIntervalDuration()) {
-                    
-                    Timer.setLastLowStressNotifDate(currentDate)
-                    Notification.sendLowStressNotification()
-                    Database.addNotificationRecord(NotificationRecord(type: "low", date: currentDate, userID: User.getUserID()))
-                    
-                } else if highTimeDifference > NSTimeInterval(Constants.getStressNotificationIntervalDuration()) &&
-                    highLowTimeDifference > NSTimeInterval(Constants.getHighStressNotificationIntervalDuration())
-                {
-                    
-                    Timer.setLastHighStressNotifDate(currentDate)
-                    Notification.sendHighStressNotification()
-                    Database.addNotificationRecord(NotificationRecord(type: "high", date: currentDate, userID: User.getUserID()))
-                    
-                }
-            } else {
-                
-                Timer.setLastHighStressNotifDate(currentDate)
-                Notification.sendHighStressNotification()
-                Database.addNotificationRecord(NotificationRecord(type: "high", date: currentDate, userID: User.getUserID()))
-                
-            }
-        } else {
-            
-            Timer.setLastLowStressNotifDate(currentDate)
-            Notification.sendLowStressNotification()
-            Database.addNotificationRecord(NotificationRecord(type: "low", date: currentDate, userID: User.getUserID()))
-            
-        }
     }
     
     private func updateProfile() {

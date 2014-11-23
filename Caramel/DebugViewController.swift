@@ -33,7 +33,7 @@ class DebugViewController: UIViewController {
     
     private func registerCallbacks() {
         //add the callbacks to the global queues
-        StressQueue.addNewScoreCallback("Debug", self.updatedScoreCallback)
+        StressScoreManager.addRawScoreCallback("Debug", self.updatedScoreCallback)
         HRQueue.addNewHRCallback("Debug", self.updatedHRCallback)
         Movement.addNewMovementCallback("Debug", self.updatedMovementCallback)
     }
