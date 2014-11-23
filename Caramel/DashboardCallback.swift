@@ -31,6 +31,16 @@ class DashboardCallback {
             println("HRQueue length: \(HRQueue.length())")
             if HRQueue.length() == Constants.getMaxNumHRQueue() {
                 var currentHRs = HRQueue.popAll()
+                
+                //Don't send if movement
+                if let lastMovementDate = Timer.getLastMovementDate() {
+                    // don't send notification if movement too recent
+                    let timeDifference = NSDate().timeIntervalSinceDate(lastMovementDate)
+                    if timeDifference < NSTimeInterval(Constants.getMovementAffectiveDuration()) {
+                        return
+                    }
+                }
+                
                 Timer.setLastHRSentDate(currentHRs.last!.date)
                 HTTPRequest.sendHRRequest(currentHRs, self.hrHTTPResponseCallback)
             }

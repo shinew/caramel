@@ -13,6 +13,7 @@ let _lowStressMessage = "You seem tense. Let's take a few deep breaths?"
 let _highStressMessage = "Need more help on de-stressing? Slide me."
 let _noInternetMessage = "We can't seem to connect to the Internet. Try reconnecting?"
 let _calibrationCompleteMessage = "Calibration is ready. You can use Beyond now."
+let _calibrationSkipMessage = "Please remember to calibrate later."
 let _memoryWarningMessage = "Slide me to reconnect."
 
 enum NotificationType {
@@ -25,31 +26,31 @@ enum NotificationType {
 class Notification {
     
     class func sendMemoryWarningNotification() {
-        AppDelegate.setNotificationType(.Standard)
-        Notification.sendNotification(_memoryWarningMessage)
+        Notification.sendNotification(_memoryWarningMessage, type: .Original)
     }
     
     class func sendCalibrationCompleteNotification() {
-        AppDelegate.setNotificationType(.Original)
-        Notification.sendNotification(_calibrationCompleteMessage)
+        Notification.sendNotification(_calibrationCompleteMessage, type: .Standard)
+    }
+    
+    class func sendCalibrationSkipNotification() {
+        Notification.sendNotification(_calibrationSkipMessage, type: .Standard)
     }
     
     class func sendNoInternetNotification() {
-        AppDelegate.setNotificationType(.Standard)
-        Notification.sendNotification(_noInternetMessage)
+        Notification.sendNotification(_noInternetMessage, type: .Standard)
     }
     
     class func sendLowStressNotification() {
-        AppDelegate.setNotificationType(.LowStress)
-        Notification.sendNotification(_lowStressMessage)
+        Notification.sendNotification(_lowStressMessage, type: .LowStress)
     }
     
     class func sendHighStressNotification() {
-        AppDelegate.setNotificationType(.HighStress)
-        Notification.sendNotification(_highStressMessage)
+        Notification.sendNotification(_highStressMessage, type: .HighStress)
     }
     
-    private class func sendNotification(message: String!) {
+    private class func sendNotification(message: String!, type: NotificationType) {
+        AppDelegate.setNotificationType(type)
         var stressNotification = UILocalNotification()
         stressNotification.alertBody = message
         stressNotification.soundName = UILocalNotificationDefaultSoundName

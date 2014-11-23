@@ -112,14 +112,6 @@ class DashboardViewController: UIViewController {
     private func updatedScoreCallback(interval: StressScoreInterval!) {
         println("Smooth score: \(interval.score)")
         
-        if let lastMovementDate = Timer.getLastMovementDate() {
-            // don't send notification if movement too recent
-            let timeDifference = NSDate().timeIntervalSinceDate(lastMovementDate)
-            if timeDifference < NSTimeInterval(Constants.getMovementAffectiveDuration()) {
-                return
-            }
-        }
-        
         Database.addStressScoreInterval(interval)
         
         self.updateProfile()
