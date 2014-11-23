@@ -19,7 +19,7 @@ class HomeTabBarController: UITabBarController {
     override func shouldAutorotate() -> Bool {
         let currentOrientation = UIDevice.currentDevice().valueForKey("orientation") as Int
         if currentOrientation == UIInterfaceOrientation.Portrait.rawValue {
-            return true
+            return !_canRotate
         }
         return _canRotate
     }
