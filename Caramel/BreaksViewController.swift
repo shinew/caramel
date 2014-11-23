@@ -49,6 +49,10 @@ class BreaksViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        Rotation.rotatePortrait()
+    }
+    
     @IBAction func walkingButtonDidPress(sender: AnyObject) {
         self.incrementActivity("Walking")
     }

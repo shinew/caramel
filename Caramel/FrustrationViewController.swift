@@ -55,6 +55,10 @@ class FrustrationViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        Rotation.rotatePortrait()
+    }
+    
     func animateButton() {
         var isFinal = self.index == self.finalIndex
         self.index = ProtocolAnimation.animate(index, buttons: self.buttons, images: self.images, maskView: self.maskView, color: color, isFinal: isFinal)

@@ -76,6 +76,10 @@ class DebugViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        Rotation.rotatePortrait()
+    }
+    
     @IBAction func testNotificationButtonDidPress(sender: UIButton) {
         AppDelegate.setNotificationType(.LowStress)
         var stressNotification = UILocalNotification()

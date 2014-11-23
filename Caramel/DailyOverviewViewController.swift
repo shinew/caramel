@@ -25,6 +25,8 @@ class DailyOverviewViewController: UIViewController {
         println("Updating trend graph")
         let data = self.prepareTrendData(NSDate())
         
+        Rotation.rotateLandscape()
+        
         self.trendGraphView.setCurrentData(data.0, maxYValue: 100)
         self.trendGraphView.setPreviousData(data.1, maxYValue: 100)
         

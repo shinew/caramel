@@ -56,4 +56,8 @@ class OverwhelmedViewController: UIViewController {
         self.buttons = [self.step1Button, self.step2Button, self.step3Button, self.step4Button]
         self.index = 0
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        Rotation.rotatePortrait()
+    }
 }

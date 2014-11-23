@@ -34,6 +34,10 @@ class CalibrationViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        Rotation.rotatePortrait()
+    }
+    
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
         //equivalent to skipCalibrationDidPress
         

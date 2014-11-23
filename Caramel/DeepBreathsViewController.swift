@@ -24,6 +24,7 @@ class DeepBreathsViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        Rotation.rotatePortrait()
         self.bubbleCallback()
     }
     

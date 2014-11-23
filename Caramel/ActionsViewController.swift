@@ -18,4 +18,8 @@ class ActionsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        Rotation.rotatePortrait()
+    }
 }

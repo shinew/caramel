@@ -506,10 +506,10 @@
             </objects>
             <point key="canvasLocation" x="1627.5" y="-1958.5"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Home Tab Bar Controller-->
         <scene sceneID="fbS-rR-cFb">
             <objects>
-                <tabBarController storyboardIdentifier="InitialTabBarController" id="NaH-e3-zsE" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="InitialTabBarController" id="NaH-e3-zsE" customClass="HomeTabBarController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

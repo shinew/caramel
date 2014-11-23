@@ -36,7 +36,7 @@ class DashboardViewController: UIViewController {
     required init(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,6 +68,19 @@ class DashboardViewController: UIViewController {
         println("Loaded DashboardViewController view!")
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        let lastSentDate = Timer.getLastMemoryWarningNotificationDate()
+        if lastSentDate != nil && lastSentDate!.timeIntervalSinceNow <= (0.0 - Constants.getMemoryWarningThrottleDuration()) {
+            Timer.setLastMemoryWarningNotificationDate(NSDate())
+            Notification.sendMemoryWarningNotification()
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        Rotation.rotatePortrait()
+    }
+    
     func registerZoneTapToggles() {
         var zoneViews = [self.blueZoneView, self.yellowZoneView, self.redZoneView]
         var functionNames = ["handleBlueTap:", "handleYellowTap:", "handleRedTap:"]
@@ -93,15 +106,6 @@ class DashboardViewController: UIViewController {
         println("Blue zone has been tapped")
         self.summaryToggles["Blue"] = 1 - self.summaryToggles["Blue"]!
         self.updateProfile()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        let lastSentDate = Timer.getLastMemoryWarningNotificationDate()
-        if lastSentDate != nil && lastSentDate!.timeIntervalSinceNow <= (0.0 - Constants.getMemoryWarningThrottleDuration()) {
-            Timer.setLastMemoryWarningNotificationDate(NSDate())
-            Notification.sendMemoryWarningNotification()
-        }
     }
     
     @IBAction func refreshButtonDidPress(sender: AnyObject) {
