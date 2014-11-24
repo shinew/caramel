@@ -212,7 +212,8 @@ class DashboardViewController: UIViewController {
                 label.text = "1:00"
                 timeFormatLabel.text = "hour"
             } else {
-                label.text = "\(seconds / 3600):\((seconds % 3600) / 60)"
+                var minutes = String(format: "%02d", (seconds % 3600) / 60)
+                label.text = "\(seconds / 3600):\(minutes)"
                 timeFormatLabel.text = "hours"
             }
         } else {
