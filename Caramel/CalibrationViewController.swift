@@ -41,10 +41,10 @@ class CalibrationViewController: UIViewController {
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
         //equivalent to skipCalibrationDidPress
         
-        dispatch_async(dispatch_get_main_queue(), {
-            self.startButton.enabled = false
-        })
         HRQueue.popAll()
+        if self.previousHRCallback != nil {
+            HRBluetooth.setHRUpdateCallback(self.previousHRCallback!)
+        }
         Notification.sendCalibrationSkipNotification()
         return false
     }
