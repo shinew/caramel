@@ -19,6 +19,8 @@
 		144630B11A1467C6003B350A /* TrendGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144630B01A1467C6003B350A /* TrendGraphView.swift */; };
 		1446CCAC1A10A21700DBA7FC /* BluetoothConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */; };
 		1469A8091A04659200F439DB /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1469A8081A04659200F439DB /* Movement.swift */; };
+		146D0DA71A21C80E003450B9 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146D0DA61A21C80E003450B9 /* HomeTabBarController.swift */; };
+		146D0DAB1A21D9D1003450B9 /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146D0DAA1A21D9D1003450B9 /* Rotation.swift */; };
 		148E40841A00F81900952565 /* QueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148E40831A00F81900952565 /* QueueTest.swift */; };
 		148E40851A00F94600952565 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2681A00AA910042F20A /* Queue.swift */; };
 		148F34F91A113EFB00B3C941 /* CalibrationCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148F34F81A113EFB00B3C941 /* CalibrationCallback.swift */; };
@@ -45,9 +47,10 @@
 		14D80AD31A01806C0064BCD8 /* HRCentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D80AD21A01806C0064BCD8 /* HRCentralManager.swift */; };
 		14D80AD51A01808D0064BCD8 /* HRPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D80AD41A01808D0064BCD8 /* HRPeripheral.swift */; };
 		14DC38041A05A53100E992B2 /* MovementQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DC38031A05A53100E992B2 /* MovementQueue.swift */; };
+		14DCDE251A21818700A7CE43 /* StressScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DCDE241A21818700A7CE43 /* StressScoreManager.swift */; };
 		14E275751A11F8A500F30780 /* DailyWellnessScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E275741A11F8A500F30780 /* DailyWellnessScore.swift */; };
 		14F878DF1A020BD8001FFFE2 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F878DE1A020BD8001FFFE2 /* Conversion.swift */; };
-		14F878E11A021992001FFFE2 /* StressQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F878E01A021992001FFFE2 /* StressQueue.swift */; };
+		14F878E11A021992001FFFE2 /* ScoreSmootheningQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F878E01A021992001FFFE2 /* ScoreSmootheningQueue.swift */; };
 		14F878E31A022372001FFFE2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F878E21A022372001FFFE2 /* Constants.swift */; };
 		14FBC1211A14C00E00BD6B15 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FBC11D1A14C00E00BD6B15 /* HockeySDK.framework */; };
 		14FBC1221A14C00E00BD6B15 /* HockeySDK.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 14FBC11F1A14C00E00BD6B15 /* HockeySDK.xcconfig */; };
@@ -121,6 +124,8 @@
 		144630B01A1467C6003B350A /* TrendGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendGraphView.swift; sourceTree = "<group>"; };
 		1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothConnectivity.swift; sourceTree = "<group>"; };
 		1469A8081A04659200F439DB /* Movement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movement.swift; sourceTree = "<group>"; };
+		146D0DA61A21C80E003450B9 /* HomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		146D0DAA1A21D9D1003450B9 /* Rotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
 		148E40831A00F81900952565 /* QueueTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTest.swift; sourceTree = "<group>"; };
 		148F34F81A113EFB00B3C941 /* CalibrationCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationCallback.swift; sourceTree = "<group>"; };
 		148F34FA1A113FDE00B3C941 /* CalibrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationViewController.swift; sourceTree = "<group>"; };
@@ -150,9 +155,10 @@
 		14D80AD21A01806C0064BCD8 /* HRCentralManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRCentralManager.swift; sourceTree = "<group>"; };
 		14D80AD41A01808D0064BCD8 /* HRPeripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRPeripheral.swift; sourceTree = "<group>"; };
 		14DC38031A05A53100E992B2 /* MovementQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementQueue.swift; sourceTree = "<group>"; };
+		14DCDE241A21818700A7CE43 /* StressScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StressScoreManager.swift; sourceTree = "<group>"; };
 		14E275741A11F8A500F30780 /* DailyWellnessScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWellnessScore.swift; sourceTree = "<group>"; };
 		14F878DE1A020BD8001FFFE2 /* Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
-		14F878E01A021992001FFFE2 /* StressQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StressQueue.swift; sourceTree = "<group>"; };
+		14F878E01A021992001FFFE2 /* ScoreSmootheningQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreSmootheningQueue.swift; sourceTree = "<group>"; };
 		14F878E21A022372001FFFE2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		14FBC11D1A14C00E00BD6B15 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
 		14FBC11F1A14C00E00BD6B15 /* HockeySDK.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = HockeySDK.xcconfig; sourceTree = "<group>"; };
@@ -236,9 +242,9 @@
 			isa = PBXGroup;
 			children = (
 				14D0E2661A00AA3A0042F20A /* HRQueue.swift */,
-				14F878E01A021992001FFFE2 /* StressQueue.swift */,
 				1430FCBB1A0307EF006B518B /* AccelQueue.swift */,
 				14DC38031A05A53100E992B2 /* MovementQueue.swift */,
+				14F878E01A021992001FFFE2 /* ScoreSmootheningQueue.swift */,
 				14D0E2681A00AA910042F20A /* Queue.swift */,
 			);
 			name = Queues;
@@ -392,6 +398,8 @@
 				1415AA991A02D81100C1CD4F /* Notification.swift */,
 				144071881A0A05B4002A3B71 /* User.swift */,
 				144468AB1A1D665100B4C680 /* StartScreen.swift */,
+				14DCDE241A21818700A7CE43 /* StressScoreManager.swift */,
+				146D0DAA1A21D9D1003450B9 /* Rotation.swift */,
 			);
 			name = Globals;
 			sourceTree = "<group>";
@@ -468,6 +476,7 @@
 				1AB847D11A06F601008509FE /* Habits */,
 				1AB847D01A06F5C0008509FE /* Overview */,
 				1A3D2C081A0623B700063AEB /* Dashboard */,
+				146D0DA61A21C80E003450B9 /* HomeTabBarController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -705,11 +714,12 @@
 				14D0E2671A00AA3A0042F20A /* HRQueue.swift in Sources */,
 				14A0C3EB1A1146B6006AD37F /* TrainingInterval.swift in Sources */,
 				1AB847DE1A07112F008509FE /* Data.swift in Sources */,
-				14F878E11A021992001FFFE2 /* StressQueue.swift in Sources */,
+				14F878E11A021992001FFFE2 /* ScoreSmootheningQueue.swift in Sources */,
 				1412E3BC1A0B676100E06AED /* BreakActivityCounter.swift in Sources */,
 				14D80ACE1A0172920064BCD8 /* Timer.swift in Sources */,
 				14D0E25F1A0090920042F20A /* HTTPRequest.swift in Sources */,
 				14A851B31A089CCC00855954 /* NotificationRecord.swift in Sources */,
+				14DCDE251A21818700A7CE43 /* StressScoreManager.swift in Sources */,
 				1AB847DD1A07112F008509FE /* BlurView.swift in Sources */,
 				1ADB0B2C1A1FF25F00294A0C /* ConnectivityViewController.swift in Sources */,
 				1446CCAC1A10A21700DBA7FC /* BluetoothConnectivity.swift in Sources */,
@@ -719,6 +729,7 @@
 				142EB8231A12E4E400F23EF0 /* ProtocolsViewController.swift in Sources */,
 				14254D571A01C9CB00DE86B8 /* HRDecoder.swift in Sources */,
 				1A3D2BD61A060E0500063AEB /* DashboardViewController.swift in Sources */,
+				146D0DA71A21C80E003450B9 /* HomeTabBarController.swift in Sources */,
 				14D0E2651A009E420042F20A /* HRSample.swift in Sources */,
 				1A9D8AB01A11F529004FA076 /* RegisterViewController.swift in Sources */,
 				1A1B7DB11A07508300312B71 /* BreaksViewController.swift in Sources */,
@@ -736,6 +747,7 @@
 				14D80AD51A01808D0064BCD8 /* HRPeripheral.swift in Sources */,
 				1AFFAAE31A0FF1F7002BAB2D /* OverwhelmedViewController.swift in Sources */,
 				14D80AD01A01730A0064BCD8 /* HRBluetooth.swift in Sources */,
+				146D0DAB1A21D9D1003450B9 /* Rotation.swift in Sources */,
 				14D0E2391A008C6D0042F20A /* Caramel.xcdatamodeld in Sources */,
 				14DC38041A05A53100E992B2 /* MovementQueue.swift in Sources */,
 				14F878DF1A020BD8001FFFE2 /* Conversion.swift in Sources */,

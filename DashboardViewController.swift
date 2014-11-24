@@ -31,12 +31,12 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     
     var bluetoothConnectivity = BluetoothConnectivity()
-    var summaryToggle = 0
+    var summaryToggles = ["Red": 0, "Yellow": 0, "Blue": 0]
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,7 +46,7 @@ class DashboardViewController: UIViewController {
         )!]
         
         self.updateProfile()
-        self.registerZoneTapToggle()
+        self.registerZoneTapToggles()
         
         self.dashboardCallback = DashboardCallback(updatedScoreCallback: self.updatedScoreCallback, currentHRLabel: self.currentHRLabel)
         
@@ -65,26 +65,53 @@ class DashboardViewController: UIViewController {
         )
         self.bluetoothConnectivity.setLongRunningTimer()
         
-        
         println("Loaded DashboardViewController view!")
-    }
-    
-    func registerZoneTapToggle() {
-        var zoneViews = [self.blueZoneView, self.yellowZoneView, self.redZoneView]
-        for zoneView in zoneViews {
-            zoneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("handleTap:")))
-        }
-    }
-    
-    func handleTap(recognizer: UITapGestureRecognizer) {
-        println("A zone has been tapped")
-        self.summaryToggle = 1 - self.summaryToggle
-        self.updateProfile()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        Notification.sendMemoryWarningNotification()
+        let lastSentDate = Timer.getLastMemoryWarningNotificationDate()
+        if lastSentDate == nil {
+            Timer.setLastMemoryWarningNotificationDate(NSDate())
+            Notification.sendMemoryWarningNotification()
+            return
+        }
+        
+        if lastSentDate!.timeIntervalSinceNow <= (0.0 - Constants.getMemoryWarningThrottleDuration()) {
+            Timer.setLastMemoryWarningNotificationDate(NSDate())
+            Notification.sendMemoryWarningNotification()
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        Rotation.rotatePortrait()
+    }
+    
+    func registerZoneTapToggles() {
+        var zoneViews = [self.blueZoneView, self.yellowZoneView, self.redZoneView]
+        var functionNames = ["handleBlueTap:", "handleYellowTap:", "handleRedTap:"]
+        
+        for i in 0 ..< zoneViews.count {
+            zoneViews[i].addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector(functionNames[i])))
+        }
+    }
+    
+    func handleRedTap(recognizer: UITapGestureRecognizer) {
+        println("Red zone has been tapped")
+        self.summaryToggles["Red"] = 1 - self.summaryToggles["Red"]!
+        self.updateProfile()
+    }
+    
+    func handleYellowTap(recognizer: UITapGestureRecognizer) {
+        println("Yellow zone has been tapped")
+        self.summaryToggles["Yellow"] = 1 - self.summaryToggles["Yellow"]!
+        self.updateProfile()
+    }
+    
+    func handleBlueTap(recognizer: UITapGestureRecognizer) {
+        println("Blue zone has been tapped")
+        self.summaryToggles["Blue"] = 1 - self.summaryToggles["Blue"]!
+        self.updateProfile()
     }
     
     @IBAction func refreshButtonDidPress(sender: AnyObject) {
@@ -93,67 +120,14 @@ class DashboardViewController: UIViewController {
     }
     
     private func updatedScoreCallback(interval: StressScoreInterval!) {
-        println("Smooth score: \(interval.score)")
+        println("Raw score: \(interval.score)")
         
-        if let lastMovementDate = Timer.getLastMovementDate() {
-            // don't send notification if movement too recent
-            let timeDifference = NSDate().timeIntervalSinceDate(lastMovementDate)
-            if timeDifference < NSTimeInterval(Constants.getMovementAffectiveDuration()) {
-                return
-            }
-        }
+        var smoothInterval = StressScoreManager.addRawScore(interval)
+        StressScoreManager.possiblySendNotification(smoothInterval.score)
         
-        Database.addStressScoreInterval(interval)
+        Database.addStressScoreInterval(smoothInterval)
         
         self.updateProfile()
-        
-        self.possiblySendNotification(interval.score)
-    }
-    
-    private func possiblySendNotification(score: Int) {
-        println("Determining whether to send a notification or not")
-        if score < Constants.getStressNotificationThreshold() {
-            return
-        }
-        
-        let currentDate = NSDate()
-        
-        // |low| --- |high| ------------ |low| ------------ |low|
-        if let lastLowDate = Timer.getLastLowStressNotifDate() {
-            let lowTimeDifference = currentDate.timeIntervalSinceDate(lastLowDate)
-            if let lastHighDate = Timer.getLastHighStressNotifDate() {
-                let highTimeDifference = currentDate.timeIntervalSinceDate(lastHighDate)
-                let highLowTimeDifference = currentDate.timeIntervalSinceDate(lastLowDate)
-                
-                if lowTimeDifference > NSTimeInterval(Constants.getStressNotificationIntervalDuration()) {
-                    
-                    Timer.setLastLowStressNotifDate(currentDate)
-                    Notification.sendLowStressNotification()
-                    Database.addNotificationRecord(NotificationRecord(type: "low", date: currentDate, userID: User.getUserID()))
-                    
-                } else if highTimeDifference > NSTimeInterval(Constants.getStressNotificationIntervalDuration()) &&
-                    highLowTimeDifference > NSTimeInterval(Constants.getHighStressNotificationIntervalDuration())
-                {
-                    
-                    Timer.setLastHighStressNotifDate(currentDate)
-                    Notification.sendHighStressNotification()
-                    Database.addNotificationRecord(NotificationRecord(type: "high", date: currentDate, userID: User.getUserID()))
-                    
-                }
-            } else {
-                
-                Timer.setLastHighStressNotifDate(currentDate)
-                Notification.sendHighStressNotification()
-                Database.addNotificationRecord(NotificationRecord(type: "high", date: currentDate, userID: User.getUserID()))
-                
-            }
-        } else {
-            
-            Timer.setLastLowStressNotifDate(currentDate)
-            Notification.sendLowStressNotification()
-            Database.addNotificationRecord(NotificationRecord(type: "low", date: currentDate, userID: User.getUserID()))
-            
-        }
     }
     
     private func updateProfile() {
@@ -194,13 +168,10 @@ class DashboardViewController: UIViewController {
     }
     
     private func updateZonePercentages(stressIntervals: [StressScoreInterval]!) {
-        if stressIntervals.count == 0 {
-            return
-        }
-        
         var counters = [0, 0, 0]
         var labels = [self.blueZoneLabel, self.yellowZoneLabel, self.redZoneLabel]
         var timeFormatLabels = [self.blueZoneTimeFormatLabel, self.yellowZoneTimeFormatLabel, self.redZoneTimeFormatLabel]
+        var colors = ["Blue", "Yellow", "Red"]
         
         for interval in stressIntervals {
             if interval.score < Constants.getCircleColorYellowThreshold() {
@@ -215,15 +186,23 @@ class DashboardViewController: UIViewController {
         
         for i in 0 ..< labels.count {
             dispatch_async(dispatch_get_main_queue(), {
-                self.updateTimeLabels(counters[i], total: total, label: labels[i], timeFormatLabel: timeFormatLabels[i])
+                self.updateTimeLabels(
+                    self.summaryToggles[colors[i]]!,
+                    counter: counters[i],
+                    total: total,
+                    label: labels[i],
+                    timeFormatLabel: timeFormatLabels[i]
+                )
             })
         }
     }
     
-    private func updateTimeLabels(counter: Int, total: Int, label: UILabel!, timeFormatLabel: UILabel!) {
-        if self.summaryToggle == 0 {
+    private func updateTimeLabels(toggle: Int, counter: Int, total: Int, label: UILabel!, timeFormatLabel: UILabel!) {
+        if toggle == 0 {
             var seconds = counter * 30 //roughly
-            if seconds < 60 {
+            if total == 0 {
+                timeFormatLabel.text = "sec"
+            } else if seconds < 60 {
                 label.text = "\(seconds)"
                 timeFormatLabel.text = "sec"
             } else if seconds < 3600 {
@@ -237,8 +216,12 @@ class DashboardViewController: UIViewController {
                 timeFormatLabel.text = "hours"
             }
         } else {
-            label.text = "\(Int(Double(counter)/Double(total)*100.0))"
-            timeFormatLabel.text = "%"
+            if total == 0 {
+                timeFormatLabel.text = "%"
+            } else {
+                label.text = "\(Int(Double(counter)/Double(total)*100.0))"
+                timeFormatLabel.text = "%"
+            }
         }
     }
 }

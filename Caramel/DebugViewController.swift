@@ -33,9 +33,9 @@ class DebugViewController: UIViewController {
     
     private func registerCallbacks() {
         //add the callbacks to the global queues
-        StressQueue.addNewScoreCallback(self.updatedScoreCallback)
-        HRQueue.addNewHRCallback(self.updatedHRCallback)
-        Movement.addNewMovementCallback(self.updatedMovementCallback)
+        StressScoreManager.addRawScoreCallback("Debug", self.updatedScoreCallback)
+        HRQueue.addNewHRCallback("Debug", self.updatedHRCallback)
+        Movement.addNewMovementCallback("Debug", self.updatedMovementCallback)
     }
     
     private func updatedScoreCallback(interval: StressScoreInterval!) {
@@ -74,6 +74,10 @@ class DebugViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        Rotation.rotatePortrait()
     }
     
     @IBAction func testNotificationButtonDidPress(sender: UIButton) {

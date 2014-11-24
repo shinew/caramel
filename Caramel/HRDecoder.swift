@@ -75,7 +75,7 @@ class HRDecoder {
         let rrIntervalPresent = (flags & HRRRIntervalPresentMask) == HRRRIntervalPresentMask
         let energyExpendedPresent = (flags & HREnergyExpendedMask) == HREnergyExpendedMask
         
-        println("contact supported \(contactFeatureSupported), incontact \(inContact), rrIntervalPresent \(rrIntervalPresent), energyExpendedPresent \(energyExpendedPresent)")
+        //println("contact supported \(contactFeatureSupported), incontact \(inContact), rrIntervalPresent \(rrIntervalPresent), energyExpendedPresent \(energyExpendedPresent)")
         
         if !inContact || count < 2 {
             return nil
@@ -107,7 +107,7 @@ class HRDecoder {
             rrIntervals.append(Int(rrInterval))
         }
         println("RR intervals: \(rrIntervals)")
-        println("array: \(array)")
+        //println("array: \(array)")
         return HRSample(date: currentDate, device: "Wahoo TICKR", hr: heartRate, hrv: rrIntervals)
     }
 }

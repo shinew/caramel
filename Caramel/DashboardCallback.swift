@@ -10,11 +10,12 @@ import UIKit
 
 class DashboardCallback {
     
-    var lastStressScoreInterval: StressScoreInterval!
+    var lastStressScoreInterval: StressScoreInterval! //used to keep track of start-end
     var currentHRLabel: UILabel!
+    var updatedScoreCallback: ((interval: StressScoreInterval!) -> Void)!
     
     init(updatedScoreCallback: (interval: StressScoreInterval!) -> Void, currentHRLabel: UILabel!) {
-        StressQueue.addNewScoreCallback(updatedScoreCallback)
+        self.updatedScoreCallback = updatedScoreCallback
         self.currentHRLabel = currentHRLabel
     }
     
@@ -31,6 +32,16 @@ class DashboardCallback {
             println("HRQueue length: \(HRQueue.length())")
             if HRQueue.length() == Constants.getMaxNumHRQueue() {
                 var currentHRs = HRQueue.popAll()
+                
+                //Don't send if movement
+                if let lastMovementDate = Timer.getLastMovementDate() {
+                    // don't send notification if movement too recent
+                    let timeDifference = NSDate().timeIntervalSinceDate(lastMovementDate)
+                    if timeDifference < NSTimeInterval(Constants.getMovementAffectiveDuration()) {
+                        return
+                    }
+                }
+                
                 Timer.setLastHRSentDate(currentHRs.last!.date)
                 HTTPRequest.sendHRRequest(currentHRs, self.hrHTTPResponseCallback)
             }
@@ -72,7 +83,7 @@ class DashboardCallback {
                 let score = json["Score"] as Int
                 println("(Stress) Received stress score: \(score)")
                 self.lastStressScoreInterval.score = score
-                StressQueue.addNewRawScore(self.lastStressScoreInterval)
+                self.updatedScoreCallback(interval: self.lastStressScoreInterval)
             }
         }
     }
