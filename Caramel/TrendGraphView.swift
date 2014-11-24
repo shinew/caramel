@@ -41,7 +41,7 @@ class TrendGraphView: UIView {
         self.drawDataArea(self.currentDataValues, max: self.currentMaxYValue, color: UIColor(red: 0.30, green: 0.55, blue: 0.76, alpha: 0.8).CGColor, rect: rect, context: context)
         
         //Draws line separators for current data
-        //self.drawLineSeparators(self.currentDataValues, max: self.currentMaxYValue, color: UIColor.whiteColor().CGColor, rect: rect, context: context)
+        self.drawLineSeparators2(self.currentDataValues, max: self.currentMaxYValue, color: UIColor.whiteColor().CGColor, rect: rect, context: context)
     }
     
     private func drawDataArea(data: [Int], max: Int, color: CGColor!, rect: CGRect!, context: CGContext!) {
@@ -61,7 +61,7 @@ class TrendGraphView: UIView {
     
     private func drawLineSeparators(data: [Int], max: Int, color: CGColor!, rect: CGRect!, context: CGContext!) {
         CGContextSetStrokeColorWithColor(context, color)
-        CGContextSetLineWidth(context, 1.0);
+        CGContextSetLineWidth(context, 0.5);
         
         for index in 1 ..< data.count - 1 {
             let xValue = self.getRelativeProportion(index, max: data.count - 1, height: rect.width)
@@ -75,6 +75,21 @@ class TrendGraphView: UIView {
                 xValue,
                 rect.height - self.getRelativeProportion(data[index], max: max, height: rect.height)
             )
+            CGContextStrokePath(context)
+        }
+    }
+    
+    private func drawLineSeparators2(data: [Int], max: Int, color: CGColor!, rect: CGRect!, context: CGContext!) {
+        CGContextSetStrokeColorWithColor(context, color)
+        CGContextSetLineWidth(context, 1.0);
+        
+        let maxLine = 7
+        
+        //we draw 7 lines
+        for index in 1 ... maxLine {
+            let xValue = self.getRelativeProportion(index, max: maxLine + 1, height: rect.width)
+            CGContextMoveToPoint(context, xValue, 0)
+            CGContextAddLineToPoint(context, xValue, rect.height)
             CGContextStrokePath(context)
         }
     }
