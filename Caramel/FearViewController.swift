@@ -50,6 +50,7 @@ class FearViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         Rotation.rotatePortrait()
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController {
+class DashboardViewController: PortraitViewController {
     
     var dashboardCallback: DashboardCallback!
     
@@ -33,17 +33,12 @@ class DashboardViewController: UIViewController {
     var bluetoothConnectivity = BluetoothConnectivity()
     var summaryToggles = ["Red": 0, "Yellow": 0, "Blue": 0]
     
-    required init(coder: NSCoder) {
+    required override init(coder: NSCoder) {
         super.init(coder: coder)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationController!.navigationBar.titleTextAttributes = [
-            NSFontAttributeName: UIFont(name: "Univers-Light-Bold",
-                size: 18
-        )!]
         
         self.updateProfile()
         self.registerZoneTapToggles()
@@ -81,10 +76,6 @@ class DashboardViewController: UIViewController {
             Timer.setLastMemoryWarningNotificationDate(NSDate())
             Notification.sendMemoryWarningNotification()
         }
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        Rotation.rotatePortrait()
     }
     
     func registerZoneTapToggles() {

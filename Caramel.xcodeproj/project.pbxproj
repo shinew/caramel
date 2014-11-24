@@ -18,6 +18,7 @@
 		144630AD1A1466BD003B350A /* DailyOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144630AC1A1466BD003B350A /* DailyOverviewViewController.swift */; };
 		144630B11A1467C6003B350A /* TrendGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144630B01A1467C6003B350A /* TrendGraphView.swift */; };
 		1446CCAC1A10A21700DBA7FC /* BluetoothConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */; };
+		1468AF351A23D93100C293B9 /* PortraitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1468AF341A23D93100C293B9 /* PortraitViewController.swift */; };
 		1469A8091A04659200F439DB /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1469A8081A04659200F439DB /* Movement.swift */; };
 		146D0DA71A21C80E003450B9 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146D0DA61A21C80E003450B9 /* HomeTabBarController.swift */; };
 		146D0DAB1A21D9D1003450B9 /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146D0DAA1A21D9D1003450B9 /* Rotation.swift */; };
@@ -123,6 +124,7 @@
 		144630AC1A1466BD003B350A /* DailyOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyOverviewViewController.swift; sourceTree = "<group>"; };
 		144630B01A1467C6003B350A /* TrendGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendGraphView.swift; sourceTree = "<group>"; };
 		1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothConnectivity.swift; sourceTree = "<group>"; };
+		1468AF341A23D93100C293B9 /* PortraitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortraitViewController.swift; sourceTree = "<group>"; };
 		1469A8081A04659200F439DB /* Movement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movement.swift; sourceTree = "<group>"; };
 		146D0DA61A21C80E003450B9 /* HomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		146D0DAA1A21D9D1003450B9 /* Rotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
@@ -477,6 +479,7 @@
 				1AB847D01A06F5C0008509FE /* Overview */,
 				1A3D2C081A0623B700063AEB /* Dashboard */,
 				146D0DA61A21C80E003450B9 /* HomeTabBarController.swift */,
+				1468AF341A23D93100C293B9 /* PortraitViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -713,6 +716,7 @@
 				14D0E2361A008C6D0042F20A /* AppDelegate.swift in Sources */,
 				14D0E2671A00AA3A0042F20A /* HRQueue.swift in Sources */,
 				14A0C3EB1A1146B6006AD37F /* TrainingInterval.swift in Sources */,
+				1468AF351A23D93100C293B9 /* PortraitViewController.swift in Sources */,
 				1AB847DE1A07112F008509FE /* Data.swift in Sources */,
 				14F878E11A021992001FFFE2 /* ScoreSmootheningQueue.swift in Sources */,
 				1412E3BC1A0B676100E06AED /* BreakActivityCounter.swift in Sources */,

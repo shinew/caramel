@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActionsViewController: UIViewController {
+class ActionsViewController: PortraitViewController {
 
     @IBOutlet weak var breathButton: UIButton!
     @IBOutlet weak var breakButton: UIButton!
@@ -18,18 +18,7 @@ class ActionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
-        
         self.breakButton.layer.borderColor = UIColor.whiteColor().CGColor
         self.breakButton.layer.borderWidth = 0.3
-
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        Rotation.rotatePortrait()
     }
 }

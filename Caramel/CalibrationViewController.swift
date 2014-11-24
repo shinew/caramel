@@ -9,7 +9,7 @@
 import UIKit
 import AudioToolbox
 
-class CalibrationViewController: UIViewController {
+class CalibrationViewController: PortraitViewController {
     
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -21,21 +21,10 @@ class CalibrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if self.navigationController != nil {
-            self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
-        }
 
         self.startButton.layer.cornerRadius = 5
         self.startButton.layer.borderWidth = 1
         self.startButton.layer.borderColor = UIColor.whiteColor().CGColor
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        Rotation.rotatePortrait()
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {

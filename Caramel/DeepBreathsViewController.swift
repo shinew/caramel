@@ -9,7 +9,7 @@
 import UIKit
 import AudioToolbox
 
-class DeepBreathsViewController: UIViewController {
+class DeepBreathsViewController: PortraitViewController {
 
     @IBOutlet weak var bubbleView: UIView!
     @IBOutlet weak var bubbleLabel: UILabel!
@@ -22,11 +22,10 @@ class DeepBreathsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bubbleLabel.text = String(bubbleCounter)
-        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
     }
     
     override func viewDidAppear(animated: Bool) {
-        Rotation.rotatePortrait()
+        super.viewDidAppear(animated)
         self.bubbleCallback()
     }
     
@@ -82,21 +81,4 @@ class DeepBreathsViewController: UIViewController {
     private func vibratePhone() {
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

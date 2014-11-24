@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ProtocolsViewController: UIViewController {
+class ProtocolsViewController: PortraitViewController {
+    
     @IBOutlet weak var frustrationButton: UIButton!
     @IBOutlet weak var conflictButton: UIButton!
     @IBOutlet weak var overwhelmedButton: UIButton!
@@ -24,13 +25,5 @@ class ProtocolsViewController: UIViewController {
             self.buttons[index].layer.borderColor = UIColor.blackColor().CGColor
             self.buttons[index].layer.borderWidth = 0.5
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        Rotation.rotatePortrait()
     }
 }

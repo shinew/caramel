@@ -8,7 +8,7 @@
 
 import Foundation
 
-let ROOT_URL = "http://api.getbeyond.me"
+let ROOT_URL = "http://devapi.getbeyond.me"
 let API_VERSION = "/v1.0"
 
 class HTTPRequest {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BreaksViewController: UIViewController {
+class BreaksViewController: PortraitViewController {
 
     @IBOutlet weak var walkingLabel: UILabel!
     @IBOutlet weak var coffeeLabel: UILabel!
@@ -43,14 +43,6 @@ class BreaksViewController: UIViewController {
             self.buttonCounters[activity] = Database.getBreakActivityCounter(activityCounter)
         }
         self.refreshActivityCounters()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        Rotation.rotatePortrait()
     }
     
     @IBAction func walkingButtonDidPress(sender: AnyObject) {

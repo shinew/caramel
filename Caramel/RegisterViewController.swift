@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController, UITextFieldDelegate {
+class RegisterViewController: PortraitViewController, UITextFieldDelegate {
     
     @IBOutlet weak var introTextView: UITextView!
     @IBOutlet weak var userNameTextField: UITextField!
@@ -21,9 +21,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
-
+        
         signUpButton.layer.cornerRadius = 5
         signUpButton.layer.borderColor = Conversion.UIColorFromRGB(13, green: 153, blue: 252).CGColor
         signUpButton.layer.borderWidth = 1
@@ -35,11 +33,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         //setting up textfield delegates
         self.userNameTextField.delegate = self
         self.passwordTextField.delegate = self
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
@@ -168,9 +161,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             if json["Scores"] is [[String: AnyObject]] {
                 let scores = json["Scores"] as [[String: AnyObject]]
                 for score in scores {
-                    let scoreInt = score["Score"]
-                    let startDate = score["StartTime"]
-                    let endDate = score["EndTime"]
+                    let scoreInt: AnyObject? = score["Score"]
+                    let startDate: AnyObject? = score["StartTime"]
+                    let endDate: AnyObject? = score["EndTime"]
                     println("\(scoreInt), \(startDate), \(endDate)")
                     bulkIntervals.append(StressScoreInterval(
                         score: scoreInt as Int,

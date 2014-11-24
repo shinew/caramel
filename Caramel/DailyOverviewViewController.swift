@@ -17,11 +17,9 @@ class DailyOverviewViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
         println("Updating trend graph")
         let data = self.prepareTrendData(NSDate())
         

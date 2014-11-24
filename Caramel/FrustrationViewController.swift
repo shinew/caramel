@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FrustrationViewController: UIViewController {
+class FrustrationViewController: PortraitViewController {
 
     @IBOutlet weak var checkMarkImage1: UIImageView!
     @IBOutlet weak var checkMarkImage2: UIImageView!
@@ -49,14 +49,6 @@ class FrustrationViewController: UIViewController {
         self.images = [self.checkMarkImage1, self.checkMarkImage2, self.checkMarkImage3, self.checkMarkImage4]
         self.buttons = [self.step1Button, self.step2Button, self.step3Button, self.step4Button]
         self.index = 0
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        Rotation.rotatePortrait()
     }
     
     func animateButton() {

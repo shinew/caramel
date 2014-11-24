@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConnectivityViewController: UIViewController {
+class ConnectivityViewController: PortraitViewController {
     
     @IBOutlet weak var currentHRLabel: UILabel!
     @IBOutlet weak var connectButton: UIButton!
@@ -36,11 +36,6 @@ class ConnectivityViewController: UIViewController {
         
         HRBluetooth.setHRUpdateCallback(self.newHeartRateCallback)
         self.bluetoothConnectivity.setLongRunningTimer()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func newHeartRateCallback(data: NSData!) -> Void {
