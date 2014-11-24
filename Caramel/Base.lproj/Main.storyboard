@@ -2313,10 +2313,10 @@
             </objects>
             <point key="canvasLocation" x="1029.5" y="1404.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Portrait View Controller-->
         <scene sceneID="894-0Y-Cns">
             <objects>
-                <viewController id="KDy-de-VLW" sceneMemberID="viewController">
+                <viewController id="KDy-de-VLW" customClass="PortraitViewController" customModule="Caramel" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CG8-99-htb"/>
                         <viewControllerLayoutGuide type="bottom" id="W7T-3m-4Ye"/>

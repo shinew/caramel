@@ -21,4 +21,20 @@ class PortraitViewController: UIViewController {
         super.viewDidAppear(animated)
         Rotation.rotatePortrait()
     }
+    
+    override func shouldAutorotate() -> Bool {
+        let currentOrientation = UIDevice.currentDevice().valueForKey("orientation") as Int
+        if currentOrientation == UIInterfaceOrientation.Portrait.rawValue {
+            return true
+        }
+        return false
+    }
+    
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    }
+    
+    override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
+        return UIInterfaceOrientation.Portrait
+    }
 }
