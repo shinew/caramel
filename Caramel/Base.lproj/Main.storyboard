@@ -104,8 +104,6 @@
             <string>Univers-Light-Normal</string>
             <string>Univers-Light-Normal</string>
             <string>Univers-Light-Normal</string>
-            <string>Univers-Light-Normal</string>
-            <string>Univers-Light-Normal</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -515,14 +513,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="% of today stressed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySU-2m-Xbw">
-                                <rect key="frame" x="205.5" y="225.5" width="124.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="% of today stressed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySU-2m-Xbw">
+                                <rect key="frame" x="205" y="225.5" width="124.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Univers-Condensed-Bold" family="Univers Condensed" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="% of yesterday stressed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRy-mO-Q7V">
-                                <rect key="frame" x="192.5" y="345.5" width="151.5" height="20.5"/>
+                                <rect key="frame" x="192" y="345.5" width="151.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Univers-Condensed-Bold" family="Univers Condensed" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -540,7 +538,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keQ-AV-yAM">
-                                <rect key="frame" x="257" y="434.5" width="22.5" height="58"/>
+                                <rect key="frame" x="258" y="434.5" width="22.5" height="58"/>
                                 <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="50"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -553,7 +551,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="heartrate (BPM)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAF-r3-tIm">
-                                <rect key="frame" x="218" y="492.5" width="101" height="20.5"/>
+                                <rect key="frame" x="219" y="492.5" width="101" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Univers-Condensed-Bold" family="Univers Condensed" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -577,6 +575,7 @@
                             <constraint firstItem="E6u-JI-bsB" firstAttribute="top" secondItem="Lup-8q-x4k" secondAttribute="bottom" id="LQ8-0T-ms0"/>
                             <constraint firstItem="rDQ-TY-12Y" firstAttribute="top" secondItem="aDN-Lc-T0L" secondAttribute="bottom" id="Lwc-l0-z59"/>
                             <constraint firstItem="aDN-Lc-T0L" firstAttribute="top" secondItem="TBZ-zP-kF5" secondAttribute="bottom" id="MaI-2X-uNs"/>
+                            <constraint firstItem="dnI-N1-bbY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ySU-2m-Xbw" secondAttribute="top" constant="10" id="Rbp-TH-hjB"/>
                             <constraint firstItem="dnI-N1-bbY" firstAttribute="top" relation="lessThanOrEqual" secondItem="ySU-2m-Xbw" secondAttribute="bottom" constant="30" id="SUw-f5-N68"/>
                             <constraint firstItem="cAF-r3-tIm" firstAttribute="top" secondItem="keQ-AV-yAM" secondAttribute="bottom" id="TLC-Rg-pTs"/>
                             <constraint firstItem="acq-mc-SKw" firstAttribute="centerX" secondItem="rDQ-TY-12Y" secondAttribute="centerX" id="Wbd-3q-ubW"/>
@@ -2326,53 +2325,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tbe-bE-2db">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tbe-bE-2db">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rnW-qT-5d3">
-                                        <rect key="frame" x="11" y="48" width="352" height="236"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dashboard-image" translatesAutoresizingMaskIntoConstraints="NO" id="WjI-6f-igm">
-                                                <rect key="frame" x="0.0" y="94" width="352" height="62"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="topdialog-image" translatesAutoresizingMaskIntoConstraints="NO" id="DgD-1y-0ug">
-                                                <rect key="frame" x="68" y="18" width="246" height="68"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bottomdialog-image" translatesAutoresizingMaskIntoConstraints="NO" id="cbV-tZ-cYM">
-                                                <rect key="frame" x="139" y="164" width="205" height="54"/>
-                                            </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="When the bluetooth icon greys out like this, the device is disconnected." translatesAutoresizingMaskIntoConstraints="NO" id="tu4-9n-OIm">
-                                                <rect key="frame" x="74" y="24" width="240" height="44"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Reconnect by clicking this button on the top right." translatesAutoresizingMaskIntoConstraints="NO" id="zcT-5r-tKH">
-                                                <rect key="frame" x="156" y="172" width="170.5" height="48.5"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Important: Reconnecting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTG-91-2lO">
-                                        <rect key="frame" x="53" y="300" width="278" height="28"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Important: Reconnecting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTG-91-2lO">
+                                        <rect key="frame" x="49" y="321" width="277.5" height="28"/>
                                         <fontDescription key="fontDescription" name="UniversLT-Bold" family="Univers LT 45 Light" pointSize="23.5"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="The device may get disconnected. Please check the bluetooth icon from time to time." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="su5-bV-4tX">
-                                        <rect key="frame" x="34" y="346" width="301" height="48.5"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
-                                    </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LsY-bH-0JK">
-                                        <rect key="frame" x="278" y="516" width="85" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LsY-bH-0JK">
+                                        <rect key="frame" x="267" y="609" width="85" height="30"/>
                                         <state key="normal" title="calibration &gt;">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2381,15 +2344,44 @@
                                             <segue destination="XsB-6y-3G6" kind="show" id="CZS-xW-b8t"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding-image" translatesAutoresizingMaskIntoConstraints="NO" id="jLk-d6-cgm">
+                                        <rect key="frame" x="20" y="58" width="334" height="235"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="jLk-d6-cgm" secondAttribute="height" multiplier="334:235" id="tkj-EN-4fV"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="The device may get disconnected. Please check the bluetooth icon from time to time." translatesAutoresizingMaskIntoConstraints="NO" id="gEn-bU-HNn">
+                                        <rect key="frame" x="32" y="374" width="311.5" height="61"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="61" id="MVc-D8-iEA"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.3058823645" green="0.57254904510000004" blue="0.87450987099999999" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
+                                    <constraint firstItem="jLk-d6-cgm" firstAttribute="leading" secondItem="Tbe-bE-2db" secondAttribute="leading" constant="20" id="7Pg-1D-9Lf"/>
                                     <constraint firstAttribute="bottom" secondItem="LsY-bH-0JK" secondAttribute="bottom" constant="8" id="7UA-mn-57B"/>
+                                    <constraint firstItem="jLk-d6-cgm" firstAttribute="centerX" secondItem="rTG-91-2lO" secondAttribute="centerX" id="DUW-vZ-gBH"/>
+                                    <constraint firstItem="gEn-bU-HNn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Tbe-bE-2db" secondAttribute="leading" constant="20" id="FpV-8V-PtM"/>
+                                    <constraint firstItem="gEn-bU-HNn" firstAttribute="top" secondItem="rTG-91-2lO" secondAttribute="bottom" constant="25" id="KMZ-vS-ELa"/>
+                                    <constraint firstItem="jLk-d6-cgm" firstAttribute="top" secondItem="Tbe-bE-2db" secondAttribute="top" constant="58" id="ceo-fw-cwb"/>
+                                    <constraint firstItem="rTG-91-2lO" firstAttribute="top" secondItem="jLk-d6-cgm" secondAttribute="bottom" constant="28" id="dLU-RJ-qmb"/>
+                                    <constraint firstAttribute="centerX" secondItem="jLk-d6-cgm" secondAttribute="centerX" id="lx3-bn-I17"/>
                                     <constraint firstAttribute="trailing" secondItem="LsY-bH-0JK" secondAttribute="trailing" constant="23" id="tU9-Se-V1w"/>
+                                    <constraint firstItem="gEn-bU-HNn" firstAttribute="centerX" secondItem="rTG-91-2lO" secondAttribute="centerX" id="tsg-RX-r0b"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tbe-bE-2db" firstAttribute="leading" secondItem="e7P-j1-scF" secondAttribute="leading" id="H5G-KO-vkc"/>
+                            <constraint firstAttribute="trailing" secondItem="Tbe-bE-2db" secondAttribute="trailing" id="KVX-r1-pRU"/>
+                            <constraint firstItem="W7T-3m-4Ye" firstAttribute="top" secondItem="Tbe-bE-2db" secondAttribute="bottom" id="NC2-qk-LYF"/>
+                            <constraint firstItem="Tbe-bE-2db" firstAttribute="top" secondItem="CG8-99-htb" secondAttribute="bottom" id="jCk-PS-RdT"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -2409,26 +2401,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G3h-b1-8U9">
-                                <rect key="frame" x="0.0" y="62" width="375" height="554"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3h-b1-8U9">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wahoo-image" translatesAutoresizingMaskIntoConstraints="NO" id="sqe-Wv-m7w">
-                                        <rect key="frame" x="76" y="77" width="222" height="78"/>
+                                        <rect key="frame" x="76.5" y="77" width="222" height="78"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="heartrate (BPM)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcS-QU-YqO">
-                                        <rect key="frame" x="139" y="433" width="101" height="21"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Please wear your Wahoo around your chest with the tab right above your sternum, then press connect." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWl-bP-t8Y">
+                                        <rect key="frame" x="30" y="173" width="315" height="77"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="77" id="wEw-Q6-RDj"/>
+                                        </constraints>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8X-es-r8j">
+                                        <rect key="frame" x="272" y="609" width="80" height="30"/>
+                                        <state key="normal" title="important &gt;">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="KDy-de-VLW" kind="show" id="75J-XF-hXf"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="heartrate (BPM)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcS-QU-YqO">
+                                        <rect key="frame" x="137" y="409.5" width="101" height="20.5"/>
                                         <fontDescription key="fontDescription" name="Univers-Condensed-Bold" family="Univers Condensed" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzM-gd-caC">
-                                        <rect key="frame" x="134" y="383" width="106" height="58"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzM-gd-caC">
+                                        <rect key="frame" x="177" y="344" width="22.5" height="58"/>
                                         <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="50"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znC-hb-R3Y">
-                                        <rect key="frame" x="22" y="295" width="330" height="27"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znC-hb-R3Y">
+                                        <rect key="frame" x="155" y="285" width="65" height="29"/>
                                         <fontDescription key="fontDescription" name="Univers-Light-Bold" family="Univers-Light" pointSize="17"/>
                                         <state key="normal" title="connect">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2439,37 +2451,17 @@
                                             <action selector="startButtonDidPress:" destination="XsB-6y-3G6" eventType="touchUpInside" id="NcV-iF-6kY"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="Please wear your Wahoo around your chest with the tab right above your sternum, then press connect." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWl-bP-t8Y">
-                                        <rect key="frame" x="34" y="173" width="306" height="77"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="77" id="wEw-Q6-RDj"/>
-                                        </constraints>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8X-es-r8j">
-                                        <rect key="frame" x="281" y="516" width="80" height="30"/>
-                                        <state key="normal" title="important &gt;">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="KDy-de-VLW" kind="show" id="75J-XF-hXf"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.3058823645" green="0.57254904510000004" blue="0.87450987099999999" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstItem="AWl-bP-t8Y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="G3h-b1-8U9" secondAttribute="leading" constant="20" id="3cm-Pn-3sW"/>
+                                    <constraint firstItem="AWl-bP-t8Y" firstAttribute="leading" secondItem="G3h-b1-8U9" secondAttribute="leading" constant="30" id="3cm-Pn-3sW"/>
                                     <constraint firstAttribute="bottom" secondItem="B8X-es-r8j" secondAttribute="bottom" constant="8" id="6LI-C3-5HX"/>
                                     <constraint firstItem="znC-hb-R3Y" firstAttribute="centerX" secondItem="sqe-Wv-m7w" secondAttribute="centerX" id="80F-zo-YMo"/>
                                     <constraint firstItem="sqe-Wv-m7w" firstAttribute="centerX" secondItem="AWl-bP-t8Y" secondAttribute="centerX" id="8ZA-wt-hUP"/>
-                                    <constraint firstItem="znC-hb-R3Y" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AWl-bP-t8Y" secondAttribute="bottom" constant="20" id="8tr-34-jg4"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="AWl-bP-t8Y" secondAttribute="trailing" constant="20" id="9Ri-F6-mzy"/>
+                                    <constraint firstAttribute="trailing" secondItem="AWl-bP-t8Y" secondAttribute="trailing" constant="30" id="9Ri-F6-mzy"/>
                                     <constraint firstAttribute="trailing" secondItem="B8X-es-r8j" secondAttribute="trailing" constant="23" id="Btj-Zm-GyO"/>
-                                    <constraint firstItem="RzM-gd-caC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="znC-hb-R3Y" secondAttribute="bottom" constant="30" id="E0C-yK-inS"/>
+                                    <constraint firstItem="RzM-gd-caC" firstAttribute="top" secondItem="znC-hb-R3Y" secondAttribute="bottom" constant="30" id="E0C-yK-inS"/>
+                                    <constraint firstItem="znC-hb-R3Y" firstAttribute="top" secondItem="AWl-bP-t8Y" secondAttribute="bottom" constant="35" id="JIZ-Fq-Bxz"/>
                                     <constraint firstAttribute="centerX" secondItem="sqe-Wv-m7w" secondAttribute="centerX" id="Qoj-de-oX0"/>
                                     <constraint firstItem="AWl-bP-t8Y" firstAttribute="top" secondItem="sqe-Wv-m7w" secondAttribute="bottom" constant="18" id="ReY-nu-CKl"/>
                                     <constraint firstItem="sqe-Wv-m7w" firstAttribute="top" secondItem="G3h-b1-8U9" secondAttribute="top" constant="77" id="h8w-Jj-IFu"/>
@@ -2522,23 +2514,21 @@
         <image name="actions-background" width="375" height="555"/>
         <image name="anger-icon" width="35" height="31"/>
         <image name="app-icon" width="70" height="99"/>
-        <image name="bottomdialog-image" width="205" height="54"/>
         <image name="breath-background" width="375" height="601"/>
         <image name="calendar-icon" width="23" height="24"/>
         <image name="calibration-icon" width="24" height="24"/>
         <image name="conflictcheck-icon" width="22" height="17"/>
-        <image name="dashboard-image" width="352" height="62"/>
         <image name="debug-icon" width="16" height="16"/>
         <image name="fear-icon" width="31" height="31"/>
         <image name="fearcheck-icon" width="22" height="17"/>
         <image name="frustration-icon" width="28" height="32"/>
         <image name="frustrationcheck-icon" width="22" height="17"/>
         <image name="habits-screenshot" width="1004" height="1358"/>
+        <image name="onboarding-image" width="352" height="235"/>
         <image name="overwhelmed-icon" width="34" height="31"/>
         <image name="overwhelmedcheck-icon" width="22" height="17"/>
         <image name="profile-icon" width="26" height="26"/>
         <image name="refresh-icon" width="15" height="14"/>
-        <image name="topdialog-image" width="246" height="68"/>
         <image name="trends-icon" width="41" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
