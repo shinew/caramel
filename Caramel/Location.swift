@@ -10,6 +10,8 @@
 import UIKit
 import CoreLocation
 
+var _lastLocation: String?
+
 class Location: NSObject, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
@@ -22,7 +24,13 @@ class Location: NSObject, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
     }
     
+    class func getLastLocation() -> String? {
+        // see HTTPRequest -- attached with HR request for algorithm
+        // used to help users identify the location of stress levels
+        return _lastLocation
+    }
+    
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        //println("New location: \(locations)")
+        _lastLocation = "\(locations)"
     }
 }

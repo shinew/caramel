@@ -27,6 +27,12 @@ class HTTPRequest {
         }
         json["Samples"] = samplesJSON
         
+        if let lastLocation = Location.getLastLocation() {
+            json["Location"] = lastLocation
+        } else {
+            json["Location"] = NSNull()
+        }
+        
         req.send(json)
         req.end(responseCallback)
     }
