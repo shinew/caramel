@@ -13,6 +13,7 @@ class BluetoothConnectivity {
     var connectedCallback: ((Void) -> Void)?
     var disconnectedCallback: ((Void) -> Void)?
     var switchConnectivity = true
+    var timer: NSTimer!
     
     init() { }
     
@@ -22,7 +23,11 @@ class BluetoothConnectivity {
     }
 
     func setLongRunningTimer() {
-        NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: Selector("checkForBluetooth"), userInfo: nil, repeats: true)
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: Selector("checkForBluetooth"), userInfo: nil, repeats: true)
+    }
+    
+    func disableTimer() {
+        self.timer.invalidate()
     }
     
     @objc func checkForBluetooth() {

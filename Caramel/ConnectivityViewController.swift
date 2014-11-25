@@ -38,6 +38,11 @@ class ConnectivityViewController: PortraitViewController {
         self.bluetoothConnectivity.setLongRunningTimer()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.bluetoothConnectivity.disableTimer()
+    }
+    
     func newHeartRateCallback(data: NSData!) -> Void {
         println("(ConnectivityOnboarding) Received new heart rate data")
         var hrSample = HRDecoder.dataToHRSample(data)
