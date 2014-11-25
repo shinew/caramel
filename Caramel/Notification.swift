@@ -26,7 +26,7 @@ enum NotificationType {
 class Notification {
     
     class func sendMemoryWarningNotification() {
-        Notification.sendNotification(_memoryWarningMessage, type: .Original, customSound: "Nudge.wav")
+        Notification.sendNotification(_memoryWarningMessage, type: .Original, customSound: nil)
     }
     
     class func sendCalibrationCompleteNotification() {
