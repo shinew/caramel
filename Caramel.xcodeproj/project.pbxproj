@@ -29,6 +29,8 @@
 		14A06CF91A08ADA5007B6FD3 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A06CF81A08ADA5007B6FD3 /* Math.swift */; };
 		14A0C3EB1A1146B6006AD37F /* TrainingInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A0C3EA1A1146B6006AD37F /* TrainingInterval.swift */; };
 		14A851B31A089CCC00855954 /* NotificationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A851B21A089CCC00855954 /* NotificationRecord.swift */; };
+		14AEFC9C1A241E4900BD2F92 /* Nudge.wav in Resources */ = {isa = PBXBuildFile; fileRef = 14AEFC9B1A241E4900BD2F92 /* Nudge.wav */; };
+		14AEFC9E1A241FD300BD2F92 /* Realization.wav in Resources */ = {isa = PBXBuildFile; fileRef = 14AEFC9D1A241FD300BD2F92 /* Realization.wav */; };
 		14C4D1111A1BE98500F517E5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C4D1101A1BE98500F517E5 /* Location.swift */; };
 		14D0E2361A008C6D0042F20A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2351A008C6D0042F20A /* AppDelegate.swift */; };
 		14D0E2391A008C6D0042F20A /* Caramel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2371A008C6D0042F20A /* Caramel.xcdatamodeld */; };
@@ -134,6 +136,8 @@
 		14A06CF81A08ADA5007B6FD3 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		14A0C3EA1A1146B6006AD37F /* TrainingInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingInterval.swift; sourceTree = "<group>"; };
 		14A851B21A089CCC00855954 /* NotificationRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationRecord.swift; sourceTree = "<group>"; };
+		14AEFC9B1A241E4900BD2F92 /* Nudge.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Nudge.wav; sourceTree = "<group>"; };
+		14AEFC9D1A241FD300BD2F92 /* Realization.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Realization.wav; sourceTree = "<group>"; };
 		14C4D1101A1BE98500F517E5 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		14D0E2301A008C6D0042F20A /* Caramel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caramel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14D0E2341A008C6D0042F20A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -287,6 +291,15 @@
 			name = Calibration;
 			sourceTree = "<group>";
 		};
+		14AEFC9A1A241E3500BD2F92 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				14AEFC9D1A241FD300BD2F92 /* Realization.wav */,
+				14AEFC9B1A241E4900BD2F92 /* Nudge.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		14C4D10F1A1BE97900F517E5 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +341,7 @@
 			children = (
 				14FBC11B1A14BFF000BD6B15 /* Vendor */,
 				1A5347D71A07896C00CE742E /* LaunchImages */,
+				14AEFC9A1A241E3500BD2F92 /* Sounds */,
 				1AB847D71A07112F008509FE /* Spring */,
 				1A3D2C071A0623A900063AEB /* ViewControllers */,
 				1A28C9F91A060CB000678084 /* Fonts */,
@@ -670,6 +684,7 @@
 				1A28C9FB1A060CD900678084 /* TipoType - Libertad.otf in Resources */,
 				1A5347DD1A07897C00CE742E /* 5C.png in Resources */,
 				14FBC1221A14C00E00BD6B15 /* HockeySDK.xcconfig in Resources */,
+				14AEFC9C1A241E4900BD2F92 /* Nudge.wav in Resources */,
 				1AB847C61A06EB95008509FE /* univers-medium.ttf in Resources */,
 				1AB847C51A06EB95008509FE /* univers-LT-65-Bold.ttf in Resources */,
 				1AB847C31A06EB95008509FE /* univers-condensed-italics.ttf in Resources */,
@@ -678,6 +693,7 @@
 				1A5347DF1A07897C00CE742E /* Portrait - 6.png in Resources */,
 				1AB847C21A06EB95008509FE /* univers-black-normal.ttf in Resources */,
 				1A5347DC1A07897C00CE742E /* @2x.png in Resources */,
+				14AEFC9E1A241FD300BD2F92 /* Realization.wav in Resources */,
 				14FBC1231A14C00E00BD6B15 /* HockeySDKResources.bundle in Resources */,
 				1AB847C41A06EB95008509FE /* univers-condensed-medium.ttf in Resources */,
 			);
