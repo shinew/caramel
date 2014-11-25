@@ -18,6 +18,7 @@
 		144630AD1A1466BD003B350A /* DailyOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144630AC1A1466BD003B350A /* DailyOverviewViewController.swift */; };
 		144630B11A1467C6003B350A /* TrendGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144630B01A1467C6003B350A /* TrendGraphView.swift */; };
 		1446CCAC1A10A21700DBA7FC /* BluetoothConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */; };
+		14534D4D1A252139003091ED /* HRAccumulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14534D4C1A252139003091ED /* HRAccumulator.swift */; };
 		1468AF351A23D93100C293B9 /* PortraitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1468AF341A23D93100C293B9 /* PortraitViewController.swift */; };
 		1469A8091A04659200F439DB /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1469A8081A04659200F439DB /* Movement.swift */; };
 		146D0DA71A21C80E003450B9 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146D0DA61A21C80E003450B9 /* HomeTabBarController.swift */; };
@@ -125,6 +126,7 @@
 		144630AC1A1466BD003B350A /* DailyOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyOverviewViewController.swift; sourceTree = "<group>"; };
 		144630B01A1467C6003B350A /* TrendGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendGraphView.swift; sourceTree = "<group>"; };
 		1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothConnectivity.swift; sourceTree = "<group>"; };
+		14534D4C1A252139003091ED /* HRAccumulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRAccumulator.swift; sourceTree = "<group>"; };
 		1468AF341A23D93100C293B9 /* PortraitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortraitViewController.swift; sourceTree = "<group>"; };
 		1469A8081A04659200F439DB /* Movement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movement.swift; sourceTree = "<group>"; };
 		146D0DA61A21C80E003450B9 /* HomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				14DC38031A05A53100E992B2 /* MovementQueue.swift */,
 				14F878E01A021992001FFFE2 /* ScoreSmootheningQueue.swift */,
 				14D0E2681A00AA910042F20A /* Queue.swift */,
+				14DCDE241A21818700A7CE43 /* StressScoreManager.swift */,
 			);
 			name = Queues;
 			sourceTree = "<group>";
@@ -411,8 +414,8 @@
 				1415AA991A02D81100C1CD4F /* Notification.swift */,
 				144071881A0A05B4002A3B71 /* User.swift */,
 				144468AB1A1D665100B4C680 /* StartScreen.swift */,
-				14DCDE241A21818700A7CE43 /* StressScoreManager.swift */,
 				146D0DAA1A21D9D1003450B9 /* Rotation.swift */,
+				14534D4C1A252139003091ED /* HRAccumulator.swift */,
 			);
 			name = Globals;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				1AB847DF1A07112F008509FE /* DesignableView.swift in Sources */,
 				148F34F91A113EFB00B3C941 /* CalibrationCallback.swift in Sources */,
 				144071891A0A05B4002A3B71 /* User.swift in Sources */,
+				14534D4D1A252139003091ED /* HRAccumulator.swift in Sources */,
 				140ACA0E1A0A3286007A1853 /* UserRecord.swift in Sources */,
 				14D47A9F1A06E61500049C34 /* DashboardCallback.swift in Sources */,
 				14D0E25A1A008CED0042F20A /* Database.swift in Sources */,

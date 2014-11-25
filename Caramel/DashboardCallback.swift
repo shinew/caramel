@@ -12,11 +12,17 @@ class DashboardCallback {
     
     var lastStressScoreInterval: StressScoreInterval! //used to keep track of start-end
     var currentHRLabel: UILabel!
+    var countdownHRLabel: UILabel!
     var updatedScoreCallback: ((interval: StressScoreInterval!) -> Void)!
     
-    init(updatedScoreCallback: (interval: StressScoreInterval!) -> Void, currentHRLabel: UILabel!) {
+    init(updatedScoreCallback: (
+        interval: StressScoreInterval!) -> Void,
+        currentHRLabel: UILabel!,
+        countdownHRLabel: UILabel!
+    ) {
         self.updatedScoreCallback = updatedScoreCallback
         self.currentHRLabel = currentHRLabel
+        self.countdownHRLabel = countdownHRLabel
     }
     
     func newHeartRateCallback(data: NSData!) -> Void {
@@ -25,9 +31,15 @@ class DashboardCallback {
         if hrSample != nil && hrSample!.hr != nil && hrSample!.hr < 150 {
             self.currentHRLabel.font = UIFont(name: "Univers Light Condensed", size: 50)
             Timer.setLastHRBluetoothReceivedDate(NSDate())
+            
+            HRAccumulator.addHRDate(NSDate())
+            var newCountdownValue = HRAccumulator.secondsLeftUntilUpdate()
+            
             dispatch_async(dispatch_get_main_queue(), {
                 self.currentHRLabel.text = "\(hrSample!.hr!)"
+                self.countdownHRLabel.text = "\(newCountdownValue)"
             })
+            
             HRQueue.push(hrSample!)
             println("HRQueue length: \(HRQueue.length())")
             if HRQueue.length() == Constants.getMaxNumHRQueue() {
@@ -43,6 +55,9 @@ class DashboardCallback {
                 }
                 
                 Timer.setLastHRSentDate(currentHRs.last!.date)
+                
+                HRAccumulator.sentHRRequestDate(currentHRs.last!.date)
+                
                 HTTPRequest.sendHRRequest(currentHRs, self.hrHTTPResponseCallback)
             }
         }

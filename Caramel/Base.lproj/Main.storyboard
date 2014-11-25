@@ -560,6 +560,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu2-og-Ilg">
+                                <rect key="frame" x="317" y="626" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -587,6 +593,7 @@
                             <constraint firstItem="XdX-mz-b14" firstAttribute="top" relation="greaterThanOrEqual" secondItem="JXQ-Rz-Ada" secondAttribute="bottom" constant="30" id="Ynk-PF-Luo"/>
                             <constraint firstItem="Lup-8q-x4k" firstAttribute="top" secondItem="EWe-tu-0oY" secondAttribute="bottom" constant="1" id="atC-qb-il6"/>
                             <constraint firstItem="rDQ-TY-12Y" firstAttribute="top" secondItem="Ceq-19-isx" secondAttribute="bottom" constant="1" id="cMF-uG-OUh"/>
+                            <constraint firstItem="fu2-og-Ilg" firstAttribute="trailing" secondItem="2ci-zW-eBd" secondAttribute="trailingMargin" id="ccz-TL-Afq"/>
                             <constraint firstItem="JXQ-Rz-Ada" firstAttribute="height" secondItem="rDQ-TY-12Y" secondAttribute="height" id="dlK-SL-KSf"/>
                             <constraint firstItem="JXQ-Rz-Ada" firstAttribute="top" secondItem="acq-mc-SKw" secondAttribute="bottom" constant="1" id="e0E-kR-lav"/>
                             <constraint firstItem="Yj9-8M-mHY" firstAttribute="centerX" secondItem="ySU-2m-Xbw" secondAttribute="centerX" id="eO3-bT-hdR"/>
@@ -602,6 +609,7 @@
                             <constraint firstItem="Yj9-8M-mHY" firstAttribute="centerX" secondItem="dnI-N1-bbY" secondAttribute="centerX" id="tTL-ZE-HBE"/>
                             <constraint firstItem="TBZ-zP-kF5" firstAttribute="top" secondItem="dID-fc-xhj" secondAttribute="bottom" constant="20" id="uuR-fs-fgQ"/>
                             <constraint firstItem="XdX-mz-b14" firstAttribute="top" relation="lessThanOrEqual" secondItem="JXQ-Rz-Ada" secondAttribute="bottom" constant="80" id="wJS-a0-bGm"/>
+                            <constraint firstItem="XdX-mz-b14" firstAttribute="top" secondItem="fu2-og-Ilg" secondAttribute="bottom" constant="20" id="wKi-Pg-XP4"/>
                             <constraint firstItem="5bh-B2-8sL" firstAttribute="height" secondItem="E6u-JI-bsB" secondAttribute="height" id="zOW-Pn-a5n"/>
                         </constraints>
                     </view>
@@ -622,6 +630,7 @@
                         <outlet property="blueZoneLabel" destination="ssa-C4-fbf" id="yRL-mq-KGD"/>
                         <outlet property="blueZoneTimeFormatLabel" destination="EpU-M5-gDp" id="Wmp-9l-klv"/>
                         <outlet property="blueZoneView" destination="JXQ-Rz-Ada" id="f7D-5Z-EMB"/>
+                        <outlet property="countdownHRLabel" destination="fu2-og-Ilg" id="D9p-hJ-i2L"/>
                         <outlet property="currentHRLabel" destination="keQ-AV-yAM" id="tAf-00-v3u"/>
                         <outlet property="percentTodayStressLabel" destination="Yj9-8M-mHY" id="c7N-Gg-tI1"/>
                         <outlet property="percentYesterdayStressLabel" destination="dnI-N1-bbY" id="dhF-sT-ZkE"/>
