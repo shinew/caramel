@@ -15,6 +15,13 @@ class CalibrationViewController: PortraitViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var descriptionTextView: UITextView!
     
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
+    
+    @IBAction func refreshButtonDidPress(sender: AnyObject) {
+        println("Restart Bluetooth background task")
+        AppDelegate.restartBGTask()
+    } 
+    
     var startDate: NSDate?
     var endDate: NSDate?
     var previousHRCallback: ((NSData!) -> Void)?

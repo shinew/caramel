@@ -13,7 +13,13 @@ class ActionsViewController: PortraitViewController {
     @IBOutlet weak var breathButton: UIButton!
     @IBOutlet weak var breakButton: UIButton!
     @IBOutlet weak var moreButton: UIButton!
-    var buttons = []
+    
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
+    
+    @IBAction func refreshButtonDidPress(sender: AnyObject) {
+        println("Restart Bluetooth background task")
+        AppDelegate.restartBGTask()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

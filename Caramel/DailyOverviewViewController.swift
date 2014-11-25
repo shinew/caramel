@@ -11,6 +11,11 @@ import UIKit
 class DailyOverviewViewController: UIViewController {
     
     @IBOutlet weak var trendGraphView: TrendGraphView!
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
+    @IBAction func refreshButtonDidPress(sender: AnyObject) {
+        println("Restart Bluetooth background task")
+        AppDelegate.restartBGTask()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
