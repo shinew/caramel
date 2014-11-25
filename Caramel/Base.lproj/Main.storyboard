@@ -1007,6 +1007,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="descriptionTextView" destination="JDI-T1-QXr" id="tbt-pr-rLv"/>
+                        <outlet property="skipButton" destination="MHh-9h-Di7" id="SOh-hc-x8Y"/>
                         <outlet property="startButton" destination="dTS-Lw-xnN" id="mBT-1g-dry"/>
                     </connections>
                 </viewController>
@@ -2489,23 +2490,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8z-NN-162" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="127.5" y="1404.5"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="h7b-i6-gqz">
-            <objects>
-                <viewController id="CvE-jg-SEO" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9mY-gA-INj"/>
-                        <viewControllerLayoutGuide type="bottom" id="Pe9-Dd-fr3"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="H6m-Yt-Xyz">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A3J-NE-Gdu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

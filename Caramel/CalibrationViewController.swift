@@ -11,6 +11,7 @@ import AudioToolbox
 
 class CalibrationViewController: PortraitViewController {
     
+    @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var descriptionTextView: UITextView!
     
@@ -18,6 +19,7 @@ class CalibrationViewController: PortraitViewController {
     var endDate: NSDate?
     var previousHRCallback: ((NSData!) -> Void)?
     var calibrationCallback = CalibrationCallback()
+    var finishedCalibrationTimer: NSTimer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,10 @@ class CalibrationViewController: PortraitViewController {
     
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
         //equivalent to skipCalibrationDidPress
+        
+        if self.finishedCalibrationTimer != nil {
+            self.finishedCalibrationTimer!.invalidate()
+        }
         
         HRQueue.popAll()
         if self.previousHRCallback != nil {
@@ -48,7 +54,7 @@ class CalibrationViewController: PortraitViewController {
         self.previousHRCallback = HRBluetooth.getHRUpdateCallback()
         HRBluetooth.setHRUpdateCallback(self.calibrationCallback.newHeartRateCallback)
         
-        var timer = NSTimer.scheduledTimerWithTimeInterval(305, target: self, selector: Selector("endButtonDidPress"), userInfo: nil, repeats: false)
+        self.finishedCalibrationTimer = NSTimer.scheduledTimerWithTimeInterval(305, target: self, selector: Selector("finishedCalibration"), userInfo: nil, repeats: false)
         
         self.startButton.setTitle("We'll vibrate when it's done.", forState: UIControlState.Normal)
         
@@ -57,13 +63,14 @@ class CalibrationViewController: PortraitViewController {
         self.descriptionTextView.font = UIFont(name: "Univers-Light-Normal", size: 17)
     }
     
-    private func vibratePhone() {
-        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-    }
-    
-    func endButtonDidPress() {
+    func finishedCalibration() {
         dispatch_async(dispatch_get_main_queue(), {
             self.startButton.enabled = false
+            self.skipButton.titleLabel!.text = "Next >"
+            self.startButton.setTitle("Perfect. Beyond is ready.", forState: UIControlState.Normal)
+            self.descriptionTextView.text = "Just click \"Next\" and let Beyond notify you when you are about to be stressed. It's that easy."
+            self.descriptionTextView.textColor = UIColor.whiteColor()
+            self.descriptionTextView.font = UIFont(name: "Univers-Light-Normal", size: 17)
         })
         
         self.endDate = NSDate()
@@ -76,12 +83,11 @@ class CalibrationViewController: PortraitViewController {
         
         HRBluetooth.setHRUpdateCallback(self.previousHRCallback!)
         
-        self.startButton.setTitle("Perfect. Beyond is ready.", forState: UIControlState.Normal)
-        self.descriptionTextView.text = "Just exit the app and let Beyond notify you when you are about to be stressed. It's that easy."
-        self.descriptionTextView.textColor = UIColor.whiteColor()
-        self.descriptionTextView.font = UIFont(name: "Univers-Light-Normal", size: 17)
-        
         Notification.sendCalibrationCompleteNotification()
         vibratePhone()
+    }
+    
+    private func vibratePhone() {
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
 }
