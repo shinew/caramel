@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-var _database_queue = dispatch_queue_create("com.database.myQueue", nil)
+var _database_queue = dispatch_queue_create("com.beyond.myDBQueue", nil)
 var _database_result_sorted_ssi: [StressScoreInterval]!
 var _database_result_sorted_nr: [NotificationRecord]!
 var _database_result_bac: BreakActivityCounter!
