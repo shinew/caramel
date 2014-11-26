@@ -8,6 +8,8 @@
 
 import UIKit
 
+var _dashboardSoftCallback: ((hrSample: HRSample!) -> Void)?
+
 class DashboardCallback {
     
     var lastStressScoreInterval: StressScoreInterval! //used to keep track of start-end
@@ -15,7 +17,7 @@ class DashboardCallback {
     var countdownHRLabel: UILabel!
     var countdownDescriptionLabel: UILabel!
     var updatedScoreCallback: ((interval: StressScoreInterval!) -> Void)!
-    
+
     init(updatedScoreCallback: (
         interval: StressScoreInterval!) -> Void,
         currentHRLabel: UILabel!,
@@ -26,22 +28,29 @@ class DashboardCallback {
         self.currentHRLabel = currentHRLabel
         self.countdownHRLabel = countdownHRLabel
         self.countdownDescriptionLabel = countdownDescriptionLabel
+        _dashboardSoftCallback = self.dashboardSoftCallback
+    }
+    
+    class func getDashboardCalibrationCallback() -> ((hrSample: HRSample!) -> Void)? {
+        return _dashboardSoftCallback
+    }
+    
+    func dashboardSoftCallback(hrSample: HRSample!) {
+        self.currentHRLabel.font = UIFont(name: "Univers Light Condensed", size: 50)
+        dispatch_async(dispatch_get_main_queue(), {
+            self.currentHRLabel.text = "\(hrSample!.hr!)"
+        })
     }
     
     func newHeartRateCallback(data: NSData!) -> Void {
         println("Received new heart rate data")
         var hrSample = HRDecoder.dataToHRSample(data)
         if hrSample != nil && hrSample!.hr != nil && hrSample!.hr < 150 {
-            self.currentHRLabel.font = UIFont(name: "Univers Light Condensed", size: 50)
+            
             Timer.setLastHRBluetoothReceivedDate(NSDate())
             
             HRAccumulator.addHRDate(NSDate())
             var newCountdownValue = HRAccumulator.beatsLeftUntilUpdate()
-            
-            dispatch_async(dispatch_get_main_queue(), {
-                self.currentHRLabel.text = "\(hrSample!.hr!)"
-            })
-            
             if HRAccumulator.activated() {
                 dispatch_async(dispatch_get_main_queue(), {
                     self.countdownHRLabel.hidden = false
@@ -54,6 +63,8 @@ class DashboardCallback {
                     self.countdownDescriptionLabel.hidden = true
                 })
             }
+            
+            self.dashboardSoftCallback(hrSample)
             
             HRQueue.push(hrSample!)
             println("HRQueue length: \(HRQueue.length())")

@@ -41,12 +41,15 @@ class CalibrationViewController: PortraitViewController {
         
         if self.finishedCalibrationTimer != nil {
             self.finishedCalibrationTimer!.invalidate()
+            self.finishedCalibrationTimer = nil
         }
         
         HRQueue.popAll()
+        
         if self.previousHRCallback != nil {
             HRBluetooth.setHRUpdateCallback(self.previousHRCallback!)
         }
+        
         Notification.sendCalibrationSkipNotification()
         return false
     }
@@ -88,7 +91,9 @@ class CalibrationViewController: PortraitViewController {
         HTTPRequest.sendHRRequest(hrSamples, self.calibrationCallback.httpResponseCallbackGenerator("HR"))
         HTTPRequest.sendTrainingIntervalRequest(trainingInterval, self.calibrationCallback.httpResponseCallbackGenerator("Training"))
         
-        HRBluetooth.setHRUpdateCallback(self.previousHRCallback!)
+        if self.previousHRCallback != nil {
+            HRBluetooth.setHRUpdateCallback(self.previousHRCallback!)
+        }
         
         Notification.sendCalibrationCompleteNotification()
         vibratePhone()

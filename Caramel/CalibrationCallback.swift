@@ -9,7 +9,7 @@
 import Foundation
 
 class CalibrationCallback {
-    
+
     func newHeartRateCallback(data: NSData!) -> Void {
         println("(Calibration) Received new heart rate data")
         var hrSample = HRDecoder.dataToHRSample(data)
@@ -18,9 +18,15 @@ class CalibrationCallback {
             HRAccumulator.addHRDate(NSDate())
             HRQueue.push(hrSample!)
             println("(Calibration) HRQueue length: \(HRQueue.length())")
+            
+            var dashboardCallback = DashboardCallback.getDashboardCalibrationCallback()
+            
+            if dashboardCallback != nil {
+                dashboardCallback!(hrSample: hrSample!)
+            }
         }
     }
-    
+
     func httpResponseCallbackGenerator(type: String) -> (NSHTTPURLResponse!, Agent.Data!, NSError!) -> Void {
         
         func closure (response: NSHTTPURLResponse!, data: Agent.Data!, error: NSError!) -> Void {
