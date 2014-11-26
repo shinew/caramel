@@ -8,12 +8,12 @@
 
 import Foundation
 
-let _BEATS_FOR_STRESS = 256
+let _BEATS_FOR_STRESS = Constants.getStressIntervalDuration()
 var _lastSentDate: NSDate?
 var _nextEstimatedStressStartDate: NSDate?
 var _nextEstimatedStressEndDate: NSDate?
 var _hrDates = [NSDate]()
-var _activated = false
+var _activated = true
 
 class HRAccumulator {
     

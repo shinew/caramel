@@ -15,6 +15,7 @@ class CalibrationCallback {
         var hrSample = HRDecoder.dataToHRSample(data)
         if hrSample != nil && hrSample!.hr != nil && hrSample!.hr < 150 {
             Timer.setLastHRBluetoothReceivedDate(NSDate())
+            HRAccumulator.addHRDate(NSDate())
             HRQueue.push(hrSample!)
             println("(Calibration) HRQueue length: \(HRQueue.length())")
         }

@@ -52,6 +52,11 @@ class HRPeripheral : NSObject, CBPeripheralDelegate {
         /* We want to read all of the characteristics except for
         the Heart Rate Measurement. The Heart Rate Measurement we
         want to subscribe to */
+        
+        if service.characteristics == nil {
+            return
+        }
+        
         for characteristic in service.characteristics {
             if characteristic.UUID == HeartRateMeasurementCharacteristicUUID {
                 if characteristic.properties == CBCharacteristicProperties.Notify {

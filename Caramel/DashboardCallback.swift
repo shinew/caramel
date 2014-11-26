@@ -37,8 +37,18 @@ class DashboardCallback {
             
             dispatch_async(dispatch_get_main_queue(), {
                 self.currentHRLabel.text = "\(hrSample!.hr!)"
-                self.countdownHRLabel.text = "\(newCountdownValue)"
             })
+            
+            if HRAccumulator.activated() {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.countdownHRLabel.hidden = false
+                    self.countdownHRLabel.text = "\(newCountdownValue)"
+                })
+            } else {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.countdownHRLabel.hidden = true
+                })
+            }
             
             HRQueue.push(hrSample!)
             println("HRQueue length: \(HRQueue.length())")

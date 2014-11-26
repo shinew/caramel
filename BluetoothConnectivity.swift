@@ -12,7 +12,6 @@ class BluetoothConnectivity {
     
     var connectedCallback: ((Void) -> Void)?
     var disconnectedCallback: ((Void) -> Void)?
-    var switchConnectivity = true
     var timer: NSTimer!
     
     init() { }
@@ -35,16 +34,15 @@ class BluetoothConnectivity {
         if let lastHRReceivedDate = Timer.getLastHRBluetoothReceivedDate() {
             if lastHRReceivedDate.timeIntervalSinceNow >= (0.0 - Constants.getBluetoothConnectivityDuration()) {
                 
-                self.switchConnectivity = true
                 if self.connectedCallback != nil { self.connectedCallback!() }
                 return
             }
         }
         if self.disconnectedCallback != nil { self.disconnectedCallback!() }
         println("(BLConnect) Restarting HRBluetooth")
-        if self.switchConnectivity {
-            AppDelegate.restartBGTask()
-            self.switchConnectivity = false
-        }
+        
+        HRAccumulator.startCountdown()
+        HRAccumulator.restartCountdown()
+        AppDelegate.restartBGTask()
     }
 }
