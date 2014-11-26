@@ -14,16 +14,19 @@ class ConnectivityViewController: PortraitViewController {
     @IBOutlet weak var connectButton: UIButton!
     
     var bluetoothConnectivity = BluetoothConnectivity()
+    var allowBTRestart = true
     
     @IBAction func connectButtonDidPress(sender: AnyObject) {
         println("Restart Bluetooth background task")
-        AppDelegate.restartBGTask()
-        self.connectButton.enabled = false
-        NSTimer.scheduledTimerWithTimeInterval(7, target: self, selector: Selector("unlockConnectButton"), userInfo: nil, repeats: false)
+        if self.allowBTRestart {
+            self.allowBTRestart = false
+            AppDelegate.restartBGTask()
+            NSTimer.scheduledTimerWithTimeInterval(7, target: self, selector: Selector("enableConnectButton"), userInfo: nil, repeats: false)
+        }
     }
     
-    @objc func unlockConnectButton() {
-        self.connectButton.enabled = true
+    @objc func enableConnectButton() {
+        self.allowBTRestart = true
     }
     
     override func viewDidLoad() {
