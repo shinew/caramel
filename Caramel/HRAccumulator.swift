@@ -13,8 +13,25 @@ var _lastSentDate: NSDate?
 var _nextEstimatedStressStartDate: NSDate?
 var _nextEstimatedStressEndDate: NSDate?
 var _hrDates = [NSDate]()
+var _activated = false
 
 class HRAccumulator {
+    
+    class func activated() -> Bool {
+        return _activated
+    }
+    
+    class func startCountdown() {
+        _activated = true
+    }
+    
+    class func stopCountdown() {
+        _activated = false
+    }
+    
+    class func restartCountdown() {
+        _hrDates.removeAll(keepCapacity: true)
+    }
     
     class func addHRDate(date: NSDate!) {
         _hrDates.append(date!)
@@ -32,11 +49,12 @@ class HRAccumulator {
             if _hrDates[i].compare(_nextEstimatedStressStartDate!) != NSComparisonResult.OrderedAscending {
                 // >=
                 _hrDates[0 ..< i] = []
+                break
             }
         }
     }
     
-    class func secondsLeftUntilUpdate() -> Int {
-        return _BEATS_FOR_STRESS - _hrDates.count
+    class func beatsLeftUntilUpdate() -> Int {
+        return max(0, _BEATS_FOR_STRESS - _hrDates.count)
     }
 }

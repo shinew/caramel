@@ -33,7 +33,7 @@ class DashboardCallback {
             Timer.setLastHRBluetoothReceivedDate(NSDate())
             
             HRAccumulator.addHRDate(NSDate())
-            var newCountdownValue = HRAccumulator.secondsLeftUntilUpdate()
+            var newCountdownValue = HRAccumulator.beatsLeftUntilUpdate()
             
             dispatch_async(dispatch_get_main_queue(), {
                 self.currentHRLabel.text = "\(hrSample!.hr!)"
@@ -92,7 +92,22 @@ class DashboardCallback {
         }
         println("(Stress) finished sending Stress request!")
         println("(Stress) response status code: \(response.statusCode)")
-        if response != nil && response.statusCode == 200 {
+        
+        if response == nil {
+            HRAccumulator.startCountdown()
+            HRAccumulator.restartCountdown()
+        }
+        
+        if response.statusCode == 428 {
+            if !HRAccumulator.activated() {
+                HRAccumulator.startCountdown()
+                HRAccumulator.restartCountdown()
+            }
+        }
+        
+        if response.statusCode == 200 {
+            HRAccumulator.stopCountdown()
+            
             let json = data as [String: AnyObject]
             if json["Score"] is Int {
                 let score = json["Score"] as Int

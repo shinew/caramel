@@ -104,6 +104,8 @@
             <string>Univers-Light-Normal</string>
             <string>Univers-Light-Normal</string>
             <string>Univers-Light-Normal</string>
+            <string>Univers-Light-Normal</string>
+            <string>Univers-Light-Normal</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -402,11 +404,11 @@
                                     <navigationItem title="Dashboard" id="F8P-S4-ORj"/>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lup-8q-x4k">
-                                <rect key="frame" x="31" y="318.5" width="90" height="90"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lup-8q-x4k">
+                                <rect key="frame" x="31" y="327" width="90" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deT-sV-fos">
-                                        <rect key="frame" x="36.5" y="25" width="17" height="30"/>
+                                        <rect key="frame" x="36" y="25" width="17" height="30"/>
                                         <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -432,8 +434,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rDQ-TY-12Y">
-                                <rect key="frame" x="31" y="169" width="90" height="90"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rDQ-TY-12Y">
+                                <rect key="frame" x="31" y="157" width="90" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sec" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJf-L7-Boi">
                                         <rect key="frame" x="31" y="55" width="28" height="18"/>
@@ -463,23 +465,23 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Stressed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ceq-19-isx">
-                                <rect key="frame" x="42" y="151" width="67" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stressed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ceq-19-isx">
+                                <rect key="frame" x="42" y="139" width="67" height="17"/>
                                 <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tense" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWe-tu-0oY">
-                                <rect key="frame" x="54" y="300.5" width="44.5" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tense" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWe-tu-0oY">
+                                <rect key="frame" x="54" y="309" width="44.5" height="17"/>
                                 <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JXQ-Rz-Ada">
-                                <rect key="frame" x="31" y="468.5" width="90.5" height="90"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXQ-Rz-Ada">
+                                <rect key="frame" x="31" y="497" width="90.5" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssa-C4-fbf">
-                                        <rect key="frame" x="37.5" y="25" width="15" height="27"/>
+                                        <rect key="frame" x="37" y="25" width="15" height="27"/>
                                         <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="27"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -505,64 +507,70 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Calm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acq-mc-SKw">
-                                <rect key="frame" x="57" y="450.5" width="38.5" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acq-mc-SKw">
+                                <rect key="frame" x="57" y="479" width="38.5" height="17"/>
                                 <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnI-N1-bbY">
-                                <rect key="frame" x="252" y="276" width="32.5" height="84.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnI-N1-bbY">
+                                <rect key="frame" x="252" y="284.5" width="32.5" height="84.5"/>
                                 <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="73"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="% of today stressed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySU-2m-Xbw">
-                                <rect key="frame" x="205" y="225.5" width="124.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="% of today stressed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySU-2m-Xbw">
+                                <rect key="frame" x="206" y="234" width="124.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Univers-Condensed-Bold" family="Univers Condensed" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="% of yesterday stressed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRy-mO-Q7V">
-                                <rect key="frame" x="192" y="345.5" width="151.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="% of yesterday stressed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRy-mO-Q7V">
+                                <rect key="frame" x="192" y="354" width="151.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Univers-Condensed-Bold" family="Univers Condensed" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TODAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBZ-zP-kF5">
-                                <rect key="frame" x="147" y="84" width="81" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBZ-zP-kF5">
+                                <rect key="frame" x="147" y="40" width="81" height="37"/>
                                 <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yj9-8M-mHY">
-                                <rect key="frame" x="252" y="155" width="32.5" height="85"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yj9-8M-mHY">
+                                <rect key="frame" x="252" y="111" width="32.5" height="137.5"/>
                                 <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="73"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keQ-AV-yAM">
-                                <rect key="frame" x="258" y="434.5" width="22.5" height="58"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keQ-AV-yAM">
+                                <rect key="frame" x="257.5" y="463" width="22.5" height="58"/>
                                 <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="50"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6u-JI-bsB"/>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5bh-B2-8sL"/>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDN-Lc-T0L"/>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pwt-vo-aJA"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6u-JI-bsB"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5bh-B2-8sL"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDN-Lc-T0L"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pwt-vo-aJA"/>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RFp-eH-YpG">
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="heartrate (BPM)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAF-r3-tIm">
-                                <rect key="frame" x="219" y="492.5" width="101" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="heartrate (BPM)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAF-r3-tIm">
+                                <rect key="frame" x="218.5" y="521" width="101" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Univers-Condensed-Bold" family="Univers Condensed" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu2-og-Ilg">
-                                <rect key="frame" x="317" y="626" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu2-og-Ilg">
+                                <rect key="frame" x="351.5" y="634" width="7.5" height="13"/>
+                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beats until stress update:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMf-5a-yGj">
+                                <rect key="frame" x="185" y="634" width="146.5" height="13"/>
+                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -587,6 +595,7 @@
                             <constraint firstItem="aDN-Lc-T0L" firstAttribute="top" secondItem="TBZ-zP-kF5" secondAttribute="bottom" id="MaI-2X-uNs"/>
                             <constraint firstItem="dnI-N1-bbY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ySU-2m-Xbw" secondAttribute="top" constant="10" id="Rbp-TH-hjB"/>
                             <constraint firstItem="dnI-N1-bbY" firstAttribute="top" relation="lessThanOrEqual" secondItem="ySU-2m-Xbw" secondAttribute="bottom" constant="30" id="SUw-f5-N68"/>
+                            <constraint firstItem="fu2-og-Ilg" firstAttribute="leading" secondItem="gMf-5a-yGj" secondAttribute="trailing" constant="20" id="T0I-9X-yDg"/>
                             <constraint firstItem="cAF-r3-tIm" firstAttribute="top" secondItem="keQ-AV-yAM" secondAttribute="bottom" id="TLC-Rg-pTs"/>
                             <constraint firstItem="acq-mc-SKw" firstAttribute="centerX" secondItem="rDQ-TY-12Y" secondAttribute="centerX" id="Wbd-3q-ubW"/>
                             <constraint firstItem="aDN-Lc-T0L" firstAttribute="height" secondItem="Pwt-vo-aJA" secondAttribute="height" id="Y43-vL-Rb7"/>
@@ -595,14 +604,17 @@
                             <constraint firstItem="rDQ-TY-12Y" firstAttribute="top" secondItem="Ceq-19-isx" secondAttribute="bottom" constant="1" id="cMF-uG-OUh"/>
                             <constraint firstItem="fu2-og-Ilg" firstAttribute="trailing" secondItem="2ci-zW-eBd" secondAttribute="trailingMargin" id="ccz-TL-Afq"/>
                             <constraint firstItem="JXQ-Rz-Ada" firstAttribute="height" secondItem="rDQ-TY-12Y" secondAttribute="height" id="dlK-SL-KSf"/>
+                            <constraint firstItem="XdX-mz-b14" firstAttribute="top" secondItem="gMf-5a-yGj" secondAttribute="bottom" constant="20" id="dq8-J8-Rax"/>
                             <constraint firstItem="JXQ-Rz-Ada" firstAttribute="top" secondItem="acq-mc-SKw" secondAttribute="bottom" constant="1" id="e0E-kR-lav"/>
                             <constraint firstItem="Yj9-8M-mHY" firstAttribute="centerX" secondItem="ySU-2m-Xbw" secondAttribute="centerX" id="eO3-bT-hdR"/>
                             <constraint firstItem="Pwt-vo-aJA" firstAttribute="top" secondItem="JXQ-Rz-Ada" secondAttribute="bottom" id="g3w-MW-khj"/>
+                            <constraint firstItem="XdX-mz-b14" firstAttribute="top" secondItem="fu2-og-Ilg" secondAttribute="bottom" constant="20" id="hrn-7H-xpg"/>
                             <constraint firstItem="deT-sV-fos" firstAttribute="top" secondItem="vRy-mO-Q7V" secondAttribute="bottom" constant="-22.5" id="j0x-4q-0Q7"/>
                             <constraint firstItem="E6u-JI-bsB" firstAttribute="height" secondItem="Pwt-vo-aJA" secondAttribute="height" id="l4N-jO-kqd"/>
                             <constraint firstItem="Yj9-8M-mHY" firstAttribute="centerX" secondItem="keQ-AV-yAM" secondAttribute="centerX" id="lgg-9A-AEI"/>
                             <constraint firstItem="EWe-tu-0oY" firstAttribute="centerX" secondItem="rDQ-TY-12Y" secondAttribute="centerX" id="ls0-vK-Vge"/>
                             <constraint firstItem="rDQ-TY-12Y" firstAttribute="leading" secondItem="2ci-zW-eBd" secondAttribute="leadingMargin" constant="15" id="lsJ-1D-mQZ"/>
+                            <constraint firstItem="fu2-og-Ilg" firstAttribute="trailing" secondItem="2ci-zW-eBd" secondAttribute="trailingMargin" id="nAk-Cg-6GH"/>
                             <constraint firstItem="ssa-C4-fbf" firstAttribute="top" secondItem="cAF-r3-tIm" secondAttribute="bottom" constant="-19.5" id="pJe-WL-AS1"/>
                             <constraint firstItem="vRy-mO-Q7V" firstAttribute="top" secondItem="dnI-N1-bbY" secondAttribute="bottom" constant="-15" id="rQ5-18-SWg"/>
                             <constraint firstItem="Lup-8q-x4k" firstAttribute="height" secondItem="rDQ-TY-12Y" secondAttribute="height" id="tBy-Gi-aVj"/>
@@ -612,6 +624,12 @@
                             <constraint firstItem="XdX-mz-b14" firstAttribute="top" secondItem="fu2-og-Ilg" secondAttribute="bottom" constant="20" id="wKi-Pg-XP4"/>
                             <constraint firstItem="5bh-B2-8sL" firstAttribute="height" secondItem="E6u-JI-bsB" secondAttribute="height" id="zOW-Pn-a5n"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="wKi-Pg-XP4"/>
+                                <exclude reference="ccz-TL-Afq"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Dashboard" id="CbV-sf-hKN">
                         <barButtonItem key="leftBarButtonItem" image="debug-icon" id="6oP-BJ-Ovk">
