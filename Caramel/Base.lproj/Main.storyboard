@@ -549,10 +549,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6u-JI-bsB"/>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5bh-B2-8sL"/>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDN-Lc-T0L"/>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pwt-vo-aJA"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6u-JI-bsB"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5bh-B2-8sL"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDN-Lc-T0L"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pwt-vo-aJA"/>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RFp-eH-YpG">
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -648,6 +648,7 @@
                         <outlet property="blueZoneLabel" destination="ssa-C4-fbf" id="yRL-mq-KGD"/>
                         <outlet property="blueZoneTimeFormatLabel" destination="EpU-M5-gDp" id="Wmp-9l-klv"/>
                         <outlet property="blueZoneView" destination="JXQ-Rz-Ada" id="f7D-5Z-EMB"/>
+                        <outlet property="countdownDescriptionLabel" destination="gMf-5a-yGj" id="4T0-ig-4PZ"/>
                         <outlet property="countdownHRLabel" destination="fu2-og-Ilg" id="D9p-hJ-i2L"/>
                         <outlet property="currentHRLabel" destination="keQ-AV-yAM" id="tAf-00-v3u"/>
                         <outlet property="percentTodayStressLabel" destination="Yj9-8M-mHY" id="c7N-Gg-tI1"/>

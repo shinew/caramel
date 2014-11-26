@@ -31,7 +31,8 @@ class DashboardViewController: PortraitViewController {
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     
     @IBOutlet weak var countdownHRLabel: UILabel!
-    
+    @IBOutlet weak var countdownDescriptionLabel: UILabel!
+
     var bluetoothConnectivity = BluetoothConnectivity()
     var summaryToggles = ["Red": 0, "Yellow": 0, "Blue": 0]
     
@@ -45,7 +46,12 @@ class DashboardViewController: PortraitViewController {
         self.updateProfile()
         self.registerZoneTapToggles()
         
-        self.dashboardCallback = DashboardCallback(updatedScoreCallback: self.updatedScoreCallback, currentHRLabel: self.currentHRLabel, countdownHRLabel: self.countdownHRLabel)
+        self.dashboardCallback = DashboardCallback(
+            updatedScoreCallback: self.updatedScoreCallback,
+            currentHRLabel: self.currentHRLabel,
+            countdownHRLabel: self.countdownHRLabel,
+            countdownDescriptionLabel: self.countdownDescriptionLabel
+        )
         
         HRBluetooth.setHRUpdateCallback(self.dashboardCallback.newHeartRateCallback)
         

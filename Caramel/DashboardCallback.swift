@@ -13,16 +13,19 @@ class DashboardCallback {
     var lastStressScoreInterval: StressScoreInterval! //used to keep track of start-end
     var currentHRLabel: UILabel!
     var countdownHRLabel: UILabel!
+    var countdownDescriptionLabel: UILabel!
     var updatedScoreCallback: ((interval: StressScoreInterval!) -> Void)!
     
     init(updatedScoreCallback: (
         interval: StressScoreInterval!) -> Void,
         currentHRLabel: UILabel!,
-        countdownHRLabel: UILabel!
+        countdownHRLabel: UILabel!,
+        countdownDescriptionLabel: UILabel!
     ) {
         self.updatedScoreCallback = updatedScoreCallback
         self.currentHRLabel = currentHRLabel
         self.countdownHRLabel = countdownHRLabel
+        self.countdownDescriptionLabel = countdownDescriptionLabel
     }
     
     func newHeartRateCallback(data: NSData!) -> Void {
@@ -43,10 +46,12 @@ class DashboardCallback {
                 dispatch_async(dispatch_get_main_queue(), {
                     self.countdownHRLabel.hidden = false
                     self.countdownHRLabel.text = "\(newCountdownValue)"
+                    self.countdownDescriptionLabel.hidden = false
                 })
             } else {
                 dispatch_async(dispatch_get_main_queue(), {
                     self.countdownHRLabel.hidden = true
+                    self.countdownDescriptionLabel.hidden = true
                 })
             }
             
