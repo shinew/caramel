@@ -99,6 +99,10 @@ class DashboardCallback {
                 
                 Notification.sendNoInternetNotification()
             }
+            
+            HRAccumulator.startCountdown()
+            HRAccumulator.restartCountdown()
+            
             return
         }
         
@@ -128,8 +132,6 @@ class DashboardCallback {
                 Notification.sendNoInternetNotification()
             }
             
-            HRAccumulator.startCountdown()
-            HRAccumulator.restartCountdown()
             return
         }
         
