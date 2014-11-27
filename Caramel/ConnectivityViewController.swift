@@ -17,9 +17,9 @@ class ConnectivityViewController: PortraitViewController {
     var allowBTRestart = true
     
     @IBAction func connectButtonDidPress(sender: AnyObject) {
-        println("Restart Bluetooth background task")
         if self.allowBTRestart {
             self.allowBTRestart = false
+            println("Restart Bluetooth background task")
             AppDelegate.restartBGTask()
             NSTimer.scheduledTimerWithTimeInterval(7, target: self, selector: Selector("enableConnectButton"), userInfo: nil, repeats: false)
         }
