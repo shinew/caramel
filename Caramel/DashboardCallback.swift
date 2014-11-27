@@ -93,9 +93,17 @@ class DashboardCallback {
         println("(HR) finished sending HR request!")
         if response == nil {
             println("(HR) Request did not go through")
-            Notification.sendNoInternetNotification()
+            
+            if InternetConnectivity.getInternetConnected() {
+                InternetConnectivity.setInternetConnected(false)
+                
+                Notification.sendNoInternetNotification()
+            }
             return
         }
+        
+        InternetConnectivity.setInternetConnected(true)
+        
         println("(HR) response status code: \(response.statusCode)")
         if response.statusCode == 201 {
             //send stress request
@@ -113,16 +121,22 @@ class DashboardCallback {
     func hrStressResponseCallback(response: NSHTTPURLResponse!, data: Agent.Data!, error: NSError!) -> Void {
         if response == nil {
             println("(Stress) Request did not go through")
-            Notification.sendNoInternetNotification()
-            return
-        }
-        println("(Stress) finished sending Stress request!")
-        println("(Stress) response status code: \(response.statusCode)")
-        
-        if response == nil {
+            
+            if InternetConnectivity.getInternetConnected() {
+                InternetConnectivity.setInternetConnected(false)
+                
+                Notification.sendNoInternetNotification()
+            }
+            
             HRAccumulator.startCountdown()
             HRAccumulator.restartCountdown()
+            return
         }
+        
+        InternetConnectivity.setInternetConnected(true)
+        
+        println("(Stress) finished sending Stress request!")
+        println("(Stress) response status code: \(response.statusCode)")
         
         if response.statusCode == 428 {
             if !HRAccumulator.activated() {

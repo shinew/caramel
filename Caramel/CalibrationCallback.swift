@@ -33,9 +33,17 @@ class CalibrationCallback {
             println("(\(type)) finished sending \(type) request!")
             if response == nil {
                 println("(\(type)) Request did not go through")
-                Notification.sendNoInternetNotification()
+                
+                if InternetConnectivity.getInternetConnected() {
+                    InternetConnectivity.setInternetConnected(false)
+                    
+                    Notification.sendNoInternetNotification()
+                }
                 return
             }
+            
+            InternetConnectivity.setInternetConnected(true)
+            
             println("(\(type)) response status code: \(response.statusCode)")
         }
         

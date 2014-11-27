@@ -75,9 +75,18 @@ class RegisterViewController: PortraitViewController, UITextFieldDelegate {
     func signupCallback(response: NSHTTPURLResponse!, data: Agent.Data!, error: NSError!) -> Void {
         println("(Onboarding) finished sending sign-up onboarding request!")
         if response == nil {
+            if InternetConnectivity.getInternetConnected() {
+                InternetConnectivity.setInternetConnected(false)
+                
+                Notification.sendNoInternetNotification()
+            }
+            
             println("(Onboarding) Request did not go through")
             return
         }
+        
+        InternetConnectivity.setInternetConnected(true)
+        
         println("(Onboarding) response status code: \(response.statusCode)")
         dispatch_async(dispatch_get_main_queue(), {
             self.signUpButton.enabled = true
@@ -113,9 +122,18 @@ class RegisterViewController: PortraitViewController, UITextFieldDelegate {
     func loginCallback(response: NSHTTPURLResponse!, data: Agent.Data!, error: NSError!) -> Void {
         println("(Onboarding) finished sending login onboarding request!")
         if response == nil {
+            if InternetConnectivity.getInternetConnected() {
+                InternetConnectivity.setInternetConnected(false)
+                
+                Notification.sendNoInternetNotification()
+            }
+
             println("(Onboarding) Request did not go through")
             return
         }
+        
+        InternetConnectivity.setInternetConnected(true)
+        
         println("(Onboarding) response status code: \(response.statusCode)")
         dispatch_async(dispatch_get_main_queue(), {
             self.signUpButton.enabled = true
@@ -149,10 +167,18 @@ class RegisterViewController: PortraitViewController, UITextFieldDelegate {
     
     private func bulkScoreRetrievalCallback(response: NSHTTPURLResponse!, data: Agent.Data!, error: NSError!) -> Void {
         if response == nil {
+            if InternetConnectivity.getInternetConnected() {
+                InternetConnectivity.setInternetConnected(false)
+                
+                Notification.sendNoInternetNotification()
+            }
+
             println("(Bulk Stress) Request did not go through")
-            Notification.sendNoInternetNotification()
             return
         }
+        
+        InternetConnectivity.setInternetConnected(true)
+        
         println("(Bulk Stress) finished sending Stress request!")
         println("(Bulk Stress) response status code: \(response.statusCode)")
         if response != nil && response.statusCode == 200 {
