@@ -36,6 +36,23 @@ class CalibrationViewController: PortraitViewController {
         self.startButton.layer.borderColor = UIColor.whiteColor().CGColor
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        let lastSentDate = Timer.getLastMemoryWarningNotificationDate()
+        if lastSentDate == nil {
+            BackgroundSuspension.setMemoryWarningSent(true)
+            Timer.setLastMemoryWarningNotificationDate(NSDate())
+            Notification.sendMemoryWarningNotification()
+            return
+        }
+        
+        if lastSentDate!.timeIntervalSinceNow <= (0.0 - Constants.getMemoryWarningThrottleDuration()) && !BackgroundSuspension.getMemoryWarningSent() {
+            BackgroundSuspension.setMemoryWarningSent(true)
+            Timer.setLastMemoryWarningNotificationDate(NSDate())
+            Notification.sendMemoryWarningNotification()
+        }
+    }
+    
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
         //equivalent to skipCalibrationDidPress
         

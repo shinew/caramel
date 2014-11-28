@@ -75,12 +75,14 @@ class DashboardViewController: PortraitViewController {
         super.didReceiveMemoryWarning()
         let lastSentDate = Timer.getLastMemoryWarningNotificationDate()
         if lastSentDate == nil {
+            BackgroundSuspension.setMemoryWarningSent(true)
             Timer.setLastMemoryWarningNotificationDate(NSDate())
             Notification.sendMemoryWarningNotification()
             return
         }
         
-        if lastSentDate!.timeIntervalSinceNow <= (0.0 - Constants.getMemoryWarningThrottleDuration()) {
+        if lastSentDate!.timeIntervalSinceNow <= (0.0 - Constants.getMemoryWarningThrottleDuration()) && !BackgroundSuspension.getMemoryWarningSent() {
+            BackgroundSuspension.setMemoryWarningSent(true)
             Timer.setLastMemoryWarningNotificationDate(NSDate())
             Notification.sendMemoryWarningNotification()
         }

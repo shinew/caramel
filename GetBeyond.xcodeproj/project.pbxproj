@@ -27,6 +27,7 @@
 		148E40851A00F94600952565 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2681A00AA910042F20A /* Queue.swift */; };
 		148F34F91A113EFB00B3C941 /* CalibrationCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148F34F81A113EFB00B3C941 /* CalibrationCallback.swift */; };
 		148F34FB1A113FDE00B3C941 /* CalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148F34FA1A113FDE00B3C941 /* CalibrationViewController.swift */; };
+		14987EF91A28FB1900019BBD /* BackgroundSuspension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14987EF81A28FB1900019BBD /* BackgroundSuspension.swift */; };
 		14A06CF91A08ADA5007B6FD3 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A06CF81A08ADA5007B6FD3 /* Math.swift */; };
 		14A0C3EB1A1146B6006AD37F /* TrainingInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A0C3EA1A1146B6006AD37F /* TrainingInterval.swift */; };
 		14A851B31A089CCC00855954 /* NotificationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A851B21A089CCC00855954 /* NotificationRecord.swift */; };
@@ -135,6 +136,7 @@
 		148E40831A00F81900952565 /* QueueTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTest.swift; sourceTree = "<group>"; };
 		148F34F81A113EFB00B3C941 /* CalibrationCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationCallback.swift; sourceTree = "<group>"; };
 		148F34FA1A113FDE00B3C941 /* CalibrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationViewController.swift; sourceTree = "<group>"; };
+		14987EF81A28FB1900019BBD /* BackgroundSuspension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundSuspension.swift; sourceTree = "<group>"; };
 		14A06CF81A08ADA5007B6FD3 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		14A0C3EA1A1146B6006AD37F /* TrainingInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingInterval.swift; sourceTree = "<group>"; };
 		14A851B21A089CCC00855954 /* NotificationRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationRecord.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			children = (
 				1446CCAB1A10A21700DBA7FC /* BluetoothConnectivity.swift */,
 				14DD03EC1A269F8900585CD9 /* InternetConnectivity.swift */,
+				14987EF81A28FB1900019BBD /* BackgroundSuspension.swift */,
 			);
 			name = "Edge Cases";
 			path = ..;
@@ -743,6 +746,7 @@
 				14D80ACE1A0172920064BCD8 /* Timer.swift in Sources */,
 				14D0E25F1A0090920042F20A /* HTTPRequest.swift in Sources */,
 				14A851B31A089CCC00855954 /* NotificationRecord.swift in Sources */,
+				14987EF91A28FB1900019BBD /* BackgroundSuspension.swift in Sources */,
 				14DCDE251A21818700A7CE43 /* StressScoreManager.swift in Sources */,
 				1AB847DD1A07112F008509FE /* BlurView.swift in Sources */,
 				1ADB0B2C1A1FF25F00294A0C /* ConnectivityViewController.swift in Sources */,
