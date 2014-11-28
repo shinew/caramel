@@ -32,6 +32,10 @@ class HRPeripheral : NSObject, CBPeripheralDelegate {
     func peripheral(peripheral: CBPeripheral!, didDiscoverServices error: NSError!) {
         println("peripheral \(peripheral) discovered services \(peripheral.services)")
         
+        if peripheral.services == nil { // a weird bug that happens sometimes
+            return
+        }
+        
         // In particular we're looking for heart rate service and device informations
         for service in peripheral.services {
             /* We'll keep it simple for the demo but there are more sophisticated ways

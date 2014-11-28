@@ -41,7 +41,7 @@ class DashboardCallback {
             self.currentHRLabel.text = "\(hrSample!.hr!)"
         })
         
-        var newCountdownValue = HRAccumulator.beatsLeftUntilUpdate()
+        var newCountdownValue = HRAccumulator.countdownTimer()
         
         if CalibrationState.getCalibrationState() {
             dispatch_async(dispatch_get_main_queue(), {
@@ -55,7 +55,7 @@ class DashboardCallback {
                     self.countdownHRLabel.hidden = false
                     self.countdownHRLabel.text = "\(newCountdownValue)"
                     self.countdownDescriptionLabel.hidden = false
-                    self.countdownDescriptionLabel.text = "Max beats until stress update:"
+                    self.countdownDescriptionLabel.text = "Estimated stress update time:"
                 })
             } else {
                 dispatch_async(dispatch_get_main_queue(), {

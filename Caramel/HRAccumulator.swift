@@ -54,7 +54,12 @@ class HRAccumulator {
         }
     }
     
-    class func beatsLeftUntilUpdate() -> Int {
-        return max(0, _BEATS_FOR_STRESS - _hrDates.count)
+    class func countdownTimer() -> String {
+        let beatsLeft = max(0, _BEATS_FOR_STRESS - _hrDates.count)
+        if beatsLeft == 0 {
+            return "soon"
+        } else {
+            return String(beatsLeft/60) + ":" + String(format: "%02d", (beatsLeft%60))
+        }
     }
 }
