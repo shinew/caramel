@@ -69,7 +69,21 @@ class CalibrationViewController: PortraitViewController {
         }
         
         Notification.sendCalibrationSkipNotification()
+        
+        self.resetCalibrationPage()
+        
         return false
+    }
+    
+    private func resetCalibrationPage() {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.descriptionTextView.text = "Beyond needs five minutes to understand your body. Let's relax for five minutes without controlling your breath."
+            self.descriptionTextView.textColor = UIColor.whiteColor()
+            self.descriptionTextView.font = UIFont(name: "Univers-Light-Normal", size: 17)
+            self.startButton.setTitle("Start Now.", forState: UIControlState.Normal)
+            self.startButton.enabled = true
+            self.skipButton.setTitle("Skip >", forState: UIControlState.Normal)
+        })
     }
     
     @IBAction func startButtonDidPress(sender: AnyObject) {
@@ -97,7 +111,7 @@ class CalibrationViewController: PortraitViewController {
         CalibrationState.setCalibrationState(false)
         
         dispatch_async(dispatch_get_main_queue(), {
-            self.skipButton.titleLabel!.text = "Next >"
+            self.skipButton.setTitle("Next >", forState: UIControlState.Normal)
             self.startButton.setTitle("Perfect. Beyond is ready.", forState: UIControlState.Normal)
             self.descriptionTextView.text = "Just click \"Next\" and let Beyond notify you when you are about to be stressed. It's that easy."
             self.descriptionTextView.textColor = UIColor.whiteColor()
