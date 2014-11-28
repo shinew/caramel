@@ -34,7 +34,7 @@ class DashboardViewController: PortraitViewController {
     @IBOutlet weak var countdownDescriptionLabel: UILabel!
 
     var bluetoothConnectivity = BluetoothConnectivity()
-    var summaryToggles = ["Red": 0, "Yellow": 0, "Blue": 0]
+    var summaryToggle = 0
     
     required override init(coder: NSCoder) {
         super.init(coder: coder)
@@ -90,31 +90,18 @@ class DashboardViewController: PortraitViewController {
     
     func registerZoneTapToggles() {
         var zoneViews = [self.blueZoneView, self.yellowZoneView, self.redZoneView]
-        var functionNames = ["handleBlueTap:", "handleYellowTap:", "handleRedTap:"]
         
         for i in 0 ..< zoneViews.count {
-            zoneViews[i].addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector(functionNames[i])))
+            zoneViews[i].addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("handleTap:")))
         }
     }
     
-    func handleRedTap(recognizer: UITapGestureRecognizer) {
-        println("Red zone has been tapped")
-        self.summaryToggles["Red"] = 1 - self.summaryToggles["Red"]!
+    func handleTap(recognizer: UITapGestureRecognizer) {
+        println("A zone has been tapped")
+        self.summaryToggle = 1 - self.summaryToggle
         self.updateProfile()
     }
-    
-    func handleYellowTap(recognizer: UITapGestureRecognizer) {
-        println("Yellow zone has been tapped")
-        self.summaryToggles["Yellow"] = 1 - self.summaryToggles["Yellow"]!
-        self.updateProfile()
-    }
-    
-    func handleBlueTap(recognizer: UITapGestureRecognizer) {
-        println("Blue zone has been tapped")
-        self.summaryToggles["Blue"] = 1 - self.summaryToggles["Blue"]!
-        self.updateProfile()
-    }
-    
+
     @IBAction func refreshButtonDidPress(sender: AnyObject) {
         println("Restart Bluetooth background task")
         AppDelegate.restartBGTask()
@@ -188,7 +175,7 @@ class DashboardViewController: PortraitViewController {
         for i in 0 ..< labels.count {
             dispatch_async(dispatch_get_main_queue(), {
                 self.updateTimeLabels(
-                    self.summaryToggles[colors[i]]!,
+                    self.summaryToggle,
                     counter: counters[i],
                     total: total,
                     label: labels[i],
