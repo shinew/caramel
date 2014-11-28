@@ -55,6 +55,7 @@ class CalibrationViewController: PortraitViewController {
     
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
         //equivalent to skipCalibrationDidPress
+        CalibrationState.setCalibrationState(false)
         
         if self.finishedCalibrationTimer != nil {
             self.finishedCalibrationTimer!.invalidate()
@@ -72,6 +73,8 @@ class CalibrationViewController: PortraitViewController {
     }
     
     @IBAction func startButtonDidPress(sender: AnyObject) {
+        CalibrationState.setCalibrationState(true)
+        
         dispatch_async(dispatch_get_main_queue(), {
             self.startButton.enabled = false
         })
@@ -91,8 +94,9 @@ class CalibrationViewController: PortraitViewController {
     }
     
     func finishedCalibration() {
+        CalibrationState.setCalibrationState(false)
+        
         dispatch_async(dispatch_get_main_queue(), {
-            self.startButton.enabled = false
             self.skipButton.titleLabel!.text = "Next >"
             self.startButton.setTitle("Perfect. Beyond is ready.", forState: UIControlState.Normal)
             self.descriptionTextView.text = "Just click \"Next\" and let Beyond notify you when you are about to be stressed. It's that easy."

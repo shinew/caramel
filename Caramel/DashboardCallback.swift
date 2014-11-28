@@ -40,17 +40,16 @@ class DashboardCallback {
         dispatch_async(dispatch_get_main_queue(), {
             self.currentHRLabel.text = "\(hrSample!.hr!)"
         })
-    }
-    
-    func newHeartRateCallback(data: NSData!) -> Void {
-        println("Received new heart rate data")
-        var hrSample = HRDecoder.dataToHRSample(data)
-        if hrSample != nil && hrSample!.hr != nil && hrSample!.hr < 150 {
-            
-            Timer.setLastHRBluetoothReceivedDate(NSDate())
-            
-            HRAccumulator.addHRDate(NSDate())
-            var newCountdownValue = HRAccumulator.beatsLeftUntilUpdate()
+        
+        var newCountdownValue = HRAccumulator.beatsLeftUntilUpdate()
+        
+        if CalibrationState.getCalibrationState() {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.countdownHRLabel.hidden = true
+                self.countdownDescriptionLabel.hidden = false
+                self.countdownDescriptionLabel.text = "Calibrating..."
+            })
+        } else {
             if HRAccumulator.activated() {
                 dispatch_async(dispatch_get_main_queue(), {
                     self.countdownHRLabel.hidden = false
@@ -63,6 +62,17 @@ class DashboardCallback {
                     self.countdownDescriptionLabel.hidden = true
                 })
             }
+        }
+    }
+    
+    func newHeartRateCallback(data: NSData!) -> Void {
+        println("Received new heart rate data")
+        var hrSample = HRDecoder.dataToHRSample(data)
+        if hrSample != nil && hrSample!.hr != nil && hrSample!.hr < 150 {
+            
+            Timer.setLastHRBluetoothReceivedDate(NSDate())
+            
+            HRAccumulator.addHRDate(NSDate())
             
             self.dashboardSoftCallback(hrSample)
             

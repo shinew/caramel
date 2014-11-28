@@ -40,7 +40,8 @@ class ConnectivityViewController: PortraitViewController {
                         self.currentHRLabel.text = "Disconnected"
                         self.currentHRLabel.font = UIFont(name: "Univers Light Condensed", size: 18)
                     }
-                })}
+                })
+            }
         )
         
         HRBluetooth.setHRUpdateCallback(self.newHeartRateCallback)

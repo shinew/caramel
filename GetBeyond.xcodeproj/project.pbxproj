@@ -28,6 +28,7 @@
 		148F34F91A113EFB00B3C941 /* CalibrationCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148F34F81A113EFB00B3C941 /* CalibrationCallback.swift */; };
 		148F34FB1A113FDE00B3C941 /* CalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148F34FA1A113FDE00B3C941 /* CalibrationViewController.swift */; };
 		14987EF91A28FB1900019BBD /* BackgroundSuspension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14987EF81A28FB1900019BBD /* BackgroundSuspension.swift */; };
+		14987EFB1A29003800019BBD /* CalibrationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14987EFA1A29003800019BBD /* CalibrationState.swift */; };
 		14A06CF91A08ADA5007B6FD3 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A06CF81A08ADA5007B6FD3 /* Math.swift */; };
 		14A0C3EB1A1146B6006AD37F /* TrainingInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A0C3EA1A1146B6006AD37F /* TrainingInterval.swift */; };
 		14A851B31A089CCC00855954 /* NotificationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A851B21A089CCC00855954 /* NotificationRecord.swift */; };
@@ -137,6 +138,7 @@
 		148F34F81A113EFB00B3C941 /* CalibrationCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationCallback.swift; sourceTree = "<group>"; };
 		148F34FA1A113FDE00B3C941 /* CalibrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationViewController.swift; sourceTree = "<group>"; };
 		14987EF81A28FB1900019BBD /* BackgroundSuspension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundSuspension.swift; sourceTree = "<group>"; };
+		14987EFA1A29003800019BBD /* CalibrationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationState.swift; sourceTree = "<group>"; };
 		14A06CF81A08ADA5007B6FD3 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		14A0C3EA1A1146B6006AD37F /* TrainingInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingInterval.swift; sourceTree = "<group>"; };
 		14A851B21A089CCC00855954 /* NotificationRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationRecord.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 			children = (
 				148F34F81A113EFB00B3C941 /* CalibrationCallback.swift */,
 				148F34FA1A113FDE00B3C941 /* CalibrationViewController.swift */,
+				14987EFA1A29003800019BBD /* CalibrationState.swift */,
 			);
 			name = Calibration;
 			sourceTree = "<group>";
@@ -746,6 +749,7 @@
 				14D80ACE1A0172920064BCD8 /* Timer.swift in Sources */,
 				14D0E25F1A0090920042F20A /* HTTPRequest.swift in Sources */,
 				14A851B31A089CCC00855954 /* NotificationRecord.swift in Sources */,
+				14987EFB1A29003800019BBD /* CalibrationState.swift in Sources */,
 				14987EF91A28FB1900019BBD /* BackgroundSuspension.swift in Sources */,
 				14DCDE251A21818700A7CE43 /* StressScoreManager.swift in Sources */,
 				1AB847DD1A07112F008509FE /* BlurView.swift in Sources */,
