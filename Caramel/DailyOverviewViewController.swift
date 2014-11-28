@@ -44,6 +44,12 @@ class DailyOverviewViewController: UIViewController {
         self.trendGraphView.setNeedsDisplay()
     }
     
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        super.didRotateFromInterfaceOrientation(fromInterfaceOrientation)
+        //sharpen the view post-rotation
+        self.trendGraphView.setNeedsDisplay()
+    }
+    
     private func prepareTrendData(date: NSDate) -> ([Int], [Int]) {
         let startDate = Conversion.dateToTimelessDate(date)
         let yesterdayStartDate = startDate.dateByAddingTimeInterval(-60 * 60 * 24)
