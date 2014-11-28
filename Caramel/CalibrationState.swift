@@ -13,7 +13,7 @@ var _isCalibrating = false
 class CalibrationState {
     
     class func setCalibrationState(isCalibrating: Bool) {
-        _isCalibrating = true
+        _isCalibrating = isCalibrating
     }
     
     class func getCalibrationState() -> Bool {

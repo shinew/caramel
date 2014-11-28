@@ -55,6 +55,7 @@ class DashboardCallback {
                     self.countdownHRLabel.hidden = false
                     self.countdownHRLabel.text = "\(newCountdownValue)"
                     self.countdownDescriptionLabel.hidden = false
+                    self.countdownDescriptionLabel.text = "Max beats until stress update:"
                 })
             } else {
                 dispatch_async(dispatch_get_main_queue(), {
