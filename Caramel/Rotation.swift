@@ -16,6 +16,6 @@ class Rotation {
     
     class func rotateLandscape() {
         HomeTabBarController.setCanRotate(true)
-        UIDevice.currentDevice().setValue(UIInterfaceOrientation.LandscapeRight.rawValue, forKey: "orientation")
+        //UIDevice.currentDevice().setValue(UIInterfaceOrientation.LandscapeRight.rawValue, forKey: "orientation")
     }
 }
