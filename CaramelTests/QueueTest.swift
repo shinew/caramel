@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Caramel
+import GetBeyond
 import XCTest
 
 class QueueTests: XCTestCase {

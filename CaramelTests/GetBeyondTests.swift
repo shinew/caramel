@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-class CaramelTests: XCTestCase {
+class GetBeyondTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
