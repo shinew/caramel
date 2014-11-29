@@ -45,6 +45,8 @@ class DashboardViewController: PortraitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.needsCalibrationView.backgroundColor = Conversion.UIColorFromRGB(66, green: 127, blue: 212)
+        
         self.updateProfile()
         self.registerZoneTapToggles()
         
