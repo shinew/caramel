@@ -8,7 +8,7 @@
 
 import UIKit
 
-var _dashboardSoftCallback: ((hrSample: HRSample!) -> Void)?
+var _dashboardUIUpdateCallback: ((hrSample: HRSample!) -> Void)?
 
 class DashboardCallback {
     
@@ -16,26 +16,29 @@ class DashboardCallback {
     var currentHRLabel: UILabel!
     var countdownHRLabel: UILabel!
     var countdownDescriptionLabel: UILabel!
+    var needsCalibrationView: UIView!
     var updatedScoreCallback: ((interval: StressScoreInterval!) -> Void)!
 
     init(updatedScoreCallback: (
         interval: StressScoreInterval!) -> Void,
         currentHRLabel: UILabel!,
         countdownHRLabel: UILabel!,
-        countdownDescriptionLabel: UILabel!
+        countdownDescriptionLabel: UILabel!,
+        needsCalibrationView: UIView!
     ) {
         self.updatedScoreCallback = updatedScoreCallback
         self.currentHRLabel = currentHRLabel
         self.countdownHRLabel = countdownHRLabel
         self.countdownDescriptionLabel = countdownDescriptionLabel
-        _dashboardSoftCallback = self.dashboardSoftCallback
+        self.needsCalibrationView = needsCalibrationView
+        _dashboardUIUpdateCallback = self.dashboardUIUpdateCallback
     }
     
     class func getDashboardCalibrationCallback() -> ((hrSample: HRSample!) -> Void)? {
-        return _dashboardSoftCallback
+        return _dashboardUIUpdateCallback
     }
     
-    func dashboardSoftCallback(hrSample: HRSample!) {
+    func dashboardUIUpdateCallback(hrSample: HRSample!) {
         self.currentHRLabel.font = UIFont(name: "Univers Light Condensed", size: 50)
         dispatch_async(dispatch_get_main_queue(), {
             self.currentHRLabel.text = "\(hrSample!.hr!)"
@@ -68,6 +71,12 @@ class DashboardCallback {
     
     func newHeartRateCallback(data: NSData!) -> Void {
         println("Received new heart rate data")
+        
+        // disable all functionality if user hasn't calibrated yet
+        if !User.getHasCalibrated() {
+            return
+        }
+        
         var hrSample = HRDecoder.dataToHRSample(data)
         if hrSample != nil && hrSample!.hr != nil && hrSample!.hr < 150 {
             
@@ -75,7 +84,7 @@ class DashboardCallback {
             
             HRAccumulator.addHRDate(NSDate())
             
-            self.dashboardSoftCallback(hrSample)
+            self.dashboardUIUpdateCallback(hrSample)
             
             HRQueue.push(hrSample!)
             println("HRQueue length: \(HRQueue.length())")
@@ -167,6 +176,42 @@ class DashboardCallback {
                 println("(Stress) Received stress score: \(score)")
                 self.lastStressScoreInterval.score = score
                 self.updatedScoreCallback(interval: self.lastStressScoreInterval)
+            }
+        }
+    }
+    
+    func loadCalibrationDataCallback(response: NSHTTPURLResponse!, data: Agent.Data!, error: NSError!) -> Void {
+        if response == nil {
+            println("(Load Calibration) Request did not go through")
+            if InternetConnectivity.getInternetConnected() {
+                InternetConnectivity.setInternetConnected(false)
+                
+                Notification.sendNoInternetNotification()
+            }
+            return
+        }
+        
+        InternetConnectivity.setInternetConnected(true)
+        
+        println("(Load Calibration) finished sending Load Calibration request!")
+        println("(Load Calibration) response status code: \(response.statusCode)")
+        
+        if response.statusCode == 200 {
+            let json = data as [String: AnyObject]
+            if json["CalibrateCount"] is Int {
+                let calibrationCount = json["CalibrateCount"] as Int
+                println("(Load Calibration) Times calibrated: \(calibrationCount)")
+                if calibrationCount == 0 {
+                    User.setHasCalibrated(false)
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.needsCalibrationView.hidden = false
+                    })
+                } else {
+                    User.setHasCalibrated(true)
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.needsCalibrationView.hidden = true
+                    })
+                }
             }
         }
     }

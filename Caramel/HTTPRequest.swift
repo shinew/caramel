@@ -101,11 +101,24 @@ class HTTPRequest {
     class func sendUserVerifyRequest(
         user: UserRecord,
         responseCallback: (NSHTTPURLResponse!, Agent.Data!, NSError!) -> Void
-        ) {
+    ) {
             println("Sending user verification request")
             let req = Agent.post(ROOT_URL + API_VERSION + "/user/verify")
             var json = [String: AnyObject]()
             json["UserName"] = user.userName
+            json["Password"] = user.password
+            req.send(json)
+            req.end(responseCallback)
+    }
+    
+    class func sendUserCalibrationCountRequest(
+        user: UserRecord,
+        responseCallback: (NSHTTPURLResponse!, Agent.Data!, NSError!) -> Void
+    ) {
+            println("Sending user calibration count request")
+            let req = Agent.post(ROOT_URL + API_VERSION + "/user/calibrate")
+            var json = [String: AnyObject]()
+            json["ID"] = user.userID
             json["Password"] = user.password
             req.send(json)
             req.end(responseCallback)

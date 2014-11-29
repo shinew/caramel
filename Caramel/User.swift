@@ -10,6 +10,7 @@ import Foundation
 
 var _userID = 9000
 var _password = "password"
+var _hasCalibrated = false
 
 class User {
     class func getUserID() -> Int {
@@ -18,6 +19,16 @@ class User {
     
     class func getPassword() -> String {
         return _password
+    }
+    
+    class func getHasCalibrated() -> Bool {
+        return _hasCalibrated
+    }
+    
+    class func setHasCalibrated(calibrated: Bool) {
+        var defaults = NSUserDefaults.standardUserDefaults()
+        _hasCalibrated = calibrated
+        defaults.setBool(_hasCalibrated, forKey: "hasCalibrated")
     }
     
     class func setUserIDAndPassword(userID: Int, password: String) {
@@ -35,6 +46,17 @@ class User {
         }
         if let password: AnyObject = defaults.objectForKey("password") {
             _password = password as String
+        }
+        _hasCalibrated = defaults.boolForKey("hasCalibrated")
+    }
+    
+    class func loadCalibrationData(response: (NSHTTPURLResponse!, Agent.Data!, NSError!) -> Void) {
+        var defaults = NSUserDefaults.standardUserDefaults()
+        if !_hasCalibrated {
+            HTTPRequest.sendUserCalibrationCountRequest(
+                UserRecord(userName: nil, userID: _userID, password: _password),
+                responseCallback: response
+            )
         }
     }
 }

@@ -33,6 +33,8 @@ class DashboardViewController: PortraitViewController {
     @IBOutlet weak var countdownHRLabel: UILabel!
     @IBOutlet weak var countdownDescriptionLabel: UILabel!
 
+    @IBOutlet weak var needsCalibrationView: UIView!
+    
     var bluetoothConnectivity = BluetoothConnectivity()
     var summaryToggle = 0
     
@@ -50,7 +52,8 @@ class DashboardViewController: PortraitViewController {
             updatedScoreCallback: self.updatedScoreCallback,
             currentHRLabel: self.currentHRLabel,
             countdownHRLabel: self.countdownHRLabel,
-            countdownDescriptionLabel: self.countdownDescriptionLabel
+            countdownDescriptionLabel: self.countdownDescriptionLabel,
+            needsCalibrationView: self.needsCalibrationView
         )
         
         HRBluetooth.setHRUpdateCallback(self.dashboardCallback.newHeartRateCallback)
@@ -85,6 +88,21 @@ class DashboardViewController: PortraitViewController {
             BackgroundSuspension.setMemoryWarningSent(true)
             Timer.setLastMemoryWarningNotificationDate(NSDate())
             Notification.sendMemoryWarningNotification()
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        dispatch_async(dispatch_get_main_queue(), {
+            self.needsCalibrationView.hidden = false
+        })
+        
+        if User.getHasCalibrated() {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.needsCalibrationView.hidden = true
+            })
+        } else {
+            User.loadCalibrationData(self.dashboardCallback.loadCalibrationDataCallback)
         }
     }
     
@@ -205,11 +223,9 @@ class DashboardViewController: PortraitViewController {
                 timeFormatLabel.text = "hours"
             }
         } else {
-            if total == 0 {
-                timeFormatLabel.text = "%"
-            } else {
+            timeFormatLabel.text = "%"
+            if total != 0 {
                 label.text = "\(Int(Double(counter)/Double(total)*100.0))"
-                timeFormatLabel.text = "%"
             }
         }
     }
