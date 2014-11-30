@@ -32,6 +32,9 @@
 		14A06CF91A08ADA5007B6FD3 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A06CF81A08ADA5007B6FD3 /* Math.swift */; };
 		14A0C3EB1A1146B6006AD37F /* TrainingInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A0C3EA1A1146B6006AD37F /* TrainingInterval.swift */; };
 		14A851B31A089CCC00855954 /* NotificationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A851B21A089CCC00855954 /* NotificationRecord.swift */; };
+		14AAE9731A2BE4940018C4D4 /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAE96E1A2BE4940018C4D4 /* JBBarChartView.m */; };
+		14AAE9741A2BE4940018C4D4 /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAE9701A2BE4940018C4D4 /* JBChartView.m */; };
+		14AAE9751A2BE4940018C4D4 /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAE9721A2BE4940018C4D4 /* JBLineChartView.m */; };
 		14AEFC9E1A241FD300BD2F92 /* Realization.wav in Resources */ = {isa = PBXBuildFile; fileRef = 14AEFC9D1A241FD300BD2F92 /* Realization.wav */; };
 		14C4D1111A1BE98500F517E5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C4D1101A1BE98500F517E5 /* Location.swift */; };
 		14D0E2361A008C6D0042F20A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2351A008C6D0042F20A /* AppDelegate.swift */; };
@@ -142,6 +145,13 @@
 		14A06CF81A08ADA5007B6FD3 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		14A0C3EA1A1146B6006AD37F /* TrainingInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingInterval.swift; sourceTree = "<group>"; };
 		14A851B21A089CCC00855954 /* NotificationRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationRecord.swift; sourceTree = "<group>"; };
+		14AAE9621A2BE3F70018C4D4 /* GetBeyond-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GetBeyond-Bridging-Header.h"; sourceTree = "<group>"; };
+		14AAE96D1A2BE4940018C4D4 /* JBBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JBBarChartView.h; path = JBChartView/JBBarChartView.h; sourceTree = "<group>"; };
+		14AAE96E1A2BE4940018C4D4 /* JBBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JBBarChartView.m; path = JBChartView/JBBarChartView.m; sourceTree = "<group>"; };
+		14AAE96F1A2BE4940018C4D4 /* JBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JBChartView.h; path = JBChartView/JBChartView.h; sourceTree = "<group>"; };
+		14AAE9701A2BE4940018C4D4 /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JBChartView.m; path = JBChartView/JBChartView.m; sourceTree = "<group>"; };
+		14AAE9711A2BE4940018C4D4 /* JBLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JBLineChartView.h; path = JBChartView/JBLineChartView.h; sourceTree = "<group>"; };
+		14AAE9721A2BE4940018C4D4 /* JBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JBLineChartView.m; path = JBChartView/JBLineChartView.m; sourceTree = "<group>"; };
 		14AEFC9D1A241FD300BD2F92 /* Realization.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Realization.wav; sourceTree = "<group>"; };
 		14C4D1101A1BE98500F517E5 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		14D0E2301A008C6D0042F20A /* GetBeyond.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetBeyond.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -301,6 +311,19 @@
 			name = Calibration;
 			sourceTree = "<group>";
 		};
+		14AAE96C1A2BE4400018C4D4 /* JBChartView */ = {
+			isa = PBXGroup;
+			children = (
+				14AAE96D1A2BE4940018C4D4 /* JBBarChartView.h */,
+				14AAE96E1A2BE4940018C4D4 /* JBBarChartView.m */,
+				14AAE96F1A2BE4940018C4D4 /* JBChartView.h */,
+				14AAE9701A2BE4940018C4D4 /* JBChartView.m */,
+				14AAE9711A2BE4940018C4D4 /* JBLineChartView.h */,
+				14AAE9721A2BE4940018C4D4 /* JBLineChartView.m */,
+			);
+			name = JBChartView;
+			sourceTree = "<group>";
+		};
 		14AEFC9A1A241E3500BD2F92 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +371,8 @@
 		14D0E2321A008C6D0042F20A /* GetBeyond */ = {
 			isa = PBXGroup;
 			children = (
+				14AAE9621A2BE3F70018C4D4 /* GetBeyond-Bridging-Header.h */,
+				14AAE96C1A2BE4400018C4D4 /* JBChartView */,
 				14FBC11B1A14BFF000BD6B15 /* Vendor */,
 				1A5347D71A07896C00CE742E /* LaunchImages */,
 				14AEFC9A1A241E3500BD2F92 /* Sounds */,
@@ -725,10 +750,12 @@
 			files = (
 				1AFFAAE51A0FF203002BAB2D /* FearViewController.swift in Sources */,
 				1415AA9A1A02D81100C1CD4F /* Notification.swift in Sources */,
+				14AAE9751A2BE4940018C4D4 /* JBLineChartView.m in Sources */,
 				1AB847E11A07112F008509FE /* SpringAnimation.swift in Sources */,
 				14D0E2611A0090A70042F20A /* Agent.swift in Sources */,
 				1AB847CD1A06F599008509FE /* WeeklyOverviewViewController.swift in Sources */,
 				1AAE14011A0714E400B16F61 /* DeepBreathsViewController.swift in Sources */,
+				14AAE9731A2BE4940018C4D4 /* JBBarChartView.m in Sources */,
 				144630B11A1467C6003B350A /* TrendGraphView.swift in Sources */,
 				14F878E31A022372001FFFE2 /* Constants.swift in Sources */,
 				14E275751A11F8A500F30780 /* DailyWellnessScore.swift in Sources */,
@@ -759,6 +786,7 @@
 				1469A8091A04659200F439DB /* Movement.swift in Sources */,
 				1AFFAAE91A0FF21F002BAB2D /* FrustrationViewController.swift in Sources */,
 				142EB8231A12E4E400F23EF0 /* ProtocolsViewController.swift in Sources */,
+				14AAE9741A2BE4940018C4D4 /* JBChartView.m in Sources */,
 				14254D571A01C9CB00DE86B8 /* HRDecoder.swift in Sources */,
 				1A3D2BD61A060E0500063AEB /* DashboardViewController.swift in Sources */,
 				146D0DA71A21C80E003450B9 /* HomeTabBarController.swift in Sources */,
@@ -906,6 +934,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -917,6 +946,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = GetBeyond;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Caramel/GetBeyond-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -926,6 +957,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -937,6 +969,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = GetBeyond;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Caramel/GetBeyond-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
