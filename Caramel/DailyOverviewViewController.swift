@@ -55,8 +55,8 @@ class DailyOverviewViewController: PortraitViewController, JBLineChartViewDataSo
         
         println("Updating trend graph")
         let data = self.prepareTrendData(NSDate())
-        //self.currentDataValues = data.0
-        //self.previousDataValues = data.1
+        self.currentDataValues = data.0
+        self.previousDataValues = data.1
 
         self.trendGraphOverview.reloadData()
         self.trendGraphOverview.setNeedsDisplay()
