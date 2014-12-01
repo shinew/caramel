@@ -3,6 +3,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JBChartView/JBUIConstants.h"
+#import "JBChartView/JBStringConstants.h"
+#import "JBChartView/JBColorConstants.h"
+#import "JBChartView/JBConstants.h"
+#import "JBChartView/JBFontConstants.h"
 #import "JBChartView/JBChartView.h"
-#import "JBChartView/JBBarChartView.h"
 #import "JBChartView/JBLineChartView.h"
+#import "JBChartView/JBLineChartFooterView.h"
