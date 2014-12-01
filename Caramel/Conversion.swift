@@ -31,6 +31,15 @@ class Conversion {
         return dateString
     }
     
+    class func dateToShortTimeString(date: NSDate!) -> String {
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
+        let hour = (components.hour % 12 == 0) ? 12 : components.hour % 12
+        let minutes = String(format: "%02d", components.minute)
+        let suffix = (components.hour < 12) ? "am" : "pm"
+        return "\(hour):\(minutes) \(suffix)"
+    }
+    
     class func dateToTimelessDate(date: NSDate!) -> NSDate {
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: date)

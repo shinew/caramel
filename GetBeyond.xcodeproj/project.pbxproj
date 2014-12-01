@@ -127,6 +127,8 @@
 		14254D561A01C9CB00DE86B8 /* HRDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRDecoder.swift; sourceTree = "<group>"; };
 		142EB8221A12E4E400F23EF0 /* ProtocolsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolsViewController.swift; sourceTree = "<group>"; };
 		1430FCBB1A0307EF006B518B /* AccelQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelQueue.swift; sourceTree = "<group>"; };
+		143BD9581A2C676F00243912 /* Univers-LT-67-Condensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Univers-LT-67-Condensed-Bold.ttf"; sourceTree = "<group>"; };
+		143BD9591A2C676F00243912 /* UniversUltraCondensedBQ-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UniversUltraCondensedBQ-Light.otf"; sourceTree = "<group>"; };
 		144071881A0A05B4002A3B71 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		144468AB1A1D665100B4C680 /* StartScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
 		144630AC1A1466BD003B350A /* DailyOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyOverviewViewController.swift; sourceTree = "<group>"; };
@@ -507,6 +509,8 @@
 		1A28C9F91A060CB000678084 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				143BD9581A2C676F00243912 /* Univers-LT-67-Condensed-Bold.ttf */,
+				143BD9591A2C676F00243912 /* UniversUltraCondensedBQ-Light.otf */,
 				1AB847CA1A06EFCC008509FE /* univers-light-condensed-1361511939.ttf */,
 				1AB847BD1A06EB95008509FE /* univers-black-normal.ttf */,
 				1AB847BE1A06EB95008509FE /* univers-condensed-italics.ttf */,

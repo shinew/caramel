@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+//OBSOLETE
 class TrendGraphView: UIView {
     
     private var currentDataValues: [Int]!

@@ -13,9 +13,17 @@ class DailyOverviewViewController: PortraitViewController, JBLineChartViewDataSo
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     @IBOutlet weak var trendGraphOverview: JBLineChartView!
     
+    @IBOutlet weak var dayTimeLabel: UILabel!
+    @IBOutlet weak var stressScoreTextLabel: UILabel!
+    @IBOutlet weak var stressStateTextLabel: UILabel!
+    @IBOutlet weak var stressStateLabel: UILabel!
+    @IBOutlet weak var stressScoreLabel: UILabel!
+    
+    var bottomLabels: [UILabel]!
+    
     var times = ["1:00", "1:05", "1:10", "1:15", "1:20", "1:25", "1:30", "1:35", "1:40", "1:45", "1:50"]
-    var currentDataValues = [69, 21, 0, 0, 34, 45, 5, 13, 13, 1, 5]
-    var previousDataValues = [19, 23, 31, 44, 59, 5, 25, 10, 23, 45, 6]
+    var currentDataValues = [69, 21, 0, 0, 34, 45, 5, 13, 13, 100, 5]
+    var previousDataValues = [19, 23, 31, 44, 59, 5, 25, 10, 23, 80, 6]
     let currentColor = UIColor(red: 0.30, green: 0.55, blue: 0.76, alpha: 1.0)
     let previousColor = UIColor(red: 0.63, green: 0.63, blue: 0.63, alpha: 1.0)
     
@@ -26,7 +34,12 @@ class DailyOverviewViewController: PortraitViewController, JBLineChartViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
+        
+        self.bottomLabels = [self.dayTimeLabel, self.stressScoreTextLabel, self.stressStateTextLabel, self.stressStateLabel, self.stressScoreLabel]
+        
+        for label in self.bottomLabels {
+            label.hidden = true
+        }
         
         self.trendGraphOverview.dataSource = self
         self.trendGraphOverview.delegate = self
@@ -42,17 +55,8 @@ class DailyOverviewViewController: PortraitViewController, JBLineChartViewDataSo
         
         println("Updating trend graph")
         let data = self.prepareTrendData(NSDate())
-        
-        //self.trendGraphView.setCurrentData(data.0, maxYValue: 100)
-        //self.trendGraphView.setPreviousData(data.1, maxYValue: 100)
-        
-        /*self.currentDataValues = [69, 21, 0, 0, 34, 45, 5, 13, 13, 1, 5]
-        self.previousDataValues = [19, 23, 31, 44, 59, 5, 25, 10, 23, 45, 6]
-        for i in 1...100 {
-            arr.append(i)
-        }   
-        self.trendGraphView.setCurrentData(arr, maxYValue: 100) //display testing
-        self.trendGraphView.setPreviousData([], maxYValue: 100)*/
+        //self.currentDataValues = data.0
+        //self.previousDataValues = data.1
 
         self.trendGraphOverview.reloadData()
         self.trendGraphOverview.setNeedsDisplay()
@@ -67,6 +71,8 @@ class DailyOverviewViewController: PortraitViewController, JBLineChartViewDataSo
     }
     
     private func organizeDailyData(startDate: NSDate) -> [Int] {
+        self.times.removeAll(keepCapacity: true)
+        
         let endDate = startDate.dateByAddingTimeInterval(60 * 60 * 24)
         let granularity = NSTimeInterval(Constants.getProfileTrendFineness() * 60) * 2
         let intervals = Database.getSortedStressIntervals(startDate, endDate: endDate)
@@ -92,13 +98,70 @@ class DailyOverviewViewController: PortraitViewController, JBLineChartViewDataSo
                 maxScore = 0
             }
             result.append(maxScore!)
+            self.times.append(Conversion.dateToShortTimeString(movingDate))
             movingDate = movingEndDate
         }
         return result
     }
     
+    //lineChartView methods
+    
     func lineChartView(lineChartView: JBLineChartView!, didSelectLineAtIndex lineIndex: UInt, horizontalIndex: UInt, touchPoint: CGFloat) {
-        let value = self.times[Int(horizontalIndex)]
+        for label in self.bottomLabels {
+            label.hidden = false
+        }
+        
+        let time = self.times[Int(horizontalIndex)]
+        var score = 0
+        if lineIndex == 1 {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.dayTimeLabel.text = "Today @ \(time)"
+            })
+            score = self.currentDataValues[Int(horizontalIndex)]
+        } else {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.dayTimeLabel.text = "Yesterday @ \(time)"
+            })
+            score = self.previousDataValues[Int(horizontalIndex)]
+        }
+        
+        if score == 0 {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.stressScoreLabel.text = "--"
+                self.stressStateLabel.text = "--"
+                self.stressStateLabel.textColor = UIColor.blackColor()
+                self.stressScoreLabel.textColor = UIColor.blackColor()
+            })
+        } else {
+            self.stressScoreLabel.text = String(score)
+            if score < Constants.getCircleColorYellowThreshold() {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.stressStateLabel.text = "Calm"
+                    self.stressStateLabel.textColor = Constants.getCalmColor()
+                    self.stressScoreLabel.textColor = Constants.getCalmColor()
+                })
+            } else if score < Constants.getCircleColorRedThreshold() {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.stressStateLabel.text = "Tense"
+                    self.stressStateLabel.textColor = Constants.getTenseColor()
+                    self.stressScoreLabel.textColor = Constants.getTenseColor()
+
+                })
+            } else {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.stressStateLabel.text = "Stressed"
+                    self.stressStateLabel.textColor = Constants.getStressedColor()
+                    self.stressScoreLabel.textColor = Constants.getStressedColor()
+
+                })
+            }
+        }
+    }
+    
+    func didDeselectLineInLineChartView(lineChartView: JBLineChartView!) {
+        for label in self.bottomLabels {
+            label.hidden = true
+        }
     }
     
     func numberOfLinesInLineChartView(lineChartView: JBLineChartView!) -> UInt {

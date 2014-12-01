@@ -23,6 +23,9 @@ let _circleColorYellowThreshold = 75
 let _circleColorRedThreshold = 90
 let _bluetoothConnectivityDuration = 10.0
 let _memoryWarningThrottleDuration = 10.0 * 60.0
+let _blueCalmColor = Conversion.UIColorFromRGB(103, green: 107, blue: 251)
+let _orangeTenseColor = UIColor.orangeColor()
+let _redStressedColor = UIColor.redColor()
 
 class Constants {
     
@@ -55,4 +58,10 @@ class Constants {
     class func getBluetoothConnectivityDuration() -> Double { return _bluetoothConnectivityDuration }
     
     class func getMemoryWarningThrottleDuration() -> Double { return _memoryWarningThrottleDuration }
+    
+    class func getCalmColor() -> UIColor { return _blueCalmColor }
+    
+    class func getTenseColor() -> UIColor { return _orangeTenseColor }
+    
+    class func getStressedColor() -> UIColor { return _redStressedColor }
 }
