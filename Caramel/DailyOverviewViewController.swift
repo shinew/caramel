@@ -21,9 +21,15 @@ class DailyOverviewViewController: PortraitViewController, JBLineChartViewDataSo
     
     var bottomLabels: [UILabel]!
     
-    var times = ["1:00", "1:05", "1:10", "1:15", "1:20", "1:25", "1:30", "1:35", "1:40", "1:45", "1:50"]
+    /*Testing data: var times = ["1:00", "1:05", "1:10", "1:15", "1:20", "1:25", "1:30", "1:35", "1:40", "1:45", "1:50"]
     var currentDataValues = [69, 21, 0, 0, 34, 45, 5, 13, 13, 100, 5]
-    var previousDataValues = [19, 23, 31, 44, 59, 5, 25, 10, 23, 80, 6]
+    var previousDataValues = [19, 23, 31, 44, 59, 5, 25, 10, 23, 80, 6]*/
+    
+    var times = [String]()
+    var currentDataValues = [Int]()
+    var previousDataValues = [Int]()
+
+    
     let currentColor = UIColor(red: 0.30, green: 0.55, blue: 0.76, alpha: 1.0)
     let previousColor = UIColor(red: 0.63, green: 0.63, blue: 0.63, alpha: 1.0)
     

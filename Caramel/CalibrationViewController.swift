@@ -9,6 +9,8 @@
 import UIKit
 import AudioToolbox
 
+var _trainingInterval: TrainingInterval!
+
 class CalibrationViewController: PortraitViewController {
     
     @IBOutlet weak var skipButton: UIButton!
@@ -108,6 +110,7 @@ class CalibrationViewController: PortraitViewController {
     }
     
     func finishedCalibration() {
+        User.attemptedCalibration()
         CalibrationState.setCalibrationState(false)
         
         dispatch_async(dispatch_get_main_queue(), {
@@ -121,17 +124,59 @@ class CalibrationViewController: PortraitViewController {
         self.endDate = NSDate()
         var hrSamples = HRQueue.popAll()
         //1 = non-stress, 2 = stress
-        var trainingInterval = TrainingInterval(startDate: self.startDate!, endDate: self.endDate!, category: 1, userID: User.getUserID())
+        _trainingInterval = TrainingInterval(startDate: self.startDate!, endDate: self.endDate!, category: 1, userID: User.getUserID())
         
-        HTTPRequest.sendHRRequest(hrSamples, self.calibrationCallback.httpResponseCallbackGenerator("HR"))
-        HTTPRequest.sendTrainingIntervalRequest(trainingInterval, self.calibrationCallback.httpResponseCallbackGenerator("Training"))
+        HTTPRequest.sendHRRequest(hrSamples, self.httpHRResponseCallback)
         
         if self.previousHRCallback != nil {
             HRBluetooth.setHRUpdateCallback(self.previousHRCallback!)
         }
         
-        Notification.sendCalibrationCompleteNotification()
         vibratePhone()
+    }
+    
+    func httpHRResponseCallback (response: NSHTTPURLResponse!, data: Agent.Data!, error: NSError!) -> Void {
+        println("(HR) finished sending HR request!")
+        if response == nil {
+            println("(HR) Request did not go through")
+            
+            if InternetConnectivity.getInternetConnected() {
+                InternetConnectivity.setInternetConnected(false)
+                
+                Notification.sendNoInternetNotification()
+            }
+            return
+        }
+        
+        InternetConnectivity.setInternetConnected(true)
+        
+        println("(HR) response status code: \(response.statusCode)")
+        HTTPRequest.sendTrainingIntervalRequest(_trainingInterval, self.httpTrainingResponseCallback)
+    }
+    
+    func httpTrainingResponseCallback (response: NSHTTPURLResponse!, data: Agent.Data!, error: NSError!) -> Void {
+        println("(Training) finished sending Training request!")
+        if response == nil {
+            println("(Training) Request did not go through")
+            
+            if InternetConnectivity.getInternetConnected() {
+                InternetConnectivity.setInternetConnected(false)
+                
+                Notification.sendNoInternetNotification()
+            }
+            return
+        }
+        
+        InternetConnectivity.setInternetConnected(true)
+        
+        println("(Training) response status code: \(response.statusCode)")
+        
+        var callback = DashboardCallback.getReloadDashboardScreenCallback()
+        if callback != nil {
+            HTTPRequest.sendUserCalibrationCountRequest(UserRecord(userName: nil, userID: User.getUserID(), password: User.getPassword()), responseCallback: callback!)
+        }
+        
+        Notification.sendCalibrationCompleteNotification()
     }
     
     private func vibratePhone() {

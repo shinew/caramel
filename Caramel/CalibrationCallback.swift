@@ -26,27 +26,4 @@ class CalibrationCallback {
             }
         }
     }
-
-    func httpResponseCallbackGenerator(type: String) -> (NSHTTPURLResponse!, Agent.Data!, NSError!) -> Void {
-        
-        func closure (response: NSHTTPURLResponse!, data: Agent.Data!, error: NSError!) -> Void {
-            println("(\(type)) finished sending \(type) request!")
-            if response == nil {
-                println("(\(type)) Request did not go through")
-                
-                if InternetConnectivity.getInternetConnected() {
-                    InternetConnectivity.setInternetConnected(false)
-                    
-                    Notification.sendNoInternetNotification()
-                }
-                return
-            }
-            
-            InternetConnectivity.setInternetConnected(true)
-            
-            println("(\(type)) response status code: \(response.statusCode)")
-        }
-        
-        return closure
-    }
 }

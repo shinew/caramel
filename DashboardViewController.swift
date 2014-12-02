@@ -34,6 +34,7 @@ class DashboardViewController: PortraitViewController {
     @IBOutlet weak var countdownDescriptionLabel: UILabel!
 
     @IBOutlet weak var needsCalibrationView: UIView!
+    @IBOutlet weak var needsCalibrationLabel: UILabel!
     
     var bluetoothConnectivity = BluetoothConnectivity()
     var summaryToggle = 0
@@ -55,7 +56,8 @@ class DashboardViewController: PortraitViewController {
             currentHRLabel: self.currentHRLabel,
             countdownHRLabel: self.countdownHRLabel,
             countdownDescriptionLabel: self.countdownDescriptionLabel,
-            needsCalibrationView: self.needsCalibrationView
+            needsCalibrationView: self.needsCalibrationView,
+            needsCalibrationLabel: self.needsCalibrationLabel
         )
         
         HRBluetooth.setHRUpdateCallback(self.dashboardCallback.newHeartRateCallback)
@@ -99,13 +101,7 @@ class DashboardViewController: PortraitViewController {
             self.needsCalibrationView.hidden = false
         })
         
-        if User.getHasCalibrated() {
-            dispatch_async(dispatch_get_main_queue(), {
-                self.needsCalibrationView.hidden = true
-            })
-        } else {
-            User.loadCalibrationData(self.dashboardCallback.loadCalibrationDataCallback)
-        }
+        User.loadCalibrationData(self.dashboardCallback.loadCalibrationDataCallback)
     }
     
     func registerZoneTapToggles() {

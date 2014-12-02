@@ -9,6 +9,7 @@
 import UIKit
 
 var _dashboardUIUpdateCallback: ((hrSample: HRSample!) -> Void)?
+var _reloadDashboardScreenCallback: ((response: NSHTTPURLResponse!, data: Agent.Data!, error: NSError!) -> Void)?
 
 class DashboardCallback {
     
@@ -17,6 +18,7 @@ class DashboardCallback {
     var countdownHRLabel: UILabel!
     var countdownDescriptionLabel: UILabel!
     var needsCalibrationView: UIView!
+    var needsCalibrationLabel: UILabel!
     var updatedScoreCallback: ((interval: StressScoreInterval!) -> Void)!
 
     init(updatedScoreCallback: (
@@ -24,18 +26,25 @@ class DashboardCallback {
         currentHRLabel: UILabel!,
         countdownHRLabel: UILabel!,
         countdownDescriptionLabel: UILabel!,
-        needsCalibrationView: UIView!
+        needsCalibrationView: UIView!,
+        needsCalibrationLabel: UILabel!
     ) {
         self.updatedScoreCallback = updatedScoreCallback
         self.currentHRLabel = currentHRLabel
         self.countdownHRLabel = countdownHRLabel
         self.countdownDescriptionLabel = countdownDescriptionLabel
         self.needsCalibrationView = needsCalibrationView
+        self.needsCalibrationLabel = needsCalibrationLabel
         _dashboardUIUpdateCallback = self.dashboardUIUpdateCallback
+        _reloadDashboardScreenCallback = self.loadCalibrationDataCallback
     }
     
     class func getDashboardCalibrationCallback() -> ((hrSample: HRSample!) -> Void)? {
         return _dashboardUIUpdateCallback
+    }
+    
+    class func getReloadDashboardScreenCallback() -> ((response: NSHTTPURLResponse!, data: Agent.Data!, error: NSError!) -> Void)? {
+        return _reloadDashboardScreenCallback
     }
     
     func dashboardUIUpdateCallback(hrSample: HRSample!) {
@@ -72,15 +81,21 @@ class DashboardCallback {
     func newHeartRateCallback(data: NSData!) -> Void {
         println("Received new heart rate data")
         
-        // disable all functionality if user hasn't calibrated yet
-        if !User.getHasCalibrated() {
-            return
-        }
-        
         var hrSample = HRDecoder.dataToHRSample(data)
         if hrSample != nil && hrSample!.hr != nil && hrSample!.hr < 150 {
-            
             Timer.setLastHRBluetoothReceivedDate(NSDate())
+            
+            if !User.getHasCalibrated() && !CalibrationState.getCalibrationState() {
+                // disable all functionality if user hasn't calibrated yet
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.countdownHRLabel.hidden = true
+                    self.countdownDescriptionLabel.hidden = false
+                    self.countdownDescriptionLabel.text = "Awaiting calibration"
+                    self.currentHRLabel.text = String(hrSample!.hr!)
+                    self.currentHRLabel.font = UIFont(name: "Univers Light Condensed", size: 50)
+                })
+                return
+            }
             
             HRAccumulator.addHRDate(NSDate())
             
@@ -205,6 +220,11 @@ class DashboardCallback {
                     User.setHasCalibrated(false)
                     dispatch_async(dispatch_get_main_queue(), {
                         self.needsCalibrationView.hidden = false
+                        if User.getHasAttemptedCalibration() {
+                            self.needsCalibrationLabel.text = "Please re-calibrate before using Beyond."
+                        } else {
+                            self.needsCalibrationLabel.text = "Please calibrate before using Beyond."
+                        }
                     })
                 } else {
                     User.setHasCalibrated(true)

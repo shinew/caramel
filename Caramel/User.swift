@@ -11,6 +11,7 @@ import Foundation
 var _userID = 9000
 var _password = "password"
 var _hasCalibrated = false
+var _hasAttemptedCalibration = false
 
 class User {
     class func getUserID() -> Int {
@@ -23,6 +24,10 @@ class User {
     
     class func getHasCalibrated() -> Bool {
         return _hasCalibrated
+    }
+    
+    class func getHasAttemptedCalibration() -> Bool {
+        return _hasAttemptedCalibration
     }
     
     class func setHasCalibrated(calibrated: Bool) {
@@ -48,15 +53,20 @@ class User {
             _password = password as String
         }
         _hasCalibrated = defaults.boolForKey("hasCalibrated")
+        _hasAttemptedCalibration = defaults.boolForKey("hasAttemptedCalibration")
     }
     
     class func loadCalibrationData(response: (NSHTTPURLResponse!, Agent.Data!, NSError!) -> Void) {
         var defaults = NSUserDefaults.standardUserDefaults()
-        if !_hasCalibrated {
-            HTTPRequest.sendUserCalibrationCountRequest(
-                UserRecord(userName: nil, userID: _userID, password: _password),
-                responseCallback: response
-            )
-        }
+        HTTPRequest.sendUserCalibrationCountRequest(
+            UserRecord(userName: nil, userID: _userID, password: _password),
+            responseCallback: response
+        )
+    }
+    
+    class func attemptedCalibration() {
+        var defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setBool(true, forKey: "hasAttemptedCalibration")
+        _hasAttemptedCalibration = true
     }
 }
