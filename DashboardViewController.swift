@@ -97,10 +97,6 @@ class DashboardViewController: PortraitViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        dispatch_async(dispatch_get_main_queue(), {
-            self.needsCalibrationView.hidden = false
-        })
-        
         User.loadCalibrationData(self.dashboardCallback.loadCalibrationDataCallback)
     }
     
