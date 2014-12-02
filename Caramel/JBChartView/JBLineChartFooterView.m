@@ -53,7 +53,7 @@ static UIColor *kJBLineChartFooterViewDefaultSeparatorColor = nil;
         _leftLabel.textAlignment = NSTextAlignmentLeft;
         _leftLabel.textColor = [UIColor blackColor];
         _leftLabel.backgroundColor = [UIColor clearColor];
-        _leftLabel.text = @"MIDNIGHT";
+        _leftLabel.text = @"6:00 am";
         
         [self addSubview:_leftLabel];
         
@@ -63,7 +63,7 @@ static UIColor *kJBLineChartFooterViewDefaultSeparatorColor = nil;
         _middleLeftLabel.textAlignment = NSTextAlignmentLeft;
         _middleLeftLabel.textColor = [UIColor blackColor];
         _middleLeftLabel.backgroundColor = [UIColor clearColor];
-        _middleLeftLabel.text = @"6:00 AM";
+        _middleLeftLabel.text = @"10:30 am";
         [self addSubview:_middleLeftLabel];
         
         _centerLabel = [[UILabel alloc] init];
@@ -72,7 +72,7 @@ static UIColor *kJBLineChartFooterViewDefaultSeparatorColor = nil;
         _centerLabel.textAlignment = NSTextAlignmentCenter;
         _centerLabel.textColor = [UIColor blackColor];
         _centerLabel.backgroundColor = [UIColor clearColor];
-        _centerLabel.text = @"NOON";
+        _centerLabel.text = @"3:00 pm";
         [self addSubview:_centerLabel];
         
         _middleRightLabel = [[UILabel alloc] init];
@@ -81,7 +81,7 @@ static UIColor *kJBLineChartFooterViewDefaultSeparatorColor = nil;
         _middleRightLabel.textAlignment = NSTextAlignmentRight;
         _middleRightLabel.textColor = [UIColor blackColor];
         _middleRightLabel.backgroundColor = [UIColor clearColor];
-        _middleRightLabel.text = @"6:00 PM";
+        _middleRightLabel.text = @"7:30 pm";
         [self addSubview:_middleRightLabel];
         
         _rightLabel = [[UILabel alloc] init];
@@ -90,7 +90,7 @@ static UIColor *kJBLineChartFooterViewDefaultSeparatorColor = nil;
         _rightLabel.textAlignment = NSTextAlignmentRight;
         _rightLabel.textColor = [UIColor blackColor];
         _rightLabel.backgroundColor = [UIColor clearColor];
-        _rightLabel.text = @"MIDNIGHT";
+        _rightLabel.text = @"12:00 am";
         [self addSubview:_rightLabel];
     }
     return self;

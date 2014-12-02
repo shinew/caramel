@@ -76,10 +76,11 @@ class DailyOverviewViewController: PortraitViewController, JBLineChartViewDataSo
         return (todayData, yesterdayData)
     }
     
-    private func organizeDailyData(startDate: NSDate) -> [Int] {
+    private func organizeDailyData(originalStartDate: NSDate) -> [Int] {
         self.times.removeAll(keepCapacity: true)
         
-        let endDate = startDate.dateByAddingTimeInterval(60 * 60 * 24)
+        let startDate = originalStartDate.dateByAddingTimeInterval(60 * 60 * 6)
+        let endDate = startDate.dateByAddingTimeInterval(60 * 60 * 18)
         let granularity = NSTimeInterval(Constants.getProfileTrendFineness() * 60) * 2
         let intervals = Database.getSortedStressIntervals(startDate, endDate: endDate)
         var movingDate = startDate
@@ -119,7 +120,7 @@ class DailyOverviewViewController: PortraitViewController, JBLineChartViewDataSo
         
         let time = self.times[Int(horizontalIndex)]
         var score = 0
-        if lineIndex == 1 {
+        if lineIndex == 0 {
             dispatch_async(dispatch_get_main_queue(), {
                 self.dayTimeLabel.text = "Today @ \(time)"
             })
@@ -172,13 +173,13 @@ class DailyOverviewViewController: PortraitViewController, JBLineChartViewDataSo
     
     func numberOfLinesInLineChartView(lineChartView: JBLineChartView!) -> UInt {
         // number of lines in chart
-        // 1 = current, 0 = previous
+        // 0 = current, 1 = previous
         return 2
     }
     
     func lineChartView(lineChartView: JBLineChartView!, numberOfVerticalValuesAtLineIndex lineIndex: UInt) -> UInt {
         // number of values for a line
-        if lineIndex == 1 {
+        if lineIndex == 0 {
             return UInt(self.currentDataValues.count)
         } else {
             return UInt(self.previousDataValues.count)
@@ -187,7 +188,7 @@ class DailyOverviewViewController: PortraitViewController, JBLineChartViewDataSo
     
     func lineChartView(lineChartView: JBLineChartView!, verticalValueForHorizontalIndex horizontalIndex: UInt, atLineIndex lineIndex: UInt) -> CGFloat {
         // y-position (y-axis) of point at horizontalIndex (x-axis)
-        if lineIndex == 1 {
+        if lineIndex == 0 {
             return CGFloat(self.currentDataValues[Int(horizontalIndex)])
         } else {
             return CGFloat(self.previousDataValues[Int(horizontalIndex)])
@@ -195,7 +196,7 @@ class DailyOverviewViewController: PortraitViewController, JBLineChartViewDataSo
     }
     
     func lineChartView(lineChartView: JBLineChartView!, widthForLineAtLineIndex lineIndex: UInt) -> CGFloat {
-        return CGFloat(1.0)
+        return CGFloat(0.5)
     }
     
     func lineChartView(lineChartView: JBLineChartView!, showsDotsForLineAtLineIndex lineIndex: UInt) -> Bool {
@@ -207,7 +208,7 @@ class DailyOverviewViewController: PortraitViewController, JBLineChartViewDataSo
     }
     
     func lineChartView(lineChartView: JBLineChartView!, colorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
-        if lineIndex == 1 {
+        if lineIndex == 0 {
             return self.currentColor
         } else {
             return self.previousColor
@@ -215,7 +216,7 @@ class DailyOverviewViewController: PortraitViewController, JBLineChartViewDataSo
     }
     
     func lineChartView(lineChartView: JBLineChartView!, fillColorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
-        if lineIndex == 1 {
+        if lineIndex == 0 {
             return self.currentColor
         } else {
             return self.previousColor
@@ -223,7 +224,7 @@ class DailyOverviewViewController: PortraitViewController, JBLineChartViewDataSo
     }
     
     func lineChartView(lineChartView: JBLineChartView!, selectionColorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
-        if lineIndex == 1 {
+        if lineIndex == 0 {
             return self.currentColor
         } else {
             return self.previousColor
@@ -231,7 +232,7 @@ class DailyOverviewViewController: PortraitViewController, JBLineChartViewDataSo
     }
     
     func lineChartView(lineChartView: JBLineChartView!, selectionFillColorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
-        if lineIndex == 1 {
+        if lineIndex == 0 {
             return self.currentColor
         } else {
             return self.previousColor
