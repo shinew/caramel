@@ -143,7 +143,7 @@ static UIColor *kJBLineChartFooterViewDefaultSeparatorColor = nil;
     
     _topSeparatorView.frame = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, kJBLineChartFooterViewSeparatorWidth);
     
-    CGFloat xOffset = 0;
+    CGFloat xOffset = 2;
     CGFloat yOffset = kJBLineChartFooterViewSeparatorSectionPadding;
     CGFloat width = ceil(self.bounds.size.width * 0.2);
     
@@ -151,7 +151,7 @@ static UIColor *kJBLineChartFooterViewDefaultSeparatorColor = nil;
     self.middleLeftLabel.frame = CGRectMake(CGRectGetMaxX(self.leftLabel.frame), yOffset, width, self.bounds.size.height);
     self.centerLabel.frame = CGRectMake(CGRectGetMaxX(self.middleLeftLabel.frame), yOffset, width, self.bounds.size.height);
     self.middleRightLabel.frame = CGRectMake(CGRectGetMaxX(self.centerLabel.frame), yOffset, width, self.bounds.size.height);
-    self.rightLabel.frame = CGRectMake(CGRectGetMaxX(self.middleRightLabel.frame), yOffset, width, self.bounds.size.height);
+    self.rightLabel.frame = CGRectMake(CGRectGetMaxX(self.middleRightLabel.frame) - xOffset * 2, yOffset, width, self.bounds.size.height);
 }
 
 #pragma mark - Setters
