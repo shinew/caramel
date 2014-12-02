@@ -33,6 +33,14 @@ class RegisterViewController: PortraitViewController, UITextFieldDelegate {
         //setting up textfield delegates
         self.userNameTextField.delegate = self
         self.passwordTextField.delegate = self
+        
+        
+        //outside-clicking setup
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("dismissKeyboard:")))
+    }
+    
+    @objc func dismissKeyboard(recognizer: UITapGestureRecognizer) {
+        self.view.endEditing(true)
     }
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
