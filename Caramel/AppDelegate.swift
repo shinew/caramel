@@ -29,9 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation();
         
         //registering for sending user various kinds of notifications
-        let types: UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Sound | UIUserNotificationType.Badge
-        let settings = UIUserNotificationSettings(forTypes: types, categories: nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        if UIDevice.currentDevice().systemVersion >= "8" {
+            let types: UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Sound | UIUserNotificationType.Badge
+            let settings = UIUserNotificationSettings(forTypes: types, categories: nil)
+            UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        }
         
         // Start movement monitoring
         Movement.initalizeManager()

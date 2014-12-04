@@ -20,7 +20,9 @@ class Location: NSObject, CLLocationManagerDelegate {
         super.init()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
+        if UIDevice.currentDevice().systemVersion >= "8" {
+            locationManager.requestAlwaysAuthorization()
+        }
         locationManager.startUpdatingLocation()
     }
     

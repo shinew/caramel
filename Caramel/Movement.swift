@@ -17,7 +17,7 @@ var _wasMoving = false
 class Movement {
     
     class func initalizeManager() {
-        if CMMotionActivityManager.isActivityAvailable() {
+        if CMMotionActivityManager.isActivityAvailable() && UIDevice.currentDevice().systemVersion >= "8" {
             Movement.initializeActivityManager()
         } else {
             Movement.initializeMotionManager()
