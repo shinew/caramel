@@ -21,7 +21,8 @@ let _stressDiscardInterval = 5 * 60 //5 min
 let _stressNotificationThreshold = 75
 let _circleColorYellowThreshold = 75
 let _circleColorRedThreshold = 90
-let _bluetoothConnectivityDuration = 10.0
+let _bluetoothConnectivityDuration = 4.0
+let _bluetoothReconnectInterval = 10.0
 let _memoryWarningThrottleDuration = 10.0 * 60.0
 let _blueCalmColor = Conversion.UIColorFromRGB(103, green: 107, blue: 251)
 let _orangeTenseColor = UIColor.orangeColor()
@@ -56,6 +57,8 @@ class Constants {
     class func getCircleColorRedThreshold() -> Int { return _circleColorRedThreshold }
     
     class func getBluetoothConnectivityDuration() -> Double { return _bluetoothConnectivityDuration }
+    
+    class func getBluetoothReconnectInterval() -> Double { return _bluetoothReconnectInterval }
     
     class func getMemoryWarningThrottleDuration() -> Double { return _memoryWarningThrottleDuration }
     

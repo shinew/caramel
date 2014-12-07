@@ -22,7 +22,7 @@ class BluetoothConnectivity {
     }
 
     func setLongRunningTimer() {
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: Selector("checkForBluetooth"), userInfo: nil, repeats: true)
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("checkForBluetooth"), userInfo: nil, repeats: true)
     }
     
     func disableTimer() {
@@ -39,10 +39,5 @@ class BluetoothConnectivity {
             }
         }
         if self.disconnectedCallback != nil { self.disconnectedCallback!() }
-        println("(BLConnect) Restarting HRBluetooth")
-        
-        HRAccumulator.startCountdown()
-        HRAccumulator.restartCountdown()
-        AppDelegate.restartBGTask()
     }
 }

@@ -15,13 +15,14 @@ class ConnectivityViewController: PortraitViewController {
     
     var bluetoothConnectivity = BluetoothConnectivity()
     var allowBTRestart = true
+    var lastBluetoothResetTime: NSDate?
     
     @IBAction func connectButtonDidPress(sender: AnyObject) {
         if self.allowBTRestart {
             self.allowBTRestart = false
             println("Restart Bluetooth background task")
             AppDelegate.restartBGTask()
-            NSTimer.scheduledTimerWithTimeInterval(7, target: self, selector: Selector("enableConnectButton"), userInfo: nil, repeats: false)
+            NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: Selector("enableConnectButton"), userInfo: nil, repeats: false)
         }
     }
     
@@ -41,6 +42,17 @@ class ConnectivityViewController: PortraitViewController {
                         self.currentHRLabel.font = UIFont(name: "Univers Light Condensed", size: 18)
                     }
                 })
+                
+                if self.lastBluetoothResetTime == nil || NSDate().timeIntervalSinceDate(self.lastBluetoothResetTime!) < Constants.getBluetoothReconnectInterval() {
+                    return
+                }
+                self.lastBluetoothResetTime = NSDate()
+                
+                println("(BLConnect) Restarting HRBluetooth")
+                
+                HRAccumulator.startCountdown()
+                HRAccumulator.restartCountdown()
+                AppDelegate.restartBGTask()
             }
         )
         

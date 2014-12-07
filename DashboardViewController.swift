@@ -71,7 +71,8 @@ class DashboardViewController: PortraitViewController {
                         self.currentHRLabel.text = "Disconnected"
                         self.currentHRLabel.font = UIFont(name: "Univers Light Condensed", size: 18)
                     }
-            })}
+                })
+            }
         )
         self.bluetoothConnectivity.setLongRunningTimer()
         
