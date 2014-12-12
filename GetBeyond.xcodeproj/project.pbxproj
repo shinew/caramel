@@ -959,7 +959,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = GetBeyond;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "3ff92b03-9f6c-41af-a511-56d5f8d41a6b";
 				SWIFT_OBJC_BRIDGING_HEADER = "Caramel/GetBeyond-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -982,7 +982,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = GetBeyond;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "3ff92b03-9f6c-41af-a511-56d5f8d41a6b";
 				SWIFT_OBJC_BRIDGING_HEADER = "Caramel/GetBeyond-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
